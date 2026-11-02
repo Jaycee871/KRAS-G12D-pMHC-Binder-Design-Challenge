@@ -37,6 +37,7 @@ import time
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Mapping, Optional, Sequence, Tuple
 
+import complex_analysis
 import design_gates
 from nvidia_client import NvidiaApiError, NvidiaClient, parse_mpnn_mfasta
 
@@ -57,9 +58,11 @@ HOTSPOT_RESIDUES = [f"{PEPTIDE_CHAIN}{i}" for i in range(4, 9)]  # C4..C8
 RFD_BINDER_CHAIN = "A"
 RFD_TARGET_CHAIN = "B"
 
-CONTACT_CUTOFF = 5.0         # Angstrom, heavy-atom contact definition
-INTERFACE_CUTOFF = 5.0       # Angstrom, "interface residue" definition
-SASA_PROBE_RADIUS = 1.4      # Angstrom (design_gates / PIPELINE.md section 6)
+# Interface definitions live in complex_analysis so the analysis module is the
+# single source of truth; re-exported here for callers and tests.
+CONTACT_CUTOFF = complex_analysis.CONTACT_CUTOFF
+INTERFACE_CUTOFF = complex_analysis.INTERFACE_CUTOFF
+SASA_PROBE_RADIUS = complex_analysis.SASA_PROBE_RADIUS
 ASP_SIDECHAIN_ATOMS = ("CB", "CG", "OD1", "OD2")
 
 STATES = ("g12d", "wt", "apo", "decoy")
@@ -87,7 +90,7 @@ CSV_COLUMNS = [
 ]
 
 # Formal charge per residue at pH 7.4; His counted at ~10 % protonation.
-RESIDUE_CHARGE = {"ARG": 1.0, "LYS": 1.0, "ASP": -1.0, "GLU": -1.0, "HIS": 0.1}
+RESIDUE_CHARGE = complex_analysis.RESIDUE_CHARGE
 
 N_GLYC_SEQUON = re.compile(r"N[^P][ST]")
 RUN_OF_FIVE = re.compile(r"(.)\1{4,}")
@@ -216,131 +219,53 @@ def _heavy_atoms(entity) -> List:
 def complex_metrics(
     mmcif_text: str,
     binder_chain: str = BINDER_CHAIN,
-    peptide_chain: str = PEPTIDE_CHAIN,
+    peptide_chain: Optional[str] = None,
     peptide_position: int = MUTATED_PEPTIDE_POSITION,
+    binder_sequence: Optional[str] = None,
 ) -> Dict[str, float]:
     """Interface geometry of a predicted binder/pMHC complex.
 
+    Thin wrapper over :func:`complex_analysis.interface_metrics`, which does
+    the real work: it maps the chains by *content* (sequence and length) rather
+    than by the hard-coded ids this function used to assume, and raises instead
+    of silently returning 0.0 when a chain, a residue or a side chain is
+    missing. See that module's docstring for why - batch-01's all-zero buried
+    fractions were indistinguishable from a mapping bug.
+
+    `binder_chain` is only a *hint*, used when `binder_sequence` is not given;
+    `peptide_chain` is accepted for backwards compatibility and, when passed,
+    is checked against the chain the mapping actually identified.
+
     Returns `peptide_buried_frac`, `asp6_buried_frac`, `pos6_contacts` and
-    `net_interface_charge` as defined in `docs/PIPELINE.md` section 6. SASA is
-    Shrake-Rupley at a 1.4 A probe, computed twice on the *same predicted
+    `net_interface_charge` as defined in `docs/PIPELINE.md` section 6, plus the
+    per-chain buried areas, contact counts and the chain map behind them. SASA
+    is Shrake-Rupley at a 1.4 A probe, computed twice on the *same predicted
     coordinates*: once with the binder present and once with the binder chain
     removed, so the two numbers differ only by the binder.
     """
-    from Bio.PDB.SASA import ShrakeRupley
-
-    structure = _parse_mmcif(mmcif_text)
-    model = next(iter(structure))
-    chain_ids = [chain.id for chain in model]
-    if binder_chain not in chain_ids:
-        raise ValueError(
-            f"binder chain {binder_chain!r} not in predicted structure "
-            f"(chains: {chain_ids})"
+    metrics = complex_analysis.interface_metrics(
+        mmcif_text,
+        binder_sequence=binder_sequence,
+        binder_chain_hint=binder_chain,
+        peptide_position=peptide_position,
+    )
+    if peptide_chain is not None and metrics["peptide_chain"] != peptide_chain:
+        raise complex_analysis.ChainMappingError(
+            f"peptide was expected in chain {peptide_chain!r} but the sequence "
+            f"mapping puts it in chain {metrics['peptide_chain']!r} "
+            f"(chains: {metrics['chain_map']['chains']})"
         )
-
-    sasa = ShrakeRupley(probe_radius=SASA_PROBE_RADIUS)
-    sasa.compute(model, level="A")
-    bound = {
-        (atom.get_parent().get_parent().id, atom.get_parent().id[1], atom.get_id()):
-        atom.sasa
-        for atom in model.get_atoms()
-    }
-
-    # Same coordinates, binder deleted: the free-target reference state.
-    free_structure = _parse_mmcif(mmcif_text)
-    free_model = next(iter(free_structure))
-    free_model.detach_child(binder_chain)
-    sasa.compute(free_model, level="A")
-    free = {
-        (atom.get_parent().get_parent().id, atom.get_parent().id[1], atom.get_id()):
-        atom.sasa
-        for atom in free_model.get_atoms()
-    }
-
-    buried_total = 0.0
-    buried_peptide = 0.0
-    for key, free_value in free.items():
-        delta = free_value - bound.get(key, 0.0)
-        if delta <= 0:
-            continue
-        buried_total += delta
-        if key[0] == peptide_chain:
-            buried_peptide += delta
-
-    metrics: Dict[str, float] = {
-        "peptide_buried_frac": (
-            buried_peptide / buried_total if buried_total > 0 else 0.0
-        ),
-        "buried_area_total": buried_total,
-        "buried_area_peptide": buried_peptide,
-    }
-
-    # Asp6 side-chain burial.
-    if peptide_chain in chain_ids:
-        residues = [r for r in model[peptide_chain]]
-        if len(residues) >= peptide_position:
-            target_residue = residues[peptide_position - 1]
-            resseq = target_residue.id[1]
-            free_sc = sum(
-                free.get((peptide_chain, resseq, name), 0.0)
-                for name in ASP_SIDECHAIN_ATOMS
-            )
-            bound_sc = sum(
-                bound.get((peptide_chain, resseq, name), 0.0)
-                for name in ASP_SIDECHAIN_ATOMS
-            )
-            if free_sc > 0:
-                metrics["asp6_buried_frac"] = design_gates.asp6_buried_fraction(
-                    free_sc, min(bound_sc, free_sc)
-                )
-            metrics["pos6_contacts"] = float(
-                _count_contacts(model, binder_chain, target_residue)
-            )
-
-    metrics["net_interface_charge"] = _interface_charge(model, binder_chain)
     return metrics
 
 
 def _count_contacts(model, binder_chain: str, residue) -> int:
     """Binder heavy atoms within CONTACT_CUTOFF of `residue`'s heavy atoms."""
-    from Bio.PDB import NeighborSearch
-
-    binder_atoms = _heavy_atoms(model[binder_chain])
-    if not binder_atoms:
-        return 0
-    search = NeighborSearch(binder_atoms)
-    hits = set()
-    for atom in residue:
-        if atom.element == "H":
-            continue
-        for neighbour in search.search(atom.coord, CONTACT_CUTOFF):
-            hits.add(neighbour.get_serial_number() or id(neighbour))
-    return len(hits)
+    return complex_analysis.count_contacts(model, binder_chain, residue)
 
 
 def _interface_charge(model, binder_chain: str) -> float:
     """Net formal charge of the binder residues forming the interface."""
-    from Bio.PDB import NeighborSearch
-
-    target_atoms = [
-        atom
-        for chain in model
-        if chain.id != binder_chain
-        for atom in _heavy_atoms(chain)
-    ]
-    if not target_atoms:
-        return 0.0
-    search = NeighborSearch(target_atoms)
-    charge = 0.0
-    for residue in model[binder_chain]:
-        contacts = any(
-            search.search(atom.coord, INTERFACE_CUTOFF)
-            for atom in residue
-            if atom.element != "H"
-        )
-        if contacts:
-            charge += RESIDUE_CHARGE.get(residue.get_resname(), 0.0)
-    return charge
+    return complex_analysis.interface_charge(model, binder_chain)
 
 
 # ---------------------------------------------------------------------------

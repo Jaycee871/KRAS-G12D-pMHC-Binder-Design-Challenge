@@ -1,0 +1,506 @@
+[
+  {
+    "sequence": "AAALARALVGGGAGGSDIYKDVKLPASLFNEQSLADIGAQKAADPLEGLRSLFPEEFPESWKIQE",
+    "mpnn_score": 1.0788,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb00",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "ADFKDDRVKAALASAPNPWAAWAGIALAEGEEATVESRDGLRLTVRVEVFTGACEETGPCVQRAR",
+    "mpnn_score": 0.9384,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb01",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "ADFNDERTKLVLASAPNPTAAFAGIAEREGEEATVEHASGLRTTVRKEVWTGACEEEGPCVQRSE",
+    "mpnn_score": 0.9621,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb01",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "ADFADERVKLVLASAPNPWAAWAGIAEAEGDVATVESADGRTLTVRREVWTGACEETGPCVARGE",
+    "mpnn_score": 1.0038,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb01",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "AAFNDDVLKQVLASAPNPTAAFAGVALAEGEEATISLSSGLTYTVRVEVFTGACEEKGPCVKRSE",
+    "mpnn_score": 1.0178,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb01",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "GPIAEWAVGTCERDRTAGGVGGPGGGVSGAYSRAAGDGCVYVGPGVEGIARDVGGGVPVSALPQR",
+    "mpnn_score": 1.0094,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb03",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "GPVEEWAVGRCDRDRTAGGVGGPAGGLGGRYSRATGDGCEYEAPGVEGIRRSVGGGVPVSALPQL",
+    "mpnn_score": 1.0192,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb03",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "GPIEALRVGTCDRDRTAGGVGGPGGGVPGAYSRAAGDGCVYVGPGVEGIRRDVGGGVPVSELPQR",
+    "mpnn_score": 1.0227,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb03",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "PPIEALAVGRADRDREAGGVGGVGGGVSGAYSRAAGTGAVYVGPGVEGIRRSVGGGVPISELPQR",
+    "mpnn_score": 1.0239,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb03",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "GPAAVLVGANSGSDRASAGSTTAAYTAAVLAPTTPRVLKDILTPEKAAGVTVDGLGAGGASLAEA",
+    "mpnn_score": 1.4087,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb02",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "GPAAVLVGEVSGSSRASAGSTEAAFTAAVLAPTSPRVLKDILTPEKAAGVKVEGLGGGGLDLSLA",
+    "mpnn_score": 1.4397,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb02",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "GAAANLVGENSLSSRTSAGSTTAAFTAEVLSPKTPRELKDILTPEKAKGYKVEGLGAGGASLLAA",
+    "mpnn_score": 1.4424,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb02",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "SAAEVLVGEVSVSARKDAGSTEFALTAEVLSATDPRDLKDLLTPEKYKGYTVDGLGAGGGSVVAA",
+    "mpnn_score": 1.4546,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb02",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "MSAEDRGGTAASVADVAATAAEAASDHGSAGGVPGPSVTGVGYVCTDVEKVKVGSTGKCLALAAP",
+    "mpnn_score": 1.1549,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb05",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "MSADDRGGRAEEVDDVAATAAETARYHGAAGGIRGPSVTGVGYVFTDVEKEREGSKGKGLALASP",
+    "mpnn_score": 1.175,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb05",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "MEASDRGGAAESVADVAAEAARAAVDHGAAGGIRGPSVTGVGYVFTDVESEREGSRGRGLALAAP",
+    "mpnn_score": 1.1825,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb05",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "MEASDRGGRAESVGDAAAEAALAARFHGSAGGVRGPSVTGVGYVFTDVEKEREGSTGKGLALAAP",
+    "mpnn_score": 1.1981,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb05",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "PSPEESEVSSTTYELEEGSEWRGGAGGEWEGPRERRRGDTPTSAGGPAALRALGLRADSRVAGAG",
+    "mpnn_score": 1.2113,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb04",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "PSAAVSEVSSTTVSLEEGSEWRGGAGGRWEGPAERRLGDTPESWGGPAAVRALGTRADSLVAGLG",
+    "mpnn_score": 1.2462,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb04",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "PSPRVSETSSTTVELEEGSEWRGGRGGRWEGPAETRKGDTPTSWGGEEAVRALGASADSLRAGEG",
+    "mpnn_score": 1.2534,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb04",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "PSPEESEVSSTTVALEAGSASRGGSGGRWEGPAETRKGTTPSSAGGPEELRHLGLSRDSRVAGLG",
+    "mpnn_score": 1.2586,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb04",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "LAAEDPRSTAAATSGRARDTSVSAVATRPVREDGSMGSLATGLPLNLPESVRATEPAVGAVEALA",
+    "mpnn_score": 1.1744,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb07",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "LAAADPRSSAAATSGRAVDTSVSAVATRPVREDGSMGSLATGPALGLSESVRATEEAVGAVEALA",
+    "mpnn_score": 1.1785,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb07",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "LAEADPESSTAATSGRERPTSVSEVATREVRADGSMGSLATGLPLGLPAAVQATEEAVGAVEALA",
+    "mpnn_score": 1.1804,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb07",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "LAAADPVSGAAATSGRARDTSVSAVATRPVREDGSMGSLATGLPKGWPKAVQEAEPAVGAVEALA",
+    "mpnn_score": 1.2072,
+    "strategy": "S1-core-short",
+    "backbone": "S1-core-short_bb07",
+    "binder_length": 65,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.1
+  },
+  {
+    "sequence": "MMSGEAMAAVVGRRGADGDGRVTEEAEAAEVSTEEARLDVARMTVGECGIAGVDQAADGARVPLAGCKGRGLERCRCLTTGLPIEELPEAARRVR",
+    "mpnn_score": 1.1171,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb00",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "LSTDARARLVTPSESVALERVRARIEEGEEKPVAERRAVVGDEDGEGGSGGLLERLPGDAGGSAATLRGLSAPNGRLEDPAAAEANKRGFGTGGA",
+    "mpnn_score": 1.0642,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb01",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "YTEDCRARLVTPSESVALERARRRIERGEAKPLSERRKVSGDASGEGGDGGIIEELPADAGGSCATLRGLTAPNGRLEDPARAELAKRGPGTGGA",
+    "mpnn_score": 1.0651,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb01",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "YTEDCRAVLVEPSQSVALELARERIERGEEKPLEERRQVVGDETGDGGSGGLVERLPGAAGGSCATLRGLTAPNGRLADPAAQRLAARGPGTGGA",
+    "mpnn_score": 1.0696,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb01",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "SEVDCRAELTTPSESVALEIARARIERGEEKPLSVRRAVVGDEEGDGASGGILERLPAAAGGSCATRRGLTAPNGRLEDPAAQAAAARGPGTGGA",
+    "mpnn_score": 1.0721,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb01",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "LAEDVTDAVRYARATAGGRSRADHDEYVSPEKEEEIGYPGAGGTGPDVTDGALGPTPLAARVASKGGSGRGGGGASRTRVGLDIDASASVRDFLP",
+    "mpnn_score": 1.3865,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb02",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "TEPGDEVRAAVDSSVHEVGEDAEAASRRSSGLQDPRVVSRAALPEATGGRADRALPPTVSIAHEVGATGSDRAARPLPGQDVEAARHRPVDRVSE",
+    "mpnn_score": 1.2253,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb03",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "SEPGAEVRAAVDSSVFRVGEDAAAASRRSAGLLDPAAVSREALAAATGGRASRDLPRRLTVEHIAGASTSTRAARPQPGVDERMAAFEPVNRVTE",
+    "mpnn_score": 1.2256,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb03",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "TTPPDAVRAAVDSTVFTVGTDATAASAVSSGRLDPADVSRAAAEAATGGRVSRDRPPTVTVENIAGATASTTAAKPTPGTSVAGSRNAPVRTVTQ",
+    "mpnn_score": 1.3014,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb03",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "STAGGGIWWTLGYSDAVRAGGLGGDIGRDDGGGRFRDRSLAGPLATGAAAASDARMGVTEAAKSLPAAGGGVGGGSGAESREEMGEHAPEEAPVL",
+    "mpnn_score": 1.4402,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb05",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "ELADRSALIAEKGDYSVFECSGMGGPGGSGFGGERVTCDQPDESILRCGECGLAPECRARHPEHCRAGGKECRGGLAGSAGGRTITGCPAEFAGV",
+    "mpnn_score": 1.116,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb06",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "ARADRSAEIARTGDLSVEEGAAVGGPGGAGLGGVKLTSSQPIESLHRCGRCGLAEECTRLHPDHCRQGGVDCRGGLCGSAGGAEVTGLPAEFQGV",
+    "mpnn_score": 1.1227,
+    "strategy": "S2-core-long",
+    "backbone": "S2-core-long_bb06",
+    "binder_length": 95,
+    "hotspots": "C4 C5 C6 C7 C8",
+    "mpnn_temp": 0.2
+  },
+  {
+    "sequence": "DEFAGLSATAEERVLEAEEGADDAGIAKGAEYIRGGVSAIDVYEAKKTGIAGSMIADVGCINGKPGARTYTACERSGVKK",
+    "mpnn_score": 1.0874,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb00",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "NWASGISAEAERQVLRAEAGAGDSGIAKGAELIRGGVSAAEIYECKKTGVAGSCIADMGCITGKPGAATHTDCVRSGVKE",
+    "mpnn_score": 1.0884,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb00",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "DAAAGVSATAAERVLEAAEGEGDSGIARGAQYIRGGTSAISVYECRKTGVAGSCISDMGCINGKPGPRTYTACEFSGVKK",
+    "mpnn_score": 1.101,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb00",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "DEARDISAEAERRVLRAEVGAGDSGIALAAEYIRGGVSYIDVYDCKLTGVGGSCISEGGCITGKPGPRTYTACVRSGVKK",
+    "mpnn_score": 1.1022,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb00",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "ALEDARAARWLGGEAAADATREAAERVAREAIRSAVYRTGSGGRADRGVEDGTGYRVSSTDEPSDASVLARGYLDREAAE",
+    "mpnn_score": 1.2538,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb02",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "AEALAEHSVWWGGEGAAGPTREAAAAVRAEVVRGPVATTGLGGSALRAVRDGTGYRLSTTEEPSDAEVLARGHREAEAAA",
+    "mpnn_score": 1.2589,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb02",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "SLAAMEHARWWGGEGAAGPTREAALAVAKEVIRSSVYRTGLGGAACDGVRDGTGHCRSCTEEPSCACVAARGKCHKAAAA",
+    "mpnn_score": 1.2965,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb02",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "SLARSRYSVWVGGEGAAGPTREEALAVRKEVIESAVYKTGLGGSASQGVRDGAGYTKASTEEASDAYVAAKGKLDKAAAV",
+    "mpnn_score": 1.2981,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb02",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "STALAVGPGAHPEVAAGVDAEAAAARGPALVLPGPSAESLAKQGEVGVEDFAVGLNDAERRGVIEYGSPEAGRKAAEERA",
+    "mpnn_score": 1.0606,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb03",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "TPALAVSPLAHPEVARGVDAEEAAARGPRLTLPGPSAESKAKEGEVGVENFAVGLNDKERIGAIELGSPDAGLEPAKERA",
+    "mpnn_score": 1.0755,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb03",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "PTRLAVSPLAHPEVAEGRDAEAAAAEGPDLTRPGASAESLAKQGSVGVKDFKIGINDKERIGAIDYGSAEAGIEPAKERA",
+    "mpnn_score": 1.12,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb03",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "SSVLAVSAGAHPEVATGKDAAEAAAAGPGRTLPGASAESLAKQGSVGVENFAVGLNDKELIGVIEYGSAEKGLKPAEEAA",
+    "mpnn_score": 1.1218,
+    "strategy": "S3-pos6-tight",
+    "backbone": "S3-pos6-tight_bb03",
+    "binder_length": 80,
+    "hotspots": "C5 C6 C7",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "TEPLKKLKHVNAPEATASAASKSSTSDIEGTGTGDTVNSVLMATIRYEGDAEGSGGAGGVVAALGAAEAAKWVGGTRGDGADIAG",
+    "mpnn_score": 1.2354,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb02",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "AEPTKVQKHIDAAEATASAASKSSTSDILGTGTGDTVSSVLLATIRYEGTEDGSGGVGGVVEALPAEAARRWEGGTRGGAAPIDG",
+    "mpnn_score": 1.253,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb02",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "TEPLKKQKYVNDESSVASAASKSRTSRIEGTGTGDTVNSVLMGTVRHSGSVDGAGGVGAAVADIGAAALARFAGGTRGGGTSIDG",
+    "mpnn_score": 1.3083,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb02",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "MEVGMSREEFGVQAPFPAEDLVSLTKEFGAGGVGVGDRVAGSTDVPEDEKKIRTAGGAAELRWTAESRLAARGLSAVAHDDYRVE",
+    "mpnn_score": 1.0494,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb06",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "MKVGMSREELGVQAPLPAEDLASFTTEFGAGGVGVGDRVAGPTDVPEEERKIGTAGGAAELLWTAASRTAAAGLSRVASADYRVA",
+    "mpnn_score": 1.0787,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb06",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "MEVGMSREELGVQAPLPAEDLFSATKEFGSGGVGVGDRTAGRTDVPEDEKKIQSAGGAATLLWSAASRLAASGLSATASGDYTVA",
+    "mpnn_score": 1.0825,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb06",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  },
+  {
+    "sequence": "MTVGASRAELGVQAPLPAEDLASLTTEWGAGGVGVGDRRAGSTDVPADERKIRTAGGATELLWTAAGRDAASGYSAVANDDYTVS",
+    "mpnn_score": 1.1171,
+    "strategy": "S4-full-groove",
+    "backbone": "S4-full-groove_bb06",
+    "binder_length": 85,
+    "hotspots": "C1 C3 C5 C6 C8 C10 A62 A65 A72 A146 A150 A155 A158",
+    "mpnn_temp": 0.15
+  }
+]

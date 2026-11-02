@@ -38,10 +38,12 @@ which is what the NIMs use to describe a malformed body.
 """
 from __future__ import annotations
 
+import contextlib
 import os
 import random
+import threading
 import time
-from typing import Any, Dict, List, Mapping, Optional, Sequence
+from typing import Any, Callable, Dict, Iterator, List, Mapping, Optional, Sequence
 
 import requests
 
@@ -49,6 +51,10 @@ __all__ = [
     "NvidiaApiError",
     "NvidiaAuthError",
     "NvidiaClient",
+    "RateLimiter",
+    "Throttle",
+    "default_throttle",
+    "configure_throttle",
     "rfdiffusion_generate",
     "proteinmpnn_design",
     "boltz2_predict",
@@ -71,6 +77,232 @@ DEFAULT_POLL_TIMEOUT = 1800.0    # seconds, total wall clock for a 202 poll loop
 DEFAULT_POLL_INTERVAL = 5.0      # seconds between status polls
 DEFAULT_MAX_RETRIES = 4          # retries after the first attempt
 RETRY_STATUS = frozenset({429, 500, 502, 503, 504})
+DEFAULT_MAX_BACKOFF = 120.0      # seconds, cap on one backoff sleep
+
+# --- client-side rate limiting ---------------------------------------------
+# The hosted NIMs answer single calls happily but return HTTP 429 as soon as
+# several are in flight: batch-01 logged 235 of them against Boltz-2 from a
+# 6-worker pool. Retrying harder makes that worse, so the throttle below is the
+# primary defence and the retry loop is only the backstop.
+#
+# Every request passes a *global* token bucket (all three endpoints share the
+# account's quota) and then a per-endpoint bucket. Boltz-2 additionally takes a
+# process-wide lock, so Boltz-2 calls are strictly serial no matter how many
+# threads the caller runs. All of it is overridable from the environment, so a
+# run can be re-tuned without a code change:
+#
+#   NVIDIA_GLOBAL_RPS         requests/second summed over all endpoints
+#   NVIDIA_GLOBAL_BURST       bucket depth for the global bucket
+#   NVIDIA_BOLTZ2_MIN_INTERVAL  seconds between the *starts* of Boltz-2 calls
+#   NVIDIA_RFDIFFUSION_MIN_INTERVAL / NVIDIA_PROTEINMPNN_MIN_INTERVAL
+#   NVIDIA_THROTTLE=0         disable throttling entirely (tests, dry runs)
+#
+# The Boltz-2 default is the rate measured by `scripts/calibrate_boltz2.py` on
+# 2026-11-02 and recorded in docs/PIPELINE.md:
+#   6 workers, no spacing  -> 31x 429 in 12 calls, 6 of 12 calls lost
+#   serial, no spacing     -> 12x 429 in 20 calls, ~9.8 calls/min
+#   serial, 8 s spacing    ->  0x 429 in 12 calls, 7.9 calls/min  <- the default
+# i.e. the hosted Boltz-2 NIM sustains ~8 requests/minute from one key, and
+# punishes concurrency far harder than volume. See that section of
+# docs/PIPELINE.md before changing this number.
+DEFAULT_GLOBAL_RPS = 1.0
+DEFAULT_GLOBAL_BURST = 2.0
+DEFAULT_BOLTZ2_MIN_INTERVAL = 8.0
+DEFAULT_RFDIFFUSION_MIN_INTERVAL = 2.0
+DEFAULT_PROTEINMPNN_MIN_INTERVAL = 2.0
+
+# Endpoints that may never overlap with themselves, whatever the caller does.
+SERIAL_PATHS = frozenset({BOLTZ2_PATH})
+
+
+def _env_float(name: str, default: float) -> float:
+    raw = os.environ.get(name, "").strip()
+    if not raw:
+        return default
+    try:
+        return float(raw)
+    except ValueError:
+        return default
+
+
+class RateLimiter:
+    """Token bucket with an optional minimum spacing between grants.
+
+    Thread-safe and *deterministic*: grant times are tracked on an internal
+    virtual clock that only ever moves forward, so the limiter behaves the same
+    whether `sleep` really sleeps (production) or is a no-op (tests).
+
+    `rate` is tokens per second, `burst` the bucket depth (how many requests may
+    go out back to back after an idle period) and `min_interval` a floor on the
+    gap between two consecutive grants.
+    """
+
+    def __init__(
+        self,
+        rate: float,
+        burst: float = 1.0,
+        min_interval: float = 0.0,
+        monotonic: Callable[[], float] = time.monotonic,
+        name: str = "",
+    ) -> None:
+        if rate <= 0:
+            raise ValueError("rate must be > 0 requests/second")
+        self.rate = float(rate)
+        self.burst = max(1.0, float(burst))
+        self.min_interval = max(0.0, float(min_interval))
+        self.name = name
+        self._monotonic = monotonic
+        self._lock = threading.Lock()
+        self._tokens = self.burst
+        now = monotonic()
+        self._updated = now
+        self._virtual_now = now
+        self._next_earliest = now
+        self.grants = 0
+        self.waited_seconds = 0.0
+
+    def reserve(self, tokens: float = 1.0) -> float:
+        """Book the next slot and return how long the caller must wait for it."""
+        with self._lock:
+            now = max(self._monotonic(), self._virtual_now)
+            self._tokens = min(
+                self.burst, self._tokens + (now - self._updated) * self.rate
+            )
+            self._updated = now
+            shortfall = tokens - self._tokens
+            token_time = now + (shortfall / self.rate if shortfall > 0 else 0.0)
+            grant = max(token_time, self._next_earliest)
+            self._tokens = min(
+                self.burst, self._tokens + (grant - self._updated) * self.rate
+            ) - tokens
+            self._updated = grant
+            self._virtual_now = grant
+            self._next_earliest = grant + self.min_interval
+            self.grants += 1
+            wait = grant - self._monotonic()
+            if wait > 0:
+                self.waited_seconds += wait
+            return max(0.0, wait)
+
+    def acquire(self, sleep: Callable[[float], Any] = time.sleep,
+                tokens: float = 1.0) -> float:
+        """Wait (via `sleep`) until a slot is free; returns the seconds waited."""
+        wait = self.reserve(tokens)
+        if wait > 0:
+            sleep(wait)
+        return wait
+
+    def stats(self) -> Dict[str, float]:
+        return {
+            "name": self.name,
+            "rate_per_second": self.rate,
+            "burst": self.burst,
+            "min_interval": self.min_interval,
+            "grants": self.grants,
+            "waited_seconds": round(self.waited_seconds, 2),
+        }
+
+
+class Throttle:
+    """Global + per-endpoint limiters, plus serial locks for some endpoints."""
+
+    def __init__(
+        self,
+        global_limiter: Optional[RateLimiter] = None,
+        endpoint_limiters: Optional[Mapping[str, RateLimiter]] = None,
+        serial_paths: Sequence[str] = tuple(SERIAL_PATHS),
+    ) -> None:
+        self.global_limiter = global_limiter
+        self.endpoint_limiters: Dict[str, RateLimiter] = dict(endpoint_limiters or {})
+        self.serial_paths = frozenset(serial_paths)
+        self._locks: Dict[str, threading.Lock] = {
+            path: threading.Lock() for path in self.serial_paths
+        }
+
+    @contextlib.contextmanager
+    def hold(self, path: str) -> Iterator[None]:
+        """Serialise `path` against itself for the whole call, polling included."""
+        lock = self._locks.get(path)
+        if lock is None:
+            yield
+            return
+        with lock:
+            yield
+
+    def acquire(self, path: str, sleep: Callable[[float], Any] = time.sleep) -> float:
+        """Block until one request to `path` may be issued."""
+        waited = 0.0
+        if self.global_limiter is not None:
+            waited += self.global_limiter.acquire(sleep)
+        limiter = self.endpoint_limiters.get(path)
+        if limiter is not None:
+            waited += limiter.acquire(sleep)
+        return waited
+
+    def stats(self) -> Dict[str, Any]:
+        out: Dict[str, Any] = {}
+        if self.global_limiter is not None:
+            out["global"] = self.global_limiter.stats()
+        out["endpoints"] = {
+            path: limiter.stats()
+            for path, limiter in self.endpoint_limiters.items()
+        }
+        return out
+
+
+def build_throttle() -> Throttle:
+    """A `Throttle` configured from the environment (see the constants above)."""
+    return Throttle(
+        global_limiter=RateLimiter(
+            rate=_env_float("NVIDIA_GLOBAL_RPS", DEFAULT_GLOBAL_RPS),
+            burst=_env_float("NVIDIA_GLOBAL_BURST", DEFAULT_GLOBAL_BURST),
+            name="global",
+        ),
+        endpoint_limiters={
+            BOLTZ2_PATH: _interval_limiter(
+                "NVIDIA_BOLTZ2_MIN_INTERVAL", DEFAULT_BOLTZ2_MIN_INTERVAL, "boltz2"
+            ),
+            RFDIFFUSION_PATH: _interval_limiter(
+                "NVIDIA_RFDIFFUSION_MIN_INTERVAL",
+                DEFAULT_RFDIFFUSION_MIN_INTERVAL,
+                "rfdiffusion",
+            ),
+            PROTEINMPNN_PATH: _interval_limiter(
+                "NVIDIA_PROTEINMPNN_MIN_INTERVAL",
+                DEFAULT_PROTEINMPNN_MIN_INTERVAL,
+                "proteinmpnn",
+            ),
+        },
+    )
+
+
+def _interval_limiter(env_name: str, default: float, name: str) -> RateLimiter:
+    interval = max(1e-6, _env_float(env_name, default))
+    return RateLimiter(rate=1.0 / interval, burst=1.0,
+                       min_interval=interval, name=name)
+
+
+_THROTTLE_LOCK = threading.Lock()
+_THROTTLE: Optional[Throttle] = None
+
+
+def default_throttle() -> Optional[Throttle]:
+    """The process-wide throttle, built on first use; None when disabled."""
+    global _THROTTLE
+    if os.environ.get("NVIDIA_THROTTLE", "").strip() in ("0", "off", "false"):
+        return None
+    with _THROTTLE_LOCK:
+        if _THROTTLE is None:
+            _THROTTLE = build_throttle()
+        return _THROTTLE
+
+
+def configure_throttle(throttle: Optional[Throttle]) -> Optional[Throttle]:
+    """Replace the process-wide throttle (used by the batch runner and tests)."""
+    global _THROTTLE
+    with _THROTTLE_LOCK:
+        _THROTTLE = throttle
+    return _THROTTLE
 
 
 class NvidiaApiError(RuntimeError):
@@ -139,6 +371,8 @@ class NvidiaClient:
         poll_timeout: float = DEFAULT_POLL_TIMEOUT,
         session: Optional[requests.Session] = None,
         sleep=time.sleep,
+        throttle: Any = "default",
+        max_backoff: float = DEFAULT_MAX_BACKOFF,
     ) -> None:
         self.base_url = base_url.rstrip("/")
         self.timeout = timeout
@@ -147,6 +381,10 @@ class NvidiaClient:
         self.poll_timeout = poll_timeout
         self.session = session or requests.Session()
         self._sleep = sleep
+        self.max_backoff = max_backoff
+        # "default" means the process-wide throttle; None disables throttling
+        # for this client only (both are useful in tests).
+        self.throttle = default_throttle() if throttle == "default" else throttle
         # Validate the key eagerly: better to fail before a long pipeline run.
         self._key = _api_key()
 
@@ -160,15 +398,47 @@ class NvidiaClient:
         }
 
     def _backoff(self, attempt: int, response: Optional[requests.Response]) -> float:
-        """Seconds to wait before retry `attempt` (1-based)."""
+        """Seconds to wait before retry `attempt` (1-based).
+
+        `Retry-After` wins when the server sends one (seconds or an HTTP date).
+        Otherwise it is exponential backoff with *decorrelated jitter*: the base
+        doubles per attempt and the actual wait is a random point in
+        [base, base * 1.5], which spreads a thundering herd of retries instead
+        of re-synchronising them. Capped at `max_backoff`.
+        """
         if response is not None:
-            retry_after = response.headers.get("Retry-After")
-            if retry_after:
-                try:
-                    return max(0.0, float(retry_after))
-                except ValueError:
-                    pass
-        return min(60.0, (2 ** (attempt - 1))) * (1.0 + random.random() * 0.25)
+            retry_after = self._retry_after_seconds(response)
+            if retry_after is not None:
+                return min(self.max_backoff, retry_after)
+        base = min(self.max_backoff, float(2 ** (attempt - 1)))
+        return min(self.max_backoff, base * (1.0 + random.random() * 0.5))
+
+    @staticmethod
+    def _retry_after_seconds(response: requests.Response) -> Optional[float]:
+        """`Retry-After` as seconds, accepting both the delta and date forms."""
+        raw = response.headers.get("Retry-After") or response.headers.get(
+            "retry-after"
+        )
+        if not raw:
+            return None
+        raw = str(raw).strip()
+        try:
+            return max(0.0, float(raw))
+        except ValueError:
+            pass
+        try:
+            from email.utils import parsedate_to_datetime
+            import datetime as _dt
+
+            when = parsedate_to_datetime(raw)
+            if when is None:
+                return None
+            if when.tzinfo is None:
+                when = when.replace(tzinfo=_dt.timezone.utc)
+            delta = (when - _dt.datetime.now(_dt.timezone.utc)).total_seconds()
+            return max(0.0, delta)
+        except Exception:  # noqa: BLE001 - a malformed header is just "no hint"
+            return None
 
     def _decode(self, response: requests.Response) -> Any:
         try:
@@ -177,12 +447,26 @@ class NvidiaClient:
             return response.text
 
     def post(self, path: str, body: Mapping[str, Any]) -> Dict[str, Any]:
-        """POST `body` to `path`, following 202/nvcf-reqid polling and retries."""
+        """POST `body` to `path`, following 202/nvcf-reqid polling and retries.
+
+        Rate limited: endpoints in `SERIAL_PATHS` (Boltz-2) are held under a
+        process-wide lock for the whole call, so two of them never overlap, and
+        every attempt - the first and each retry - must first be granted a slot
+        by the global and per-endpoint token buckets.
+        """
+        if self.throttle is not None:
+            with self.throttle.hold(path):
+                return self._post_attempts(path, body)
+        return self._post_attempts(path, body)
+
+    def _post_attempts(self, path: str, body: Mapping[str, Any]) -> Dict[str, Any]:
         url = f"{self.base_url}{path}"
         last_error: Optional[NvidiaApiError] = None
 
         for attempt in range(1, self.max_retries + 2):
             retry_source: Optional[requests.Response] = None
+            if self.throttle is not None:
+                self.throttle.acquire(path, self._sleep)
             try:
                 response = self.session.post(
                     url, headers=self._headers(), json=dict(body), timeout=self.timeout
