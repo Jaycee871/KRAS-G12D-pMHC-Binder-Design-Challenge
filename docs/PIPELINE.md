@@ -1,8 +1,10 @@
 # Design pipeline
 
-Planned pipeline for Challenge 5. **Nothing in this document has been run yet** —
-the GPU stages below are not implemented in this repository; only target
-preparation, submission building and validation are (see `src/`).
+Pipeline for Challenge 5. Sections 1-6 are implemented and have been run
+end to end against the hosted NVIDIA BioNeMo NIMs — see
+[Running it](#running-it) at the end of this document for the commands, the
+confirmed API schemas and what is still missing. Sections 2-5 are *not* run
+locally on a GPU: `src/nvidia_client.py` calls the hosted models instead.
 
 ## 0. The central difficulty
 
@@ -125,6 +127,14 @@ helices inward.
 
 ## 4. Monomer refolding filter — AlphaFold2 (single sequence / monomer)
 
+> **Not wired up.** The hosted DeepMind AlphaFold2 NIM
+> (`/v1/biology/deepmind/alphafold2`) was retired and now answers HTTP 410, and
+> Boltz-2 has no monomer-refold mode that returns a design-vs-prediction RMSD.
+> `src/run_pipeline.py` therefore skips straight from section 3 to section 5 and
+> relies on the four-state panel to do the filtering, which costs four complex
+> predictions on sequences a cheap refold would have dropped. Closing this gap
+> needs a local ColabFold/Boltz monomer run or an equivalent NIM.
+
 Refold each designed sequence on its own and keep only:
 
 * **pLDDT ≥ 85** (mean over the binder), and
@@ -142,8 +152,9 @@ For every surviving design, run complex prediction **four times**, against:
 3. **peptide-free** HLA + B2M,
 4. the **decoy** complex (HLA + B2M + `AVFDRKSDAK`).
 
-Use AlphaFold-Multimer and/or Boltz; where compute allows, run both and require
-agreement. Record per run:
+Implemented with the hosted **Boltz-2** NIM
+(`/v1/biology/mit/boltz2/predict`), one call per design per state, since the
+AlphaFold2 NIM is retired (section 4). Record per run:
 
 * `ipTM` (and pTM), the primary interface confidence
 * **PAE-interface**: mean predicted aligned error across the binder↔target
@@ -234,3 +245,89 @@ loops from a natural TCR do not.
 `src/make_submission.py` takes the scored table, ranks it, truncates to ≤ 20,
 and validates the result against every documented rule before writing. Then
 upload at the submit page and log the batch in `docs/SUBMISSION_PLAN.md`.
+
+## Running it
+
+Everything in sections 1-6 runs from this repository against the hosted NVIDIA
+BioNeMo NIMs. No GPU, no model weights, no container.
+
+```bash
+pip install -r requirements.txt
+export NVIDIA_API_KEY=...          # from build.nvidia.com; never commit it
+python3 src/fetch_target.py        # section 1: writes data/targets/*.pdb|fasta
+
+# section 2-6, no network and no quota: stub responses, same code paths
+python3 src/run_pipeline.py --dry-run --out designs/dryrun.csv
+
+# the real thing: 2 backbones x 4 sequences, scored against all four states
+python3 src/run_pipeline.py \
+    --backbones 2 --binder-lengths 70,85 --seqs-per-backbone 8 \
+    --out designs/scored_designs.csv
+
+python3 src/make_submission.py --scored designs/scored_designs.csv   # section 8
+```
+
+`run_pipeline.py` writes a CSV with exactly the columns of
+[`examples/scored_designs_example.csv`](../examples/scored_designs_example.csv),
+plus a `*.details.json` sidecar holding the raw per-state Boltz-2 confidences
+(chain-pair ipTM matrices, pLDDT, ipLDDT, interface PDE) that the CSV columns
+are derived from. Designs are sorted by `specificity_gap`, and every gate
+failure from [`src/design_gates.py`](../src/design_gates.py) is printed.
+
+Cost per design is **four Boltz-2 calls** (G12D, WT, apo, decoy) plus a share of
+one RFdiffusion and one ProteinMPNN call. On 2026-11-02 a one-backbone,
+one-candidate live run took 22 s wall clock in total; RFdiffusion on the trimmed
+target answered in ~6 s, ProteinMPNN in ~2 s, and each Boltz-2 call on the
+455-residue complex in ~4 s. Use `--max-candidates` to cap spend, and
+`--recycling-steps 1 --sampling-steps 30` for cheap smoke runs.
+
+### Confirmed endpoint schemas
+
+Verified live on 2026-11-02 by reading the 422 validation bodies and NVIDIA's
+NIM reference docs; the full field lists live in the docstrings of
+[`src/nvidia_client.py`](../src/nvidia_client.py). Base URL
+`https://health.api.nvidia.com`, `Authorization: Bearer $NVIDIA_API_KEY`.
+
+| NIM | path | required | key optional fields | response |
+| --- | --- | --- | --- | --- |
+| RFdiffusion 2.3 | `/v1/biology/ipd/rfdiffusion/generate` | `contigs`, and one of `input_pdb` / `input_pdb_asset` | `hotspot_res` (`["C4",...]`), `diffusion_steps` (1-50), `random_seed` | `{"output_pdb", "elapsed_ms"}` |
+| ProteinMPNN | `/v1/biology/ipd/proteinmpnn/predict` | `input_pdb` (or asset) | `input_pdb_chains` (chains to **design**), `num_seq_per_target` (1-100), `sampling_temp` (array), `ca_only`, `use_soluble_model`, `random_seed`, `pssm_*` | `{"mfasta", "scores", "probs"}` |
+| Boltz-2 | `/v1/biology/mit/boltz2/predict` | `polymers` (1-12, each `molecule_type` + `sequence` ≤ 4096 aa) | `id`, `cyclic`, `msa`, `recycling_steps` (1-10), `sampling_steps` (10-1000), `diffusion_samples` (1-25), `step_scale`, `without_potentials` | `{"structures" (mmCIF), "iptm_scores", "ptm_scores", "pair_chains_iptm_scores", "complex_plddt_scores", "complex_iplddt_scores", "complex_ipde_scores", ...}` |
+
+Three things about these endpoints shape the code:
+
+* **RFdiffusion relabels chains.** In the output PDB the designed binder is
+  chain **A** and every kept target segment is concatenated into chain **B**, in
+  contig order — so the contig `A1-180/0 C1-10/0 70-70` comes back as a
+  70-residue chain A plus a 190-residue chain B whose residues 181-190 are the
+  peptide. ProteinMPNN is therefore called with `input_pdb_chains: ["A"]`, which
+  designs the binder and reports `fixed_chains=['B']`.
+* **ProteinMPNN echoes the input.** The first record of `mfasta` is the input
+  backbone sequence (poly-glycine for an RFdiffusion backbone), not a design;
+  `parse_mpnn_mfasta` drops it.
+* **The global ipTM is useless here, use the chain-pair matrix.** For a
+  pMHC + binder prediction `iptm_scores` is dominated by the three *native*
+  interfaces (HLA/B2M/peptide) and sits near 0.79 even when the binder misses
+  completely. The per-state score in the CSV is instead the largest
+  binder↔target-chain entry of `pair_chains_iptm_scores`.
+
+### Known gaps before a real design run
+
+* **No per-residue PAE.** The hosted Boltz-2 returns `pae: null` even with
+  `write_full_pae: true` (full matrices are only written to disk by a
+  self-hosted NIM), so the section 6 `PAE-interface < 10 Å` gate cannot be
+  evaluated as documented. `pae_interface_g12d` in the CSV is currently the
+  **interface PDE** (`complex_ipde_scores`, Å) as a stand-in; it is a related
+  but not identical quantity, and should be replaced by a real interface PAE
+  before the gate is trusted.
+* **No MSA.** Boltz-2 is called in single-sequence mode. Accuracy on the pMHC
+  side would improve with an MSA for the HLA and B2M chains (the endpoint
+  accepts up to three `msa` database entries per protein polymer).
+* **No monomer refold filter** (section 4), and therefore no design-backbone
+  RMSD or monomer pLDDT column.
+* **No AlphaFold-Multimer cross-check** — the agreement requirement in
+  section 5 is unmet while only one predictor is available.
+* **`asp6_buried_frac` is measured against the binder-deleted complex**, not
+  against a separately predicted free pMHC. That isolates the binder's
+  contribution exactly, which is what the definition wants, but it does not
+  capture any peptide relaxation on binder release.
