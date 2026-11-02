@@ -8,6 +8,9 @@ submitted to the competition. Every sequence here is named
 
 * `scored_designs_example.csv` - the shape of the table `make_submission.py`
   consumes (`name`, `sequence`, optional `molecule_class`, plus score columns).
+  The score columns are the gate inputs listed in `docs/PIPELINE.md`
+  section 6 and checked by `src/design_gates.py`, including the decoy
+  counter-screen (`iptm_decoy`) and the buried-Asp term (`asp6_buried_frac`).
 * `example_submission.csv` - the shape of the file uploaded to Proteinbase.
 
 Try them:
