@@ -1,5 +1,7 @@
 # Lightweight dependencies for the CPU-only parts of this repository:
-# target preparation, submission building and submission validation.
+# target preparation, the hosted-NIM clients and pipeline runner
+# (src/nvidia_client.py, src/run_pipeline.py - requests + biopython only, no
+# new dependencies), submission building and submission validation.
 numpy>=1.24
 pandas>=2.0
 biopython>=1.81
@@ -8,6 +10,10 @@ requests>=2.31
 # Testing
 pytest>=7.4
 
+# The models below are reachable *without* a local install through the hosted
+# NVIDIA BioNeMo NIMs - see docs/PIPELINE.md "Running it" and
+# src/nvidia_client.py. Only NVIDIA_API_KEY is needed for that route.
+#
 # ---------------------------------------------------------------------------
 # NOT installed here - install separately, these need a GPU and their own
 # environments / licences / model weights:
