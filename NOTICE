@@ -1,0 +1,26 @@
+KRAS-G12D-pMHC-Binder-Design-Challenge
+Copyright (c) 2026 Pack Kwan Low (Jaycee)
+
+This repository is released under the MIT License (see LICENSE).
+
+Third-party data and software referenced or used by this repository:
+
+* RCSB Protein Data Bank entry 7OW6 (KRAS G12D peptide VVVGADGVGK bound to
+  HLA-A*11:01 with beta-2-microglobulin, in complex with a TCR). PDB data are
+  distributed by RCSB under CC0 1.0. Downloaded at run time by
+  src/fetch_target.py; coordinate files are NOT redistributed in this
+  repository (see .gitignore).
+
+* Biopython (Biopython License / BSD-3-Clause), NumPy (BSD-3-Clause),
+  pandas (BSD-3-Clause), requests (Apache-2.0) - installed via
+  requirements.txt, not vendored here.
+
+* Heavier design and structure-prediction tools (RFdiffusion, BindCraft,
+  ProteinMPNN, AlphaFold2/AlphaFold-Multimer, Boltz) are NOT included in this
+  repository. They are installed separately by the user and remain subject to
+  their own licences, several of which restrict commercial use. Model weights
+  are never committed here.
+
+This project is an independent entry to the Anthropic x Adaptyv Protein Design
+Competition hosted on Proteinbase. It is not affiliated with, endorsed by, or
+sponsored by Anthropic, Adaptyv Bio, Proteinbase, or the RCSB PDB.

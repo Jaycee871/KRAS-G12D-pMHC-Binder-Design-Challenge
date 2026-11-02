@@ -1,0 +1,65 @@
+# ---- Python ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.ipynb_checkpoints/
+
+# ---- Secrets (NEVER commit) ----
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+secrets.json
+credentials.json
+
+# ---- Large structure / model outputs ----
+# Downloaded source structures (re-fetch with src/fetch_target.py)
+data/raw/
+# Generated / downloaded coordinates. Small curated FASTAs ARE tracked.
+*.pdb
+*.cif
+*.mmcif
+*.pdb.gz
+*.cif.gz
+*.mtz
+*.mrc
+*.dcd
+*.xtc
+*.trr
+outputs/
+runs/
+designs/
+predictions/
+rfdiffusion_out/
+proteinmpnn_out/
+af2_out/
+boltz_out/
+bindcraft_out/
+
+# ---- Model weights ----
+weights/
+models/
+*.pt
+*.pth
+*.ckpt
+*.npz
+*.pkl
+*.params
+params_model_*.npz
+
+# ---- Misc ----
+.DS_Store
+*.log
+*.tmp

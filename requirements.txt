@@ -1,0 +1,24 @@
+# Lightweight dependencies for the CPU-only parts of this repository:
+# target preparation, submission building and submission validation.
+numpy>=1.24
+pandas>=2.0
+biopython>=1.81
+requests>=2.31
+
+# Testing
+pytest>=7.4
+
+# ---------------------------------------------------------------------------
+# NOT installed here - install separately, these need a GPU and their own
+# environments / licences / model weights:
+#
+#   RFdiffusion          https://github.com/RosettaCommons/RFdiffusion
+#   BindCraft            https://github.com/martinpacesa/BindCraft
+#   ProteinMPNN          https://github.com/dauparas/ProteinMPNN
+#   AlphaFold2 / -Multimer, ColabFold
+#                        https://github.com/sokrypton/ColabFold
+#   Boltz                https://github.com/jwohlwend/boltz
+#
+# Weights for these tools must never be committed to this repository
+# (see .gitignore). See docs/PIPELINE.md for how each one is used.
+# ---------------------------------------------------------------------------
