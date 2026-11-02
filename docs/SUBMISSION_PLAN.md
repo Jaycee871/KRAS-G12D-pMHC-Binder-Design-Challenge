@@ -39,7 +39,8 @@ Track 3 → 6 + 14 = 20.
 
 ### Tue 4 Nov — Batch 1: first real Track 1 batch (8 designs)
 * Full pipeline with the hard gates from `docs/PIPELINE.md`
-  (ipTM G12D ≥ 0.75, WT and apo ≤ 0.50, gap ≥ 0.25).
+  (ipTM G12D ≥ 0.75, `max(WT, apo, decoy) ≤ 0.50`, gap ≥ 0.25,
+  `asp6_buried_frac ≥ 0.60`).
 * Cluster at 70 % identity, submit cluster representatives only — topological
   spread matters more than squeezing in near-duplicates.
 * Carry any novelty-flagged design back for redesign rather than resubmitting.
@@ -51,11 +52,13 @@ Track 3 → 6 + 14 = 20.
   even at some cost in predicted affinity — specificity ranks above KD.
 
 ### Thu 6 Nov — Batch 3: specificity hardening (12 Track 1 + 6 Track 3)
-* Re-score every surviving candidate against **all three** targets with the
+* Re-score every surviving candidate against **all four** targets (G12D, WT,
+  apo, decoy `AVFDRKSDAK`) with the
   second predictor (Boltz if Multimer was primary, or vice versa) and keep only
   designs where both predictors agree on the gap.
 * Drop anything whose buried interface is < 40 % on the peptide chain, however
-  good its G12D ipTM — those are groove-rim binders and will hit WT and apo.
+  good its G12D ipTM — those are groove-rim binders and will hit WT, apo and
+  the decoy.
 
 ### Fri 7 Nov — Batch 4: best-of (12 Track 1 + 14 Track 2)
 * Spend the remaining Track 1 budget on the highest `specificity_gap` designs,

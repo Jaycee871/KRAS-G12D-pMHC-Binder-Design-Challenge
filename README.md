@@ -87,16 +87,22 @@ Implemented here (CPU, tested) in **bold**; everything else is planned.
 
 1. **Target preparation** — `src/fetch_target.py` downloads 7OW6 from RCSB,
    identifies the heavy chain / B2M / peptide, and writes the three target
-   states (G12D complex, WT complex, peptide-free HLA+B2M).
+   states (G12D complex, WT complex, peptide-free HLA+B2M). The
+   counter-screen decoy complex (unrelated A*11:01 10-mer) sits beside them as
+   `data/targets/decoy_a1101_complex.fasta`.
 2. Backbone generation — RFdiffusion and BindCraft against a peptide-centred
    epitope (peptide residues 4–8, weighted on residue 6).
 3. Sequence design — ProteinMPNN, 8–16 sequences per backbone.
 4. Monomer refolding filter — AlphaFold2, keep pLDDT ≥ 85 and RMSD < 2 Å to
    the design backbone.
-5. Complex prediction — AlphaFold-Multimer or Boltz, run **three times per
-   design** (G12D, WT, peptide-free), scoring ipTM and PAE-interface.
-6. Ranking — by `specificity_gap`, behind hard gates on ipTM, interface
-   coverage of peptide position 6, and PAE.
+5. Complex prediction — AlphaFold-Multimer or Boltz, run **four times per
+   design** (G12D, WT, peptide-free, unrelated A*11:01 decoy `AVFDRKSDAK`),
+   scoring ipTM, PAE-interface and the buried fraction of the Asp at peptide
+   position 6.
+6. Ranking — by `specificity_gap`, behind hard gates on ipTM (including
+   `max(ipTM(WT), ipTM(apo), ipTM(decoy)) ≤ 0.50`), interface coverage of
+   peptide position 6, the buried fraction of Asp6, net interface charge,
+   and PAE. The thresholds live in `src/design_gates.py`.
 7. **Submission** — `src/make_submission.py` ranks and truncates,
    `src/validate_submission.py` enforces every documented rule.
 
@@ -188,7 +194,7 @@ printed or logged.
 | Backbone generation (RFdiffusion / BindCraft) | ⬜ not started — needs GPU |
 | Sequence design (ProteinMPNN) | ⬜ not started |
 | AF2 monomer filter | ⬜ not started |
-| Complex prediction / three-target scoring | ⬜ not started |
+| Complex prediction / four-target scoring | ⬜ not started |
 | **Designs produced** | **⬜ none** |
 | **Designs submitted** | **⬜ none** |
 
