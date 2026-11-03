@@ -1,0 +1,104 @@
+[
+  {
+    "backbone": "B4-c6-62_bb25",
+    "variant": "donor-anchored",
+    "ensemble": [
+      "original",
+      "r0",
+      "r1",
+      "r2"
+    ],
+    "pairwise": [
+      {
+        "pair": "original~r0",
+        "binder_ca_rmsd": 0.42,
+        "n_ca": 62,
+        "frame_ca_rmsd": 0.06
+      },
+      {
+        "pair": "original~r1",
+        "binder_ca_rmsd": 10.38,
+        "n_ca": 62,
+        "frame_ca_rmsd": 0.32
+      },
+      {
+        "pair": "original~r2",
+        "binder_ca_rmsd": 1.4,
+        "n_ca": 62,
+        "frame_ca_rmsd": 0.11
+      },
+      {
+        "pair": "r0~r1",
+        "binder_ca_rmsd": 10.36,
+        "n_ca": 62,
+        "frame_ca_rmsd": 0.33
+      },
+      {
+        "pair": "r0~r2",
+        "binder_ca_rmsd": 1.3,
+        "n_ca": 62,
+        "frame_ca_rmsd": 0.1
+      },
+      {
+        "pair": "r1~r2",
+        "binder_ca_rmsd": 10.15,
+        "n_ca": 62,
+        "frame_ca_rmsd": 0.36
+      }
+    ],
+    "binder_ca_rmsd_mean": 5.67,
+    "binder_ca_rmsd_max": 10.38,
+    "binder_ca_rmsd_sd": 4.64
+  },
+  {
+    "backbone": "B4-c67-65_bb26",
+    "variant": "donor-anchored",
+    "ensemble": [
+      "original",
+      "r0",
+      "r1",
+      "r2"
+    ],
+    "pairwise": [
+      {
+        "pair": "original~r0",
+        "binder_ca_rmsd": 18.13,
+        "n_ca": 65,
+        "frame_ca_rmsd": 0.28
+      },
+      {
+        "pair": "original~r1",
+        "binder_ca_rmsd": 17.67,
+        "n_ca": 65,
+        "frame_ca_rmsd": 0.2
+      },
+      {
+        "pair": "original~r2",
+        "binder_ca_rmsd": 15.42,
+        "n_ca": 65,
+        "frame_ca_rmsd": 0.23
+      },
+      {
+        "pair": "r0~r1",
+        "binder_ca_rmsd": 15.16,
+        "n_ca": 65,
+        "frame_ca_rmsd": 0.28
+      },
+      {
+        "pair": "r0~r2",
+        "binder_ca_rmsd": 17.27,
+        "n_ca": 65,
+        "frame_ca_rmsd": 0.26
+      },
+      {
+        "pair": "r1~r2",
+        "binder_ca_rmsd": 17.86,
+        "n_ca": 65,
+        "frame_ca_rmsd": 0.27
+      }
+    ],
+    "binder_ca_rmsd_mean": 16.92,
+    "binder_ca_rmsd_max": 18.13,
+    "binder_ca_rmsd_sd": 1.18
+  }
+]
