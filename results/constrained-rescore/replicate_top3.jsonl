@@ -1,0 +1,3 @@
+{"backbone": "S1-pos6-68_bb18", "first_pass_gap": 0.2975, "iptm_g12d": 0.43982282280921936, "iptm_wt": 0.7398288249969482, "iptm_apo": 0.3155606985092163, "iptm_decoy": 0.5227972269058228, "replicate_gap": -0.3}
+{"backbone": "S1-pos6-68_bb19", "first_pass_gap": 0.2214, "iptm_g12d": 0.41740116477012634, "iptm_wt": 0.35273000597953796, "iptm_apo": 0.4585621953010559, "iptm_decoy": 0.4502031207084656, "replicate_gap": -0.0412}
+{"backbone": "S1-pos6-68_bb13", "first_pass_gap": 0.1827, "iptm_g12d": 0.7576488852500916, "iptm_wt": 0.39834704995155334, "iptm_apo": 0.25881025195121765, "iptm_decoy": 0.6069770455360413, "replicate_gap": 0.1507}
