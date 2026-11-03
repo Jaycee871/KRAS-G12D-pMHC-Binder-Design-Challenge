@@ -1,0 +1,620 @@
+[
+  {
+    "backbone": "B5-c6-62_bb135",
+    "variant": "donor-anchored-g1",
+    "sequence": "VEVLGAGALGSEARYVSTNCAARTALCTTDPFEDINRYKVRCPSNADNPSAECSVFTEDFPA",
+    "replicates": 3,
+    "gate_pass_count": 2,
+    "asp6_min_donor_distance": {
+      "values": [
+        2.03,
+        2.03
+      ],
+      "mean": 2.03,
+      "sd": 0.0
+    },
+    "peptide_buried_frac": {
+      "values": [
+        0.337,
+        0.325,
+        0.336
+      ],
+      "mean": 0.333,
+      "sd": 0.005
+    },
+    "pos6_sidechain_contacts": {
+      "values": [
+        5.0,
+        1.0,
+        5.0
+      ],
+      "mean": 3.667,
+      "sd": 1.886
+    },
+    "asp6_buried_frac": {
+      "values": [
+        0.383,
+        0.164,
+        0.435
+      ],
+      "mean": 0.327,
+      "sd": 0.117
+    },
+    "net_interface_charge": {
+      "values": [
+        0.0,
+        1.0,
+        0.0
+      ],
+      "mean": 0.333,
+      "sd": 0.471
+    },
+    "iptm_g12d": {
+      "values": [
+        0.5337,
+        0.4051,
+        0.415
+      ],
+      "mean": 0.451,
+      "sd": 0.058
+    },
+    "runs": [
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb135",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.274,
+        "donor_bias_score": 5.635,
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.54,
+        "sequence": "VEVLGAGALGSEARYVSTNCAARTALCTTDPFEDINRYKVRCPSNADNPSAECSVFTEDFPA",
+        "analysis_error": "",
+        "iptm_g12d": 0.5337,
+        "pae_interface_g12d": 2.0,
+        "peptide_buried_frac": 0.337,
+        "asp6_buried_frac": 0.383,
+        "buried_area_total": 615.6,
+        "buried_area_peptide": 207.4,
+        "buried_area_hla": 408.2,
+        "pos6_contacts": 13,
+        "net_interface_charge": 0.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": true,
+        "pos6_sidechain_contacts": 5,
+        "asp6_min_any_donor_distance": 2.03,
+        "asp6_min_donor_distance": 2.03,
+        "asp6_donor_partner": "ARG23:NH1@2.03A",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": true,
+        "gate_reason": ""
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb135",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.274,
+        "donor_bias_score": 5.635,
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.54,
+        "sequence": "VEVLGAGALGSEARYVSTNCAARTALCTTDPFEDINRYKVRCPSNADNPSAECSVFTEDFPA",
+        "analysis_error": "",
+        "iptm_g12d": 0.4051,
+        "pae_interface_g12d": 2.59,
+        "peptide_buried_frac": 0.325,
+        "asp6_buried_frac": 0.164,
+        "buried_area_total": 539.5,
+        "buried_area_peptide": 175.1,
+        "buried_area_hla": 364.4,
+        "pos6_contacts": 3,
+        "net_interface_charge": 1.0,
+        "asp6_hbond": false,
+        "asp6_salt_bridge": false,
+        "pos6_sidechain_contacts": 1,
+        "asp6_min_any_donor_distance": "",
+        "asp6_min_donor_distance": "",
+        "asp6_donor_partner": "",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": false,
+        "gate_reason": "no Arg/Lys/His/Ser/Thr/Tyr donor within 3.5 A of Asp6 OD1/OD2 (closest donor of any kind: none within 4.0 A)"
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb135",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.274,
+        "donor_bias_score": 5.635,
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.54,
+        "sequence": "VEVLGAGALGSEARYVSTNCAARTALCTTDPFEDINRYKVRCPSNADNPSAECSVFTEDFPA",
+        "analysis_error": "",
+        "iptm_g12d": 0.415,
+        "pae_interface_g12d": 2.59,
+        "peptide_buried_frac": 0.336,
+        "asp6_buried_frac": 0.435,
+        "buried_area_total": 596.6,
+        "buried_area_peptide": 200.6,
+        "buried_area_hla": 396.0,
+        "pos6_contacts": 12,
+        "net_interface_charge": 0.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": true,
+        "pos6_sidechain_contacts": 5,
+        "asp6_min_any_donor_distance": 2.03,
+        "asp6_min_donor_distance": 2.03,
+        "asp6_donor_partner": "ARG23:NH1@2.03A",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": true,
+        "gate_reason": ""
+      }
+    ]
+  },
+  {
+    "backbone": "B5-c6-62_bb173",
+    "variant": "donor-anchored-g1",
+    "sequence": "ADIVTAAHLAPEPRQYRGNTRPLREEDRRFGASADTVGLLGNEVATAYIAKTGKSATEVVKA",
+    "replicates": 3,
+    "gate_pass_count": 2,
+    "asp6_min_donor_distance": {
+      "values": [
+        2.48,
+        2.67
+      ],
+      "mean": 2.575,
+      "sd": 0.095
+    },
+    "peptide_buried_frac": {
+      "values": [
+        0.322,
+        0.276,
+        0.293
+      ],
+      "mean": 0.297,
+      "sd": 0.019
+    },
+    "pos6_sidechain_contacts": {
+      "values": [
+        6.0,
+        6.0,
+        6.0
+      ],
+      "mean": 6.0,
+      "sd": 0.0
+    },
+    "asp6_buried_frac": {
+      "values": [
+        0.698,
+        0.834,
+        0.345
+      ],
+      "mean": 0.626,
+      "sd": 0.206
+    },
+    "net_interface_charge": {
+      "values": [
+        -1.0,
+        1.0,
+        0.0
+      ],
+      "mean": 0.0,
+      "sd": 0.816
+    },
+    "iptm_g12d": {
+      "values": [
+        0.3959,
+        0.8461,
+        0.3509
+      ],
+      "mean": 0.531,
+      "sd": 0.224
+    },
+    "runs": [
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb173",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.2043,
+        "donor_bias_score": 3.799,
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.38,
+        "sequence": "ADIVTAAHLAPEPRQYRGNTRPLREEDRRFGASADTVGLLGNEVATAYIAKTGKSATEVVKA",
+        "analysis_error": "",
+        "iptm_g12d": 0.3959,
+        "pae_interface_g12d": 2.54,
+        "peptide_buried_frac": 0.322,
+        "asp6_buried_frac": 0.698,
+        "buried_area_total": 721.1,
+        "buried_area_peptide": 232.0,
+        "buried_area_hla": 489.2,
+        "pos6_contacts": 8,
+        "net_interface_charge": -1.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": true,
+        "pos6_sidechain_contacts": 6,
+        "asp6_min_any_donor_distance": 2.48,
+        "asp6_min_donor_distance": 2.48,
+        "asp6_donor_partner": "ARG17:NH1@2.48A",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": true,
+        "gate_reason": ""
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb173",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.2043,
+        "donor_bias_score": 3.799,
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.38,
+        "sequence": "ADIVTAAHLAPEPRQYRGNTRPLREEDRRFGASADTVGLLGNEVATAYIAKTGKSATEVVKA",
+        "analysis_error": "",
+        "iptm_g12d": 0.8461,
+        "pae_interface_g12d": 0.85,
+        "peptide_buried_frac": 0.276,
+        "asp6_buried_frac": 0.834,
+        "buried_area_total": 764.4,
+        "buried_area_peptide": 211.3,
+        "buried_area_hla": 553.1,
+        "pos6_contacts": 8,
+        "net_interface_charge": 1.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": true,
+        "pos6_sidechain_contacts": 6,
+        "asp6_min_any_donor_distance": 2.67,
+        "asp6_min_donor_distance": 2.67,
+        "asp6_donor_partner": "ARG17:NH2@2.67A",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": true,
+        "gate_reason": ""
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb173",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.2043,
+        "donor_bias_score": 3.799,
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.38,
+        "sequence": "ADIVTAAHLAPEPRQYRGNTRPLREEDRRFGASADTVGLLGNEVATAYIAKTGKSATEVVKA",
+        "analysis_error": "",
+        "iptm_g12d": 0.3509,
+        "pae_interface_g12d": 2.8,
+        "peptide_buried_frac": 0.293,
+        "asp6_buried_frac": 0.345,
+        "buried_area_total": 757.1,
+        "buried_area_peptide": 222.0,
+        "buried_area_hla": 535.1,
+        "pos6_contacts": 9,
+        "net_interface_charge": 0.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": false,
+        "pos6_sidechain_contacts": 6,
+        "asp6_min_any_donor_distance": 3.37,
+        "asp6_min_donor_distance": "",
+        "asp6_donor_partner": "",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": false,
+        "gate_reason": "no Arg/Lys/His/Ser/Thr/Tyr donor within 3.5 A of Asp6 OD1/OD2 (closest donor of any kind: 3.37)"
+      }
+    ]
+  },
+  {
+    "backbone": "B5-c6-62_bb90",
+    "variant": "donor-anchored-g2",
+    "sequence": "VNPAEWTSGPAPGTRGAGGGGSGIGGLYFGNSDLLGEEDVISAAALPREVKTLEEVKLSARK",
+    "replicates": 3,
+    "gate_pass_count": 1,
+    "asp6_min_donor_distance": {
+      "values": [
+        3.37
+      ],
+      "mean": 3.37,
+      "sd": 0.0
+    },
+    "peptide_buried_frac": {
+      "values": [
+        0.242,
+        0.239,
+        0.242
+      ],
+      "mean": 0.241,
+      "sd": 0.001
+    },
+    "pos6_sidechain_contacts": {
+      "values": [
+        4.0,
+        6.0,
+        3.0
+      ],
+      "mean": 4.333,
+      "sd": 1.247
+    },
+    "asp6_buried_frac": {
+      "values": [
+        0.619,
+        0.559,
+        0.393
+      ],
+      "mean": 0.524,
+      "sd": 0.096
+    },
+    "net_interface_charge": {
+      "values": [
+        0.0,
+        2.0,
+        2.0
+      ],
+      "mean": 1.333,
+      "sd": 0.943
+    },
+    "iptm_g12d": {
+      "values": [
+        0.2665,
+        0.2365,
+        0.2965
+      ],
+      "mean": 0.267,
+      "sd": 0.024
+    },
+    "runs": [
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb90",
+        "variant": "donor-anchored-g2",
+        "binder_length": 62,
+        "mpnn_score": 1.1131,
+        "donor_bias_score": 2.091,
+        "design_pos6_contacts": 2,
+        "design_pos6_distance": 4.39,
+        "sequence": "VNPAEWTSGPAPGTRGAGGGGSGIGGLYFGNSDLLGEEDVISAAALPREVKTLEEVKLSARK",
+        "analysis_error": "",
+        "iptm_g12d": 0.2665,
+        "pae_interface_g12d": 3.28,
+        "peptide_buried_frac": 0.242,
+        "asp6_buried_frac": 0.619,
+        "buried_area_total": 933.5,
+        "buried_area_peptide": 226.3,
+        "buried_area_hla": 707.2,
+        "pos6_contacts": 11,
+        "net_interface_charge": 0.0,
+        "asp6_hbond": false,
+        "asp6_salt_bridge": false,
+        "pos6_sidechain_contacts": 4,
+        "asp6_min_any_donor_distance": "",
+        "asp6_min_donor_distance": "",
+        "asp6_donor_partner": "",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": false,
+        "gate_reason": "no Arg/Lys/His/Ser/Thr/Tyr donor within 3.5 A of Asp6 OD1/OD2 (closest donor of any kind: none within 4.0 A)"
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb90",
+        "variant": "donor-anchored-g2",
+        "binder_length": 62,
+        "mpnn_score": 1.1131,
+        "donor_bias_score": 2.091,
+        "design_pos6_contacts": 2,
+        "design_pos6_distance": 4.39,
+        "sequence": "VNPAEWTSGPAPGTRGAGGGGSGIGGLYFGNSDLLGEEDVISAAALPREVKTLEEVKLSARK",
+        "analysis_error": "",
+        "iptm_g12d": 0.2365,
+        "pae_interface_g12d": 3.53,
+        "peptide_buried_frac": 0.239,
+        "asp6_buried_frac": 0.559,
+        "buried_area_total": 894.3,
+        "buried_area_peptide": 214.0,
+        "buried_area_hla": 680.3,
+        "pos6_contacts": 13,
+        "net_interface_charge": 2.0,
+        "asp6_hbond": false,
+        "asp6_salt_bridge": false,
+        "pos6_sidechain_contacts": 6,
+        "asp6_min_any_donor_distance": "",
+        "asp6_min_donor_distance": "",
+        "asp6_donor_partner": "",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": false,
+        "gate_reason": "no Arg/Lys/His/Ser/Thr/Tyr donor within 3.5 A of Asp6 OD1/OD2 (closest donor of any kind: none within 4.0 A)"
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb90",
+        "variant": "donor-anchored-g2",
+        "binder_length": 62,
+        "mpnn_score": 1.1131,
+        "donor_bias_score": 2.091,
+        "design_pos6_contacts": 2,
+        "design_pos6_distance": 4.39,
+        "sequence": "VNPAEWTSGPAPGTRGAGGGGSGIGGLYFGNSDLLGEEDVISAAALPREVKTLEEVKLSARK",
+        "analysis_error": "",
+        "iptm_g12d": 0.2965,
+        "pae_interface_g12d": 3.18,
+        "peptide_buried_frac": 0.242,
+        "asp6_buried_frac": 0.393,
+        "buried_area_total": 857.7,
+        "buried_area_peptide": 207.9,
+        "buried_area_hla": 649.8,
+        "pos6_contacts": 11,
+        "net_interface_charge": 2.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": true,
+        "pos6_sidechain_contacts": 3,
+        "asp6_min_any_donor_distance": 3.37,
+        "asp6_min_donor_distance": 3.37,
+        "asp6_donor_partner": "ARG15:NH1@3.37A",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": true,
+        "gate_reason": ""
+      }
+    ]
+  },
+  {
+    "backbone": "B5-c6-62_bb50",
+    "variant": "donor-anchored-g1",
+    "sequence": "SLATEATAIEYGAASGERLDAAPDPNWVLVRPGETTTSYGADNRIRGAGRYGPLAAVNPDVA",
+    "replicates": 3,
+    "gate_pass_count": 1,
+    "asp6_min_donor_distance": {
+      "values": [
+        2.98
+      ],
+      "mean": 2.98,
+      "sd": 0.0
+    },
+    "peptide_buried_frac": {
+      "values": [
+        0.274,
+        0.232,
+        0.168
+      ],
+      "mean": 0.225,
+      "sd": 0.044
+    },
+    "pos6_sidechain_contacts": {
+      "values": [
+        8.0,
+        6.0,
+        5.0
+      ],
+      "mean": 6.333,
+      "sd": 1.247
+    },
+    "asp6_buried_frac": {
+      "values": [
+        0.568,
+        0.236,
+        0.542
+      ],
+      "mean": 0.449,
+      "sd": 0.151
+    },
+    "net_interface_charge": {
+      "values": [
+        -1.0,
+        -1.0,
+        -1.0
+      ],
+      "mean": -1.0,
+      "sd": 0.0
+    },
+    "iptm_g12d": {
+      "values": [
+        0.5005,
+        0.4468,
+        0.3331
+      ],
+      "mean": 0.427,
+      "sd": 0.07
+    },
+    "runs": [
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb50",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.1727,
+        "donor_bias_score": 2.163,
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.16,
+        "sequence": "SLATEATAIEYGAASGERLDAAPDPNWVLVRPGETTTSYGADNRIRGAGRYGPLAAVNPDVA",
+        "analysis_error": "",
+        "iptm_g12d": 0.5005,
+        "pae_interface_g12d": 2.21,
+        "peptide_buried_frac": 0.274,
+        "asp6_buried_frac": 0.568,
+        "buried_area_total": 567.6,
+        "buried_area_peptide": 155.4,
+        "buried_area_hla": 412.2,
+        "pos6_contacts": 15,
+        "net_interface_charge": -1.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": false,
+        "pos6_sidechain_contacts": 8,
+        "asp6_min_any_donor_distance": 3.11,
+        "asp6_min_donor_distance": "",
+        "asp6_donor_partner": "",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": false,
+        "gate_reason": "no Arg/Lys/His/Ser/Thr/Tyr donor within 3.5 A of Asp6 OD1/OD2 (closest donor of any kind: 3.11)"
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb50",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.1727,
+        "donor_bias_score": 2.163,
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.16,
+        "sequence": "SLATEATAIEYGAASGERLDAAPDPNWVLVRPGETTTSYGADNRIRGAGRYGPLAAVNPDVA",
+        "analysis_error": "",
+        "iptm_g12d": 0.4468,
+        "pae_interface_g12d": 2.35,
+        "peptide_buried_frac": 0.232,
+        "asp6_buried_frac": 0.236,
+        "buried_area_total": 660.2,
+        "buried_area_peptide": 152.9,
+        "buried_area_hla": 507.3,
+        "pos6_contacts": 13,
+        "net_interface_charge": -1.0,
+        "asp6_hbond": false,
+        "asp6_salt_bridge": false,
+        "pos6_sidechain_contacts": 6,
+        "asp6_min_any_donor_distance": "",
+        "asp6_min_donor_distance": "",
+        "asp6_donor_partner": "",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": false,
+        "gate_reason": "no Arg/Lys/His/Ser/Thr/Tyr donor within 3.5 A of Asp6 OD1/OD2 (closest donor of any kind: none within 4.0 A)"
+      },
+      {
+        "strategy": "B5-c6-62",
+        "backbone": "B5-c6-62_bb50",
+        "variant": "donor-anchored-g1",
+        "binder_length": 62,
+        "mpnn_score": 1.1727,
+        "donor_bias_score": 2.163,
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.16,
+        "sequence": "SLATEATAIEYGAASGERLDAAPDPNWVLVRPGETTTSYGADNRIRGAGRYGPLAAVNPDVA",
+        "analysis_error": "",
+        "iptm_g12d": 0.3331,
+        "pae_interface_g12d": 2.84,
+        "peptide_buried_frac": 0.168,
+        "asp6_buried_frac": 0.542,
+        "buried_area_total": 1069.6,
+        "buried_area_peptide": 179.9,
+        "buried_area_hla": 889.6,
+        "pos6_contacts": 10,
+        "net_interface_charge": -1.0,
+        "asp6_hbond": true,
+        "asp6_salt_bridge": true,
+        "pos6_sidechain_contacts": 5,
+        "asp6_min_any_donor_distance": 2.98,
+        "asp6_min_donor_distance": 2.98,
+        "asp6_donor_partner": "ARG44:NH2@2.98A",
+        "pose_ok": true,
+        "pose_reject_reason": "",
+        "gate_pass": true,
+        "gate_reason": ""
+      }
+    ]
+  }
+]

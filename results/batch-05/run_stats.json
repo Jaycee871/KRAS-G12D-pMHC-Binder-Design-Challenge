@@ -1,0 +1,53 @@
+{
+  "elapsed_seconds": 2801.3,
+  "backbones_generated": 200,
+  "backbones_pose_ok": 46,
+  "grafts": 60,
+  "scored_this_segment": 60,
+  "boltz2_calls_this_segment": 60,
+  "stopped_early": "",
+  "strategy": {
+    "name": "B5-c6-62",
+    "binder_length": 62,
+    "hotspots": [
+      "C6"
+    ],
+    "sampling_temp": 0.15,
+    "rationale": "batch-04's B4-c6-62 verbatim - the only strategy that produced a gate survivor whose pose replicated - run at volume with a deterministic donor graft per backbone"
+  },
+  "pose_filter": {
+    "min_pos6_contacts": 2,
+    "max_pos6_distance": 5.0
+  },
+  "constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "C",
+          "residue_index": 6
+        }
+      ],
+      "max_distance": 6.0
+    }
+  ],
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": false
+  },
+  "gate": {
+    "donor_residues": [
+      "ARG",
+      "HIS",
+      "LYS",
+      "SER",
+      "THR",
+      "TYR"
+    ],
+    "donor_distance": 3.5,
+    "asp6_buried_frac": "> 0",
+    "replication": "3 of 3 independent constrained draws"
+  }
+}

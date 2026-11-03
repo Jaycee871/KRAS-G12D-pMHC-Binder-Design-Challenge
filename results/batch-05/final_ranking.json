@@ -1,0 +1,483 @@
+{
+  "summary": {
+    "screening_gate_passers_replicated": 4,
+    "survivors_3of3": 0,
+    "clusters": 0,
+    "required_gate_passes": 3,
+    "peptide_buried_floor_reported_not_applied": 0.4,
+    "survivors_meeting_peptide_floor": 0
+  },
+  "survivors": [],
+  "all_replicated": [
+    {
+      "backbone": "B5-c6-62_bb135",
+      "variant": "donor-anchored-g1",
+      "sequence": "VEVLGAGALGSEARYVSTNCAARTALCTTDPFEDINRYKVRCPSNADNPSAECSVFTEDFPA",
+      "binder_length": 62,
+      "strategy": "B5-c6-62",
+      "draws": 3,
+      "gate_passes": 2,
+      "gate_3of3": false,
+      "screen_gate_pass": true,
+      "screen_asp6_min_donor_distance": 2.8,
+      "screen_asp6_donor_partner": "ARG23:NH1@2.8A",
+      "asp6_min_donor_distance_draws": [
+        2.03,
+        "",
+        2.03
+      ],
+      "asp6_donor_partner_draws": [
+        "ARG23:NH1@2.03A",
+        "",
+        "ARG23:NH1@2.03A"
+      ],
+      "asp6_min_donor_distance": {
+        "values": [
+          2.03,
+          2.03
+        ],
+        "mean": 2.03,
+        "sd": 0.0
+      },
+      "asp6_buried_frac": {
+        "values": [
+          0.383,
+          0.164,
+          0.435
+        ],
+        "mean": 0.327,
+        "sd": 0.117
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.337,
+          0.325,
+          0.336
+        ],
+        "mean": 0.333,
+        "sd": 0.005
+      },
+      "pos6_sidechain_contacts": {
+        "values": [
+          5.0,
+          1.0,
+          5.0
+        ],
+        "mean": 3.667,
+        "sd": 1.886
+      },
+      "net_interface_charge": {
+        "values": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "mean": 0.333,
+        "sd": 0.471
+      },
+      "iptm_g12d": {
+        "values": [
+          0.5337,
+          0.4051,
+          0.415
+        ],
+        "mean": 0.451,
+        "sd": 0.058
+      },
+      "binder_ca_rmsd_mean_all": 3.65,
+      "binder_ca_rmsd_max_all": 5.81,
+      "binder_ca_rmsd_mean_replicates": 4.54,
+      "binder_ca_rmsd_max_replicates": 5.81,
+      "pairwise_rmsd": [
+        {
+          "pair": "original~r0",
+          "binder_ca_rmsd": 0.39,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.08
+        },
+        {
+          "pair": "original~r1",
+          "binder_ca_rmsd": 5.67,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.24
+        },
+        {
+          "pair": "original~r2",
+          "binder_ca_rmsd": 2.19,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.31
+        },
+        {
+          "pair": "r0~r1",
+          "binder_ca_rmsd": 5.56,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.26
+        },
+        {
+          "pair": "r0~r2",
+          "binder_ca_rmsd": 2.26,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.33
+        },
+        {
+          "pair": "r1~r2",
+          "binder_ca_rmsd": 5.81,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.19
+        }
+      ]
+    },
+    {
+      "backbone": "B5-c6-62_bb173",
+      "variant": "donor-anchored-g1",
+      "sequence": "ADIVTAAHLAPEPRQYRGNTRPLREEDRRFGASADTVGLLGNEVATAYIAKTGKSATEVVKA",
+      "binder_length": 62,
+      "strategy": "B5-c6-62",
+      "draws": 3,
+      "gate_passes": 2,
+      "gate_3of3": false,
+      "screen_gate_pass": true,
+      "screen_asp6_min_donor_distance": 3.4,
+      "screen_asp6_donor_partner": "ARG17:NH2@3.4A",
+      "asp6_min_donor_distance_draws": [
+        2.48,
+        2.67,
+        ""
+      ],
+      "asp6_donor_partner_draws": [
+        "ARG17:NH1@2.48A",
+        "ARG17:NH2@2.67A",
+        ""
+      ],
+      "asp6_min_donor_distance": {
+        "values": [
+          2.48,
+          2.67
+        ],
+        "mean": 2.575,
+        "sd": 0.095
+      },
+      "asp6_buried_frac": {
+        "values": [
+          0.698,
+          0.834,
+          0.345
+        ],
+        "mean": 0.626,
+        "sd": 0.206
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.322,
+          0.276,
+          0.293
+        ],
+        "mean": 0.297,
+        "sd": 0.019
+      },
+      "pos6_sidechain_contacts": {
+        "values": [
+          6.0,
+          6.0,
+          6.0
+        ],
+        "mean": 6.0,
+        "sd": 0.0
+      },
+      "net_interface_charge": {
+        "values": [
+          -1.0,
+          1.0,
+          0.0
+        ],
+        "mean": 0.0,
+        "sd": 0.816
+      },
+      "iptm_g12d": {
+        "values": [
+          0.3959,
+          0.8461,
+          0.3509
+        ],
+        "mean": 0.531,
+        "sd": 0.224
+      },
+      "binder_ca_rmsd_mean_all": 7.29,
+      "binder_ca_rmsd_max_all": 11.79,
+      "binder_ca_rmsd_mean_replicates": 8.78,
+      "binder_ca_rmsd_max_replicates": 11.79,
+      "pairwise_rmsd": [
+        {
+          "pair": "original~r0",
+          "binder_ca_rmsd": 3.9,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.14
+        },
+        {
+          "pair": "original~r1",
+          "binder_ca_rmsd": 2.25,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.11
+        },
+        {
+          "pair": "original~r2",
+          "binder_ca_rmsd": 11.25,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.3
+        },
+        {
+          "pair": "r0~r1",
+          "binder_ca_rmsd": 2.89,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.13
+        },
+        {
+          "pair": "r0~r2",
+          "binder_ca_rmsd": 11.79,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.23
+        },
+        {
+          "pair": "r1~r2",
+          "binder_ca_rmsd": 11.65,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.25
+        }
+      ]
+    },
+    {
+      "backbone": "B5-c6-62_bb90",
+      "variant": "donor-anchored-g2",
+      "sequence": "VNPAEWTSGPAPGTRGAGGGGSGIGGLYFGNSDLLGEEDVISAAALPREVKTLEEVKLSARK",
+      "binder_length": 62,
+      "strategy": "B5-c6-62",
+      "draws": 3,
+      "gate_passes": 1,
+      "gate_3of3": false,
+      "screen_gate_pass": true,
+      "screen_asp6_min_donor_distance": 3.14,
+      "screen_asp6_donor_partner": "SER22:OG@3.14A",
+      "asp6_min_donor_distance_draws": [
+        "",
+        "",
+        3.37
+      ],
+      "asp6_donor_partner_draws": [
+        "",
+        "",
+        "ARG15:NH1@3.37A"
+      ],
+      "asp6_min_donor_distance": {
+        "values": [
+          3.37
+        ],
+        "mean": 3.37,
+        "sd": 0.0
+      },
+      "asp6_buried_frac": {
+        "values": [
+          0.619,
+          0.559,
+          0.393
+        ],
+        "mean": 0.524,
+        "sd": 0.096
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.242,
+          0.239,
+          0.242
+        ],
+        "mean": 0.241,
+        "sd": 0.001
+      },
+      "pos6_sidechain_contacts": {
+        "values": [
+          4.0,
+          6.0,
+          3.0
+        ],
+        "mean": 4.333,
+        "sd": 1.247
+      },
+      "net_interface_charge": {
+        "values": [
+          0.0,
+          2.0,
+          2.0
+        ],
+        "mean": 1.333,
+        "sd": 0.943
+      },
+      "iptm_g12d": {
+        "values": [
+          0.2665,
+          0.2365,
+          0.2965
+        ],
+        "mean": 0.267,
+        "sd": 0.024
+      },
+      "binder_ca_rmsd_mean_all": 3.66,
+      "binder_ca_rmsd_max_all": 4.11,
+      "binder_ca_rmsd_mean_replicates": 3.28,
+      "binder_ca_rmsd_max_replicates": 3.73,
+      "pairwise_rmsd": [
+        {
+          "pair": "original~r0",
+          "binder_ca_rmsd": 4.11,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.11
+        },
+        {
+          "pair": "original~r1",
+          "binder_ca_rmsd": 4.0,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.08
+        },
+        {
+          "pair": "original~r2",
+          "binder_ca_rmsd": 4.03,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.09
+        },
+        {
+          "pair": "r0~r1",
+          "binder_ca_rmsd": 3.45,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.09
+        },
+        {
+          "pair": "r0~r2",
+          "binder_ca_rmsd": 2.65,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.09
+        },
+        {
+          "pair": "r1~r2",
+          "binder_ca_rmsd": 3.73,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.08
+        }
+      ]
+    },
+    {
+      "backbone": "B5-c6-62_bb50",
+      "variant": "donor-anchored-g1",
+      "sequence": "SLATEATAIEYGAASGERLDAAPDPNWVLVRPGETTTSYGADNRIRGAGRYGPLAAVNPDVA",
+      "binder_length": 62,
+      "strategy": "B5-c6-62",
+      "draws": 3,
+      "gate_passes": 1,
+      "gate_3of3": false,
+      "screen_gate_pass": true,
+      "screen_asp6_min_donor_distance": 2.96,
+      "screen_asp6_donor_partner": "ARG44:NH2@2.96A",
+      "asp6_min_donor_distance_draws": [
+        "",
+        "",
+        2.98
+      ],
+      "asp6_donor_partner_draws": [
+        "",
+        "",
+        "ARG44:NH2@2.98A"
+      ],
+      "asp6_min_donor_distance": {
+        "values": [
+          2.98
+        ],
+        "mean": 2.98,
+        "sd": 0.0
+      },
+      "asp6_buried_frac": {
+        "values": [
+          0.568,
+          0.236,
+          0.542
+        ],
+        "mean": 0.449,
+        "sd": 0.151
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.274,
+          0.232,
+          0.168
+        ],
+        "mean": 0.225,
+        "sd": 0.044
+      },
+      "pos6_sidechain_contacts": {
+        "values": [
+          8.0,
+          6.0,
+          5.0
+        ],
+        "mean": 6.333,
+        "sd": 1.247
+      },
+      "net_interface_charge": {
+        "values": [
+          -1.0,
+          -1.0,
+          -1.0
+        ],
+        "mean": -1.0,
+        "sd": 0.0
+      },
+      "iptm_g12d": {
+        "values": [
+          0.5005,
+          0.4468,
+          0.3331
+        ],
+        "mean": 0.427,
+        "sd": 0.07
+      },
+      "binder_ca_rmsd_mean_all": 14.26,
+      "binder_ca_rmsd_max_all": 20.37,
+      "binder_ca_rmsd_mean_replicates": 14.44,
+      "binder_ca_rmsd_max_replicates": 20.37,
+      "pairwise_rmsd": [
+        {
+          "pair": "original~r0",
+          "binder_ca_rmsd": 20.16,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.3
+        },
+        {
+          "pair": "original~r1",
+          "binder_ca_rmsd": 20.26,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.26
+        },
+        {
+          "pair": "original~r2",
+          "binder_ca_rmsd": 1.79,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.1
+        },
+        {
+          "pair": "r0~r1",
+          "binder_ca_rmsd": 2.68,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.11
+        },
+        {
+          "pair": "r0~r2",
+          "binder_ca_rmsd": 20.28,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.33
+        },
+        {
+          "pair": "r1~r2",
+          "binder_ca_rmsd": 20.37,
+          "n_ca": 62,
+          "frame_ca_rmsd": 0.29
+        }
+      ]
+    }
+  ]
+}
