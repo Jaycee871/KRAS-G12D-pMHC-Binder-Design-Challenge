@@ -1,0 +1,98 @@
+[
+  {
+    "strategy": "B7-A-bb54",
+    "backbone": "bb54",
+    "binder_length": 46,
+    "variant": "rigid-gp-self",
+    "track": "A",
+    "sequence": "MPLPDDAIAEPSGTPEARELARRLGGPERVAINYRAGRRGRVGVEA",
+    "parent_sequence": "MMLPDDAIAELSGTPEARELARRLGGDERVAINYRAGRRGRVGVEA",
+    "graft_sequence": "MMLPDDAIAELSGTPEARELARRLGGDERVAINYRAGRRGRVGVEA",
+    "mpnn_score": "",
+    "rigidity": {
+      "ss": "LLEHHHHHHLLLLHHHHHHHHHHHLLLLLLELHHHHHHHHHHHHLL",
+      "ss_helix_frac": 0.63,
+      "ss_loop_frac": 0.326,
+      "anchor_position": 35,
+      "anchor_ss": "H",
+      "shell_ss": "HHHH",
+      "donor_loop_length": 0,
+      "donor_loop_span": null,
+      "n_loop_runs": 5,
+      "longest_loop": 6
+    },
+    "donor_bias_score": 3.391,
+    "rigidifying_edits": [
+      "G13 kept (phi 76 positive)",
+      "G25 kept (phi 149 positive)",
+      "G26 kept (phi 92 positive)",
+      "M2P (phi -82)",
+      "L11P (phi -95)",
+      "D27P (phi -93)"
+    ],
+    "design_pos6_contacts": "",
+    "design_pos6_distance": ""
+  },
+  {
+    "strategy": "B7-A-bb54",
+    "backbone": "bb54",
+    "binder_length": 46,
+    "variant": "graft-p1",
+    "track": "A",
+    "sequence": "MMLPDDALADLGGTEAYRALAERLGGDPDAHINYRALAGGRRGIDV",
+    "parent_sequence": "MMLPDDALADLGGTEAYRALAERLGGDPDAHINLRALAGGRRGIDV",
+    "graft_sequence": "MMLPDDALADLGGTEAYRALAERLGGDPDAHINYRALAGGRRGIDV",
+    "mpnn_score": 1.0317,
+    "donor_bias_score": 3.386,
+    "rigidifying_edits": [],
+    "rigidity": {
+      "ss": "LLEHHHHHHLLLLHHHHHHHHHHHLLLLLLELHHHHHHHHHHHHLL",
+      "ss_helix_frac": 0.63,
+      "ss_loop_frac": 0.326,
+      "anchor_position": 35,
+      "anchor_ss": "H",
+      "shell_ss": "HHHH",
+      "donor_loop_length": 0,
+      "donor_loop_span": null,
+      "n_loop_runs": 5,
+      "longest_loop": 6
+    },
+    "design_pos6_contacts": "",
+    "design_pos6_distance": ""
+  },
+  {
+    "strategy": "B7-A-bb54",
+    "backbone": "bb54",
+    "binder_length": 46,
+    "variant": "rigid-gp-p1",
+    "track": "A",
+    "sequence": "MPLPDDALADPAGTEAYRALAERLGGPPDAHINYRALAGGRRGIDV",
+    "parent_sequence": "MMLPDDALADLGGTEAYRALAERLGGDPDAHINLRALAGGRRGIDV",
+    "graft_sequence": "MMLPDDALADLGGTEAYRALAERLGGDPDAHINYRALAGGRRGIDV",
+    "mpnn_score": 1.0317,
+    "donor_bias_score": 3.386,
+    "rigidifying_edits": [
+      "G12A",
+      "G13 kept (phi 76 positive)",
+      "G25 kept (phi 149 positive)",
+      "G26 kept (phi 92 positive)",
+      "M2P (phi -82)",
+      "L11P (phi -95)",
+      "D27P (phi -93)"
+    ],
+    "rigidity": {
+      "ss": "LLEHHHHHHLLLLHHHHHHHHHHHLLLLLLELHHHHHHHHHHHHLL",
+      "ss_helix_frac": 0.63,
+      "ss_loop_frac": 0.326,
+      "anchor_position": 35,
+      "anchor_ss": "H",
+      "shell_ss": "HHHH",
+      "donor_loop_length": 0,
+      "donor_loop_span": null,
+      "n_loop_runs": 5,
+      "longest_loop": 6
+    },
+    "design_pos6_contacts": "",
+    "design_pos6_distance": ""
+  }
+]

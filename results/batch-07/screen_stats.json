@@ -1,0 +1,59 @@
+{
+  "elapsed_seconds": 563.9,
+  "candidates": 21,
+  "scored": 21,
+  "gate_3of3": [
+    "bb54_rigid-gp-p2"
+  ],
+  "condition_order": [
+    "r3np",
+    "r3"
+  ],
+  "rigidity_filter": {
+    "min_ss_frac": 0.55,
+    "max_donor_loop": 3,
+    "max_longest_loop": 8
+  },
+  "strategies": [
+    {
+      "name": "B7-rigid-46",
+      "binder_length": 46,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.1,
+      "rationale": "bb54-g2's own paratope size, re-diffused at 30 steps and filtered for a donor anchor on a regular element"
+    },
+    {
+      "name": "B7-rigid-52",
+      "binder_length": 52,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.1,
+      "rationale": "bb54-g2's paratope with ~6 residues of extra scaffold to buttress the donor-carrying helix - more bundle, not more interface"
+    },
+    {
+      "name": "B7-rigid-58",
+      "binder_length": 58,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.15,
+      "rationale": "upper buttressing band; the batch-04/05 length that gave the project's tightest pose (bb50-g1, 1.58/3.78 A)"
+    }
+  ],
+  "constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "C",
+          "residue_index": 6
+        }
+      ],
+      "max_distance": 6.0
+    }
+  ],
+  "draws_per_call": 3
+}
