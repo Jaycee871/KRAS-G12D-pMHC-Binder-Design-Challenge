@@ -40,6 +40,26 @@ SASA_PROBE_RADIUS = 1.4      # Å, PIPELINE.md section 6
 CONTACT_CUTOFF = 5.0         # Å, heavy-atom contact definition
 INTERFACE_CUTOFF = 5.0       # Å, "interface residue" definition
 
+# --- Asp6 hydrogen bond / salt bridge (PIPELINE.md section 6, batch-02) -----
+# Replaces the unreachable `asp6_buried_frac >= 0.60` gate: in 7OW6 the groove
+# alone buries ~90 % of the Asp6 side chain, and the selective TCR of Poole et
+# al. 2022 scores 0.00 on buried fraction while making 7 contacts with
+# position 6. What a *selective* paratope has to do is read the carboxylate,
+# i.e. donate a hydrogen bond to it.
+HBOND_DISTANCE = 3.5         # Å, donor heavy atom to OD1/OD2
+SALT_BRIDGE_DISTANCE = 4.0   # Å, charged donor group to OD1/OD2
+ASP_CARBOXYLATE_ATOMS = ("OD1", "OD2")
+# Side-chain hydroxyl / sulfhydryl donors, by residue.
+HYDROXYL_DONORS = {
+    "SER": {"OG"}, "THR": {"OG1"}, "TYR": {"OH"}, "CYS": {"SG"},
+}
+# Side-chain nitrogen donors that also carry (part of) a positive charge.
+CHARGED_DONORS = {
+    "ARG": {"NE", "NH1", "NH2"},
+    "LYS": {"NZ"},
+    "HIS": {"ND1", "NE2"},
+}
+
 BACKBONE_ATOMS = frozenset({"N", "CA", "C", "O", "OXT"})
 
 # Peptide chemistry of the four target states (PIPELINE.md section 0).
@@ -467,12 +487,100 @@ def interface_metrics(
     metrics["asp6_sasa_bound"] = bound_sc
     metrics["asp6_buried_frac"] = (free_sc - min(bound_sc, free_sc)) / free_sc
 
+    partners = asp6_hbond_partners(model, binder_chain, target_residue)
+    metrics["asp6_hbond_partners"] = partners
+    metrics["asp6_hbond"] = any(p["hbond"] for p in partners)
+    metrics["asp6_salt_bridge"] = any(p["salt_bridge"] for p in partners)
+    metrics["asp6_min_donor_distance"] = (
+        partners[0]["distance"] if partners else None)
+    if not partners:
+        notes.append(
+            f"no binder hydrogen-bond donor within {HBOND_DISTANCE} Å of the "
+            f"{resname}{resseq} carboxylate: the binder does not read the "
+            f"mutated side chain"
+        )
+
     contacts = count_contacts(model, binder_chain, target_residue)
     metrics["pos6_contacts"] = float(contacts)
     metrics["contacts_by_chain"] = contacts_by_chain(model, binder_chain)
     metrics["net_interface_charge"] = interface_charge(model, binder_chain)
     metrics["notes"] = notes
     return metrics
+
+
+def is_donor_atom(residue, atom) -> bool:
+    """True when `atom` of `residue` can donate a hydrogen bond.
+
+    Any nitrogen (backbone amide or side chain) counts, as do the side-chain
+    hydroxyls of Ser/Thr/Tyr and the Cys sulfhydryl. Hydrogens are not present
+    in predicted structures, so donor identity is decided by chemistry rather
+    than by an explicit H.
+    """
+    name = atom.get_id().strip().upper()
+    resname = residue.get_resname().strip().upper()
+    if atom.element == "N":
+        return True
+    return name in HYDROXYL_DONORS.get(resname, ())
+
+
+def asp6_hbond_partners(
+    model,
+    binder_chain: str,
+    residue,
+    hbond_distance: float = HBOND_DISTANCE,
+    salt_bridge_distance: float = SALT_BRIDGE_DISTANCE,
+) -> List[Dict[str, Any]]:
+    """Binder donors hydrogen bonding to the Asp6 carboxylate.
+
+    One record per donor atom within `hbond_distance` of OD1/OD2, flagged as a
+    salt bridge when the donor is a charged Arg/Lys/His group within
+    `salt_bridge_distance`. Sorted by distance, closest first.
+    """
+    from Bio.PDB import NeighborSearch
+
+    if binder_chain not in [c.id for c in model]:
+        raise ChainMappingError(f"binder chain {binder_chain!r} is not in the model")
+    carboxylate = [a for a in residue
+                   if a.get_id().strip().upper() in ASP_CARBOXYLATE_ATOMS]
+    if not carboxylate:
+        raise StructureAnalysisError(
+            f"{residue.get_resname()}{residue.id[1]} has no "
+            f"{'/'.join(ASP_CARBOXYLATE_ATOMS)} carboxylate oxygens, so no "
+            f"hydrogen bond to it can be measured"
+        )
+    binder_atoms = heavy_atoms(model[binder_chain])
+    if not binder_atoms:
+        raise StructureAnalysisError(f"binder chain {binder_chain} has no heavy atoms")
+    search = NeighborSearch(binder_atoms)
+
+    best: Dict[Tuple[str, int, str], Dict[str, Any]] = {}
+    cutoff = max(hbond_distance, salt_bridge_distance)
+    for oxygen in carboxylate:
+        for atom in search.search(oxygen.coord, cutoff):
+            donor_residue = atom.get_parent()
+            if not is_donor_atom(donor_residue, atom):
+                continue
+            resname = donor_residue.get_resname().strip().upper()
+            name = atom.get_id().strip().upper()
+            distance = float(((atom.coord - oxygen.coord) ** 2).sum() ** 0.5)
+            charged = name in CHARGED_DONORS.get(resname, ())
+            is_hbond = distance <= hbond_distance
+            is_salt_bridge = charged and distance <= salt_bridge_distance
+            if not (is_hbond or is_salt_bridge):
+                continue
+            key = (resname, donor_residue.id[1], name)
+            record = {
+                "donor_residue": resname,
+                "donor_resseq": donor_residue.id[1],
+                "donor_atom": name,
+                "acceptor_atom": oxygen.get_id().strip().upper(),
+                "distance": round(distance, 2),
+                "hbond": is_hbond,
+                "salt_bridge": is_salt_bridge,
+            }
+            if key not in best or distance < best[key]["distance"]:
+                best[key] = record
+    return sorted(best.values(), key=lambda r: r["distance"])
 
 
 def heavy_atoms(entity) -> List:

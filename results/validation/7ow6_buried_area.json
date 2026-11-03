@@ -45,6 +45,38 @@
       "asp6_sasa_free": 85.20783418061855,
       "asp6_sasa_bound": 8.844010576456155,
       "asp6_buried_frac": 0.8962066028141362,
+      "asp6_hbond_partners": [
+        {
+          "donor_residue": "ARG",
+          "donor_resseq": 114,
+          "donor_atom": "NH2",
+          "acceptor_atom": "OD2",
+          "distance": 2.95,
+          "hbond": true,
+          "salt_bridge": true
+        },
+        {
+          "donor_residue": "ARG",
+          "donor_resseq": 114,
+          "donor_atom": "NH1",
+          "acceptor_atom": "OD1",
+          "distance": 3.04,
+          "hbond": true,
+          "salt_bridge": true
+        },
+        {
+          "donor_residue": "GLN",
+          "donor_resseq": 70,
+          "donor_atom": "NE2",
+          "acceptor_atom": "OD2",
+          "distance": 3.08,
+          "hbond": true,
+          "salt_bridge": false
+        }
+      ],
+      "asp6_hbond": true,
+      "asp6_salt_bridge": true,
+      "asp6_min_donor_distance": 2.95,
       "pos6_contacts": 19.0,
       "contacts_by_chain": {
         "B": 178,
@@ -104,6 +136,10 @@
       "asp6_sasa_free": 8.844010576456155,
       "asp6_sasa_bound": 8.844010576456155,
       "asp6_buried_frac": 0.0,
+      "asp6_hbond_partners": [],
+      "asp6_hbond": false,
+      "asp6_salt_bridge": false,
+      "asp6_min_donor_distance": null,
       "pos6_contacts": 7.0,
       "contacts_by_chain": {
         "A": 86,
@@ -111,7 +147,9 @@
         "C": 33
       },
       "net_interface_charge": -1.9,
-      "notes": []
+      "notes": [
+        "no binder hydrogen-bond donor within 3.5 \u00c5 of the ASP6 carboxylate: the binder does not read the mutated side chain"
+      ]
     }
   }
 }

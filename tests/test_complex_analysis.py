@@ -203,7 +203,10 @@ def test_metrics_on_a_binder_that_sits_on_the_peptide():
     assert metrics["asp6_buried_frac"] > 0.3
     assert metrics["pos6_contacts"] >= ca_min_contacts()
     assert metrics["contacts_by_chain"]["C"] > 0
-    assert metrics["notes"] == []
+    # The only note allowed here is the Asp6 read-out one: this synthetic
+    # binder is a poly-alanine trace with no hydrogen-bond donor.
+    assert all("buries" not in note for note in metrics["notes"])
+    assert metrics["asp6_hbond"] is False
 
 
 def ca_min_contacts():
@@ -313,3 +316,104 @@ def test_interface_charge_needs_a_target():
     model = model_of(make_cif([("D", BINDER_SEQUENCE, 0.0)]))
     with pytest.raises(StructureAnalysisError, match="no target chains"):
         ca.interface_charge(model, "D")
+
+
+# --- Asp6 hydrogen bond / salt bridge (batch-02) ----------------------------
+# The gate `asp6_buried_frac >= 0.60` was replaced by a read-out criterion on
+# the carboxylate, because in 7OW6 the groove alone buries ~90 % of the Asp6
+# side chain and the selective TCR of Poole et al. 2022 buries none of the
+# remainder. What matters is whether the binder *reads* the carboxylate.
+
+def arg_near_the_carboxylate(distance: float) -> str:
+    """Peptide (chain C) plus a one-residue Arg "binder" (chain D).
+
+    The Arg NH1 is placed `distance` Angstrom from the Asp6 OD1, which sits at
+    (0.5 + 5 * 3.8, 3.4, 0.0) in the fixture geometry.
+    """
+    rows = []
+    serial = 1
+    peptide_rows, serial = chain_rows("C", ca.G12D_PEPTIDE, 0.0, serial)
+    rows += peptide_rows
+    x, y = 0.5 + 5 * 3.8, 3.4
+    atoms = [("N", "N", x, y + 20.0, 0.0), ("CA", "C", x + 1, y + 20.0, 0.0),
+             ("C", "C", x + 2, y + 20.0, 0.0), ("O", "O", x + 2, y + 21.0, 0.0),
+             ("CB", "C", x, y + 19.0, 0.0), ("CG", "C", x, y + 18.0, 0.0),
+             ("CD", "C", x, y + 17.0, 0.0), ("NE", "N", x, y + 16.0, 0.0),
+             ("CZ", "C", x, y + 15.0, 0.0),
+             ("NH1", "N", x, y + distance, 0.0),
+             ("NH2", "N", x + 1.2, y + distance + 0.8, 0.0)]
+    for name, element, ax, ay, az in atoms:
+        rows.append(
+            f"ATOM {serial} {element} {name} . ARG D 1 ? {ax:.3f} {ay:.3f} "
+            f"{az:.3f} 1.00 50.00 1 D 1"
+        )
+        serial += 1
+    return "\n".join(CIF_HEADER + rows) + "\n#\n"
+
+
+def asp6_of(model):
+    return [r for r in model["C"] if ca.is_polymer_residue(r)][5]
+
+
+def test_an_arginine_close_to_the_carboxylate_is_a_salt_bridge():
+    model = model_of(arg_near_the_carboxylate(2.9))
+    partners = ca.asp6_hbond_partners(model, "D", asp6_of(model))
+    assert partners
+    best = partners[0]
+    assert best["donor_residue"] == "ARG"
+    assert best["donor_atom"] == "NH1"
+    assert best["acceptor_atom"] in ("OD1", "OD2")
+    assert best["distance"] == pytest.approx(2.9, abs=0.05)
+    assert best["hbond"] and best["salt_bridge"]
+
+
+def test_an_arginine_just_out_of_range_is_neither():
+    model = model_of(arg_near_the_carboxylate(5.0))
+    assert ca.asp6_hbond_partners(model, "D", asp6_of(model)) == []
+
+
+def test_a_charged_donor_between_35_and_4A_is_a_salt_bridge_only():
+    model = model_of(arg_near_the_carboxylate(3.8))
+    partners = ca.asp6_hbond_partners(model, "D", asp6_of(model))
+    assert partners
+    assert partners[0]["salt_bridge"] is True
+    assert partners[0]["hbond"] is False
+
+
+def test_hydroxyl_and_nitrogen_donors_are_recognised():
+    class FakeAtom:
+        def __init__(self, name, element):
+            self._name, self.element = name, element
+
+        def get_id(self):
+            return self._name
+
+    class FakeResidue:
+        def __init__(self, name):
+            self._name = name
+
+        def get_resname(self):
+            return self._name
+
+    assert ca.is_donor_atom(FakeResidue("SER"), FakeAtom("OG", "O"))
+    assert ca.is_donor_atom(FakeResidue("THR"), FakeAtom("OG1", "O"))
+    assert ca.is_donor_atom(FakeResidue("TYR"), FakeAtom("OH", "O"))
+    assert ca.is_donor_atom(FakeResidue("LYS"), FakeAtom("NZ", "N"))
+    assert ca.is_donor_atom(FakeResidue("GLY"), FakeAtom("N", "N"))
+    assert not ca.is_donor_atom(FakeResidue("ASP"), FakeAtom("OD1", "O"))
+    assert not ca.is_donor_atom(FakeResidue("LEU"), FakeAtom("CD1", "C"))
+
+
+def test_interface_metrics_reports_the_readout_columns():
+    metrics = ca.interface_metrics(bound_complex(binder_y=7.0),
+                                   binder_sequence=BINDER_SEQUENCE)
+    assert metrics["asp6_hbond"] in (True, False)
+    assert metrics["asp6_salt_bridge"] in (True, False)
+    assert "asp6_hbond_partners" in metrics
+
+
+def test_a_binder_that_does_not_read_the_carboxylate_says_so():
+    metrics = ca.interface_metrics(bound_complex(binder_y=7.0),
+                                   binder_sequence=BINDER_SEQUENCE)
+    if not metrics["asp6_hbond"]:
+        assert any("hydrogen-bond donor" in note for note in metrics["notes"])

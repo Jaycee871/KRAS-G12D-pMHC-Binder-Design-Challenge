@@ -54,6 +54,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import complex_analysis
 import design_gates
 import nvidia_client as nvidia
+import pose_filter
 import run_pipeline
 from nvidia_client import NvidiaApiError, NvidiaClient
 
@@ -70,7 +71,11 @@ POS6_TIGHT = ["C5", "C6", "C7"]
 # included precisely to show that rim-centred paratopes lose specificity.
 GROOVE_RIM = ["A62", "A65", "A72", "A146", "A150", "A155", "A158"]
 
-STRATEGIES: List[Dict[str, Any]] = [
+POS6_CENTRED = POS6_TIGHT  # C5-C7, the mutated Asp6 and its neighbours
+
+# Batch-01 strategies, kept so a batch-01 run can be reproduced
+# (`--strategy-set batch01`).
+BATCH01_STRATEGIES: List[Dict[str, Any]] = [
     {
         "name": "S1-core-short",
         "rationale": "short minibinder arcing over the peptide; hotspots on the "
@@ -106,6 +111,68 @@ STRATEGIES: List[Dict[str, Any]] = [
     },
 ]
 
+# Batch-02: S1-core-short was the only batch-01 strategy that produced
+# peptide-contacting designs, so the whole budget goes to that family - small
+# binders around 65 residues, hotspots on the peptide core or collapsed onto
+# C5-C7 - spread over *many backbones* rather than many sequences per
+# backbone (same-backbone sequences give correlated poses, and the pose is
+# what fails).
+BATCH02_STRATEGIES: List[Dict[str, Any]] = [
+    {
+        "name": "S1-core-65",
+        "rationale": "the batch-01 S1-core-short setting exactly (65 aa, C4-C8, "
+                     "T=0.1): the only strategy that produced a peptide-centred "
+                     "design, re-run over many more backbones",
+        "binder_length": 65,
+        "hotspots": PEPTIDE_CORE,
+        "sampling_temp": 0.1,
+    },
+    {
+        "name": "S1-core-58",
+        "rationale": "shorter S1 variant (58 aa): less scaffold to drape onto "
+                     "the a1/a2 helices, so a larger share of the paratope has "
+                     "to land on the peptide",
+        "binder_length": 58,
+        "hotspots": PEPTIDE_CORE,
+        "sampling_temp": 0.1,
+    },
+    {
+        "name": "S1-core-72",
+        "rationale": "longer S1 variant (72 aa): enough scaffold for a stable "
+                     "fold while staying in the batch-01 length band that "
+                     "worked",
+        "binder_length": 72,
+        "hotspots": PEPTIDE_CORE,
+        "sampling_temp": 0.1,
+    },
+    {
+        "name": "S1-pos6-65",
+        "rationale": "S1 length with hotspots centred on C5-C7, i.e. on the "
+                     "mutated Asp6 and its two neighbours, to pull the paratope "
+                     "onto the mutation itself",
+        "binder_length": 65,
+        "hotspots": POS6_CENTRED,
+        "sampling_temp": 0.1,
+    },
+    {
+        "name": "S1-pos6-68",
+        "rationale": "C5-C7 hotspots at 68 aa and a slightly higher MPNN "
+                     "temperature, for sequence diversity over the same "
+                     "position-6-centred pose",
+        "binder_length": 68,
+        "hotspots": POS6_CENTRED,
+        "sampling_temp": 0.15,
+    },
+]
+
+STRATEGY_SETS = {
+    "batch01": BATCH01_STRATEGIES,
+    "batch02": BATCH02_STRATEGIES,
+    "all": BATCH02_STRATEGIES + BATCH01_STRATEGIES,
+}
+
+STRATEGIES: List[Dict[str, Any]] = BATCH02_STRATEGIES
+
 EXTRA_COLUMNS = [
     "strategy",
     "backbone",
@@ -120,9 +187,24 @@ EXTRA_COLUMNS = [
     "buried_area_hla",
     "contacts_peptide",
     "contacts_hla",
+    # Does the binder read the Asp6 carboxylate? (batch-02 gate, replaces
+    # the unreachable asp6_buried_frac >= 0.60.)
+    "asp6_hbond",
+    "asp6_salt_bridge",
+    "asp6_min_donor_distance",
+    "asp6_hbond_partner",
+    # Pose filters: the designed RFdiffusion pose, and whether Boltz-2 kept it.
+    "design_peptide_contacts",
+    "design_peptide_residues",
+    "design_pos6_contacts",
+    "design_pos6_distance",
+    "pose_ok",
+    "pose_reject_reason",
+    "boltz_calls",
     "analysis_error",
     "n_gate_failures",
     "gate_failures",
+    "ranking_shortfalls",
 ]
 BATCH_CSV_COLUMNS = run_pipeline.CSV_COLUMNS + EXTRA_COLUMNS
 
@@ -159,6 +241,7 @@ def client(timeout: float) -> CountingClient:
     return existing
 
 
+BACKBONE_STATS: "collections.Counter" = collections.Counter()
 CALL_TIMES: List[float] = []
 CALL_COUNTS: "collections.Counter" = collections.Counter()
 _stats_lock = threading.Lock()
@@ -189,12 +272,40 @@ def make_backbone(strategy: Mapping[str, Any], index: int, target_pdb: str,
               file=sys.stderr)
         return None
     _record("rfdiffusion", time.time() - started)
-    return {
+    record = {
         "strategy": strategy["name"],
         "backbone": f"{strategy['name']}_bb{index:02d}",
         "contigs": contigs,
         "pdb": pdb,
     }
+    record.update(backbone_pose(record, skip=args.no_pose_filter))
+    return record
+
+
+# --- pose filter 1: the designed RFdiffusion complex ------------------------
+
+def backbone_pose(backbone: Mapping[str, Any], skip: bool = False) -> Dict[str, Any]:
+    """Measure, in place, whether the designed binder sits on the peptide.
+
+    This is the cheap half of the batch-02 budget saving: it costs no API call
+    at all and it rejects whole backbones - and therefore every sequence they
+    would have produced - before ProteinMPNN or Boltz-2 are asked for anything.
+    """
+    if skip:
+        return {"pose_ok": True, "pose_reject_reason": "", "pose_metrics": {}}
+    try:
+        metrics = pose_filter.design_pose_metrics(backbone["pdb"])
+    except complex_analysis.StructureAnalysisError as exc:
+        print(f"[pose] {backbone['backbone']} unreadable: {exc}", file=sys.stderr)
+        return {"pose_ok": False,
+                "pose_reject_reason": f"design pose unreadable: {exc}",
+                "pose_metrics": {}}
+    ok, reason = pose_filter.design_pose_ok(metrics)
+    if not ok:
+        print(f"[pose] drop backbone {backbone['backbone']}: {reason}")
+    return {"pose_ok": ok,
+            "pose_reject_reason": "" if ok else f"design pose: {reason}",
+            "pose_metrics": metrics}
 
 
 def design_sequences(backbone: Mapping[str, Any], strategy: Mapping[str, Any],
@@ -222,6 +333,7 @@ def design_sequences(backbone: Mapping[str, Any], strategy: Mapping[str, Any],
             print(f"[filter] drop {backbone['backbone']} {sequence[:16]}...: "
                   f"{'; '.join(failures)}")
             continue
+        pose = backbone.get("pose_metrics") or {}
         out.append({
             "sequence": sequence,
             "mpnn_score": record.get("score"),
@@ -230,6 +342,10 @@ def design_sequences(backbone: Mapping[str, Any], strategy: Mapping[str, Any],
             "binder_length": strategy["binder_length"],
             "hotspots": " ".join(strategy["hotspots"]),
             "mpnn_temp": strategy["sampling_temp"],
+            "design_peptide_contacts": pose.get("peptide_contacts", ""),
+            "design_peptide_residues": pose.get("peptide_residues_contacted", ""),
+            "design_pos6_contacts": pose.get("pos6_contacts", ""),
+            "design_pos6_distance": pose.get("pos6_distance", ""),
         })
     # Lowest ProteinMPNN score first (negative log-likelihood: lower is better).
     out.sort(key=lambda r: (r["mpnn_score"] is None, r["mpnn_score"] or 0.0))
@@ -253,11 +369,22 @@ def _analysis_columns(row: Dict[str, Any], metrics: Mapping[str, Any],
 
 def score_candidate(candidate: Mapping[str, Any], target_states, boltz_kwargs,
                     args) -> Optional[Dict[str, Any]]:
-    """Boltz-2 against all four states + section 6 metrics for one sequence."""
+    """Boltz-2 + section 6 metrics for one sequence.
+
+    The G12D state is predicted first and the binder's *pose* is checked
+    (`pose_filter.predicted_pose_ok`) before the WT, apo and decoy states are
+    paid for. A prediction that puts the binder on the HLA heavy chain or on
+    beta-2m instead of the peptide cannot be mutation-specific whatever its
+    ipTM says, so the remaining three calls are skipped - three of four calls
+    saved on every off-peptide prediction.
+    """
     sequence = candidate["sequence"]
     row: Dict[str, Any] = dict(candidate)
     row["molecule_class"] = "single_chain"
     row["analysis_error"] = ""
+    row["boltz_calls"] = 0
+    row["pose_ok"] = ""
+    row["pose_reject_reason"] = ""
     detail: Dict[str, Any] = {"sequence": sequence, "states": {},
                               "strategy": candidate["strategy"],
                               "backbone": candidate["backbone"]}
@@ -277,6 +404,7 @@ def score_candidate(candidate: Mapping[str, Any], target_states, boltz_kwargs,
                   file=sys.stderr)
             return None
         _record("boltz2", time.time() - started)
+        row["boltz_calls"] = int(row["boltz_calls"]) + 1
 
         binder_index = len(polymers) - 1
         iptm = run_pipeline.binder_interface_iptm(payload, binder_index)
@@ -320,16 +448,44 @@ def score_candidate(candidate: Mapping[str, Any], target_states, boltz_kwargs,
                 row["pos6_contacts"] = int(contacts) if contacts is not None else ""
                 _analysis_columns(row, metrics, metrics.get("chain_map", {}))
                 detail["notes"] = metrics.get("notes", [])
+            if metrics:
+                row["asp6_hbond"] = bool(metrics.get("asp6_hbond"))
+                row["asp6_salt_bridge"] = bool(metrics.get("asp6_salt_bridge"))
+                row["asp6_min_donor_distance"] = (
+                    metrics.get("asp6_min_donor_distance") or "")
+                partners = metrics.get("asp6_hbond_partners") or []
+                row["asp6_hbond_partner"] = (
+                    f"{partners[0]['donor_residue']}{partners[0]['donor_resseq']}"
+                    f":{partners[0]['donor_atom']}@{partners[0]['distance']}A"
+                    if partners else "")
             row["pae_interface_g12d"] = run_pipeline._round(
                 detail["states"]["g12d"]["complex_ipde"], 2)
 
+            # --- pose filter 2: did Boltz-2 keep the binder on the peptide? --
+            if not args.no_pose_filter:
+                ok, reason = pose_filter.predicted_pose_ok(metrics)
+                row["pose_ok"] = ok
+                detail["pose_ok"] = ok
+                if not ok:
+                    row["pose_reject_reason"] = f"predicted pose: {reason}"
+                    detail["pose_reject_reason"] = row["pose_reject_reason"]
+                    print(f"[pose] {candidate['backbone']} off-peptide after "
+                          f"Boltz-2 ({reason}); skipping WT/apo/decoy",
+                          flush=True)
+                    break
+
     row["specificity_gap"] = run_pipeline._round(design_gates.specificity_gap(row))
     failures = design_gates.evaluate(row)
+    if row["pose_reject_reason"]:
+        failures.append(row["pose_reject_reason"])
     if row["analysis_error"]:
         failures.append(f"interface analysis failed: {row['analysis_error']}")
     row["gate_failures"] = "; ".join(failures)
     row["n_gate_failures"] = len(failures)
+    shortfalls = design_gates.ranking_shortfalls(row)
+    row["ranking_shortfalls"] = "; ".join(shortfalls)
     detail["gate_failures"] = failures
+    detail["ranking_shortfalls"] = shortfalls
     return {"row": row, "detail": detail, "structure": g12d_structure}
 
 
@@ -450,11 +606,21 @@ def finalize(out_dir: Path, results: List[Dict[str, Any]], args,
             result["structure"])
 
     elapsed = time.time() - started
+    scored_four_state = [r for r in results
+                         if int(r["row"].get("boltz_calls") or 0) >= 4]
+    pose_survivors = [r for r in results
+                      if str(r["row"].get("pose_ok")).lower() == "true"]
     stats = {
         "elapsed_seconds": round(elapsed, 1),
         "backbones": backbones,
+        "backbones_generated": BACKBONE_STATS.get("generated", backbones),
+        "backbones_pose_ok": BACKBONE_STATS.get("pose_ok", backbones),
+        "backbones_pose_rejected": BACKBONE_STATS.get("pose_rejected", 0),
         "raw_sequences": candidates,
         "scored": len(results),
+        "scored_four_state": len(scored_four_state),
+        "pose_filter_survivors": len(pose_survivors),
+        "pose_filter_rejected": len(results) - len(pose_survivors),
         "passing": sum(1 for r in results if not r["row"]["gate_failures"]),
         "analysis_errors": sum(1 for r in results
                                if r["row"].get("analysis_error")),
@@ -473,6 +639,15 @@ def finalize(out_dir: Path, results: List[Dict[str, Any]], args,
         "diffusion_steps": args.diffusion_steps,
         "seqs_per_backbone": args.seqs_per_backbone,
         "seqs_scored_per_backbone": args.seqs_scored_per_backbone,
+        "pose_filter": {
+            "enabled": not args.no_pose_filter,
+            "design_min_peptide_contacts": pose_filter.DESIGN_MIN_PEPTIDE_CONTACTS,
+            "design_min_peptide_residues": pose_filter.DESIGN_MIN_PEPTIDE_RESIDUES,
+            "design_min_pos6_contacts": pose_filter.DESIGN_MIN_POS6_CONTACTS,
+            "design_max_pos6_distance": pose_filter.DESIGN_MAX_POS6_DISTANCE,
+            "predicted_min_peptide_area": pose_filter.PREDICTED_MIN_PEPTIDE_AREA,
+            "predicted_min_pos6_contacts": pose_filter.PREDICTED_MIN_POS6_CONTACTS,
+        },
     }
     (out_dir / "run_stats.json").write_text(json.dumps(stats, indent=2,
                                                        default=str))
@@ -513,6 +688,18 @@ def main(argv=None) -> int:
     parser.add_argument("--rebuild", action="store_true",
                         help="rebuild designs.csv and the summary inputs from "
                              "checkpoint.jsonl without making any API call")
+    parser.add_argument("--strategy-set", default="batch02",
+                        choices=sorted(STRATEGY_SETS),
+                        help="which strategy table to run (default: batch02)")
+    parser.add_argument("--no-pose-filter", action="store_true",
+                        help="disable both pose filters (batch-01 behaviour): "
+                             "score every sequence against all four states")
+    parser.add_argument("--max-boltz-calls", type=int, default=0,
+                        help="stop starting new candidates once this many "
+                             "Boltz-2 calls have been made (0 = no cap)")
+    parser.add_argument("--time-budget", type=float, default=0.0,
+                        help="stop starting new candidates after this many "
+                             "seconds of wall clock (0 = no limit)")
     parser.add_argument("--boltz-min-interval", type=float, default=None,
                         help="seconds between Boltz-2 requests (default: the "
                              "calibrated value in nvidia_client)")
@@ -550,10 +737,10 @@ def main(argv=None) -> int:
     target_states = run_pipeline.load_target_states(target_dir)
     target_pdb = run_pipeline.trimmed_design_target(target_dir / "g12d_complex.pdb")
 
-    strategies = STRATEGIES
+    strategies = STRATEGY_SETS[args.strategy_set]
     if args.strategies:
         wanted = {s.strip() for s in args.strategies.split(",")}
-        strategies = [s for s in STRATEGIES if s["name"] in wanted]
+        strategies = [s for s in strategies if s["name"] in wanted]
 
     boltz_kwargs = {
         "recycling_steps": args.recycling_steps,
@@ -592,13 +779,15 @@ def main(argv=None) -> int:
             strategy_name = stem.split("_bb")[0]
             if strategy_name not in by_name:
                 continue
-            reused[stem] = {
+            record = {
                 "strategy": strategy_name,
                 "backbone": stem,
                 "contigs": run_pipeline.binder_contig(
                     int(by_name[strategy_name]["binder_length"])),
                 "pdb": path.read_text(),
             }
+            record.update(backbone_pose(record, skip=args.no_pose_filter))
+            reused[stem] = record
         jobs = [(by_name[b["strategy"]], b) for b in reused.values()]
         print(f"[batch] reusing {len(jobs)} backbones from {args.from_backbones}")
 
@@ -610,6 +799,10 @@ def main(argv=None) -> int:
             bb = make_backbone(strategy, index, target_pdb, args)
         if bb is None:
             return None, []
+        if not bb.get("pose_ok", True):
+            # No ProteinMPNN call, no Boltz-2 calls: the designed binder is not
+            # on the peptide, so nothing it encodes can be mutation-specific.
+            return bb, []
         return bb, design_sequences(bb, strategy, args)
 
     with ThreadPoolExecutor(max_workers=args.design_workers) as pool:
@@ -617,13 +810,20 @@ def main(argv=None) -> int:
                                     for j in jobs]):
             bb, seqs = future.result()
             if bb is not None:
-                backbones.append(bb)
+                BACKBONE_STATS["generated"] += 1
+                if bb.get("pose_ok", True):
+                    BACKBONE_STATS["pose_ok"] += 1
+                    backbones.append(bb)
+                else:
+                    BACKBONE_STATS["pose_rejected"] += 1
                 target_file = (out_dir / "all_structures" /
                                f"{bb['backbone']}.pdb")
                 if not target_file.exists():
                     target_file.write_text(bb["pdb"])
             candidates.extend(seqs)
-            print(f"[batch] backbones={len(backbones)} candidates={len(candidates)}")
+            print(f"[batch] backbones={BACKBONE_STATS['generated']} "
+                  f"on-peptide={BACKBONE_STATS['pose_ok']} "
+                  f"candidates={len(candidates)}")
 
     # de-duplicate identical sequences across backbones
     seen = set()
@@ -636,8 +836,14 @@ def main(argv=None) -> int:
     candidates = unique
 
     (out_dir / "candidates.json").write_text(json.dumps(candidates, indent=2))
-    print(f"[batch] {len(backbones)} backbones, {len(candidates)} candidates to "
-          f"score ({len(candidates) * len(run_pipeline.STATES)} Boltz-2 calls)")
+    (out_dir / "backbone_poses.json").write_text(json.dumps(
+        [{k: v for k, v in bb.items() if k != "pdb"} for bb in backbones],
+        indent=2, default=str))
+    print(f"[batch] {BACKBONE_STATS['generated']} backbones generated, "
+          f"{len(backbones)} passed the design pose filter, "
+          f"{len(candidates)} candidates to score "
+          f"(<= {len(candidates) * len(run_pipeline.STATES)} Boltz-2 calls, "
+          f"1 per off-peptide candidate)")
 
     return score_all(candidates, out_dir, target_states, boltz_kwargs, args,
                      started, backbones=len(backbones), strategies=strategies)
@@ -657,35 +863,78 @@ def score_all(candidates: List[Dict[str, Any]], out_dir: Path, target_states,
           f"({len(todo) * len(run_pipeline.STATES)} Boltz-2 calls, serial)")
 
     done = 0
+    stopped = ""
     if args.workers > 1:
         print(f"[batch] WARNING: --workers {args.workers} requested, but "
               f"nvidia_client serialises Boltz-2; concurrency only adds 429s",
               file=sys.stderr)
-    with ThreadPoolExecutor(max_workers=max(1, args.workers)) as pool:
-        futures = [pool.submit(score_candidate, c, target_states, boltz_kwargs,
-                               args) for c in todo]
-        for future in as_completed(futures):
-            result = future.result()
+
+    def budget_exhausted() -> str:
+        """Why no further candidate should be started, or ''."""
+        if args.max_boltz_calls and CALL_COUNTS["boltz2"] >= args.max_boltz_calls:
+            return (f"Boltz-2 call budget reached "
+                    f"({CALL_COUNTS['boltz2']}/{args.max_boltz_calls})")
+        if args.time_budget and (time.time() - started) >= args.time_budget:
+            return (f"time budget reached "
+                    f"({time.time() - started:.0f}s/{args.time_budget:.0f}s)")
+        return ""
+
+    def record_result(result, index: int) -> None:
+        # Durability first: on disk before anything else happens.
+        append_checkpoint(out_dir, result)
+        row = result["row"]
+        print(f"[boltz2] {index}/{len(todo)} scored "
+              f"{row.get('backbone')} calls={row.get('boltz_calls')} "
+              f"pose_ok={row.get('pose_ok')} "
+              f"gap={row.get('specificity_gap')} "
+              f"pep_buried={row.get('peptide_buried_frac')} "
+              f"pos6={row.get('pos6_contacts')} "
+              f"asp6_hbond={row.get('asp6_hbond')} "
+              f"({time.time() - started:.0f}s elapsed)", flush=True)
+
+    if args.workers <= 1:
+        # Serial is the only sane mode (the throttle serialises Boltz-2
+        # anyway), and it is the only mode in which a call budget can actually
+        # be respected - so the budget checks live here.
+        for candidate in todo:
+            stopped = budget_exhausted()
+            if stopped:
+                print(f"[batch] stopping early: {stopped}; "
+                      f"{len(todo) - done} candidates left unscored",
+                      file=sys.stderr)
+                break
+            result = score_candidate(candidate, target_states, boltz_kwargs, args)
             done += 1
             if result is None:
                 print(f"[boltz2] {done}/{len(todo)} - candidate dropped "
                       f"(API error)", file=sys.stderr)
                 continue
-            # Durability first: on disk before anything else happens.
-            append_checkpoint(out_dir, result)
-            row = result["row"]
-            print(f"[boltz2] {done}/{len(todo)} scored "
-                  f"{row.get('backbone')} gap={row.get('specificity_gap')} "
-                  f"pep_buried={row.get('peptide_buried_frac')} "
-                  f"asp6={row.get('asp6_buried_frac')} "
-                  f"pos6={row.get('pos6_contacts')} "
-                  f"({time.time() - started:.0f}s elapsed)", flush=True)
+            record_result(result, done)
+    else:
+        with ThreadPoolExecutor(max_workers=args.workers) as pool:
+            futures = [pool.submit(score_candidate, c, target_states,
+                                   boltz_kwargs, args) for c in todo]
+            for future in as_completed(futures):
+                result = future.result()
+                done += 1
+                if result is None:
+                    print(f"[boltz2] {done}/{len(todo)} - candidate dropped "
+                          f"(API error)", file=sys.stderr)
+                    continue
+                record_result(result, done)
 
     results = results_from_checkpoint(out_dir)
     stats = finalize(out_dir, results, args, started, backbones,
                      len(candidates), strategies)
+    stats["stopped_early"] = stopped
+    stats["unscored_candidates"] = max(0, len(todo) - done)
+    (out_dir / "run_stats.json").write_text(json.dumps(stats, indent=2,
+                                                       default=str))
     print(f"[batch] done in {stats['elapsed_seconds']:.0f}s: "
-          f"{stats['scored']} scored, {stats['passing']} clear every gate, "
+          f"{stats['scored']} scored "
+          f"({stats['pose_filter_survivors']} survived the pose filter, "
+          f"{stats['scored_four_state']} four-state), "
+          f"{stats['passing']} clear every gate, "
           f"{stats['analysis_errors']} analysis errors, "
           f"{stats['total_calls']} API calls, "
           f"retries {stats['retry_statuses'] or 'none'}")

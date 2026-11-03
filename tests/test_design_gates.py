@@ -13,6 +13,8 @@ def good_record(**overrides):
         "iptm_decoy": 0.27,
         "peptide_buried_frac": 0.58,
         "asp6_buried_frac": 0.81,
+        "asp6_hbond": True,
+        "asp6_salt_bridge": True,
         "pos6_contacts": 7,
         "pae_interface_g12d": 6.2,
         "net_interface_charge": 1.0,
@@ -29,6 +31,11 @@ def test_documented_thresholds():
     assert dg.SPECIFICITY_GAP_MIN == 0.25
     assert dg.PEPTIDE_BURIED_FRACTION_MIN == 0.40
     assert dg.MIN_POS6_HEAVY_ATOM_CONTACTS == 3
+    assert dg.POS6_CONTACTS_WITHOUT_HBOND == 7
+    # The buried-fraction *gate* is gone (batch-02): unreachable even by the
+    # selective TCR of Poole et al. 2022, which scores 0.00 on it.
+    assert not hasattr(dg, "ASP6_BURIED_FRACTION_MIN")
+    assert dg.ASP6_BURIED_FRACTION_PREFERRED == 0.75
 
 
 def test_decoy_is_in_the_off_target_panel():
@@ -69,7 +76,9 @@ def test_string_values_are_parsed():
 
 def test_non_numeric_value_raises():
     with pytest.raises(dg.GateError, match="not numeric"):
-        dg.evaluate(good_record(iptm_decoy="n/a"))
+        dg.ranking_shortfalls(good_record(iptm_decoy="n/a"))
+    with pytest.raises(dg.GateError, match="not numeric"):
+        dg.evaluate(good_record(pos6_contacts="n/a"))
 
 
 # --- gates ------------------------------------------------------------------
@@ -79,36 +88,45 @@ def test_good_record_passes():
     assert dg.passes(good_record())
 
 
-def test_low_on_target_iptm_fails():
-    failures = dg.evaluate(good_record(iptm_g12d=0.70, iptm_decoy=0.20))
-    assert any("ipTM(G12D)" in f for f in failures)
+# --- ipTM: ranking terms since batch-02, not hard gates ---------------------
+
+def test_low_on_target_iptm_is_a_ranking_shortfall_not_a_gate():
+    record = good_record(iptm_g12d=0.70, iptm_decoy=0.20)
+    assert dg.evaluate(record) == []
+    assert any("ipTM(G12D)" in s for s in dg.ranking_shortfalls(record))
+    assert any("ipTM(G12D)" in f
+               for f in dg.evaluate(record, include_ranking=True))
 
 
-def test_high_decoy_iptm_fails_the_counter_screen():
-    failures = dg.evaluate(good_record(iptm_decoy=0.62))
-    assert any("ipTM(decoy)" in f for f in failures)
-    assert any("max(WT, apo, decoy)" in f for f in failures)
+def test_high_decoy_iptm_is_a_ranking_shortfall():
+    shortfalls = dg.ranking_shortfalls(good_record(iptm_decoy=0.62))
+    assert any("ipTM(decoy)" in s for s in shortfalls)
+    assert any("max(WT, apo, decoy)" in s for s in shortfalls)
+    assert dg.evaluate(good_record(iptm_decoy=0.62)) == []
 
 
-def test_high_wt_iptm_still_fails():
-    assert any("ipTM(wt)" in f for f in dg.evaluate(good_record(iptm_wt=0.55)))
+def test_high_wt_iptm_is_a_ranking_shortfall():
+    assert any("ipTM(wt)" in s
+               for s in dg.ranking_shortfalls(good_record(iptm_wt=0.55)))
 
 
-def test_high_apo_iptm_still_fails():
-    assert any("ipTM(apo)" in f for f in dg.evaluate(good_record(iptm_apo=0.70)))
+def test_high_apo_iptm_is_a_ranking_shortfall():
+    assert any("ipTM(apo)" in s
+               for s in dg.ranking_shortfalls(good_record(iptm_apo=0.70)))
 
 
-def test_decoy_binder_fails_even_with_clean_wt_and_apo():
+def test_decoy_binder_shows_up_in_the_ranking_shortfalls():
     """A groove-rim binder: great on G12D, clean on WT/apo, binds the decoy."""
-    failures = dg.evaluate(good_record(iptm_g12d=0.88, iptm_wt=0.10,
-                                       iptm_apo=0.12, iptm_decoy=0.84))
-    assert failures
-    assert any("specificity_gap" in f for f in failures)
+    shortfalls = dg.ranking_shortfalls(
+        good_record(iptm_g12d=0.88, iptm_wt=0.10, iptm_apo=0.12,
+                    iptm_decoy=0.84))
+    assert any("specificity_gap" in s for s in shortfalls)
 
 
-def test_narrow_gap_fails():
-    failures = dg.evaluate(good_record(iptm_g12d=0.76, iptm_decoy=0.60))
-    assert any("specificity_gap" in f for f in failures)
+def test_narrow_gap_is_a_ranking_shortfall():
+    shortfalls = dg.ranking_shortfalls(
+        good_record(iptm_g12d=0.76, iptm_decoy=0.60))
+    assert any("specificity_gap" in s for s in shortfalls)
 
 
 def test_low_peptide_buried_fraction_fails():
@@ -116,15 +134,48 @@ def test_low_peptide_buried_fraction_fails():
     assert any("peptide-buried fraction" in f for f in failures)
 
 
-def test_low_asp6_buried_fraction_fails():
-    failures = dg.evaluate(good_record(asp6_buried_frac=0.35))
-    assert any("Asp6 buried fraction" in f for f in failures)
+# --- the Asp6 read-out criterion (replaces the buried-fraction gate) --------
+
+def test_a_low_asp6_buried_fraction_is_no_longer_a_failure():
+    """The Poole TCR scores 0.00 here and is the selective binder we want."""
+    assert dg.evaluate(good_record(asp6_buried_frac=0.0)) == []
 
 
-def test_asp6_threshold_boundary_passes():
-    assert dg.evaluate(
-        good_record(asp6_buried_frac=dg.ASP6_BURIED_FRACTION_MIN)
-    ) == []
+def test_no_bond_and_few_contacts_fails():
+    failures = dg.evaluate(good_record(asp6_hbond=False, asp6_salt_bridge=False,
+                                       pos6_contacts=4))
+    assert any("hydrogen bond or salt bridge" in f for f in failures)
+
+
+def test_a_hydrogen_bond_alone_is_enough():
+    assert dg.evaluate(good_record(asp6_hbond=True, asp6_salt_bridge=False,
+                                   pos6_contacts=4)) == []
+
+
+def test_a_salt_bridge_alone_is_enough():
+    assert dg.evaluate(good_record(asp6_hbond=False, asp6_salt_bridge=True,
+                                   pos6_contacts=4)) == []
+
+
+def test_a_poole_like_contact_footprint_substitutes_for_the_bond():
+    """7 heavy-atom contacts with position 6 and no H-bond: the Poole TCR."""
+    assert dg.evaluate(good_record(asp6_hbond=False, asp6_salt_bridge=False,
+                                   pos6_contacts=7)) == []
+
+
+def test_unmeasured_readout_is_not_a_failure():
+    record = good_record()
+    del record["asp6_hbond"]
+    del record["asp6_salt_bridge"]
+    assert dg.asp6_readout_failures(record) == []
+
+
+def test_booleans_survive_a_csv_round_trip():
+    assert dg.evaluate(good_record(asp6_hbond="True",
+                                   asp6_salt_bridge="False")) == []
+    assert dg.evaluate(good_record(asp6_hbond="False",
+                                   asp6_salt_bridge="False",
+                                   pos6_contacts=3))
 
 
 def test_too_few_pos6_contacts_fails():
@@ -184,8 +235,8 @@ def test_asp6_buried_fraction_rejects_negative_sasa():
 def test_missing_columns_reported():
     rec = good_record()
     del rec["iptm_decoy"]
-    del rec["asp6_buried_frac"]
-    assert set(dg.missing_columns(rec)) == {"iptm_decoy", "asp6_buried_frac"}
+    del rec["asp6_hbond"]
+    assert set(dg.missing_columns(rec)) == {"iptm_decoy", "asp6_hbond"}
     assert not dg.is_complete(rec)
     assert not dg.passes(rec)
     # ...but the gates that *can* be checked still pass.

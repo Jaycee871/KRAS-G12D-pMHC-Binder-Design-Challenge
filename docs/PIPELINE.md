@@ -198,22 +198,58 @@ same atoms' SASA in the **binder-bound complex**. Compute both with the same
 probe radius (1.4 Å) and the same algorithm (FreeSASA / Shrake–Rupley) on the
 predicted G12D complex, so the two numbers differ only by the binder.
 
-* **Gate: `asp6_buried_frac ≥ 0.60`**, i.e. the binder must bury at least 60 %
-  of the aspartate side chain it is supposed to be reading.
-* **Preferred: ≥ 0.75**, used as a ranking term behind the specificity gap.
+* **Ranking term only (since batch-02): preferred `asp6_buried_frac ≥ 0.75`.**
+  It is reported for every design and used behind the specificity gap, but it
+  no longer vetoes anything — see the measured caveat below.
 
-> **Measured caveat (2026-11-02).** Run on PDB 7OW6 itself
-> (`scripts/validate_7ow6.py`), the HLA groove buries 0.90 of the Asp6 side
-> chain and 0.44 of the whole peptide, which is the sanity check this definition
-> needs to pass. But with the *selective TCR* of Poole et al. (chains D+E) as the
-> binder, `asp6_buried_frac = 0.00`: the aspartate is already ~90 % buried by the
-> groove, leaving only 8.8 Å² of side-chain SASA, and the TCR buries none of the
-> remainder while still making 11 heavy-atom contacts with position 6. **A gate
-> of 0.60 measured this way is therefore unreachable even by a known selective
-> binder** and should be replaced by a hydrogen-bond / salt-bridge criterion on
-> the Asp6 carboxylate (donor within 3.5 Å) plus the position-6 contact count.
-> It is left in `src/design_gates.py` unchanged for now so that document and code
-> still agree; changing it is a batch-02 decision.
+> **Measured caveat (2026-11-02), acted on in batch-02.** Run on PDB 7OW6
+> itself (`scripts/validate_7ow6.py`), the HLA groove buries 0.90 of the Asp6
+> side chain and 0.44 of the whole peptide, which is the sanity check this
+> definition needs to pass. But with the *selective TCR* of Poole et al.
+> (chains D+E) as the binder, `asp6_buried_frac = 0.00`: the aspartate is
+> already ~90 % buried by the groove, leaving only 8.8 Å² of side-chain SASA,
+> and the TCR buries none of the remainder while still making 7–11 heavy-atom
+> contacts with position 6. **A gate of 0.60 measured this way is unreachable
+> even by a known selective binder**, so batch-02 deleted
+> `ASP6_BURIED_FRACTION_MIN` and replaced it with the read-out gate below.
+
+### Asp6 read-out gate (replaces `asp6_buried_frac ≥ 0.60`)
+
+What a selective binder has to do is *read* the carboxylate, not bury it. The
+gate is therefore chemical plus geometric, computed on the predicted G12D
+complex by `src/complex_analysis.py`:
+
+* **hydrogen bond** — a donor nitrogen, or a hydroxyl/thiol oxygen-equivalent
+  (Ser OG, Thr OG1, Tyr OH, Cys SG), on the **binder** within **3.5 Å** of
+  Asp6 OD1 or OD2;
+* **salt bridge** — a charged donor (Arg NE/NH1/NH2, Lys NZ, His ND1/NE2)
+  within **4.0 Å** of OD1 or OD2.
+
+A design **passes** when it makes at least one hydrogen bond *or* salt bridge
+to the carboxylate, **or** it makes **≥ 7 heavy-atom contacts with peptide
+position 6** — the *Poole escape clause*, calibrated on the 7OW6 TCR, which
+reads the aspartate indirectly because HLA Arg114/Gln70 already cap it. In both
+branches ≥ 3 position-6 contacts are still required. Columns:
+`asp6_hbond`, `asp6_salt_bridge`, `asp6_min_donor_distance`,
+`asp6_hbond_partner`.
+
+### Pose filters (new in batch-02)
+
+Batch-01's finding was that the problem is the **pose**, not the sequence:
+Boltz-2 re-docks most binders onto the HLA α3 face or β2m (mean 24 Å² buried on
+the peptide). Two filters in `src/pose_filter.py` enforce the pose and, more
+importantly, stop the budget being spent on designs that have already failed:
+
+1. **Design-stage filter** — on the RFdiffusion complex itself (binder chain A,
+   concatenated target chain B), before ProteinMPNN runs: ≥ 10 binder heavy
+   atoms within 5 Å of the peptide, ≥ 3 distinct peptide residues contacted,
+   ≥ 1 contact with position 6, and closest approach to position 6 ≤ 6.0 Å.
+   An off-peptide backbone costs zero ProteinMPNN and zero Boltz-2 calls.
+2. **Predicted-pose filter** — after the **G12D** Boltz-2 state and before the
+   other three: ≥ 25 Å² buried on the peptide and ≥ 1 contact with position 6.
+   A binder that Boltz-2 has docked away from the peptide costs one call
+   instead of four. This is the main budget saver: a batch's cost is
+   `candidates + 3 × (candidates surviving the filter)`.
 
 The reasoning is energetic, not geometric. A binder that genuinely *buries* the
 carboxylate makes the glycine variant pay a real desolvation and cavity penalty;
@@ -222,22 +258,32 @@ binding. Where compute allows, confirm with Xie et al.'s reverse-mutation score
 — rescore the top designs with the D→G substitution in place and keep those with
 the largest predicted ΔΔG.
 
-Hard gates applied before ranking:
+Hard gates applied before ranking (geometry and chemistry only, since
+batch-02):
+
+* ≥ 40 % of buried interface area on the peptide chain
+* the **Asp6 read-out gate** above (H-bond or salt bridge, or ≥ 7 position-6
+  contacts)
+* ≥ 3 binder heavy atoms within 5 Å of peptide position 6 (necessary, not
+  sufficient — see the Poole caution in section 0)
+* net interface charge in **−2 … +4**
+* PAE-interface(G12D) < 10 Å
+* the predicted-pose filter above
+
+**Ranking targets, not gates (demoted in batch-02).** Boltz-2 reports ipTM for
+the binder against its best-scoring chain pair, so a high ipTM is compatible
+with the binder sitting on β2m; until the pose filter is proven these are
+reported and ranked on, never used to veto:
 
 * `ipTM(G12D) ≥ 0.75`
 * `max( ipTM(WT), ipTM(apo), ipTM(decoy) ) ≤ 0.50`
 * `specificity_gap ≥ 0.25`
-* ≥ 40 % of buried interface area on the peptide chain
-* `asp6_buried_frac ≥ 0.60`
-* ≥ 3 binder heavy atoms within 5 Å of peptide position 6 (necessary, not
-  sufficient — see the Poole caution in section 0)
-* net interface charge in **−2 … +4**, with at least one Arg/Lys/His or
-  Ser/Thr/Tyr donor within 4 Å of the Asp6 carboxylate
-* PAE-interface(G12D) < 10 Å
+* `asp6_buried_frac ≥ 0.75`
 
 These thresholds are mirrored in code in [`src/design_gates.py`](../src/design_gates.py)
 so the document and the tooling cannot drift apart; `evaluate()` returns the
-list of gates a scored design fails.
+list of hard gates a scored design fails and `ranking_shortfalls()` the ranking
+targets it misses.
 
 Tie-breakers, in order: larger `specificity_gap`, then higher
 `asp6_buried_frac`, then lower PAE-interface on G12D, then higher monomer
@@ -279,6 +325,23 @@ python3 src/run_pipeline.py \
 
 python3 src/make_submission.py --scored designs/scored_designs.csv   # section 8
 ```
+
+Batches run through `src/run_batch.py`, which wraps the same code with the
+strategy table, the pose filters, the throttle and checkpointing:
+
+```bash
+# batch-02: five S1-core-short variants, pose filter on, budget capped
+python3 src/run_batch.py --strategy-set batch02 \
+    --backbones-per-strategy 24 --seqs-per-backbone 8 \
+    --seqs-scored-per-backbone 2 --seed 2026 \
+    --out-dir results/batch-02 --max-boltz-calls 430 --time-budget 10200
+python3 src/summarize_batch.py --dir results/batch-02 --title "Batch 02"
+```
+
+`--strategy-set` picks `batch01`, `batch02` or `all`; `--no-pose-filter`
+disables both pose filters (for a controlled comparison); `--max-boltz-calls`
+and `--time-budget` stop the run cleanly at a budget, leaving the checkpoint
+resumable with `--resume`.
 
 `run_pipeline.py` writes a CSV with exactly the columns of
 [`examples/scored_designs_example.csv`](../examples/scored_designs_example.csv),
