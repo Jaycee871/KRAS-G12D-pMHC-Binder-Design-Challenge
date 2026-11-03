@@ -1,0 +1,4187 @@
+[
+  {
+    "backbone": "B6-c6-34_w2_bb00",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.69,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb01",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 21,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.37,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb02",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.61,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb03",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 11,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.86,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb04",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 5.4 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 10,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 1,
+      "pos6_contacts": 0,
+      "pos6_distance": 5.39,
+      "peptide_contact_frac": 0.9090909090909091
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb05",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 19,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.75,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb06",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.26,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb07",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.88,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb08",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 17,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.56,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb09",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 17,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.2,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb10",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 18,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.96,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb11",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 18,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.06,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb12",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 3,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.02,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb13",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 0,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.33,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb14",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.74,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb15",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 0,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.76,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb16",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 24,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.73,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb17",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.51,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb18",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.19,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb19",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.78,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb20",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 24,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.06,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb21",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 19,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.62,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb22",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 19,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.19,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb23",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 15.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 34,
+      "pos6_contacts": 0,
+      "pos6_distance": 15.36,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb24",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 1 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 5.7 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 11,
+      "peptide_residues_contacted": 1,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 5.67,
+      "peptide_contact_frac": 0.6111111111111112
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb25",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.12,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb26",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 22,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.16,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb27",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.12,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb28",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.88,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb29",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 3 binder heavy atoms within 5 A of the peptide (need >= 10); only 1 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 5.6 A (need <= 4.5 A); only 0.07 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 3,
+      "peptide_residues_contacted": 1,
+      "hla_contacts": 43,
+      "pos6_contacts": 0,
+      "pos6_distance": 5.6,
+      "peptide_contact_frac": 0.06521739130434782
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb30",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 17,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.35,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb31",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.95,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb32",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.28,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb33",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 2 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 5.6 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 12,
+      "peptide_residues_contacted": 2,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 5.56,
+      "peptide_contact_frac": 0.7058823529411765
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb34",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 8 binder heavy atoms within 5 A of the peptide (need >= 10); only 2 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 4.7 A (need <= 4.5 A); only 0.23 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 8,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 27,
+      "pos6_contacts": 2,
+      "pos6_distance": 4.66,
+      "peptide_contact_frac": 0.22857142857142856
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb35",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 8,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.58,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb36",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 11,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.01,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb37",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 17,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.15,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb38",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.31,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb39",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.89,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb40",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 23,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.92,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb41",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.35,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb42",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.25,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb43",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 19,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.27,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb44",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.45,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb45",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 42,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.62,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb46",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.99,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb47",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 9.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 33,
+      "pos6_contacts": 0,
+      "pos6_distance": 9.64,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb48",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 21,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.48,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb49",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.0,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb50",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.27,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb51",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 21,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.33,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb52",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.04,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb53",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 11,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.01,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb54",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 14.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 23,
+      "pos6_contacts": 0,
+      "pos6_distance": 14.79,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-34_w2_bb55",
+    "strategy": "B6-c6-34",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 34,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 8,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.19,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb00",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 15.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 15.61,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb01",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.79,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb02",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.96,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb03",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.65,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb04",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 20,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.98,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb05",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 14,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.85,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb07",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 11.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 39,
+      "pos6_contacts": 0,
+      "pos6_distance": 10.98,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb08",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.14,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb09",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 20,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.38,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb06",
+    "strategy": "B6-c6-40",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 16,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 37,
+      "pos6_contacts": 5,
+      "pos6_distance": 3.34,
+      "peptide_contact_frac": 0.3018867924528302
+    },
+    "candidates": [
+      {
+        "sequence": "SVAVPAVAAGGGAGGGAGVFRREELDAEGIETMTQEALEA",
+        "mpnn_score": 1.0808,
+        "donor_bias_score": 0.0,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb06",
+        "binder_length": 40,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.34
+      },
+      {
+        "sequence": "SVAVPAVAARYGAGGGAGVFRREELDAEGIETMTQEALEA",
+        "mpnn_score": 1.0808,
+        "donor_bias_score": 2.326,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb06",
+        "binder_length": 40,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.34
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 10,
+        "distance": 3.34
+      },
+      {
+        "position": 11,
+        "distance": 4.06
+      },
+      {
+        "position": 9,
+        "distance": 4.91
+      },
+      {
+        "position": 5,
+        "distance": 5.27
+      },
+      {
+        "position": 3,
+        "distance": 5.32
+      },
+      {
+        "position": 12,
+        "distance": 5.37
+      },
+      {
+        "position": 4,
+        "distance": 5.8
+      },
+      {
+        "position": 8,
+        "distance": 6.41
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "SVAVPAVAARYGAGGGAGVFRREELDAEGIETMTQEALEA",
+        "mpnn_score": 1.0808,
+        "donor_bias_score": 2.326,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb06",
+        "binder_length": 40,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.34,
+        "parent_sequence": "SVAVPAVAAGGGAGGGAGVFRREELDAEGIETMTQEALEA"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb10",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 14,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.75,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb11",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 11,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.63,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb12",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 3 binder heavy atoms within 5 A of the peptide (need >= 10); only 1 binder heavy atoms within 5 A of position 6 (need >= 3); only 0.06 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 3,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 48,
+      "pos6_contacts": 1,
+      "pos6_distance": 4.41,
+      "peptide_contact_frac": 0.058823529411764705
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb13",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.4,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb14",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.65,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb15",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 9.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 51,
+      "pos6_contacts": 0,
+      "pos6_distance": 9.92,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb16",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 18,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.93,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb17",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 19,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.02,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb18",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 11,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.69,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb19",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.38,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb20",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.48,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb21",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 15.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 26,
+      "pos6_contacts": 0,
+      "pos6_distance": 15.72,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb22",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.48,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb23",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 27,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.99,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb24",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.67,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb25",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 3,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.19,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb26",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.24,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb27",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 14,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.32,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb28",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 8,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.09,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb29",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 2 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 4.8 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 17,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 17,
+      "pos6_contacts": 2,
+      "pos6_distance": 4.77,
+      "peptide_contact_frac": 0.5
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb30",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 7.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 24,
+      "pos6_contacts": 0,
+      "pos6_distance": 7.08,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb31",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 0,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.5,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb32",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 14,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.66,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb33",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.1,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb34",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 4,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.85,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb35",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 5.5 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 21,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 4,
+      "pos6_contacts": 0,
+      "pos6_distance": 5.49,
+      "peptide_contact_frac": 0.84
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb36",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 14.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 26,
+      "pos6_contacts": 0,
+      "pos6_distance": 14.34,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb37",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 15.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 15.68,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb38",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0.23 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 10,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 34,
+      "pos6_contacts": 5,
+      "pos6_distance": 3.39,
+      "peptide_contact_frac": 0.22727272727272727
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb39",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.47,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb40",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.78,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb41",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 21,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.66,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb42",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 8,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.62,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb43",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.94,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb44",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 3,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.36,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb45",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.51,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb46",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 27,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.66,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb47",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.86,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb48",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.52,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb49",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 2 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 10.5 A (need <= 4.5 A); only 0.22 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 11,
+      "peptide_residues_contacted": 2,
+      "hla_contacts": 38,
+      "pos6_contacts": 0,
+      "pos6_distance": 10.49,
+      "peptide_contact_frac": 0.22448979591836735
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb50",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.77,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb51",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.37,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb52",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 14,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.19,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb53",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 3,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.37,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb55",
+    "strategy": "B6-c6-40",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.17,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb01",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 5,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.05,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-40_w2_bb54",
+    "strategy": "B6-c6-40",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 40,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 19,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 26,
+      "pos6_contacts": 5,
+      "pos6_distance": 3.45,
+      "peptide_contact_frac": 0.4222222222222222
+    },
+    "candidates": [
+      {
+        "sequence": "DAVRPVEALGDGGGESGFSVAKSFSLEDTSAESFGATKPE",
+        "mpnn_score": 1.3729,
+        "donor_bias_score": -1.742,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb54",
+        "binder_length": 40,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.45
+      },
+      {
+        "sequence": "SVARPIEALGDGGGHSGFEVTKEFSLERTSAEDFGSTEAE",
+        "mpnn_score": 1.3791,
+        "donor_bias_score": -1.742,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb54",
+        "binder_length": 40,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.45
+      },
+      {
+        "sequence": "DAVRPVQYLRNGGGESGFSVAKSFSLEDTSAESFGATKPE",
+        "mpnn_score": 1.3729,
+        "donor_bias_score": 2.709,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb54",
+        "binder_length": 40,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.45
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 10,
+        "distance": 3.45
+      },
+      {
+        "position": 8,
+        "distance": 3.71
+      },
+      {
+        "position": 11,
+        "distance": 4.66
+      },
+      {
+        "position": 9,
+        "distance": 5.04
+      },
+      {
+        "position": 12,
+        "distance": 5.27
+      },
+      {
+        "position": 7,
+        "distance": 6.71
+      },
+      {
+        "position": 13,
+        "distance": 8.32
+      },
+      {
+        "position": 5,
+        "distance": 8.5
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "DAVRPVQYLRNGGGESGFSVAKSFSLEDTSAESFGATKPE",
+        "mpnn_score": 1.3729,
+        "donor_bias_score": 2.709,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb54",
+        "binder_length": 40,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.45,
+        "parent_sequence": "DAVRPVEALGDGGGESGFSVAKSFSLEDTSAESFGATKPE"
+      },
+      {
+        "sequence": "SVARPIQYLRNGGGHSGFEVTKEFSLERTSAEDFGSTEAE",
+        "mpnn_score": 1.3791,
+        "donor_bias_score": 2.709,
+        "strategy": "B6-c6-40",
+        "backbone": "B6-c6-40_w2_bb54",
+        "binder_length": 40,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.45,
+        "parent_sequence": "SVARPIEALGDGGGHSGFEVTKEFSLERTSAEDFGSTEAE"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb02",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 18,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.02,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb03",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.32,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb00",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 19,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 24,
+      "pos6_contacts": 5,
+      "pos6_distance": 3.93,
+      "peptide_contact_frac": 0.4418604651162791
+    },
+    "candidates": [
+      {
+        "sequence": "AVVRATAKDGRNPLESEVVKLVENPEALEYALGGGGVGSLSASRTA",
+        "mpnn_score": 1.1855,
+        "donor_bias_score": 2.962,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb00",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.93
+      },
+      {
+        "sequence": "AEVRATAKDGTNPLESEDVKLVADPTALEYALGGGGSGSLSASREA",
+        "mpnn_score": 1.2044,
+        "donor_bias_score": 2.909,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb00",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.93
+      },
+      {
+        "sequence": "AVVRATAKDGRNPLESEVVKLVENPEALEYALGGGGYRSLSASRTA",
+        "mpnn_score": 1.1855,
+        "donor_bias_score": 5.143,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb00",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.93
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 38,
+        "distance": 3.93
+      },
+      {
+        "position": 37,
+        "distance": 4.47
+      },
+      {
+        "position": 39,
+        "distance": 5.17
+      },
+      {
+        "position": 36,
+        "distance": 5.68
+      },
+      {
+        "position": 40,
+        "distance": 6.44
+      },
+      {
+        "position": 44,
+        "distance": 6.71
+      },
+      {
+        "position": 43,
+        "distance": 7.07
+      },
+      {
+        "position": 42,
+        "distance": 7.24
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "AVVRATAKDGRNPLESEVVKLVENPEALEYALGGGGYRSLSASRTA",
+        "mpnn_score": 1.1855,
+        "donor_bias_score": 5.143,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb00",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.93,
+        "parent_sequence": "AVVRATAKDGRNPLESEVVKLVENPEALEYALGGGGVGSLSASRTA"
+      },
+      {
+        "sequence": "AEVRATAKDGTNPLESEDVKLVADPTALEYALGGGGSRSLSASRQA",
+        "mpnn_score": 1.2044,
+        "donor_bias_score": 4.788,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb00",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 5,
+        "design_pos6_distance": 3.93,
+        "parent_sequence": "AEVRATAKDGTNPLESEDVKLVADPTALEYALGGGGSGSLSASREA"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb04",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 8 binder heavy atoms within 5 A of the peptide (need >= 10); only 2 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 6.8 A (need <= 4.5 A); only 0.20 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 8,
+      "peptide_residues_contacted": 2,
+      "hla_contacts": 33,
+      "pos6_contacts": 0,
+      "pos6_distance": 6.76,
+      "peptide_contact_frac": 0.1951219512195122
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb06",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 1,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.4,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb07",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 32,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.78,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb08",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.8,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb05",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 44,
+      "peptide_residues_contacted": 7,
+      "hla_contacts": 75,
+      "pos6_contacts": 10,
+      "pos6_distance": 4.04,
+      "peptide_contact_frac": 0.3697478991596639
+    },
+    "candidates": [],
+    "pos6_shell": [
+      {
+        "position": 3,
+        "distance": 4.04
+      },
+      {
+        "position": 4,
+        "distance": 4.46
+      },
+      {
+        "position": 5,
+        "distance": 4.62
+      },
+      {
+        "position": 24,
+        "distance": 4.74
+      },
+      {
+        "position": 25,
+        "distance": 5.15
+      },
+      {
+        "position": 6,
+        "distance": 5.57
+      },
+      {
+        "position": 2,
+        "distance": 5.88
+      },
+      {
+        "position": 26,
+        "distance": 6.04
+      }
+    ],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb09",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 11.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 38,
+      "pos6_contacts": 0,
+      "pos6_distance": 11.91,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb12",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 24,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.04,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb13",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.48,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb14",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 21,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.77,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb10",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 28,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 24,
+      "pos6_contacts": 6,
+      "pos6_distance": 4.1,
+      "peptide_contact_frac": 0.5384615384615384
+    },
+    "candidates": [
+      {
+        "sequence": "EEDWERGIVLSEGERVGGPSGEPVRVSGAGDLPAGGGGSGGRRRVP",
+        "mpnn_score": 1.3168,
+        "donor_bias_score": 4.174,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb10",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.1
+      },
+      {
+        "sequence": "AAEWALGLLLGEDKRVGFPSGLPTRVSGAGDRVSAGGGRGGSARVA",
+        "mpnn_score": 1.3517,
+        "donor_bias_score": 2.998,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb10",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.1
+      },
+      {
+        "sequence": "EEDWERGIVLSEGERVGGPSGEPVRVSGAGDLPAGGGGSGRRRRVP",
+        "mpnn_score": 1.3168,
+        "donor_bias_score": 5.491,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb10",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.1
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 41,
+        "distance": 4.1
+      },
+      {
+        "position": 44,
+        "distance": 4.84
+      },
+      {
+        "position": 43,
+        "distance": 4.89
+      },
+      {
+        "position": 40,
+        "distance": 5.14
+      },
+      {
+        "position": 39,
+        "distance": 5.44
+      },
+      {
+        "position": 42,
+        "distance": 5.6
+      },
+      {
+        "position": 45,
+        "distance": 6.08
+      },
+      {
+        "position": 38,
+        "distance": 7.66
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "EEDWERGIVLSEGERVGGPSGEPVRVSGAGDLPAGGGGSGRRRRVP",
+        "mpnn_score": 1.3168,
+        "donor_bias_score": 5.491,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb10",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.1,
+        "parent_sequence": "EEDWERGIVLSEGERVGGPSGEPVRVSGAGDLPAGGGGSGGRRRVP"
+      },
+      {
+        "sequence": "AAEWALGLLLGEDKRVGFPSGLPTRVSGAGDRVSAGGGRGRSARVA",
+        "mpnn_score": 1.3517,
+        "donor_bias_score": 4.314,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb10",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.1,
+        "parent_sequence": "AAEWALGLLLGEDKRVGFPSGLPTRVSGAGDRVSAGGGRGGSARVA"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb15",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 20,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.35,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb11",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 14,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 36,
+      "pos6_contacts": 5,
+      "pos6_distance": 4.1,
+      "peptide_contact_frac": 0.28
+    },
+    "candidates": [],
+    "pos6_shell": [
+      {
+        "position": 22,
+        "distance": 4.1
+      },
+      {
+        "position": 17,
+        "distance": 4.51
+      },
+      {
+        "position": 23,
+        "distance": 4.68
+      },
+      {
+        "position": 16,
+        "distance": 5.19
+      },
+      {
+        "position": 21,
+        "distance": 5.89
+      },
+      {
+        "position": 24,
+        "distance": 6.49
+      },
+      {
+        "position": 18,
+        "distance": 6.82
+      },
+      {
+        "position": 13,
+        "distance": 6.95
+      }
+    ],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb16",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.18,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb17",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 20,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.48,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb20",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 8 binder heavy atoms within 5 A of the peptide (need >= 10); only 2 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 6.4 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 8,
+      "peptide_residues_contacted": 2,
+      "hla_contacts": 19,
+      "pos6_contacts": 0,
+      "pos6_distance": 6.42,
+      "peptide_contact_frac": 0.2962962962962963
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb21",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 18,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.75,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb18",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 13,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 34,
+      "pos6_contacts": 4,
+      "pos6_distance": 4.23,
+      "peptide_contact_frac": 0.2765957446808511
+    },
+    "candidates": [
+      {
+        "sequence": "AASAAVAKAPDGGGAGPAHVVVGPAEALLHYDRVDYGVAADEAAKA",
+        "mpnn_score": 1.3267,
+        "donor_bias_score": 1.561,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb18",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.23
+      },
+      {
+        "sequence": "AVSQAVQLAPAGGGLGPARVRVGPAEALMHYTDEDYDVAATGAAAA",
+        "mpnn_score": 1.2894,
+        "donor_bias_score": 1.557,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb18",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.23
+      },
+      {
+        "sequence": "AASAAVAKAPDGGGAGPARYVVGPAEALLHYDRVDYGVAADEAAKA",
+        "mpnn_score": 1.3267,
+        "donor_bias_score": 2.319,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb18",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.23
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 19,
+        "distance": 4.23
+      },
+      {
+        "position": 20,
+        "distance": 5.17
+      },
+      {
+        "position": 18,
+        "distance": 6.13
+      },
+      {
+        "position": 21,
+        "distance": 6.14
+      },
+      {
+        "position": 17,
+        "distance": 7.23
+      },
+      {
+        "position": 22,
+        "distance": 7.99
+      },
+      {
+        "position": 34,
+        "distance": 8.88
+      },
+      {
+        "position": 29,
+        "distance": 8.92
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "AASAAVAKAPDGGGAGPARYVVGPAEALLHYDRVDYGVAADEAAKA",
+        "mpnn_score": 1.3267,
+        "donor_bias_score": 2.319,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb18",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.23,
+        "parent_sequence": "AASAAVAKAPDGGGAGPAHVVVGPAEALLHYDRVDYGVAADEAAKA"
+      },
+      {
+        "sequence": "AVSQAVQLAPAGGGLGPARYRVGPAEALMHYTDQDYNVAATGAAAA",
+        "mpnn_score": 1.2894,
+        "donor_bias_score": 3.296,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb18",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.23,
+        "parent_sequence": "AVSQAVQLAPAGGGLGPARVRVGPAEALMHYTDEDYDVAATGAAAA"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb22",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 31,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.75,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb19",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 12,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 31,
+      "pos6_contacts": 6,
+      "pos6_distance": 4.18,
+      "peptide_contact_frac": 0.27906976744186046
+    },
+    "candidates": [
+      {
+        "sequence": "VDAALAARLSAALGTPRDVSDRIGEGVEEFLGASGGAAALFGPREG",
+        "mpnn_score": 1.2254,
+        "donor_bias_score": 1.169,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb19",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.18
+      },
+      {
+        "sequence": "MNEELAAKLSAALGKPRDVSRNIGEGPEEFEGAVSGAAAVFGPLAG",
+        "mpnn_score": 1.2113,
+        "donor_bias_score": 0.869,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb19",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.18
+      },
+      {
+        "sequence": "VDAALAARLSAALGTPRDVSDRIGEGVEEFLGASRYAAALFGPREG",
+        "mpnn_score": 1.2254,
+        "donor_bias_score": 3.313,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb19",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.18
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 35,
+        "distance": 4.18
+      },
+      {
+        "position": 36,
+        "distance": 4.43
+      },
+      {
+        "position": 37,
+        "distance": 4.5
+      },
+      {
+        "position": 38,
+        "distance": 5.0
+      },
+      {
+        "position": 39,
+        "distance": 6.21
+      },
+      {
+        "position": 34,
+        "distance": 7.42
+      },
+      {
+        "position": 44,
+        "distance": 8.04
+      },
+      {
+        "position": 40,
+        "distance": 8.3
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "VDAALAARLSAALGTPRDVSDRIGEGVEEFLGASRYAAALFGPREG",
+        "mpnn_score": 1.2254,
+        "donor_bias_score": 3.313,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb19",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.18,
+        "parent_sequence": "VDAALAARLSAALGTPRDVSDRIGEGVEEFLGASGGAAALFGPREG"
+      },
+      {
+        "sequence": "MNEELAAKLSAALGKPRDVSRNIGEGPEEFEGAVRYAAAVFGPLAG",
+        "mpnn_score": 1.2113,
+        "donor_bias_score": 2.144,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb19",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 4.18,
+        "parent_sequence": "MNEELAAKLSAALGKPRDVSRNIGEGPEEFEGAVSGAAAVFGPLAG"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb23",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 15.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 25,
+      "pos6_contacts": 0,
+      "pos6_distance": 15.72,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb24",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 14,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.89,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb25",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.62,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb26",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.6 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 9,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.64,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb27",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 7.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 40,
+      "pos6_contacts": 0,
+      "pos6_distance": 7.07,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb28",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 2 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 10.2 A (need <= 4.5 A)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 12,
+      "peptide_residues_contacted": 2,
+      "hla_contacts": 36,
+      "pos6_contacts": 0,
+      "pos6_distance": 10.15,
+      "peptide_contact_frac": 0.25
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb29",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 3,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.31,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb30",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.1 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.1,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb31",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.17,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb32",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 17,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.87,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb33",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 18,
+      "pos6_contacts": 0,
+      "pos6_distance": 19.22,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb34",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.41,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb37",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 18.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 10,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.26,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb39",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 11,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.49,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb35",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 14,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 20,
+      "pos6_contacts": 4,
+      "pos6_distance": 4.21,
+      "peptide_contact_frac": 0.4117647058823529
+    },
+    "candidates": [
+      {
+        "sequence": "SPTDVPGACAAVVAGEGGTPVETLRLDGCARGGVGGGGRVAEVVGP",
+        "mpnn_score": 1.1629,
+        "donor_bias_score": 1.052,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb35",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.21
+      },
+      {
+        "sequence": "SPTNVPGACAEVVAGPGGEPEESLRLKGCRAGGVSGGDRLAEVNTP",
+        "mpnn_score": 1.2029,
+        "donor_bias_score": 0.516,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb35",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.21
+      },
+      {
+        "sequence": "SPTDVPGACAAVVAGEGGTPVETLRLDGCARGGVGRYGRVAEVVGP",
+        "mpnn_score": 1.1629,
+        "donor_bias_score": 3.206,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb35",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.21
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 36,
+        "distance": 4.21
+      },
+      {
+        "position": 37,
+        "distance": 4.3
+      },
+      {
+        "position": 38,
+        "distance": 5.16
+      },
+      {
+        "position": 39,
+        "distance": 5.69
+      },
+      {
+        "position": 35,
+        "distance": 6.56
+      },
+      {
+        "position": 40,
+        "distance": 7.67
+      },
+      {
+        "position": 34,
+        "distance": 8.29
+      },
+      {
+        "position": 43,
+        "distance": 9.54
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "SPTDVPGACAAVVAGEGGTPVETLRLDGCARGGVGRYGRVAEVVGP",
+        "mpnn_score": 1.1629,
+        "donor_bias_score": 3.206,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb35",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.21,
+        "parent_sequence": "SPTDVPGACAAVVAGEGGTPVETLRLDGCARGGVGGGGRVAEVVGP"
+      },
+      {
+        "sequence": "SPTNVPGACAEVVAGPGGEPEESLRLKGCRAGGVSRYNRLAEVNTP",
+        "mpnn_score": 1.2029,
+        "donor_bias_score": 3.81,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb35",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 4,
+        "design_pos6_distance": 4.21,
+        "parent_sequence": "SPTNVPGACAEVVAGPGGEPEESLRLKGCRAGGVSGGDRLAEVNTP"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb36",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 25,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 4,
+      "pos6_contacts": 3,
+      "pos6_distance": 4.34,
+      "peptide_contact_frac": 0.8620689655172413
+    },
+    "candidates": [
+      {
+        "sequence": "MPPAVLTVSRAEELKRVFHGLGQGGPASADQSASYSNPAAVGGRAD",
+        "mpnn_score": 1.1724,
+        "donor_bias_score": 2.897,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb36",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 3,
+        "design_pos6_distance": 4.34
+      },
+      {
+        "sequence": "MLPAELTVSPAEAWRREFHGLGQGGPAAADQSASYADPQALGGRAE",
+        "mpnn_score": 1.1772,
+        "donor_bias_score": 2.337,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb36",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 3,
+        "design_pos6_distance": 4.34
+      },
+      {
+        "sequence": "MPPAVLTVSRAEELKRVFHGLGQYRPASADQSASYSNPAAVGGRAD",
+        "mpnn_score": 1.1724,
+        "donor_bias_score": 4.954,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb36",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 3,
+        "design_pos6_distance": 4.34
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 25,
+        "distance": 4.34
+      },
+      {
+        "position": 24,
+        "distance": 4.97
+      },
+      {
+        "position": 19,
+        "distance": 4.98
+      },
+      {
+        "position": 26,
+        "distance": 5.2
+      },
+      {
+        "position": 20,
+        "distance": 5.39
+      },
+      {
+        "position": 18,
+        "distance": 5.68
+      },
+      {
+        "position": 23,
+        "distance": 6.11
+      },
+      {
+        "position": 21,
+        "distance": 7.85
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "MPPAVLTVSRAEELKRVFHGLGQYRPASADQSASYSNPAAVGGRAD",
+        "mpnn_score": 1.1724,
+        "donor_bias_score": 4.954,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb36",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 3,
+        "design_pos6_distance": 4.34,
+        "parent_sequence": "MPPAVLTVSRAEELKRVFHGLGQGGPASADQSASYSNPAAVGGRAD"
+      },
+      {
+        "sequence": "MLPAELTVSPAEAWRRQFHGLGQYRPAAADQSASYADPQALGGRAE",
+        "mpnn_score": 1.1772,
+        "donor_bias_score": 4.954,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb36",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 3,
+        "design_pos6_distance": 4.34,
+        "parent_sequence": "MLPAELTVSPAEAWRREFHGLGQGGPAAADQSASYADPQALGGRAE"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb40",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.3 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 26,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.3,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb38",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 20,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 40,
+      "pos6_contacts": 8,
+      "pos6_distance": 2.87,
+      "peptide_contact_frac": 0.3333333333333333
+    },
+    "candidates": [
+      {
+        "sequence": "DSLAAFGTVRIDPDAAEVKATAGGGVGGREGPKAAMSTGVDGDVYK",
+        "mpnn_score": 1.36,
+        "donor_bias_score": 2.138,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb38",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 8,
+        "design_pos6_distance": 2.87
+      },
+      {
+        "sequence": "DSLAAFGQVRVDAGAAGLSATAGGGVGGREGPAAQTVTESGGDVVR",
+        "mpnn_score": 1.3247,
+        "donor_bias_score": 1.55,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb38",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 8,
+        "design_pos6_distance": 2.87
+      },
+      {
+        "sequence": "NSLAAFGTVRIDPDAAEVKATAYRGVGGREGPKAAMSTGVDGDVYK",
+        "mpnn_score": 1.36,
+        "donor_bias_score": 5.342,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb38",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 8,
+        "design_pos6_distance": 2.87
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 24,
+        "distance": 2.87
+      },
+      {
+        "position": 23,
+        "distance": 4.18
+      },
+      {
+        "position": 25,
+        "distance": 4.45
+      },
+      {
+        "position": 22,
+        "distance": 5.47
+      },
+      {
+        "position": 2,
+        "distance": 5.82
+      },
+      {
+        "position": 3,
+        "distance": 6.08
+      },
+      {
+        "position": 21,
+        "distance": 6.54
+      },
+      {
+        "position": 20,
+        "distance": 6.62
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "NSLAAFGTVRIDPDAAEVKATAYRGVGGREGPKAAMSTGVDGDVYK",
+        "mpnn_score": 1.36,
+        "donor_bias_score": 5.342,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb38",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 8,
+        "design_pos6_distance": 2.87,
+        "parent_sequence": "DSLAAFGTVRIDPDAAEVKATAGGGVGGREGPKAAMSTGVDGDVYK"
+      },
+      {
+        "sequence": "NSLAAFGQVRVDAGAAGLSATAYRGVGGREGPAAQTVTESGGDVVR",
+        "mpnn_score": 1.3247,
+        "donor_bias_score": 4.754,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb38",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 8,
+        "design_pos6_distance": 2.87,
+        "parent_sequence": "DSLAAFGQVRVDAGAAGLSATAGGGVGGREGPAAQTVTESGGDVVR"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb41",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 19.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 7,
+      "pos6_contacts": 0,
+      "pos6_distance": 18.97,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb42",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 13,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.84,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb43",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.7 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 12,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.71,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb44",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 15,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.98,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb45",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.2 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.2,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb47",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.98,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb48",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 5.1 A (need <= 4.5 A); only 0.18 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 10,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 46,
+      "pos6_contacts": 0,
+      "pos6_distance": 5.1,
+      "peptide_contact_frac": 0.17857142857142858
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb49",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.9 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 17,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.95,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb46",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 15,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 35,
+      "pos6_contacts": 9,
+      "pos6_distance": 2.87,
+      "peptide_contact_frac": 0.3
+    },
+    "candidates": [
+      {
+        "sequence": "SSKCPCETREECSEVEKYCAGDPITTKDGPITGAGIGTGGTASARV",
+        "mpnn_score": 1.3346,
+        "donor_bias_score": 2.859,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb46",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 9,
+        "design_pos6_distance": 2.87
+      },
+      {
+        "sequence": "GSASPCSEAEACSETDKYFAGDPQTTSTGPITGIGLGSGGTLAALE",
+        "mpnn_score": 1.2779,
+        "donor_bias_score": 1.802,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb46",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 9,
+        "design_pos6_distance": 2.87
+      },
+      {
+        "sequence": "SSKCPCETREECSEVEKYCAGDPITTKDGPITGAGIGTRYTASARV",
+        "mpnn_score": 1.3346,
+        "donor_bias_score": 5.368,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb46",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 9,
+        "design_pos6_distance": 2.87
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 39,
+        "distance": 2.87
+      },
+      {
+        "position": 40,
+        "distance": 3.12
+      },
+      {
+        "position": 41,
+        "distance": 3.22
+      },
+      {
+        "position": 38,
+        "distance": 4.56
+      },
+      {
+        "position": 37,
+        "distance": 5.91
+      },
+      {
+        "position": 42,
+        "distance": 6.67
+      },
+      {
+        "position": 44,
+        "distance": 7.37
+      },
+      {
+        "position": 43,
+        "distance": 8.05
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "SSKCPCETREECSEVEKYCAGDPITTKDGPITGAGIGTRYTASARV",
+        "mpnn_score": 1.3346,
+        "donor_bias_score": 5.368,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb46",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 9,
+        "design_pos6_distance": 2.87,
+        "parent_sequence": "SSKCPCETREECSEVEKYCAGDPITTKDGPITGAGIGTGGTASARV"
+      },
+      {
+        "sequence": "GSASPCSEAEACSETDKYFAGDPQTTSTGPITGIGLGSRYTLAALE",
+        "mpnn_score": 1.2779,
+        "donor_bias_score": 4.311,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb46",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 9,
+        "design_pos6_distance": 2.87,
+        "parent_sequence": "GSASPCSEAEACSETDKYFAGDPQTTSTGPITGIGLGSGGTLAALE"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb51",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.4 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 16,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.42,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb52",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 7.0 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 38,
+      "pos6_contacts": 0,
+      "pos6_distance": 6.97,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb53",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 16.5 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 2,
+      "pos6_contacts": 0,
+      "pos6_distance": 16.48,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb50",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 21,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 28,
+      "pos6_contacts": 10,
+      "pos6_distance": 3.24,
+      "peptide_contact_frac": 0.42857142857142855
+    },
+    "candidates": [
+      {
+        "sequence": "ASADLAGSDEATRATGAGGEGGGGSGGATRAAWPLKSVTDAELLAE",
+        "mpnn_score": 1.1876,
+        "donor_bias_score": 1.233,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb50",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 10,
+        "design_pos6_distance": 3.24
+      },
+      {
+        "sequence": "TRADLAGSDEAVTATGSGGAGGGGSGGASREKSPLKSVSDEELLAA",
+        "mpnn_score": 1.2321,
+        "donor_bias_score": 1.132,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb50",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 10,
+        "design_pos6_distance": 3.24
+      },
+      {
+        "sequence": "ASADLAGSNQATRATGAGGQGYRGSGGATRAAWPLKSVTDAELLAE",
+        "mpnn_score": 1.1876,
+        "donor_bias_score": 5.433,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb50",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 10,
+        "design_pos6_distance": 3.24
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 23,
+        "distance": 3.24
+      },
+      {
+        "position": 22,
+        "distance": 3.4
+      },
+      {
+        "position": 24,
+        "distance": 4.49
+      },
+      {
+        "position": 13,
+        "distance": 5.52
+      },
+      {
+        "position": 25,
+        "distance": 5.62
+      },
+      {
+        "position": 21,
+        "distance": 5.67
+      },
+      {
+        "position": 15,
+        "distance": 6.37
+      },
+      {
+        "position": 12,
+        "distance": 6.57
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "ASADLAGSNQATRATGAGGQGYRGSGGATRAAWPLKSVTDAELLAE",
+        "mpnn_score": 1.1876,
+        "donor_bias_score": 5.433,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb50",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 10,
+        "design_pos6_distance": 3.24,
+        "parent_sequence": "ASADLAGSDEATRATGAGGEGGGGSGGATRAAWPLKSVTDAELLAE"
+      },
+      {
+        "sequence": "TRADLAGSNQAVTATGSGGAGYRGSGGASREKSPLKSVSDEELLAA",
+        "mpnn_score": 1.2321,
+        "donor_bias_score": 4.796,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb50",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 10,
+        "design_pos6_distance": 3.24,
+        "parent_sequence": "TRADLAGSDEAVTATGSGGAGGGGSGGASREKSPLKSVSDEELLAA"
+      }
+    ]
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb55",
+    "strategy": "B6-c6-46",
+    "ok": false,
+    "reason": "only 0 binder heavy atoms within 5 A of the peptide (need >= 10); only 0 peptide residues contacted (need >= 3); only 0 binder heavy atoms within 5 A of position 6 (need >= 3); closest approach to position 6 is 17.8 A (need <= 4.5 A); only 0.00 of target contact is on the peptide (need >= 0.25)",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 0,
+      "peptide_residues_contacted": 0,
+      "hla_contacts": 6,
+      "pos6_contacts": 0,
+      "pos6_distance": 17.84,
+      "peptide_contact_frac": 0.0
+    },
+    "candidates": [],
+    "grafts": []
+  },
+  {
+    "backbone": "B6-c6-46_w2_bb54",
+    "strategy": "B6-c6-46",
+    "ok": true,
+    "reason": "",
+    "pose": {
+      "binder_length": 46,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 18,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 3,
+      "pos6_contacts": 6,
+      "pos6_distance": 3.48,
+      "peptide_contact_frac": 0.8571428571428571
+    },
+    "candidates": [
+      {
+        "sequence": "MMLPDDAVADLSGTPEYRALAQRLGGNADEYIILSSGRRGQVGIEA",
+        "mpnn_score": 1.1588,
+        "donor_bias_score": 2.537,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb54",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 3.48
+      },
+      {
+        "sequence": "MMLPDDAIAELSGTPEARELARRLGGDERVAINGRAGRRGRVGVEA",
+        "mpnn_score": 1.0111,
+        "donor_bias_score": 2.53,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb54",
+        "binder_length": 46,
+        "variant": "mpnn-selected",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 3.48
+      },
+      {
+        "sequence": "MMLPDDAVADLSGTPEYRALAQRLGGNADEYIIYRSGRRGQVGIEA",
+        "mpnn_score": 1.1588,
+        "donor_bias_score": 3.872,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb54",
+        "binder_length": 46,
+        "variant": "donor-anchored",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 3.48
+      }
+    ],
+    "pos6_shell": [
+      {
+        "position": 35,
+        "distance": 3.48
+      },
+      {
+        "position": 34,
+        "distance": 4.25
+      },
+      {
+        "position": 36,
+        "distance": 5.83
+      },
+      {
+        "position": 33,
+        "distance": 6.21
+      },
+      {
+        "position": 40,
+        "distance": 6.92
+      },
+      {
+        "position": 32,
+        "distance": 6.96
+      },
+      {
+        "position": 37,
+        "distance": 7.58
+      },
+      {
+        "position": 41,
+        "distance": 8.61
+      }
+    ],
+    "grafts": [
+      {
+        "sequence": "MMLPDDAVADLSGTPEYRALAQRLGGNADEYIIYRSGRRGQVGIEA",
+        "mpnn_score": 1.1588,
+        "donor_bias_score": 3.872,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb54",
+        "binder_length": 46,
+        "variant": "donor-anchored-g1",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 3.48,
+        "parent_sequence": "MMLPDDAVADLSGTPEYRALAQRLGGNADEYIILSSGRRGQVGIEA"
+      },
+      {
+        "sequence": "MMLPDDAIAELSGTPEARELARRLGGDERVAINYRAGRRGRVGVEA",
+        "mpnn_score": 1.0111,
+        "donor_bias_score": 3.391,
+        "strategy": "B6-c6-46",
+        "backbone": "B6-c6-46_w2_bb54",
+        "binder_length": 46,
+        "variant": "donor-anchored-g2",
+        "design_pos6_contacts": 6,
+        "design_pos6_distance": 3.48,
+        "parent_sequence": "MMLPDDAIAELSGTPEARELARRLGGDERVAINGRAGRRGRVGVEA"
+      }
+    ]
+  }
+]

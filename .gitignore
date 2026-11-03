@@ -78,3 +78,6 @@ results/*/scored_structures/
 # (not a curated set) and predates the rule above; regenerate with
 # `run_batch.py --rebuild --out-dir results/batch-01` if they are ever needed.
 results/batch-01/structures/
+
+# Run logs (raw stdout; checkpoints under results/ are authoritative)
+logs/
