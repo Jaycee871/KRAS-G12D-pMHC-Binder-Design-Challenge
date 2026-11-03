@@ -1,0 +1,103 @@
+{
+  "elapsed_seconds": 13629.2,
+  "backbones": 40,
+  "backbones_generated": 120,
+  "backbones_pose_ok": 40,
+  "backbones_pose_rejected": 80,
+  "raw_sequences": 28,
+  "scored": 28,
+  "scored_four_state": 8,
+  "pose_filter_survivors": 8,
+  "pose_filter_rejected": 20,
+  "passing": 0,
+  "analysis_errors": 0,
+  "call_counts": {
+    "rfdiffusion": 120,
+    "proteinmpnn": 40,
+    "boltz2": 52
+  },
+  "total_calls": 212,
+  "retry_statuses": {
+    "429": 17
+  },
+  "throttle": {
+    "global": {
+      "name": "global",
+      "rate_per_second": 1.0,
+      "burst": 2.0,
+      "min_interval": 0.0,
+      "grants": 230,
+      "waited_seconds": 3.0
+    },
+    "endpoints": {
+      "/v1/biology/mit/boltz2/predict": {
+        "name": "boltz2",
+        "rate_per_second": 0.125,
+        "burst": 1.0,
+        "min_interval": 8.0,
+        "grants": 70,
+        "waited_seconds": 255.69
+      },
+      "/v1/biology/ipd/rfdiffusion/generate": {
+        "name": "rfdiffusion",
+        "rate_per_second": 0.5,
+        "burst": 1.0,
+        "min_interval": 2.0,
+        "grants": 120,
+        "waited_seconds": 205.18
+      },
+      "/v1/biology/ipd/proteinmpnn/predict": {
+        "name": "proteinmpnn",
+        "rate_per_second": 0.5,
+        "burst": 1.0,
+        "min_interval": 2.0,
+        "grants": 40,
+        "waited_seconds": 0.11
+      }
+    }
+  },
+  "strategies": [
+    {
+      "name": "S1-pos6-65",
+      "rationale": "S1 length with hotspots centred on C5-C7, i.e. on the mutated Asp6 and its two neighbours, to pull the paratope onto the mutation itself",
+      "binder_length": 65,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.1
+    },
+    {
+      "name": "S1-pos6-68",
+      "rationale": "C5-C7 hotspots at 68 aa and a slightly higher MPNN temperature, for sequence diversity over the same position-6-centred pose",
+      "binder_length": 68,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.15
+    }
+  ],
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": true
+  },
+  "diffusion_steps": 15,
+  "seqs_per_backbone": 8,
+  "seqs_scored_per_backbone": 1,
+  "pose_filter": {
+    "enabled": true,
+    "design_min_peptide_contacts": 10,
+    "design_min_peptide_residues": 3,
+    "design_min_pos6_contacts": 1,
+    "design_max_pos6_distance": 6.0,
+    "predicted_min_peptide_area": 25.0,
+    "predicted_min_pos6_contacts": 1
+  },
+  "stopped_early": "",
+  "unscored_candidates": 0
+}

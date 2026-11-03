@@ -1,0 +1,682 @@
+[
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb00",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 21,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 34,
+      "pos6_contacts": 4,
+      "pos6_distance": 4.4,
+      "peptide_contact_frac": 0.38181818181818183
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb03",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 17,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 57,
+      "pos6_contacts": 3,
+      "pos6_distance": 4.34,
+      "peptide_contact_frac": 0.22972972972972974
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb11",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 22,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 67,
+      "pos6_contacts": 8,
+      "pos6_distance": 4.29,
+      "peptide_contact_frac": 0.24719101123595505
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb13",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 25,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 77,
+      "pos6_contacts": 4,
+      "pos6_distance": 3.82,
+      "peptide_contact_frac": 0.24509803921568626
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb16",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 40,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 47,
+      "pos6_contacts": 4,
+      "pos6_distance": 4.45,
+      "peptide_contact_frac": 0.45977011494252873
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb17",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 32,
+      "peptide_residues_contacted": 7,
+      "hla_contacts": 43,
+      "pos6_contacts": 6,
+      "pos6_distance": 3.08,
+      "peptide_contact_frac": 0.4266666666666667
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb19",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 19,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 15,
+      "pos6_contacts": 11,
+      "pos6_distance": 0.89,
+      "peptide_contact_frac": 0.5588235294117647
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb22",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 12,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 52,
+      "pos6_contacts": 1,
+      "pos6_distance": 4.77,
+      "peptide_contact_frac": 0.1875
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb23",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 14,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 33,
+      "pos6_contacts": 1,
+      "pos6_distance": 4.1,
+      "peptide_contact_frac": 0.2978723404255319
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb29",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 34,
+      "peptide_residues_contacted": 7,
+      "hla_contacts": 69,
+      "pos6_contacts": 7,
+      "pos6_distance": 3.55,
+      "peptide_contact_frac": 0.3300970873786408
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb34",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 14,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 28,
+      "pos6_contacts": 6,
+      "pos6_distance": 3.99,
+      "peptide_contact_frac": 0.3333333333333333
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb41",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 16,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 22,
+      "pos6_contacts": 11,
+      "pos6_distance": 2.61,
+      "peptide_contact_frac": 0.42105263157894735
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb42",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 17,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 41,
+      "pos6_contacts": 1,
+      "pos6_distance": 5.0,
+      "peptide_contact_frac": 0.29310344827586204
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb43",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 14,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 75,
+      "pos6_contacts": 7,
+      "pos6_distance": 2.99,
+      "peptide_contact_frac": 0.15730337078651685
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb45",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 26,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 55,
+      "pos6_contacts": 17,
+      "pos6_distance": 1.67,
+      "peptide_contact_frac": 0.32098765432098764
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb51",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 23,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 35,
+      "pos6_contacts": 15,
+      "pos6_distance": 1.93,
+      "peptide_contact_frac": 0.39655172413793105
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb53",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 13,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 33,
+      "pos6_contacts": 7,
+      "pos6_distance": 3.79,
+      "peptide_contact_frac": 0.2826086956521739
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb56",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 25,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 20,
+      "pos6_contacts": 3,
+      "pos6_distance": 4.39,
+      "peptide_contact_frac": 0.5555555555555556
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb57",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 25,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 45,
+      "pos6_contacts": 4,
+      "pos6_distance": 4.27,
+      "peptide_contact_frac": 0.35714285714285715
+    }
+  },
+  {
+    "strategy": "S1-pos6-65",
+    "backbone": "S1-pos6-65_bb58",
+    "contigs": "A1-180/0 C1-10/0 65-65",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 65,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 13,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 36,
+      "pos6_contacts": 1,
+      "pos6_distance": 4.98,
+      "peptide_contact_frac": 0.2653061224489796
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb01",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 18,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 35,
+      "pos6_contacts": 9,
+      "pos6_distance": 2.44,
+      "peptide_contact_frac": 0.33962264150943394
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb03",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 13,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 32,
+      "pos6_contacts": 9,
+      "pos6_distance": 2.04,
+      "peptide_contact_frac": 0.28888888888888886
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb05",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 28,
+      "peptide_residues_contacted": 7,
+      "hla_contacts": 85,
+      "pos6_contacts": 9,
+      "pos6_distance": 2.81,
+      "peptide_contact_frac": 0.24778761061946902
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb07",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 10,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 20,
+      "pos6_contacts": 7,
+      "pos6_distance": 3.32,
+      "peptide_contact_frac": 0.3333333333333333
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb13",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 27,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 24,
+      "pos6_contacts": 7,
+      "pos6_distance": 3.02,
+      "peptide_contact_frac": 0.5294117647058824
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb15",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 35,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 67,
+      "pos6_contacts": 17,
+      "pos6_distance": 3.1,
+      "peptide_contact_frac": 0.3431372549019608
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb18",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 32,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 50,
+      "pos6_contacts": 12,
+      "pos6_distance": 3.32,
+      "peptide_contact_frac": 0.3902439024390244
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb19",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 36,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 63,
+      "pos6_contacts": 12,
+      "pos6_distance": 3.22,
+      "peptide_contact_frac": 0.36363636363636365
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb21",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 28,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 72,
+      "pos6_contacts": 7,
+      "pos6_distance": 3.87,
+      "peptide_contact_frac": 0.28
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb23",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 26,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 35,
+      "pos6_contacts": 12,
+      "pos6_distance": 2.53,
+      "peptide_contact_frac": 0.4262295081967213
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb27",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 19,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 36,
+      "pos6_contacts": 10,
+      "pos6_distance": 4.07,
+      "peptide_contact_frac": 0.34545454545454546
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb31",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 18,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 17,
+      "pos6_contacts": 13,
+      "pos6_distance": 2.78,
+      "peptide_contact_frac": 0.5142857142857142
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb32",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 21,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 37,
+      "pos6_contacts": 7,
+      "pos6_distance": 3.34,
+      "peptide_contact_frac": 0.3620689655172414
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb33",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 29,
+      "peptide_residues_contacted": 5,
+      "hla_contacts": 51,
+      "pos6_contacts": 10,
+      "pos6_distance": 2.07,
+      "peptide_contact_frac": 0.3625
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb42",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 20,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 37,
+      "pos6_contacts": 1,
+      "pos6_distance": 4.77,
+      "peptide_contact_frac": 0.3508771929824561
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb49",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 15,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 27,
+      "pos6_contacts": 8,
+      "pos6_distance": 3.93,
+      "peptide_contact_frac": 0.35714285714285715
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb50",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 23,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 54,
+      "pos6_contacts": 1,
+      "pos6_distance": 4.88,
+      "peptide_contact_frac": 0.2987012987012987
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb51",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 11,
+      "peptide_residues_contacted": 3,
+      "hla_contacts": 34,
+      "pos6_contacts": 5,
+      "pos6_distance": 3.09,
+      "peptide_contact_frac": 0.24444444444444444
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb57",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 17,
+      "peptide_residues_contacted": 6,
+      "hla_contacts": 85,
+      "pos6_contacts": 2,
+      "pos6_distance": 4.45,
+      "peptide_contact_frac": 0.16666666666666666
+    }
+  },
+  {
+    "strategy": "S1-pos6-68",
+    "backbone": "S1-pos6-68_bb58",
+    "contigs": "A1-180/0 C1-10/0 68-68",
+    "pose_ok": true,
+    "pose_reject_reason": "",
+    "pose_metrics": {
+      "binder_length": 68,
+      "peptide_sequence": "VVVGADGVGK",
+      "peptide_contacts": 23,
+      "peptide_residues_contacted": 4,
+      "hla_contacts": 81,
+      "pos6_contacts": 3,
+      "pos6_distance": 3.64,
+      "peptide_contact_frac": 0.22115384615384615
+    }
+  }
+]
