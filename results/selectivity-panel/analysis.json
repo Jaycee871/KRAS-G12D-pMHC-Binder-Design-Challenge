@@ -1,0 +1,3047 @@
+{
+  "designs": {
+    "bb50-g1": {
+      "condition": "recyc8",
+      "n_draws": 10,
+      "n_distinct_structures": 6,
+      "gate_passes": 10,
+      "per_draw": [
+        {
+          "draw": 0,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.77,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 13,
+          "peptide_buried_frac": 0.216,
+          "asp6_buried_frac": 0.724,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4684,
+          "structure_md5": "850efcc1"
+        },
+        {
+          "draw": 1,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.73,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 16,
+          "peptide_buried_frac": 0.224,
+          "asp6_buried_frac": 0.706,
+          "net_interface_charge": -3.0,
+          "iptm": 0.532,
+          "structure_md5": "c874e0a1"
+        },
+        {
+          "draw": 2,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.77,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 13,
+          "peptide_buried_frac": 0.216,
+          "asp6_buried_frac": 0.724,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4684,
+          "structure_md5": "850efcc1"
+        },
+        {
+          "draw": 3,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.71,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 17,
+          "peptide_buried_frac": 0.221,
+          "asp6_buried_frac": 0.764,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4672,
+          "structure_md5": "19f4781c"
+        },
+        {
+          "draw": 4,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.79,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 14,
+          "peptide_buried_frac": 0.218,
+          "asp6_buried_frac": 0.708,
+          "net_interface_charge": -3.0,
+          "iptm": 0.3239,
+          "structure_md5": "21f3d891"
+        },
+        {
+          "draw": 5,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.71,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 17,
+          "peptide_buried_frac": 0.221,
+          "asp6_buried_frac": 0.764,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4672,
+          "structure_md5": "19f4781c"
+        },
+        {
+          "draw": 6,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.71,
+          "pos6_sidechain_contacts": 7,
+          "pos6_contacts": 17,
+          "peptide_buried_frac": 0.221,
+          "asp6_buried_frac": 0.764,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4672,
+          "structure_md5": "19f4781c"
+        },
+        {
+          "draw": 7,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.53,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 13,
+          "peptide_buried_frac": 0.218,
+          "asp6_buried_frac": 0.863,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4471,
+          "structure_md5": "70c763fa"
+        },
+        {
+          "draw": 8,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.53,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 13,
+          "peptide_buried_frac": 0.218,
+          "asp6_buried_frac": 0.863,
+          "net_interface_charge": -2.0,
+          "iptm": 0.4471,
+          "structure_md5": "70c763fa"
+        },
+        {
+          "draw": 9,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 3.11,
+          "pos6_sidechain_contacts": 4,
+          "pos6_contacts": 9,
+          "peptide_buried_frac": 0.239,
+          "asp6_buried_frac": 0.619,
+          "net_interface_charge": -1.0,
+          "iptm": 0.3745,
+          "structure_md5": "980ee2aa"
+        }
+      ],
+      "pose": {
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 1.05,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r0~r3",
+            "binder_ca_rmsd": 0.93,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r0~r4",
+            "binder_ca_rmsd": 0.99,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r0~r5",
+            "binder_ca_rmsd": 0.93,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r0~r6",
+            "binder_ca_rmsd": 0.93,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r0~r7",
+            "binder_ca_rmsd": 1.25,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r0~r8",
+            "binder_ca_rmsd": 1.25,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r0~r9",
+            "binder_ca_rmsd": 3.59,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 1.05,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r3",
+            "binder_ca_rmsd": 0.6,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r4",
+            "binder_ca_rmsd": 0.34,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r5",
+            "binder_ca_rmsd": 0.6,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r6",
+            "binder_ca_rmsd": 0.6,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r7",
+            "binder_ca_rmsd": 2.08,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r1~r8",
+            "binder_ca_rmsd": 2.08,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r1~r9",
+            "binder_ca_rmsd": 3.78,
+            "frame_ca_rmsd": 0.12
+          },
+          {
+            "pair": "r2~r3",
+            "binder_ca_rmsd": 0.93,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r2~r4",
+            "binder_ca_rmsd": 0.99,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r2~r5",
+            "binder_ca_rmsd": 0.93,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r2~r6",
+            "binder_ca_rmsd": 0.93,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r2~r7",
+            "binder_ca_rmsd": 1.25,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r2~r8",
+            "binder_ca_rmsd": 1.25,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r2~r9",
+            "binder_ca_rmsd": 3.59,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r3~r4",
+            "binder_ca_rmsd": 0.59,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r3~r5",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r3~r6",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r3~r7",
+            "binder_ca_rmsd": 1.94,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r3~r8",
+            "binder_ca_rmsd": 1.94,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r3~r9",
+            "binder_ca_rmsd": 3.69,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r4~r5",
+            "binder_ca_rmsd": 0.59,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r4~r6",
+            "binder_ca_rmsd": 0.59,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r4~r7",
+            "binder_ca_rmsd": 2.1,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r4~r8",
+            "binder_ca_rmsd": 2.1,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r4~r9",
+            "binder_ca_rmsd": 3.74,
+            "frame_ca_rmsd": 0.12
+          },
+          {
+            "pair": "r5~r6",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r5~r7",
+            "binder_ca_rmsd": 1.94,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r5~r8",
+            "binder_ca_rmsd": 1.94,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r5~r9",
+            "binder_ca_rmsd": 3.69,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r6~r7",
+            "binder_ca_rmsd": 1.94,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r6~r8",
+            "binder_ca_rmsd": 1.94,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r6~r9",
+            "binder_ca_rmsd": 3.69,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r7~r8",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r7~r9",
+            "binder_ca_rmsd": 3.38,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r8~r9",
+            "binder_ca_rmsd": 3.38,
+            "frame_ca_rmsd": 0.1
+          }
+        ],
+        "mean": 1.58,
+        "max": 3.78,
+        "frame_max": 0.12
+      },
+      "summary": {
+        "asp6_min_donor_distance": {
+          "mean": 2.736,
+          "sd": 0.152,
+          "min": 2.53,
+          "max": 3.11,
+          "n": 10
+        },
+        "pos6_sidechain_contacts": {
+          "mean": 6.3,
+          "sd": 1.1,
+          "min": 4,
+          "max": 7,
+          "n": 10
+        },
+        "peptide_buried_frac": {
+          "mean": 0.221,
+          "sd": 0.006,
+          "min": 0.216,
+          "max": 0.239,
+          "n": 10
+        },
+        "net_interface_charge": {
+          "mean": -2.1,
+          "sd": 0.539,
+          "min": -3.0,
+          "max": -1.0,
+          "n": 10
+        },
+        "iptm": {
+          "mean": 0.446,
+          "sd": 0.055,
+          "min": 0.324,
+          "max": 0.532,
+          "n": 10
+        }
+      },
+      "arms": {
+        "wt": {
+          "n_draws": 4,
+          "n_distinct_structures": 3,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 19,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.209,
+              "buried_area_total": 1047.5,
+              "buried_area_peptide": 218.8,
+              "buried_area_by_chain": {
+                "A": 828.7,
+                "C": 218.8
+              },
+              "contacts_by_chain": {
+                "A": 111,
+                "B": 0,
+                "C": 39
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.5631,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 15.09,
+              "frame_ca_rmsd": 0.35,
+              "frame_chains": "A+C",
+              "structure_md5": "c686dd09"
+            },
+            {
+              "draw": 1,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 12,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.242,
+              "buried_area_total": 723.6,
+              "buried_area_peptide": 175.2,
+              "buried_area_by_chain": {
+                "A": 548.4,
+                "C": 175.2
+              },
+              "contacts_by_chain": {
+                "A": 71,
+                "B": 0,
+                "C": 32
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.358,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 16.95,
+              "frame_ca_rmsd": 0.36,
+              "frame_chains": "A+C",
+              "structure_md5": "80b41e31"
+            },
+            {
+              "draw": 2,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 15,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.191,
+              "buried_area_total": 904.7,
+              "buried_area_peptide": 172.5,
+              "buried_area_by_chain": {
+                "A": 732.2,
+                "C": 172.5
+              },
+              "contacts_by_chain": {
+                "A": 101,
+                "B": 0,
+                "C": 34
+              },
+              "net_interface_charge": 1.0,
+              "iptm": 0.5014,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 16.4,
+              "frame_ca_rmsd": 0.45,
+              "frame_chains": "A+C",
+              "structure_md5": "c4eb5326"
+            },
+            {
+              "draw": 3,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 15,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.191,
+              "buried_area_total": 904.7,
+              "buried_area_peptide": 172.5,
+              "buried_area_by_chain": {
+                "A": 732.2,
+                "C": 172.5
+              },
+              "contacts_by_chain": {
+                "A": 101,
+                "B": 0,
+                "C": 34
+              },
+              "net_interface_charge": 1.0,
+              "iptm": 0.5014,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 16.4,
+              "frame_ca_rmsd": 0.45,
+              "frame_chains": "A+C",
+              "structure_md5": "c4eb5326"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 7.86,
+                "frame_ca_rmsd": 0.13
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 3.83,
+                "frame_ca_rmsd": 0.22
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 3.83,
+                "frame_ca_rmsd": 0.22
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 7.83,
+                "frame_ca_rmsd": 0.21
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 7.83,
+                "frame_ca_rmsd": 0.21
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              }
+            ],
+            "mean": 5.2,
+            "max": 7.86
+          },
+          "summary": {
+            "pos6_contacts": {
+              "mean": 15.25,
+              "sd": 2.487,
+              "min": 12,
+              "max": 19,
+              "n": 4
+            },
+            "pos6_sidechain_contacts": {
+              "mean": 0.0,
+              "sd": 0.0,
+              "min": 0,
+              "max": 0,
+              "n": 4
+            },
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": {
+              "mean": 0.208,
+              "sd": 0.021,
+              "min": 0.191,
+              "max": 0.242,
+              "n": 4
+            },
+            "buried_area_total": {
+              "mean": 895.125,
+              "sd": 114.916,
+              "min": 723.6,
+              "max": 1047.5,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": 0.0,
+              "sd": 1.225,
+              "min": -2.0,
+              "max": 1.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.481,
+              "sd": 0.075,
+              "min": 0.358,
+              "max": 0.563,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 16.21,
+              "sd": 0.685,
+              "min": 15.09,
+              "max": 16.95,
+              "n": 4
+            }
+          }
+        },
+        "apo": {
+          "n_draws": 4,
+          "n_distinct_structures": 1,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1454.1,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1454.1
+              },
+              "contacts_by_chain": {
+                "A": 176,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3595,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 12.34,
+              "frame_ca_rmsd": 0.43,
+              "frame_chains": "A",
+              "structure_md5": "999babc8"
+            },
+            {
+              "draw": 1,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1454.1,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1454.1
+              },
+              "contacts_by_chain": {
+                "A": 176,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3595,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 12.34,
+              "frame_ca_rmsd": 0.43,
+              "frame_chains": "A",
+              "structure_md5": "999babc8"
+            },
+            {
+              "draw": 2,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1454.1,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1454.1
+              },
+              "contacts_by_chain": {
+                "A": 176,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3595,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 12.34,
+              "frame_ca_rmsd": 0.43,
+              "frame_chains": "A",
+              "structure_md5": "999babc8"
+            },
+            {
+              "draw": 3,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1454.1,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1454.1
+              },
+              "contacts_by_chain": {
+                "A": 176,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3595,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 12.34,
+              "frame_ca_rmsd": 0.43,
+              "frame_chains": "A",
+              "structure_md5": "999babc8"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              }
+            ],
+            "mean": 0.0,
+            "max": 0.0
+          },
+          "summary": {
+            "pos6_contacts": null,
+            "pos6_sidechain_contacts": null,
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": null,
+            "buried_area_total": {
+              "mean": 1454.1,
+              "sd": 0.0,
+              "min": 1454.1,
+              "max": 1454.1,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -2.0,
+              "sd": 0.0,
+              "min": -2.0,
+              "max": -2.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.359,
+              "sd": 0.0,
+              "min": 0.359,
+              "max": 0.359,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 12.34,
+              "sd": 0.0,
+              "min": 12.34,
+              "max": 12.34,
+              "n": 4
+            }
+          }
+        },
+        "decoy": {
+          "n_draws": 4,
+          "n_distinct_structures": 3,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 0,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.126,
+              "buried_area_total": 556.5,
+              "buried_area_peptide": 69.8,
+              "buried_area_by_chain": {
+                "A": 486.6,
+                "C": 69.8
+              },
+              "contacts_by_chain": {
+                "A": 61,
+                "B": 0,
+                "C": 13
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.4145,
+              "donor_contacts": [
+                {
+                  "peptide_position": 8,
+                  "peptide_residue": "ASP",
+                  "donor": "ARG44:NH2",
+                  "distance": 2.95
+                }
+              ],
+              "binder_rmsd_vs_g12d_r0": 23.16,
+              "frame_ca_rmsd": 0.52,
+              "frame_chains": "A+C",
+              "structure_md5": "dcf6f643"
+            },
+            {
+              "draw": 1,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 1,
+              "pos6_sidechain_contacts": 1,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.108,
+              "buried_area_total": 533.1,
+              "buried_area_peptide": 57.7,
+              "buried_area_by_chain": {
+                "A": 475.4,
+                "C": 57.7
+              },
+              "contacts_by_chain": {
+                "A": 62,
+                "B": 0,
+                "C": 10
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.2694,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 22.08,
+              "frame_ca_rmsd": 0.52,
+              "frame_chains": "A+C",
+              "structure_md5": "45f235eb"
+            },
+            {
+              "draw": 2,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 2,
+              "pos6_sidechain_contacts": 2,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.132,
+              "buried_area_total": 457.5,
+              "buried_area_peptide": 60.4,
+              "buried_area_by_chain": {
+                "A": 397.1,
+                "C": 60.4
+              },
+              "contacts_by_chain": {
+                "A": 47,
+                "B": 0,
+                "C": 7
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3562,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 26.35,
+              "frame_ca_rmsd": 0.51,
+              "frame_chains": "A+C",
+              "structure_md5": "f4671360"
+            },
+            {
+              "draw": 3,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 2,
+              "pos6_sidechain_contacts": 2,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.132,
+              "buried_area_total": 457.5,
+              "buried_area_peptide": 60.4,
+              "buried_area_by_chain": {
+                "A": 397.1,
+                "C": 60.4
+              },
+              "contacts_by_chain": {
+                "A": 47,
+                "B": 0,
+                "C": 7
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3562,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 26.35,
+              "frame_ca_rmsd": 0.51,
+              "frame_chains": "A+C",
+              "structure_md5": "f4671360"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 9.04,
+                "frame_ca_rmsd": 0.14
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 8.81,
+                "frame_ca_rmsd": 0.07
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 8.81,
+                "frame_ca_rmsd": 0.07
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 10.93,
+                "frame_ca_rmsd": 0.13
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 10.93,
+                "frame_ca_rmsd": 0.13
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              }
+            ],
+            "mean": 8.09,
+            "max": 10.93
+          },
+          "summary": {
+            "pos6_contacts": {
+              "mean": 1.25,
+              "sd": 0.829,
+              "min": 0,
+              "max": 2,
+              "n": 4
+            },
+            "pos6_sidechain_contacts": {
+              "mean": 1.25,
+              "sd": 0.829,
+              "min": 0,
+              "max": 2,
+              "n": 4
+            },
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": {
+              "mean": 0.124,
+              "sd": 0.01,
+              "min": 0.108,
+              "max": 0.132,
+              "n": 4
+            },
+            "buried_area_total": {
+              "mean": 501.15,
+              "sd": 44.427,
+              "min": 457.5,
+              "max": 556.5,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -1.25,
+              "sd": 0.829,
+              "min": -2.0,
+              "max": 0.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.349,
+              "sd": 0.052,
+              "min": 0.269,
+              "max": 0.414,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 24.485,
+              "sd": 1.904,
+              "min": 22.08,
+              "max": 26.35,
+              "n": 4
+            }
+          }
+        }
+      }
+    },
+    "bb25": {
+      "condition": "recyc8",
+      "n_draws": 10,
+      "n_distinct_structures": 7,
+      "gate_passes": 9,
+      "per_draw": [
+        {
+          "draw": 0,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.12,
+          "pos6_sidechain_contacts": 15,
+          "pos6_contacts": 19,
+          "peptide_buried_frac": 0.284,
+          "asp6_buried_frac": 0.852,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3673,
+          "structure_md5": "0e7277f2"
+        },
+        {
+          "draw": 1,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.52,
+          "pos6_sidechain_contacts": 12,
+          "pos6_contacts": 16,
+          "peptide_buried_frac": 0.253,
+          "asp6_buried_frac": 0.876,
+          "net_interface_charge": 2.0,
+          "iptm": 0.4592,
+          "structure_md5": "8c99130f"
+        },
+        {
+          "draw": 2,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.26,
+          "pos6_sidechain_contacts": 13,
+          "pos6_contacts": 21,
+          "peptide_buried_frac": 0.307,
+          "asp6_buried_frac": 0.837,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3991,
+          "structure_md5": "c092d3b0"
+        },
+        {
+          "draw": 3,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.26,
+          "pos6_sidechain_contacts": 13,
+          "pos6_contacts": 21,
+          "peptide_buried_frac": 0.307,
+          "asp6_buried_frac": 0.837,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3991,
+          "structure_md5": "c092d3b0"
+        },
+        {
+          "draw": 4,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 1.94,
+          "pos6_sidechain_contacts": 8,
+          "pos6_contacts": 14,
+          "peptide_buried_frac": 0.305,
+          "asp6_buried_frac": 0.703,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3776,
+          "structure_md5": "944923b6"
+        },
+        {
+          "draw": 5,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 1.94,
+          "pos6_sidechain_contacts": 8,
+          "pos6_contacts": 14,
+          "peptide_buried_frac": 0.305,
+          "asp6_buried_frac": 0.703,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3776,
+          "structure_md5": "944923b6"
+        },
+        {
+          "draw": 6,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.26,
+          "pos6_sidechain_contacts": 13,
+          "pos6_contacts": 21,
+          "peptide_buried_frac": 0.307,
+          "asp6_buried_frac": 0.837,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3991,
+          "structure_md5": "c092d3b0"
+        },
+        {
+          "draw": 7,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.88,
+          "pos6_sidechain_contacts": 16,
+          "pos6_contacts": 21,
+          "peptide_buried_frac": 0.281,
+          "asp6_buried_frac": 0.788,
+          "net_interface_charge": 1.0,
+          "iptm": 0.4371,
+          "structure_md5": "c55a4029"
+        },
+        {
+          "draw": 8,
+          "source": "this run",
+          "gate_pass": false,
+          "asp6_min_donor_distance": null,
+          "pos6_sidechain_contacts": 0,
+          "pos6_contacts": 1,
+          "peptide_buried_frac": 0.206,
+          "asp6_buried_frac": 0.086,
+          "net_interface_charge": -1.0,
+          "iptm": 0.4558,
+          "structure_md5": "a0f1fde5"
+        },
+        {
+          "draw": 9,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.67,
+          "pos6_sidechain_contacts": 16,
+          "pos6_contacts": 21,
+          "peptide_buried_frac": 0.307,
+          "asp6_buried_frac": 0.728,
+          "net_interface_charge": 1.0,
+          "iptm": 0.3984,
+          "structure_md5": "be708859"
+        }
+      ],
+      "pose": {
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 2.11,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 1.23,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r0~r3",
+            "binder_ca_rmsd": 1.23,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r0~r4",
+            "binder_ca_rmsd": 1.17,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r0~r5",
+            "binder_ca_rmsd": 1.17,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r0~r6",
+            "binder_ca_rmsd": 1.23,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r0~r7",
+            "binder_ca_rmsd": 1.18,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r0~r8",
+            "binder_ca_rmsd": 13.93,
+            "frame_ca_rmsd": 0.49
+          },
+          {
+            "pair": "r0~r9",
+            "binder_ca_rmsd": 1.05,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 2.54,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r1~r3",
+            "binder_ca_rmsd": 2.54,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r1~r4",
+            "binder_ca_rmsd": 2.36,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r1~r5",
+            "binder_ca_rmsd": 2.36,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r1~r6",
+            "binder_ca_rmsd": 2.54,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r1~r7",
+            "binder_ca_rmsd": 1.88,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r1~r8",
+            "binder_ca_rmsd": 13.94,
+            "frame_ca_rmsd": 0.46
+          },
+          {
+            "pair": "r1~r9",
+            "binder_ca_rmsd": 2.35,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r2~r3",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r2~r4",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r2~r5",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r2~r6",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r2~r7",
+            "binder_ca_rmsd": 1.34,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r2~r8",
+            "binder_ca_rmsd": 13.7,
+            "frame_ca_rmsd": 0.47
+          },
+          {
+            "pair": "r2~r9",
+            "binder_ca_rmsd": 0.62,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r3~r4",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r3~r5",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r3~r6",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r3~r7",
+            "binder_ca_rmsd": 1.34,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r3~r8",
+            "binder_ca_rmsd": 13.7,
+            "frame_ca_rmsd": 0.47
+          },
+          {
+            "pair": "r3~r9",
+            "binder_ca_rmsd": 0.62,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r4~r5",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r4~r6",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r4~r7",
+            "binder_ca_rmsd": 1.4,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r4~r8",
+            "binder_ca_rmsd": 13.79,
+            "frame_ca_rmsd": 0.46
+          },
+          {
+            "pair": "r4~r9",
+            "binder_ca_rmsd": 0.89,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r5~r6",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r5~r7",
+            "binder_ca_rmsd": 1.4,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r5~r8",
+            "binder_ca_rmsd": 13.79,
+            "frame_ca_rmsd": 0.46
+          },
+          {
+            "pair": "r5~r9",
+            "binder_ca_rmsd": 0.89,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r6~r7",
+            "binder_ca_rmsd": 1.34,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r6~r8",
+            "binder_ca_rmsd": 13.7,
+            "frame_ca_rmsd": 0.47
+          },
+          {
+            "pair": "r6~r9",
+            "binder_ca_rmsd": 0.62,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r7~r8",
+            "binder_ca_rmsd": 13.55,
+            "frame_ca_rmsd": 0.44
+          },
+          {
+            "pair": "r7~r9",
+            "binder_ca_rmsd": 1.06,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r8~r9",
+            "binder_ca_rmsd": 13.69,
+            "frame_ca_rmsd": 0.45
+          }
+        ],
+        "mean": 3.69,
+        "max": 13.94,
+        "frame_max": 0.49
+      },
+      "summary": {
+        "asp6_min_donor_distance": {
+          "mean": 2.317,
+          "sd": 0.301,
+          "min": 1.94,
+          "max": 2.88,
+          "n": 9
+        },
+        "pos6_sidechain_contacts": {
+          "mean": 11.4,
+          "sd": 4.652,
+          "min": 0,
+          "max": 16,
+          "n": 10
+        },
+        "peptide_buried_frac": {
+          "mean": 0.286,
+          "sd": 0.032,
+          "min": 0.206,
+          "max": 0.307,
+          "n": 10
+        },
+        "net_interface_charge": {
+          "mean": 0.9,
+          "sd": 0.7,
+          "min": -1.0,
+          "max": 2.0,
+          "n": 10
+        },
+        "iptm": {
+          "mean": 0.407,
+          "sd": 0.031,
+          "min": 0.367,
+          "max": 0.459,
+          "n": 10
+        }
+      },
+      "arms": {
+        "wt": {
+          "n_draws": 4,
+          "n_distinct_structures": 4,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 16,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.289,
+              "buried_area_total": 684.0,
+              "buried_area_peptide": 198.0,
+              "buried_area_by_chain": {
+                "A": 486.0,
+                "C": 198.0
+              },
+              "contacts_by_chain": {
+                "A": 71,
+                "B": 0,
+                "C": 41
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.4468,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 10.94,
+              "frame_ca_rmsd": 0.41,
+              "frame_chains": "A+C",
+              "structure_md5": "00ee7c43"
+            },
+            {
+              "draw": 1,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 17,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.29,
+              "buried_area_total": 682.1,
+              "buried_area_peptide": 197.6,
+              "buried_area_by_chain": {
+                "A": 484.5,
+                "C": 197.6
+              },
+              "contacts_by_chain": {
+                "A": 68,
+                "B": 0,
+                "C": 39
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3788,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 10.6,
+              "frame_ca_rmsd": 0.43,
+              "frame_chains": "A+C",
+              "structure_md5": "5cf8ad78"
+            },
+            {
+              "draw": 2,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 14,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.288,
+              "buried_area_total": 699.0,
+              "buried_area_peptide": 201.5,
+              "buried_area_by_chain": {
+                "A": 497.5,
+                "C": 201.5
+              },
+              "contacts_by_chain": {
+                "A": 70,
+                "B": 0,
+                "C": 42
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.3985,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 10.77,
+              "frame_ca_rmsd": 0.43,
+              "frame_chains": "A+C",
+              "structure_md5": "c2ea6c59"
+            },
+            {
+              "draw": 3,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 14,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.28,
+              "buried_area_total": 674.8,
+              "buried_area_peptide": 188.6,
+              "buried_area_by_chain": {
+                "A": 486.2,
+                "C": 188.6
+              },
+              "contacts_by_chain": {
+                "A": 69,
+                "B": 0,
+                "C": 36
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.3805,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 11.35,
+              "frame_ca_rmsd": 0.4,
+              "frame_chains": "A+C",
+              "structure_md5": "f05c55e5"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 1.21,
+                "frame_ca_rmsd": 0.06
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 1.33,
+                "frame_ca_rmsd": 0.09
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 1.73,
+                "frame_ca_rmsd": 0.07
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 1.19,
+                "frame_ca_rmsd": 0.08
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 2.18,
+                "frame_ca_rmsd": 0.09
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 2.04,
+                "frame_ca_rmsd": 0.1
+              }
+            ],
+            "mean": 1.61,
+            "max": 2.18
+          },
+          "summary": {
+            "pos6_contacts": {
+              "mean": 15.25,
+              "sd": 1.299,
+              "min": 14,
+              "max": 17,
+              "n": 4
+            },
+            "pos6_sidechain_contacts": {
+              "mean": 0.0,
+              "sd": 0.0,
+              "min": 0,
+              "max": 0,
+              "n": 4
+            },
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": {
+              "mean": 0.287,
+              "sd": 0.004,
+              "min": 0.28,
+              "max": 0.29,
+              "n": 4
+            },
+            "buried_area_total": {
+              "mean": 684.975,
+              "sd": 8.796,
+              "min": 674.8,
+              "max": 699.0,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -1.5,
+              "sd": 0.5,
+              "min": -2.0,
+              "max": -1.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.401,
+              "sd": 0.027,
+              "min": 0.379,
+              "max": 0.447,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 10.915,
+              "sd": 0.278,
+              "min": 10.6,
+              "max": 11.35,
+              "n": 4
+            }
+          }
+        },
+        "apo": {
+          "n_draws": 4,
+          "n_distinct_structures": 2,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1254.2,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1254.2
+              },
+              "contacts_by_chain": {
+                "A": 145,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.4412,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 25.3,
+              "frame_ca_rmsd": 0.68,
+              "frame_chains": "A",
+              "structure_md5": "973509e3"
+            },
+            {
+              "draw": 1,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1254.2,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1254.2
+              },
+              "contacts_by_chain": {
+                "A": 145,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.4412,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 25.3,
+              "frame_ca_rmsd": 0.68,
+              "frame_chains": "A",
+              "structure_md5": "973509e3"
+            },
+            {
+              "draw": 2,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1254.2,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1254.2
+              },
+              "contacts_by_chain": {
+                "A": 145,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.4412,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 25.3,
+              "frame_ca_rmsd": 0.68,
+              "frame_chains": "A",
+              "structure_md5": "973509e3"
+            },
+            {
+              "draw": 3,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1254.2,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1254.2
+              },
+              "contacts_by_chain": {
+                "A": 145,
+                "B": 0
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.4412,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 25.3,
+              "frame_ca_rmsd": 0.68,
+              "frame_chains": "A",
+              "structure_md5": "9bb360b8"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              }
+            ],
+            "mean": 0.0,
+            "max": 0.0
+          },
+          "summary": {
+            "pos6_contacts": null,
+            "pos6_sidechain_contacts": null,
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": null,
+            "buried_area_total": {
+              "mean": 1254.2,
+              "sd": 0.0,
+              "min": 1254.2,
+              "max": 1254.2,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -2.0,
+              "sd": 0.0,
+              "min": -2.0,
+              "max": -2.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.441,
+              "sd": 0.0,
+              "min": 0.441,
+              "max": 0.441,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 25.3,
+              "sd": 0.0,
+              "min": 25.3,
+              "max": 25.3,
+              "n": 4
+            }
+          }
+        },
+        "decoy": {
+          "n_draws": 4,
+          "n_distinct_structures": 4,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 23,
+              "pos6_sidechain_contacts": 23,
+              "pos6_min_donor_distance": 3.27,
+              "pos6_donor_partner": "ARG29:NH2->CB@3.27A",
+              "peptide_buried_frac": 0.391,
+              "buried_area_total": 532.6,
+              "buried_area_peptide": 208.2,
+              "buried_area_by_chain": {
+                "A": 324.4,
+                "C": 208.2
+              },
+              "contacts_by_chain": {
+                "A": 45,
+                "B": 0,
+                "C": 28
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.5184,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 18.7,
+              "frame_ca_rmsd": 0.58,
+              "frame_chains": "A+C",
+              "structure_md5": "6337b660"
+            },
+            {
+              "draw": 1,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 10,
+              "pos6_sidechain_contacts": 10,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.267,
+              "buried_area_total": 416.5,
+              "buried_area_peptide": 111.1,
+              "buried_area_by_chain": {
+                "A": 305.3,
+                "C": 111.1
+              },
+              "contacts_by_chain": {
+                "A": 32,
+                "B": 0,
+                "C": 22
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.2628,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 26.35,
+              "frame_ca_rmsd": 0.65,
+              "frame_chains": "A+C",
+              "structure_md5": "d9fef884"
+            },
+            {
+              "draw": 2,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 13,
+              "pos6_sidechain_contacts": 13,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.342,
+              "buried_area_total": 376.6,
+              "buried_area_peptide": 128.9,
+              "buried_area_by_chain": {
+                "A": 247.6,
+                "C": 128.9
+              },
+              "contacts_by_chain": {
+                "A": 27,
+                "B": 0,
+                "C": 22
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.2924,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 26.23,
+              "frame_ca_rmsd": 0.65,
+              "frame_chains": "A+C",
+              "structure_md5": "be31ffc0"
+            },
+            {
+              "draw": 3,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 0,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": 5.75,
+              "pos6_donor_partner": "ARG9:NH1->NZ@5.75A",
+              "peptide_buried_frac": 0.065,
+              "buried_area_total": 398.7,
+              "buried_area_peptide": 26.0,
+              "buried_area_by_chain": {
+                "A": 372.7,
+                "C": 26.0
+              },
+              "contacts_by_chain": {
+                "A": 43,
+                "B": 0,
+                "C": 3
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.279,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 31.64,
+              "frame_ca_rmsd": 0.68,
+              "frame_chains": "A+C",
+              "structure_md5": "0c86f4d0"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 15.81,
+                "frame_ca_rmsd": 0.18
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 15.83,
+                "frame_ca_rmsd": 0.2
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 22.43,
+                "frame_ca_rmsd": 0.27
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 1.15,
+                "frame_ca_rmsd": 0.06
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 11.31,
+                "frame_ca_rmsd": 0.15
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 11.6,
+                "frame_ca_rmsd": 0.14
+              }
+            ],
+            "mean": 13.02,
+            "max": 22.43
+          },
+          "summary": {
+            "pos6_contacts": {
+              "mean": 11.5,
+              "sd": 8.201,
+              "min": 0,
+              "max": 23,
+              "n": 4
+            },
+            "pos6_sidechain_contacts": {
+              "mean": 11.5,
+              "sd": 8.201,
+              "min": 0,
+              "max": 23,
+              "n": 4
+            },
+            "pos6_min_donor_distance": {
+              "mean": 4.51,
+              "sd": 1.24,
+              "min": 3.27,
+              "max": 5.75,
+              "n": 2
+            },
+            "peptide_buried_frac": {
+              "mean": 0.266,
+              "sd": 0.124,
+              "min": 0.065,
+              "max": 0.391,
+              "n": 4
+            },
+            "buried_area_total": {
+              "mean": 431.1,
+              "sd": 60.281,
+              "min": 376.6,
+              "max": 532.6,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -0.75,
+              "sd": 0.829,
+              "min": -2.0,
+              "max": 0.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.338,
+              "sd": 0.105,
+              "min": 0.263,
+              "max": 0.518,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 25.73,
+              "sd": 4.609,
+              "min": 18.7,
+              "max": 31.64,
+              "n": 4
+            }
+          }
+        }
+      }
+    },
+    "bb135-g1": {
+      "condition": "combo",
+      "n_draws": 10,
+      "n_distinct_structures": 8,
+      "gate_passes": 10,
+      "per_draw": [
+        {
+          "draw": 0,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.81,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 11,
+          "peptide_buried_frac": 0.347,
+          "asp6_buried_frac": 0.339,
+          "net_interface_charge": 0.0,
+          "iptm": 0.3837,
+          "structure_md5": "6a7d7d76"
+        },
+        {
+          "draw": 1,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.42,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 11,
+          "peptide_buried_frac": 0.325,
+          "asp6_buried_frac": 0.274,
+          "net_interface_charge": 0.0,
+          "iptm": 0.5617,
+          "structure_md5": "43d8bda3"
+        },
+        {
+          "draw": 2,
+          "source": "sampling-study",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.59,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 10,
+          "peptide_buried_frac": 0.331,
+          "asp6_buried_frac": 0.516,
+          "net_interface_charge": 0.0,
+          "iptm": 0.4629,
+          "structure_md5": "2d2255d4"
+        },
+        {
+          "draw": 3,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.69,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 10,
+          "peptide_buried_frac": 0.303,
+          "asp6_buried_frac": 0.326,
+          "net_interface_charge": 0.0,
+          "iptm": 0.4502,
+          "structure_md5": "85fe7245"
+        },
+        {
+          "draw": 4,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.59,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 10,
+          "peptide_buried_frac": 0.331,
+          "asp6_buried_frac": 0.516,
+          "net_interface_charge": 0.0,
+          "iptm": 0.4629,
+          "structure_md5": "2d2255d4"
+        },
+        {
+          "draw": 5,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.61,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 12,
+          "peptide_buried_frac": 0.314,
+          "asp6_buried_frac": 0.396,
+          "net_interface_charge": 0.0,
+          "iptm": 0.6256,
+          "structure_md5": "ffb15c51"
+        },
+        {
+          "draw": 6,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.88,
+          "pos6_sidechain_contacts": 4,
+          "pos6_contacts": 9,
+          "peptide_buried_frac": 0.282,
+          "asp6_buried_frac": 0.256,
+          "net_interface_charge": 0.0,
+          "iptm": 0.4263,
+          "structure_md5": "97d43f96"
+        },
+        {
+          "draw": 7,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.61,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 12,
+          "peptide_buried_frac": 0.314,
+          "asp6_buried_frac": 0.396,
+          "net_interface_charge": 0.0,
+          "iptm": 0.6256,
+          "structure_md5": "ffb15c51"
+        },
+        {
+          "draw": 8,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.71,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 12,
+          "peptide_buried_frac": 0.318,
+          "asp6_buried_frac": 0.44,
+          "net_interface_charge": 0.0,
+          "iptm": 0.4488,
+          "structure_md5": "124f44eb"
+        },
+        {
+          "draw": 9,
+          "source": "this run",
+          "gate_pass": true,
+          "asp6_min_donor_distance": 2.67,
+          "pos6_sidechain_contacts": 5,
+          "pos6_contacts": 12,
+          "peptide_buried_frac": 0.316,
+          "asp6_buried_frac": 0.458,
+          "net_interface_charge": 0.0,
+          "iptm": 0.4428,
+          "structure_md5": "ce88133e"
+        }
+      ],
+      "pose": {
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 2.73,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 2.97,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r3",
+            "binder_ca_rmsd": 3.01,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r0~r4",
+            "binder_ca_rmsd": 2.97,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r5",
+            "binder_ca_rmsd": 3.46,
+            "frame_ca_rmsd": 0.21
+          },
+          {
+            "pair": "r0~r6",
+            "binder_ca_rmsd": 4.79,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r0~r7",
+            "binder_ca_rmsd": 3.46,
+            "frame_ca_rmsd": 0.21
+          },
+          {
+            "pair": "r0~r8",
+            "binder_ca_rmsd": 4.03,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r9",
+            "binder_ca_rmsd": 3.71,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 0.41,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r3",
+            "binder_ca_rmsd": 2.75,
+            "frame_ca_rmsd": 0.17
+          },
+          {
+            "pair": "r1~r4",
+            "binder_ca_rmsd": 0.41,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r5",
+            "binder_ca_rmsd": 1.42,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r1~r6",
+            "binder_ca_rmsd": 4.25,
+            "frame_ca_rmsd": 0.15
+          },
+          {
+            "pair": "r1~r7",
+            "binder_ca_rmsd": 1.42,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r1~r8",
+            "binder_ca_rmsd": 2.12,
+            "frame_ca_rmsd": 0.06
+          },
+          {
+            "pair": "r1~r9",
+            "binder_ca_rmsd": 1.68,
+            "frame_ca_rmsd": 0.14
+          },
+          {
+            "pair": "r2~r3",
+            "binder_ca_rmsd": 2.73,
+            "frame_ca_rmsd": 0.16
+          },
+          {
+            "pair": "r2~r4",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r2~r5",
+            "binder_ca_rmsd": 1.22,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r2~r6",
+            "binder_ca_rmsd": 4.12,
+            "frame_ca_rmsd": 0.14
+          },
+          {
+            "pair": "r2~r7",
+            "binder_ca_rmsd": 1.22,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r2~r8",
+            "binder_ca_rmsd": 1.87,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r2~r9",
+            "binder_ca_rmsd": 1.39,
+            "frame_ca_rmsd": 0.13
+          },
+          {
+            "pair": "r3~r4",
+            "binder_ca_rmsd": 2.73,
+            "frame_ca_rmsd": 0.16
+          },
+          {
+            "pair": "r3~r5",
+            "binder_ca_rmsd": 2.11,
+            "frame_ca_rmsd": 0.12
+          },
+          {
+            "pair": "r3~r6",
+            "binder_ca_rmsd": 2.16,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r3~r7",
+            "binder_ca_rmsd": 2.11,
+            "frame_ca_rmsd": 0.12
+          },
+          {
+            "pair": "r3~r8",
+            "binder_ca_rmsd": 2.35,
+            "frame_ca_rmsd": 0.16
+          },
+          {
+            "pair": "r3~r9",
+            "binder_ca_rmsd": 2.4,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r4~r5",
+            "binder_ca_rmsd": 1.22,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r4~r6",
+            "binder_ca_rmsd": 4.12,
+            "frame_ca_rmsd": 0.14
+          },
+          {
+            "pair": "r4~r7",
+            "binder_ca_rmsd": 1.22,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r4~r8",
+            "binder_ca_rmsd": 1.87,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r4~r9",
+            "binder_ca_rmsd": 1.39,
+            "frame_ca_rmsd": 0.13
+          },
+          {
+            "pair": "r5~r6",
+            "binder_ca_rmsd": 3.16,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r5~r7",
+            "binder_ca_rmsd": 0.0,
+            "frame_ca_rmsd": 0.0
+          },
+          {
+            "pair": "r5~r8",
+            "binder_ca_rmsd": 0.86,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r5~r9",
+            "binder_ca_rmsd": 0.65,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r6~r7",
+            "binder_ca_rmsd": 3.16,
+            "frame_ca_rmsd": 0.1
+          },
+          {
+            "pair": "r6~r8",
+            "binder_ca_rmsd": 2.84,
+            "frame_ca_rmsd": 0.13
+          },
+          {
+            "pair": "r6~r9",
+            "binder_ca_rmsd": 3.19,
+            "frame_ca_rmsd": 0.07
+          },
+          {
+            "pair": "r7~r8",
+            "binder_ca_rmsd": 0.86,
+            "frame_ca_rmsd": 0.08
+          },
+          {
+            "pair": "r7~r9",
+            "binder_ca_rmsd": 0.65,
+            "frame_ca_rmsd": 0.09
+          },
+          {
+            "pair": "r8~r9",
+            "binder_ca_rmsd": 0.64,
+            "frame_ca_rmsd": 0.13
+          }
+        ],
+        "mean": 2.17,
+        "max": 4.79,
+        "frame_max": 0.25
+      },
+      "summary": {
+        "asp6_min_donor_distance": {
+          "mean": 2.658,
+          "sd": 0.121,
+          "min": 2.42,
+          "max": 2.88,
+          "n": 10
+        },
+        "pos6_sidechain_contacts": {
+          "mean": 4.9,
+          "sd": 0.3,
+          "min": 4,
+          "max": 5,
+          "n": 10
+        },
+        "peptide_buried_frac": {
+          "mean": 0.318,
+          "sd": 0.017,
+          "min": 0.282,
+          "max": 0.347,
+          "n": 10
+        },
+        "net_interface_charge": {
+          "mean": 0.0,
+          "sd": 0.0,
+          "min": 0.0,
+          "max": 0.0,
+          "n": 10
+        },
+        "iptm": {
+          "mean": 0.489,
+          "sd": 0.08,
+          "min": 0.384,
+          "max": 0.626,
+          "n": 10
+        }
+      },
+      "arms": {
+        "wt": {
+          "n_draws": 4,
+          "n_distinct_structures": 4,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 24,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.328,
+              "buried_area_total": 613.9,
+              "buried_area_peptide": 201.3,
+              "buried_area_by_chain": {
+                "A": 412.6,
+                "C": 201.3
+              },
+              "contacts_by_chain": {
+                "A": 61,
+                "B": 0,
+                "C": 39
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.6668,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 4.8,
+              "frame_ca_rmsd": 0.39,
+              "frame_chains": "A+C",
+              "structure_md5": "1fda727c"
+            },
+            {
+              "draw": 1,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 13,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.303,
+              "buried_area_total": 612.2,
+              "buried_area_peptide": 185.5,
+              "buried_area_by_chain": {
+                "A": 426.7,
+                "C": 185.5
+              },
+              "contacts_by_chain": {
+                "A": 52,
+                "B": 0,
+                "C": 32
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.6059,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 8.03,
+              "frame_ca_rmsd": 0.4,
+              "frame_chains": "A+C",
+              "structure_md5": "3d2fb43c"
+            },
+            {
+              "draw": 2,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 21,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.324,
+              "buried_area_total": 571.7,
+              "buried_area_peptide": 185.3,
+              "buried_area_by_chain": {
+                "A": 386.4,
+                "C": 185.3
+              },
+              "contacts_by_chain": {
+                "A": 55,
+                "B": 0,
+                "C": 38
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.5217,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 4.86,
+              "frame_ca_rmsd": 0.41,
+              "frame_chains": "A+C",
+              "structure_md5": "66191bab"
+            },
+            {
+              "draw": 3,
+              "constrained": true,
+              "pos6_residue": "GLY",
+              "pos6_contacts": 23,
+              "pos6_sidechain_contacts": 0,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": 0.317,
+              "buried_area_total": 615.0,
+              "buried_area_peptide": 195.2,
+              "buried_area_by_chain": {
+                "A": 419.7,
+                "C": 195.2
+              },
+              "contacts_by_chain": {
+                "A": 58,
+                "B": 0,
+                "C": 39
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.7228,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 4.91,
+              "frame_ca_rmsd": 0.39,
+              "frame_chains": "A+C",
+              "structure_md5": "52204d0e"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 4.7,
+                "frame_ca_rmsd": 0.24
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 0.77,
+                "frame_ca_rmsd": 0.12
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 0.4,
+                "frame_ca_rmsd": 0.08
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 4.26,
+                "frame_ca_rmsd": 0.29
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 4.69,
+                "frame_ca_rmsd": 0.26
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.87,
+                "frame_ca_rmsd": 0.08
+              }
+            ],
+            "mean": 2.62,
+            "max": 4.7
+          },
+          "summary": {
+            "pos6_contacts": {
+              "mean": 20.25,
+              "sd": 4.323,
+              "min": 13,
+              "max": 24,
+              "n": 4
+            },
+            "pos6_sidechain_contacts": {
+              "mean": 0.0,
+              "sd": 0.0,
+              "min": 0,
+              "max": 0,
+              "n": 4
+            },
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": {
+              "mean": 0.318,
+              "sd": 0.01,
+              "min": 0.303,
+              "max": 0.328,
+              "n": 4
+            },
+            "buried_area_total": {
+              "mean": 603.2,
+              "sd": 18.214,
+              "min": 571.7,
+              "max": 615.0,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -0.5,
+              "sd": 0.5,
+              "min": -1.0,
+              "max": 0.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.629,
+              "sd": 0.075,
+              "min": 0.522,
+              "max": 0.723,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 5.65,
+              "sd": 1.375,
+              "min": 4.8,
+              "max": 8.03,
+              "n": 4
+            }
+          }
+        },
+        "apo": {
+          "n_draws": 4,
+          "n_distinct_structures": 1,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1101.0,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1101.0
+              },
+              "contacts_by_chain": {
+                "A": 118,
+                "B": 0
+              },
+              "net_interface_charge": -3.0,
+              "iptm": 0.4567,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 15.19,
+              "frame_ca_rmsd": 0.34,
+              "frame_chains": "A",
+              "structure_md5": "04f3281f"
+            },
+            {
+              "draw": 1,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1101.0,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1101.0
+              },
+              "contacts_by_chain": {
+                "A": 118,
+                "B": 0
+              },
+              "net_interface_charge": -3.0,
+              "iptm": 0.4567,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 15.19,
+              "frame_ca_rmsd": 0.34,
+              "frame_chains": "A",
+              "structure_md5": "04f3281f"
+            },
+            {
+              "draw": 2,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1101.0,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1101.0
+              },
+              "contacts_by_chain": {
+                "A": 118,
+                "B": 0
+              },
+              "net_interface_charge": -3.0,
+              "iptm": 0.4567,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 15.19,
+              "frame_ca_rmsd": 0.34,
+              "frame_chains": "A",
+              "structure_md5": "04f3281f"
+            },
+            {
+              "draw": 3,
+              "constrained": false,
+              "pos6_residue": null,
+              "pos6_contacts": null,
+              "pos6_sidechain_contacts": null,
+              "pos6_min_donor_distance": null,
+              "pos6_donor_partner": "",
+              "peptide_buried_frac": null,
+              "buried_area_total": 1101.0,
+              "buried_area_peptide": null,
+              "buried_area_by_chain": {
+                "A": 1101.0
+              },
+              "contacts_by_chain": {
+                "A": 118,
+                "B": 0
+              },
+              "net_interface_charge": -3.0,
+              "iptm": 0.4567,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 15.19,
+              "frame_ca_rmsd": 0.34,
+              "frame_chains": "A",
+              "structure_md5": "04f3281f"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.0,
+                "frame_ca_rmsd": 0.0
+              }
+            ],
+            "mean": 0.0,
+            "max": 0.0
+          },
+          "summary": {
+            "pos6_contacts": null,
+            "pos6_sidechain_contacts": null,
+            "pos6_min_donor_distance": null,
+            "peptide_buried_frac": null,
+            "buried_area_total": {
+              "mean": 1101.0,
+              "sd": 0.0,
+              "min": 1101.0,
+              "max": 1101.0,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -3.0,
+              "sd": 0.0,
+              "min": -3.0,
+              "max": -3.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.457,
+              "sd": 0.0,
+              "min": 0.457,
+              "max": 0.457,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 15.19,
+              "sd": 0.0,
+              "min": 15.19,
+              "max": 15.19,
+              "n": 4
+            }
+          }
+        },
+        "decoy": {
+          "n_draws": 4,
+          "n_distinct_structures": 4,
+          "per_draw": [
+            {
+              "draw": 0,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 27,
+              "pos6_sidechain_contacts": 27,
+              "pos6_min_donor_distance": 4.35,
+              "pos6_donor_partner": "ARG14:NE->CD@4.35A",
+              "peptide_buried_frac": 0.284,
+              "buried_area_total": 738.0,
+              "buried_area_peptide": 209.8,
+              "buried_area_by_chain": {
+                "A": 528.1,
+                "C": 209.8
+              },
+              "contacts_by_chain": {
+                "A": 70,
+                "B": 0,
+                "C": 44
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.3916,
+              "donor_contacts": [
+                {
+                  "peptide_position": 8,
+                  "peptide_residue": "ASP",
+                  "donor": "ARG14:NH2",
+                  "distance": 3.26
+                }
+              ],
+              "binder_rmsd_vs_g12d_r0": 17.31,
+              "frame_ca_rmsd": 0.52,
+              "frame_chains": "A+C",
+              "structure_md5": "e3347e5b"
+            },
+            {
+              "draw": 1,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 28,
+              "pos6_sidechain_contacts": 28,
+              "pos6_min_donor_distance": 5.02,
+              "pos6_donor_partner": "SER11:OG->CE@5.02A",
+              "peptide_buried_frac": 0.225,
+              "buried_area_total": 848.3,
+              "buried_area_peptide": 190.6,
+              "buried_area_by_chain": {
+                "A": 657.7,
+                "C": 190.6
+              },
+              "contacts_by_chain": {
+                "A": 76,
+                "B": 0,
+                "C": 37
+              },
+              "net_interface_charge": -2.0,
+              "iptm": 0.3331,
+              "donor_contacts": [],
+              "binder_rmsd_vs_g12d_r0": 16.98,
+              "frame_ca_rmsd": 0.52,
+              "frame_chains": "A+C",
+              "structure_md5": "2a667d13"
+            },
+            {
+              "draw": 2,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 18,
+              "pos6_sidechain_contacts": 18,
+              "pos6_min_donor_distance": 5.17,
+              "pos6_donor_partner": "SER11:OG->CD@5.17A",
+              "peptide_buried_frac": 0.264,
+              "buried_area_total": 685.9,
+              "buried_area_peptide": 181.0,
+              "buried_area_by_chain": {
+                "A": 504.9,
+                "C": 181.0
+              },
+              "contacts_by_chain": {
+                "A": 64,
+                "B": 0,
+                "C": 32
+              },
+              "net_interface_charge": 0.0,
+              "iptm": 0.3028,
+              "donor_contacts": [
+                {
+                  "peptide_position": 8,
+                  "peptide_residue": "ASP",
+                  "donor": "ARG14:NH2",
+                  "distance": 3.89
+                }
+              ],
+              "binder_rmsd_vs_g12d_r0": 17.38,
+              "frame_ca_rmsd": 0.5,
+              "frame_chains": "A+C",
+              "structure_md5": "3a52fc16"
+            },
+            {
+              "draw": 3,
+              "constrained": true,
+              "pos6_residue": "LYS",
+              "pos6_contacts": 20,
+              "pos6_sidechain_contacts": 20,
+              "pos6_min_donor_distance": 4.1,
+              "pos6_donor_partner": "SER11:OG->NZ@4.1A",
+              "peptide_buried_frac": 0.229,
+              "buried_area_total": 754.9,
+              "buried_area_peptide": 172.6,
+              "buried_area_by_chain": {
+                "A": 582.3,
+                "C": 172.6
+              },
+              "contacts_by_chain": {
+                "A": 72,
+                "B": 0,
+                "C": 34
+              },
+              "net_interface_charge": -1.0,
+              "iptm": 0.331,
+              "donor_contacts": [
+                {
+                  "peptide_position": 8,
+                  "peptide_residue": "ASP",
+                  "donor": "ARG14:NH2",
+                  "distance": 2.7
+                }
+              ],
+              "binder_rmsd_vs_g12d_r0": 17.22,
+              "frame_ca_rmsd": 0.5,
+              "frame_chains": "A+C",
+              "structure_md5": "b0405301"
+            }
+          ],
+          "internal_pose": {
+            "pairwise": [
+              {
+                "pair": "r0~r1",
+                "binder_ca_rmsd": 3.53,
+                "frame_ca_rmsd": 0.08
+              },
+              {
+                "pair": "r0~r2",
+                "binder_ca_rmsd": 2.16,
+                "frame_ca_rmsd": 0.08
+              },
+              {
+                "pair": "r0~r3",
+                "binder_ca_rmsd": 2.22,
+                "frame_ca_rmsd": 0.1
+              },
+              {
+                "pair": "r1~r2",
+                "binder_ca_rmsd": 4.58,
+                "frame_ca_rmsd": 0.1
+              },
+              {
+                "pair": "r1~r3",
+                "binder_ca_rmsd": 4.46,
+                "frame_ca_rmsd": 0.11
+              },
+              {
+                "pair": "r2~r3",
+                "binder_ca_rmsd": 0.98,
+                "frame_ca_rmsd": 0.07
+              }
+            ],
+            "mean": 2.99,
+            "max": 4.58
+          },
+          "summary": {
+            "pos6_contacts": {
+              "mean": 23.25,
+              "sd": 4.323,
+              "min": 18,
+              "max": 28,
+              "n": 4
+            },
+            "pos6_sidechain_contacts": {
+              "mean": 23.25,
+              "sd": 4.323,
+              "min": 18,
+              "max": 28,
+              "n": 4
+            },
+            "pos6_min_donor_distance": {
+              "mean": 4.66,
+              "sd": 0.447,
+              "min": 4.1,
+              "max": 5.17,
+              "n": 4
+            },
+            "peptide_buried_frac": {
+              "mean": 0.251,
+              "sd": 0.025,
+              "min": 0.225,
+              "max": 0.284,
+              "n": 4
+            },
+            "buried_area_total": {
+              "mean": 756.775,
+              "sd": 58.643,
+              "min": 685.9,
+              "max": 848.3,
+              "n": 4
+            },
+            "net_interface_charge": {
+              "mean": -0.75,
+              "sd": 0.829,
+              "min": -2.0,
+              "max": 0.0,
+              "n": 4
+            },
+            "iptm": {
+              "mean": 0.34,
+              "sd": 0.032,
+              "min": 0.303,
+              "max": 0.392,
+              "n": 4
+            },
+            "binder_rmsd_vs_g12d_r0": {
+              "mean": 17.223,
+              "sd": 0.151,
+              "min": 16.98,
+              "max": 17.38,
+              "n": 4
+            }
+          }
+        }
+      }
+    }
+  }
+}
