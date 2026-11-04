@@ -2,169 +2,1033 @@
   {
     "backbone": "B11-peptide40_bb00",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "76 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.149,
+      "severe_clash_atoms": 76,
+      "hla_contact_atoms_5A": 114,
+      "min_hla_distance": 0.415
+    }
   },
   {
     "backbone": "B11-peptide40_bb01",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "99 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1378,
+      "severe_clash_atoms": 99,
+      "hla_contact_atoms_5A": 122,
+      "min_hla_distance": 0.163
+    }
   },
   {
     "backbone": "B11-peptide40_bb02",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "105 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1308,
+      "severe_clash_atoms": 105,
+      "hla_contact_atoms_5A": 158,
+      "min_hla_distance": 0.301
+    }
   },
   {
     "backbone": "B11-peptide40_bb03",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "42 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1358,
+      "severe_clash_atoms": 42,
+      "hla_contact_atoms_5A": 78,
+      "min_hla_distance": 0.58
+    }
   },
   {
     "backbone": "B11-peptide40_bb04",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "97 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.172,
+      "severe_clash_atoms": 97,
+      "hla_contact_atoms_5A": 129,
+      "min_hla_distance": 0.341
+    }
   },
   {
     "backbone": "B11-peptide40_bb05",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "84 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1423,
+      "severe_clash_atoms": 84,
+      "hla_contact_atoms_5A": 119,
+      "min_hla_distance": 0.301
+    }
   },
   {
     "backbone": "B11-peptide40_bb06",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "105 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1559,
+      "severe_clash_atoms": 105,
+      "hla_contact_atoms_5A": 152,
+      "min_hla_distance": 0.357
+    }
   },
   {
     "backbone": "B11-peptide40_bb07",
     "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "75 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1482,
+      "severe_clash_atoms": 75,
+      "hla_contact_atoms_5A": 119,
+      "min_hla_distance": 0.27
+    }
   },
   {
     "backbone": "B11-peptide46_bb00",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "135 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.144,
+      "severe_clash_atoms": 135,
+      "hla_contact_atoms_5A": 180,
+      "min_hla_distance": 0.488
+    }
   },
   {
     "backbone": "B11-peptide46_bb01",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "119 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1596,
+      "severe_clash_atoms": 119,
+      "hla_contact_atoms_5A": 170,
+      "min_hla_distance": 0.375
+    }
   },
   {
     "backbone": "B11-peptide46_bb02",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "99 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1358,
+      "severe_clash_atoms": 99,
+      "hla_contact_atoms_5A": 141,
+      "min_hla_distance": 0.345
+    }
   },
   {
     "backbone": "B11-peptide46_bb03",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "144 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.15,
+      "severe_clash_atoms": 144,
+      "hla_contact_atoms_5A": 182,
+      "min_hla_distance": 0.237
+    }
   },
   {
     "backbone": "B11-peptide46_bb04",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "139 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1539,
+      "severe_clash_atoms": 139,
+      "hla_contact_atoms_5A": 179,
+      "min_hla_distance": 0.184
+    }
   },
   {
     "backbone": "B11-peptide46_bb05",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "83 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1572,
+      "severe_clash_atoms": 83,
+      "hla_contact_atoms_5A": 128,
+      "min_hla_distance": 0.459
+    }
   },
   {
     "backbone": "B11-peptide46_bb06",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "70 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1305,
+      "severe_clash_atoms": 70,
+      "hla_contact_atoms_5A": 112,
+      "min_hla_distance": 0.353
+    }
   },
   {
     "backbone": "B11-peptide46_bb07",
     "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "65 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.171,
+      "severe_clash_atoms": 65,
+      "hla_contact_atoms_5A": 108,
+      "min_hla_distance": 0.488
+    }
   },
   {
     "backbone": "B11-peptide52_bb00",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "41 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1379,
+      "severe_clash_atoms": 41,
+      "hla_contact_atoms_5A": 91,
+      "min_hla_distance": 0.697
+    }
   },
   {
     "backbone": "B11-peptide52_bb01",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "95 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1112,
+      "severe_clash_atoms": 95,
+      "hla_contact_atoms_5A": 161,
+      "min_hla_distance": 0.387
+    }
   },
   {
     "backbone": "B11-peptide52_bb02",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "69 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1152,
+      "severe_clash_atoms": 69,
+      "hla_contact_atoms_5A": 131,
+      "min_hla_distance": 0.242
+    }
   },
   {
     "backbone": "B11-peptide52_bb03",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "141 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1389,
+      "severe_clash_atoms": 141,
+      "hla_contact_atoms_5A": 186,
+      "min_hla_distance": 0.347
+    }
   },
   {
     "backbone": "B11-peptide52_bb04",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "134 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1159,
+      "severe_clash_atoms": 134,
+      "hla_contact_atoms_5A": 154,
+      "min_hla_distance": 0.193
+    }
   },
   {
     "backbone": "B11-peptide52_bb05",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "154 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1232,
+      "severe_clash_atoms": 154,
+      "hla_contact_atoms_5A": 202,
+      "min_hla_distance": 0.321
+    }
   },
   {
     "backbone": "B11-peptide52_bb06",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "119 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1321,
+      "severe_clash_atoms": 119,
+      "hla_contact_atoms_5A": 162,
+      "min_hla_distance": 0.285
+    }
   },
   {
     "backbone": "B11-peptide52_bb07",
     "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "hotspots": [
+      "C5",
+      "C6",
+      "C8"
+    ],
     "ok": false,
-    "stage": "rfdiffusion",
-    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance None > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance None > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "142 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": null,
+      "sidechain_min_distance": null,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": []
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.144,
+      "severe_clash_atoms": 142,
+      "hla_contact_atoms_5A": 185,
+      "min_hla_distance": 0.357
+    }
   }
 ]

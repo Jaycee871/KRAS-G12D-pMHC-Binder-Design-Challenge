@@ -1,9 +1,22 @@
 {
-  "status": "not_run_due_to_design_infrastructure_failure",
-  "scientific_result": false,
+  "status": "completed",
   "stage": "confirm",
   "advancers": [],
+  "arms": [
+    "wt",
+    "decoy"
+  ],
+  "sampling": {
+    "recycling_steps": 8,
+    "sampling_steps": 50,
+    "diffusion_samples": 3,
+    "without_potentials": false
+  },
+  "constraint": null,
   "boltz2_calls_this_run": 0,
-  "interpretation": "No WT/decoy confirmation occurred because the design stage was invalidated before model generation.",
+  "confirm_summary": {},
+  "interpretation": "diagnostic only; no post-hoc WT/decoy hard threshold added",
+  "elapsed_seconds": 0.0,
+  "historical_gates_changed": false,
   "track1_slots_spent": 0
 }
