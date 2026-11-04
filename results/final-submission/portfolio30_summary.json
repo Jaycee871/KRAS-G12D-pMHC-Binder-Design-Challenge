@@ -1,0 +1,18 @@
+{
+  "designs": 30,
+  "top20_families": 20,
+  "max_family_count_top20": 1,
+  "max_family_count_full30": 2,
+  "top20_gt2_cys": 0,
+  "full30_gt2_cys": 0,
+  "top20_sequence_filter_failures": 0,
+  "top20_batch10_failed_family_exploration_slots": 0,
+  "policy": {
+    "top20_family_cap": 1,
+    "full30_family_cap": 2,
+    "max_cys": 2,
+    "ranks_1_3": "fixed corrected matched-panel leads",
+    "ranks_4_20": "family-diverse exploration selected by max-min sequence distance",
+    "ranks_21_30": "reserve, direct-readout evidence prioritized"
+  }
+}
