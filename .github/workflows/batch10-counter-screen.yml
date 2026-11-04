@@ -1,0 +1,70 @@
+name: Batch 10 matched G12D-apo counter-screen
+
+on:
+  push:
+    branches: [batch10-counter-screen-first]
+    paths: [.github/workflows/batch10-counter-screen.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: batch10-counter-screen
+  cancel-in-progress: false
+
+jobs:
+  screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: batch10-counter-screen-first
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run tests
+        run: python -m pytest -q
+      - name: Validate frozen phase-1 requests without model calls
+        run: |
+          mkdir -p logs
+          python scripts/batch10_counter_screen.py --phase screen --dry-run > logs/batch10-screen-preflight.json
+      - name: Run phase-1 matched G12D plus apo screen
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          if [ -z "$NVIDIA_API_KEY" ]; then
+            echo 'NVIDIA_API_KEY repository secret is required for model calls.' >&2
+            exit 1
+          fi
+          python scripts/batch10_counter_screen.py --phase screen --max-boltz-calls 16
+      - name: Freeze advance decision
+        run: |
+          python scripts/batch10_counter_screen.py --phase confirm --dry-run > logs/batch10-confirm-preflight.json
+          tar -czf results/batch-10/counter_screen_responses.tar.gz -C results/batch-10 responses
+          sha256sum results/batch-10/counter_screen_responses.tar.gz > results/batch-10/counter_screen_responses.sha256
+      - name: Commit phase-1 evidence to review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- results/batch-10/counter_screen_checkpoint.jsonl results/batch-10/counter_screen_run.json results/batch-10/structures results/batch-10/counter_screen_responses.tar.gz results/batch-10/counter_screen_responses.sha256
+          if git diff --cached --quiet; then
+            echo 'Evidence already preserved.'
+          else
+            git commit -m 'batch-10: preserve matched G12D-apo phase-1 evidence'
+            git push origin HEAD:batch10-counter-screen-first
+          fi
+      - name: Upload complete evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch10-counter-screen-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            logs/batch10-screen-preflight.json
+            logs/batch10-confirm-preflight.json
+            results/batch-10/
+          if-no-files-found: warn
+          retention-days: 30
