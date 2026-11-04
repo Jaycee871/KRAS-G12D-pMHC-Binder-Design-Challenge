@@ -1,0 +1,50 @@
+{
+  "status": "completed",
+  "stage": "design",
+  "mechanism": "peptide-only RFdiffusion + ProteinMPNN; HLA reinserted after generation",
+  "strategies": [
+    {
+      "name": "B11-peptide40",
+      "binder_length": 40,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "sampling_temp": 0.2
+    },
+    {
+      "name": "B11-peptide46",
+      "binder_length": 46,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "sampling_temp": 0.2
+    },
+    {
+      "name": "B11-peptide52",
+      "binder_length": 52,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C8"
+      ],
+      "sampling_temp": 0.25
+    }
+  ],
+  "backbones_requested": 24,
+  "backbones_bidentate_ok": 0,
+  "candidate_sequences": 0,
+  "design_gate": {
+    "asp6_sidechain_contact_atoms": ">=1",
+    "asp6_sidechain_distance": "<=4.5",
+    "val8_sidechain_contact_atoms": ">=1",
+    "val8_sidechain_distance": "<=4.5",
+    "distinct_binder_residues": ">=2 across Asp6/Val8 contacts",
+    "severe_hla_clash_atoms": "<=2 at 2.2 A"
+  },
+  "elapsed_seconds": 46.1,
+  "track1_slots_spent": 0
+}

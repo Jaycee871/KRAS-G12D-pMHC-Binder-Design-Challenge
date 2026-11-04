@@ -1,0 +1,170 @@
+[
+  {
+    "backbone": "B11-peptide40_bb00",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb01",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb02",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb03",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb04",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb05",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb06",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide40_bb07",
+    "strategy": "B11-peptide40",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb00",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb01",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb02",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb03",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb04",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb05",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb06",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide46_bb07",
+    "strategy": "B11-peptide46",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb00",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb01",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb02",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb03",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb04",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb05",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb06",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  },
+  {
+    "backbone": "B11-peptide52_bb07",
+    "strategy": "B11-peptide52",
+    "ok": false,
+    "stage": "rfdiffusion",
+    "error": "NvidiaAuthError: POST /v1/biology/ipd/rfdiffusion/generate rejected the API key (HTTP 401): Invalid JWT serialization: Missing dot delimiter(s). Check NVIDIA_API_KEY and that the key is entitled to this NIM."
+  }
+]
