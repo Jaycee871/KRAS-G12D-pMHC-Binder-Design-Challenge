@@ -1,0 +1,86 @@
+{
+  "elapsed_seconds": 210.0,
+  "backbones_generated": 0,
+  "backbones_pose_ok": 0,
+  "candidates": 54,
+  "scored": 17,
+  "boltz2_calls": 17,
+  "stopped_early": "",
+  "strategies": [
+    {
+      "name": "B4-c6-62",
+      "binder_length": 62,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.15,
+      "rationale": "hotspot collapsed onto position 6 alone - the strongest available pull of the paratope onto the mutated aspartate"
+    },
+    {
+      "name": "B4-c67-65",
+      "binder_length": 65,
+      "hotspots": [
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "position 6 plus its C-terminal neighbour at the batch-01/02 length that produced peptide-centred poses"
+    },
+    {
+      "name": "B4-pos6-68",
+      "binder_length": 68,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "the S1-pos6-68 setting that produced bb13, the only design in three batches to read the carboxylate, re-run with the donor bias"
+    },
+    {
+      "name": "B4-pos6-72",
+      "binder_length": 72,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.25,
+      "rationale": "longer scaffold on the same pos6 hotspots at a higher MPNN temperature, for topological diversity among survivors"
+    }
+  ],
+  "pose_filter": {
+    "min_pos6_contacts": 2,
+    "max_pos6_distance": 5.0
+  },
+  "constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "C",
+          "residue_index": 6
+        }
+      ],
+      "max_distance": 6.0
+    }
+  ],
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": false
+  },
+  "gate": {
+    "donor_residues": [
+      "ARG",
+      "HIS",
+      "LYS",
+      "SER",
+      "THR",
+      "TYR"
+    ],
+    "donor_distance": 3.5,
+    "asp6_buried_frac": "> 0"
+  }
+}

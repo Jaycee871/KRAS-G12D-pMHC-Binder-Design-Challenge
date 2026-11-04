@@ -1,0 +1,176 @@
+{
+  "note": "Consolidated from checkpoint.jsonl, which is the authoritative record. run_stats_resumed.json records only the final resumed segment (17 of the 54 scoring calls); the run was interrupted twice and resumed from the checkpoint.",
+  "candidates": 54,
+  "scored": 54,
+  "boltz2_calls_scoring": 54,
+  "boltz2_calls_replicates": 6,
+  "analysis_errors": 0,
+  "pose_ok": 52,
+  "gate_survivors": 2,
+  "asp6_hbond": 2,
+  "asp6_salt_bridge": 3,
+  "asp6_buried_frac_gt_0": 23,
+  "net_interface_charge": {
+    "median": 0.0,
+    "mean": -0.5,
+    "min": -4.0,
+    "max": 3.0,
+    "n_negative": 23,
+    "n_zero_or_positive": 31,
+    "batch02_median": -1.0,
+    "batch03_median": -1.0,
+    "histogram": {
+      "-4.0": 3,
+      "-3.0": 4,
+      "-2.9": 3,
+      "-2.0": 6,
+      "-1.9": 1,
+      "-1.0": 5,
+      "-0.9": 1,
+      "0.0": 13,
+      "0.1": 1,
+      "1.0": 9,
+      "1.1": 3,
+      "2.0": 1,
+      "2.1": 1,
+      "3.0": 3
+    }
+  },
+  "peptide_buried_frac": {
+    "max": 0.353,
+    "median": 0.192,
+    "n_above_0.40_floor": 0,
+    "control_7ow6_predicted": 0.224,
+    "control_7ow6_crystal": 0.207
+  },
+  "iptm_g12d": {
+    "max": 0.7083,
+    "median": 0.3478,
+    "n_above_0.75": 0,
+    "role": "pose-quality read-out only, never a ranking term"
+  },
+  "by_variant": {
+    "donor-anchored": {
+      "n": 16,
+      "median_charge": 0.0,
+      "mean_charge": 0.08,
+      "gate_survivors": 2,
+      "max_peptide_buried_frac": 0.353
+    },
+    "mpnn-selected": {
+      "n": 38,
+      "median_charge": -0.45,
+      "mean_charge": -0.74,
+      "gate_survivors": 0,
+      "max_peptide_buried_frac": 0.319
+    }
+  },
+  "by_strategy": {
+    "B4-c6-62": {
+      "n": 19,
+      "median_charge": 0.0,
+      "mean_charge": -0.61,
+      "gate_survivors": 1,
+      "max_peptide_buried_frac": 0.319
+    },
+    "B4-c67-65": {
+      "n": 10,
+      "median_charge": -0.5,
+      "mean_charge": -0.68,
+      "gate_survivors": 1,
+      "max_peptide_buried_frac": 0.269
+    },
+    "B4-pos6-68": {
+      "n": 12,
+      "median_charge": -0.5,
+      "mean_charge": -1.06,
+      "gate_survivors": 0,
+      "max_peptide_buried_frac": 0.228
+    },
+    "B4-pos6-72": {
+      "n": 13,
+      "median_charge": 1.0,
+      "mean_charge": 0.32,
+      "gate_survivors": 0,
+      "max_peptide_buried_frac": 0.353
+    }
+  },
+  "constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "C",
+          "residue_index": 6
+        }
+      ],
+      "max_distance": 6.0
+    }
+  ],
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": false
+  },
+  "gate": {
+    "donor_residues": [
+      "ARG",
+      "HIS",
+      "LYS",
+      "SER",
+      "THR",
+      "TYR"
+    ],
+    "donor_distance": 3.5,
+    "asp6_buried_frac": "> 0"
+  },
+  "strategies": [
+    {
+      "name": "B4-c6-62",
+      "binder_length": 62,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.15,
+      "rationale": "hotspot collapsed onto position 6 alone - the strongest available pull of the paratope onto the mutated aspartate"
+    },
+    {
+      "name": "B4-c67-65",
+      "binder_length": 65,
+      "hotspots": [
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "position 6 plus its C-terminal neighbour at the batch-01/02 length that produced peptide-centred poses"
+    },
+    {
+      "name": "B4-pos6-68",
+      "binder_length": 68,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "the S1-pos6-68 setting that produced bb13, the only design in three batches to read the carboxylate, re-run with the donor bias"
+    },
+    {
+      "name": "B4-pos6-72",
+      "binder_length": 72,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.25,
+      "rationale": "longer scaffold on the same pos6 hotspots at a higher MPNN temperature, for topological diversity among survivors"
+    }
+  ],
+  "pose_filter": {
+    "min_pos6_contacts": 2,
+    "max_pos6_distance": 5.0
+  },
+  "structure_file_caveat": "scored_structures/ holds 36 files for 54 rows: the filename is {backbone}_{variant}, and the two mpnn-selected candidates per backbone share it, so the second overwrites the first. Metrics in checkpoint.jsonl are complete and unaffected; only the retained .cif for the overwritten mpnn-selected rows is lost. Both gate survivors are donor-anchored variants, whose files are unique and intact."
+}
