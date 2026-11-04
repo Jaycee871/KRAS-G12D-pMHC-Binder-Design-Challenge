@@ -2,6 +2,8 @@
 """Build a compliant Proteinbase submission CSV from a scored designs table.
 
 Input: a CSV of scored designs with at least `name` and `sequence` columns.
+`molecule_class` is preserved when supplied; otherwise a single-chain design
+is emitted as the official Proteinbase class `protein`.
 Scoring columns are optional; by default designs are ranked by the
 `specificity_gap` column (descending) if present, else by `score`, else the
 input order is preserved.
@@ -88,13 +90,20 @@ def rank(rows: List[dict], column: str | None, ascending: bool) -> List[dict]:
 
 def write_submission(rows: List[dict], path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    include_class = any(r.get("molecule_class") for r in rows)
-    cols = list(OUTPUT_COLUMNS) if include_class else list(OUTPUT_COLUMNS[:2])
+    cols = list(OUTPUT_COLUMNS)
     with path.open("w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=cols)
         writer.writeheader()
         for row in rows:
-            writer.writerow({c: row.get(c, "") for c in cols})
+            sequence = (row.get("sequence") or "").strip()
+            molecule_class = (row.get("molecule_class") or "").strip().lower()
+            if not molecule_class and ":" not in sequence:
+                molecule_class = "protein"
+            writer.writerow({
+                "name": row.get("name", ""),
+                "sequence": sequence,
+                "molecule_class": molecule_class,
+            })
     return path
 
 
