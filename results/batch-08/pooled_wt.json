@@ -1,0 +1,23 @@
+{
+  "design": "bb54-g2 (B6-c6-46_w2_bb54 donor-anchored-g2)",
+  "cell": "r3np (batch-08 label `nopot`)",
+  "pooled_across": "batch-07 r3np/_rep2/_rep3/_rep4 + batch-08 nopot",
+  "n_g12d": 12,
+  "n_wt": 15,
+  "g12d_asp6_gate_passes": 11,
+  "batch08_only_n_g12d": 3,
+  "batch08_only_n_wt": 3,
+  "wt_criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion.",
+  "pooled_wt_verdict": {
+    "g12d_median_peptide_area": 197.2,
+    "wt_median_peptide_area": 139.2,
+    "peptide_area_loss": 0.294,
+    "g12d_median_pos6_contacts": 20.0,
+    "wt_median_pos6_contacts": 10.0,
+    "pos6_contact_loss": 0.5,
+    "strict_separation_area": false,
+    "strict_separation_pos6": false,
+    "wt_gate_pass": false,
+    "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+  }
+}
