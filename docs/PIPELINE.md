@@ -285,6 +285,26 @@ so the document and the tooling cannot drift apart; `evaluate()` returns the
 list of hard gates a scored design fails and `ranking_shortfalls()` the ranking
 targets it misses.
 
+> **Positive control, 2026-11-03 - the specificity gap does not survive it.**
+> The pocket-constrained protocol was run on the real 7OW6 TCR (the Poole et
+> al. 2022 selective binder) across all four states:
+> `scripts/control_7ow6_constrained.py`, write-up in
+> [`results/validation/CONTROL_7OW6.md`](../results/validation/CONTROL_7OW6.md).
+> The **pose** is reproduced to 1.3-1.5 A C-alpha RMSD over the TCR variable
+> domains with crystal-matching buried areas, so the geometry half of section 6
+> is validated. The **ranking quantity is not**: ipTM(G12D) 0.9268 +/- 0.0010
+> vs ipTM(WT) 0.9325 +/- 0.0001, i.e. `specificity_gap = -0.006` for a known
+> selective binder, and only 0.013 separates the on-target peptide from an
+> unrelated HLA-A*11:01 decoy. In the design regime the same quantity is not
+> even reproducible: identical constrained calls give ipTM(G12D) spreads of
+> 0.06-0.23 and flip the sign of a +0.30 gap. Until the ranking quantity is
+> replaced by a paired same-pose dG(G12D->WT) calculation, treat every
+> `specificity_gap` in this repository as unvalidated. The control also fails
+> two hard gates - `peptide_buried_frac` 0.224 vs the 0.40 threshold and net
+> interface charge -2.9 vs the -2.0 floor - and the evidence-backed
+> recalibration proposed in `CONTROL_7OW6.md` (0.18 and -3.5) is awaiting the
+> user's approval; the thresholds in `src/design_gates.py` are unchanged.
+
 Tie-breakers, in order: larger `specificity_gap`, then higher
 `asp6_buried_frac`, then lower PAE-interface on G12D, then higher monomer
 pLDDT, then topological diversity (do not submit 20 near-identical sequences —

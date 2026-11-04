@@ -1,0 +1,155 @@
+{
+  "generated": "2026-11-03 07:00:19 +0000",
+  "runs": {
+    "g12d_constrained": {
+      "run": "g12d_constrained",
+      "state": "g12d",
+      "constrained": true,
+      "iptm_binder_vs_target": 0.9271979928016663,
+      "iptm_scores": [
+        0.9531903266906738
+      ],
+      "complex_plddt": 0.9683101773262024,
+      "complex_iplddt": 0.9743459820747375,
+      "complex_ipde": 0.40110498666763306,
+      "seconds": 11.2
+    },
+    "wt_constrained": {
+      "run": "wt_constrained",
+      "state": "wt",
+      "constrained": true,
+      "iptm_binder_vs_target": 0.9308578968048096,
+      "iptm_scores": [
+        0.9557133913040161
+      ],
+      "complex_plddt": 0.9695451855659485,
+      "complex_iplddt": 0.9758092761039734,
+      "complex_ipde": 0.39498451352119446,
+      "error": "StructureAnalysisError: peptide position 6 (GLY) has no heavy side-chain atoms, so its buried fraction is undefined",
+      "seconds": 10.5
+    },
+    "decoy_constrained": {
+      "run": "decoy_constrained",
+      "state": "decoy",
+      "constrained": true,
+      "iptm_binder_vs_target": 0.9115735292434692,
+      "iptm_scores": [
+        0.9400439262390137
+      ],
+      "complex_plddt": 0.9642334580421448,
+      "complex_iplddt": 0.9697198867797852,
+      "complex_ipde": 0.4482935965061188,
+      "error": "StructureAnalysisError: LYS6 has no OD1/OD2 carboxylate oxygens, so no hydrogen bond to it can be measured",
+      "seconds": 10.1
+    },
+    "apo_unconstrained": {
+      "run": "apo_unconstrained",
+      "state": "apo",
+      "constrained": false,
+      "iptm_binder_vs_target": 0.7844085693359375,
+      "iptm_scores": [
+        0.8622373342514038
+      ],
+      "complex_plddt": 0.9677650332450867,
+      "complex_iplddt": 0.9729069471359253,
+      "complex_ipde": 1.2732950448989868,
+      "seconds": 16.1
+    },
+    "g12d_unconstrained": {
+      "run": "g12d_unconstrained",
+      "state": "g12d",
+      "constrained": false,
+      "iptm_binder_vs_target": 0.9228934645652771,
+      "iptm_scores": [
+        0.9499585628509521
+      ],
+      "complex_plddt": 0.9659566879272461,
+      "complex_iplddt": 0.9721105694770813,
+      "complex_ipde": 0.4182951748371124,
+      "seconds": 11.6
+    }
+  },
+  "g12d_constrained_metrics": {
+    "binder_chain": "D",
+    "peptide_chain": "C",
+    "peptide_buried_frac": 0.22352446897465517,
+    "buried_area_total": 824.80264483023,
+    "buried_area_peptide": 184.36357319456826,
+    "buried_area_by_chain": {
+      "A": 640.4,
+      "C": 184.4
+    },
+    "pos6_residue": "ASP",
+    "pos6_resseq": 6,
+    "asp6_sasa_free": 11.259267008535987,
+    "asp6_sasa_bound": 11.259267008535987,
+    "asp6_buried_frac": 0.0,
+    "asp6_hbond_partners": [],
+    "asp6_hbond": false,
+    "asp6_salt_bridge": false,
+    "asp6_min_donor_distance": null,
+    "pos6_contacts": 7.0,
+    "contacts_by_chain": {
+      "A": 90,
+      "B": 0,
+      "C": 31
+    },
+    "net_interface_charge": -2.9,
+    "notes": [
+      "no binder hydrogen-bond donor within 3.5 \u00c5 of the ASP6 carboxylate: the binder does not read the mutated side chain"
+    ]
+  },
+  "g12d_unconstrained_metrics": {
+    "binder_chain": "D",
+    "peptide_chain": "C",
+    "peptide_buried_frac": 0.21989755135807026,
+    "buried_area_total": 827.7404486515667,
+    "buried_area_peptide": 182.01809781851,
+    "buried_area_by_chain": {
+      "A": 645.7,
+      "C": 182.0
+    },
+    "pos6_residue": "ASP",
+    "pos6_resseq": 6,
+    "asp6_sasa_free": 6.701092528330714,
+    "asp6_sasa_bound": 6.701092528330714,
+    "asp6_buried_frac": 0.0,
+    "asp6_hbond_partners": [],
+    "asp6_hbond": false,
+    "asp6_salt_bridge": false,
+    "asp6_min_donor_distance": null,
+    "pos6_contacts": 8.0,
+    "contacts_by_chain": {
+      "A": 88,
+      "B": 0,
+      "C": 31
+    },
+    "net_interface_charge": -2.9,
+    "notes": [
+      "no binder hydrogen-bond donor within 3.5 \u00c5 of the ASP6 carboxylate: the binder does not read the mutated side chain"
+    ]
+  },
+  "gate_readout": {
+    "name": "7OW6_native_TCR",
+    "iptm_g12d": 0.9271979928016663,
+    "iptm_wt": 0.9308578968048096,
+    "iptm_apo": 0.7844085693359375,
+    "iptm_decoy": 0.9115735292434692,
+    "peptide_buried_frac": 0.22352446897465517,
+    "asp6_buried_frac": 0.0,
+    "buried_area_peptide": 184.36357319456826,
+    "buried_area_total": 824.80264483023,
+    "pos6_contacts": 7.0,
+    "asp6_hbond": false,
+    "asp6_salt_bridge": false,
+    "net_interface_charge": -2.9,
+    "pae_interface_g12d": 0.40110498666763306,
+    "specificity_gap": -0.0036599040031433105,
+    "gate_failures": [
+      "peptide-buried fraction 0.22 < 0.40",
+      "net interface charge -2.9 below -2.0: excess negative charge at the interface (Xie et al. 2025)"
+    ],
+    "pose_filter_ok": true,
+    "pose_filter_reason": ""
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "g12d_constrained": {
+    "frame_residues": 286,
+    "frame_ca_rmsd": 0.85,
+    "tcr_alpha_n": 181,
+    "tcr_alpha_ca_rmsd_in_pmhc_frame": 2.74,
+    "tcr_alpha_v_domain_ca_rmsd": 1.29,
+    "tcr_beta_n": 245,
+    "tcr_beta_ca_rmsd_in_pmhc_frame": 2.56,
+    "tcr_beta_v_domain_ca_rmsd": 1.51
+  },
+  "g12d_unconstrained": {
+    "frame_residues": 286,
+    "frame_ca_rmsd": 0.82,
+    "tcr_alpha_n": 181,
+    "tcr_alpha_ca_rmsd_in_pmhc_frame": 3.45,
+    "tcr_alpha_v_domain_ca_rmsd": 1.81,
+    "tcr_beta_n": 245,
+    "tcr_beta_ca_rmsd_in_pmhc_frame": 2.68,
+    "tcr_beta_v_domain_ca_rmsd": 1.78
+  }
+}

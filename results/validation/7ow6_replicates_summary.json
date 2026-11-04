@@ -1,0 +1,29 @@
+{
+  "g12d": {
+    "n": 2,
+    "iptm_vs_target_mean": 0.9268,
+    "iptm_vs_target_sd": 0.001,
+    "iptm_vs_target_min": 0.9259,
+    "iptm_vs_target_max": 0.9278,
+    "iptm_vs_peptide_mean": 0.8966,
+    "iptm_vs_peptide_sd": 0.0009
+  },
+  "wt": {
+    "n": 2,
+    "iptm_vs_target_mean": 0.9325,
+    "iptm_vs_target_sd": 0.0001,
+    "iptm_vs_target_min": 0.9324,
+    "iptm_vs_target_max": 0.9326,
+    "iptm_vs_peptide_mean": 0.9001,
+    "iptm_vs_peptide_sd": 0.0012
+  },
+  "decoy": {
+    "n": 2,
+    "iptm_vs_target_mean": 0.9136,
+    "iptm_vs_target_sd": 0.0005,
+    "iptm_vs_target_min": 0.913,
+    "iptm_vs_target_max": 0.9141,
+    "iptm_vs_peptide_mean": 0.8847,
+    "iptm_vs_peptide_sd": 0.001
+  }
+}
