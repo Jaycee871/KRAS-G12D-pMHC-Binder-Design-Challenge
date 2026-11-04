@@ -2,6 +2,8 @@
 """Build a compliant Proteinbase submission CSV from a scored designs table.
 
 Input: a CSV of scored designs with at least `name` and `sequence` columns.
+`molecule_class` is preserved when supplied; otherwise a single-chain design
+is emitted as the official Proteinbase class `protein`.
 Scoring columns are optional; by default designs are ranked by the
 `specificity_gap` column (descending) if present, else by `score`, else the
 input order is preserved.
@@ -29,6 +31,7 @@ except ImportError:  # pragma: no cover - import shim
 
 DEFAULT_RANK_COLUMNS = ("specificity_gap", "score")
 OUTPUT_COLUMNS = ("name", "sequence", "molecule_class")
+DEFAULT_TOP_N = 20  # Track 1 screens the top 20; files may contain up to 40.
 
 
 def read_scored(path: Path) -> List[dict]:
@@ -88,20 +91,27 @@ def rank(rows: List[dict], column: str | None, ascending: bool) -> List[dict]:
 
 def write_submission(rows: List[dict], path: Path) -> Path:
     path.parent.mkdir(parents=True, exist_ok=True)
-    include_class = any(r.get("molecule_class") for r in rows)
-    cols = list(OUTPUT_COLUMNS) if include_class else list(OUTPUT_COLUMNS[:2])
+    cols = list(OUTPUT_COLUMNS)
     with path.open("w", newline="", encoding="utf-8") as fh:
         writer = csv.DictWriter(fh, fieldnames=cols)
         writer.writeheader()
         for row in rows:
-            writer.writerow({c: row.get(c, "") for c in cols})
+            sequence = (row.get("sequence") or "").strip()
+            molecule_class = (row.get("molecule_class") or "").strip().lower()
+            if not molecule_class and ":" not in sequence:
+                molecule_class = "protein"
+            writer.writerow({
+                "name": row.get("name", ""),
+                "sequence": sequence,
+                "molecule_class": molecule_class,
+            })
     return path
 
 
 def build(
     source: Path,
     out: Path,
-    top_n: int = MAX_DESIGNS,
+    top_n: int = DEFAULT_TOP_N,
     rank_column: str | None = None,
     ascending: bool = False,
 ) -> Path:
@@ -110,7 +120,7 @@ def build(
         raise ValidationError(f"--top-n must be >= 1 (got {top_n})")
     if top_n > MAX_DESIGNS:
         raise ValidationError(
-            f"--top-n {top_n} exceeds the per-submission limit of {MAX_DESIGNS}"
+            f"--top-n {top_n} exceeds the Track 1 submission maximum of {MAX_DESIGNS}"
         )
 
     rows = read_scored(source)
@@ -137,7 +147,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("source", type=Path, help="scored designs CSV")
     ap.add_argument("-o", "--out", type=Path, default=Path("submission.csv"))
-    ap.add_argument("-n", "--top-n", type=int, default=MAX_DESIGNS)
+    ap.add_argument("-n", "--top-n", type=int, default=DEFAULT_TOP_N)
     ap.add_argument("--rank-column", default=None,
                     help="column to rank by (default: specificity_gap, then score)")
     ap.add_argument("--ascending", action="store_true",

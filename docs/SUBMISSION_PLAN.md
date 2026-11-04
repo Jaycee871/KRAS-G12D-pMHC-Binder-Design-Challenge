@@ -1,104 +1,151 @@
-# Submission plan to the Nov 8 deadline
+# Submission plan — current as of 2026-11-04
 
-**Deadline: Sunday 8 Nov 2026, 23:59 Anywhere on Earth** = 9 Nov 11:59 UTC
-= **9 Nov 19:59 Asia/Taipei**. Plan to be finished a full day early; AoE is a
-safety margin, not a schedule.
+**Official deadline:** Sunday 8 Nov 2026, 23:59 Anywhere on Earth (UTC−12),
+which is **Monday 9 Nov 2026, 19:59 Asia/Taipei**.
 
-**Status: no designs generated, nothing submitted. All batches below are
-planned, none are done.**
+Official challenge page:
+https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/pmhc
 
-## The two limits that shape the schedule
+## Current project state
 
-1. **Cadence:** one submission per 24 hours, ≤ 20 designs per submission.
-   From 2 Nov that leaves about **6 submission slots** before the deadline.
-2. **Per-participant design caps** (these are totals, *not* per submission):
-   * Track 1 — up to **40 designs**
-   * Track 2 — up to **20 designs**
-   * Track 3 — up to **20 designs**
+This is no longer a scaffold. Batches 01–08 have been run and analysed.
 
-The caps bind harder than the cadence. Six slots × 20 designs is 120 designs,
-but only 80 can ever be spent. So batches must be **small and deliberate**:
-roughly 6–10 designs each, keeping reserve capacity for the last two days when
-the modelling is best. Never burn 20 Track-1 slots on batch 1 — half the budget
-would be gone before a single scoring run has been sanity-checked.
+- RFdiffusion and ProteinMPNN have produced multiple de novo design batches.
+- Hosted Boltz-2 has been used for G12D, WT and off-target diagnostics.
+- No sequence has been submitted to Proteinbase yet.
+- No candidate currently clears the project's full internal
+  **Asp6 reproducibility + pooled WT-discrimination** gate.
+- The central unresolved failure is peptide-free HLA: candidates tested on apo
+  HLA still show substantial groove binding.
+- `bb54-g2` remains an informative near-miss, but its pooled WT peptide-area
+  loss fell to 29.4%, just below the pre-registered 30% criterion in batch-08.
 
-Proposed budget: Track 1 → 8 + 8 + 12 + 12 = 40. Track 2 → 6 + 14 = 20.
-Track 3 → 6 + 14 = 20.
+See `results/batch-08/SUMMARY.md` for the latest controlled result.
 
-## Day by day
+## Current official submission rules
 
-### Mon 3 Nov — Batch 0: the safety batch (small, early, deliberate)
-* Submit **4–6 designs**, the best available from a first fast
-  RFdiffusion → ProteinMPNN → AF2-monomer → AF-Multimer pass.
-* Purpose is **not** score. It is to prove the whole path end to end: file
-  parses, columns accepted, novelty check (≥ 3/4) passes, no length or
-  alphabet rejection, and the 24-hour clock behaves as expected.
-* Run `python src/validate_submission.py` before uploading, every time.
-* Record the exact upload timestamp (Taipei + UTC) below — the next slot opens
-  24 h after it.
+The live FAQ now says:
 
-### Tue 4 Nov — Batch 1: first real Track 1 batch (8 designs)
-* Full pipeline with the hard gates from `docs/PIPELINE.md`
-  (ipTM G12D ≥ 0.75, `max(WT, apo, decoy) ≤ 0.50`, gap ≥ 0.25,
-  `asp6_buried_frac ≥ 0.60`).
-* Cluster at 70 % identity, submit cluster representatives only — topological
-  spread matters more than squeezing in near-duplicates.
-* Carry any novelty-flagged design back for redesign rather than resubmitting.
+- submit a **CSV ordered by preferred rank**;
+- minimum columns: `name`, `sequence`, `molecule_class`;
+- `molecule_class` is one of
+  `protein`, `nanobody`, `scfv`, `fab_kappa`, `fab_lambda`;
+- single-chain proteins are 10–250 aa;
+- Fab is submitted as `{VH}:{VL}`;
+- Track 1: submit **at least 20 and at most 40** designs;
+- Tracks 2/3: submit at most **20** designs;
+- Track 1: the **top 20 ranked designs that pass filtering** are screened;
+- all designs must be unique, de novo and zero-shot. An existing binder may be
+  used for calibration/evaluation, but not as the starting binder to modify.
 
-### Wed 5 Nov — Batch 2: scaffold diversification (8 Track 1 + 6 Track 2)
-* Add BindCraft-derived backbones as an independent topology prior.
-* Introduce the antibody formats: nanobody and scFv written `{VH}:{VL}`.
-* Explicitly include two designs that over-weight peptide position 6 contacts
-  even at some cost in predicted affinity — specificity ranks above KD.
+The current FAQ does **not** document the old repo assumptions of “one
+submission every 24 h”, “≤20 designs per file for everyone”, a mandatory 5 MB
+CSV limit, or a hard “novelty ≥3/4” score. Those old assumptions are retired
+unless the live submission UI explicitly reintroduces one of them.
 
-### Thu 6 Nov — Batch 3: specificity hardening (12 Track 1 + 6 Track 3)
-* Re-score every surviving candidate against **all four** targets (G12D, WT,
-  apo, decoy `AVFDRKSDAK`) with the
-  second predictor (Boltz if Multimer was primary, or vice versa) and keep only
-  designs where both predictors agree on the gap.
-* Drop anything whose buried interface is < 40 % on the peptide chain, however
-  good its G12D ipTM — those are groove-rim binders and will hit WT, apo and
-  the decoy.
+## What the internal gates mean
 
-### Fri 7 Nov — Batch 4: best-of (12 Track 1 + 14 Track 2)
-* Spend the remaining Track 1 budget on the highest `specificity_gap` designs,
-  plus mutational micro-variants (1–3 substitutions) around the two best
-  interfaces to hedge prediction error.
-* Full Track 2 top-up.
+The repo's gates are **research diagnostics**, not competition rules. They are
+deliberately stricter than “submit anything that might bind” and should not be
+silently retuned after seeing results.
 
-### Sat 8 Nov — Batch 5: final top-up (14 Track 3) — **submit by 18:00 Taipei**
-* Last remaining capacity only. Submit the day before the AoE cut-off, not
-  into it.
-* After uploading: confirm the submission appears on the competition page,
-  screenshot the confirmation, and fill in the log below.
+Two important consequences:
 
-### Sun 9 Nov — buffer, no new work
-* Reserved for a failed upload, a site outage, or a novelty rejection on
-  batch 5. If everything went in on Sat, do nothing.
+1. The old `peptide_buried_frac >= 0.40` threshold is not an appropriate
+   absolute veto. The experimentally validated 7OW6 TCR itself is around
+   0.21–0.22 by the same analysis, and the official challenge recommends the
+   peptide **and the groove around it** as the epitope.
+2. A failed internal gate is evidence to lower a design's rank, not permission
+   to rewrite history. If a near-miss is submitted, its failure mode should be
+   documented honestly in the metadata.
 
-## Pre-flight checklist (run before every upload)
+## Plan from here
+
+### 4 Nov — infrastructure and rule repair
+
+- Align submission tooling with the live FAQ.
+- Repair stale `single_chain` molecule classes to `protein`.
+- Restore CI without installing the optional OpenMM/MM-GBSA stack into the
+  lightweight test environment.
+- Do not spend experimental design slots.
+
+### 5 Nov — matched counter-screen diagnostic
+
+Before generating another large RFdiffusion batch, test the strongest and most
+diverse existing candidates under a **matched docking/counter-screen setup**.
+The present apo comparison is not like-for-like: G12D/WT use a peptide-position
+constraint while apo has no peptide and therefore runs unconstrained.
+
+The purpose of this diagnostic is not to weaken the apo objective. It is to ask
+whether the current computational counter-screen is measuring peptide
+dependence or an artefact of different docking priors.
+
+Prioritise:
+- `bb54-g2` (best mutation-specific evidence, but pooled WT near-miss);
+- `bb50-g1` (tightest pose reference);
+- the strongest diverse 3-of-3/2-of-3 Asp6 readers from earlier batches;
+- one or two peptide-centred batch-08 controls.
+
+No gate is changed by this diagnostic.
+
+### 6 Nov — freeze the candidate pool
+
+If the matched diagnostic produces a clear improvement, make a small targeted
+batch-09 around that mechanism only. Do **not** repeat the already-refuted
+“smaller”, “rigidified”, generic shape-steering, or helix de-wetting strategies.
+
+If it does not improve the evidence, stop generating backbones and rank the
+best existing near-misses. Additional RFdiffusion sampling without a new
+mechanism is unlikely to add information before the deadline.
+
+### 7 Nov — build the ranked submission package
+
+For Track 1, prepare 20–40 unique sequences, with the strongest 20 first.
+For Track 2/3, prepare at most 20.
+
+Rank by a composite evidence table rather than a single ipTM:
+
+1. reproducible direct/indirect read-out of peptide position 6;
+2. pooled WT discrimination;
+3. peptide-free HLA and unrelated-peptide counter-screens;
+4. pose reproducibility;
+5. sequence/topology diversity and design provenance;
+6. sequence liabilities and manufacturability;
+7. on-target affinity/confidence only after the specificity evidence above.
+
+Include methods/provenance and links to the relevant batch summaries.
+
+### 8 Nov (Taipei) — submit with margin
+
+Prefer submitting by **18:00 Asia/Taipei on 8 Nov**, more than a day before the
+AoE cutoff. The official cutoff corresponds to 19:59 Taipei on 9 Nov, but that
+extra day is contingency, not working time.
+
+After submission, verify the accepted design count and saved rank order in the
+Proteinbase UI and preserve the confirmation.
+
+## Pre-flight checklist
 
 ```bash
 python -m pytest -q
-python src/make_submission.py <scored>.csv -o submissions/batchN.csv -n <N>
-python src/validate_submission.py submissions/batchN.csv
+python src/make_submission.py <scored>.csv -o submissions/final.csv -n <N>
+python src/validate_submission.py submissions/final.csv
 ```
 
-* [ ] ≤ 20 designs, each chain 10–250 aa, canonical amino acids only
-* [ ] scFv/Fab written `{VH}:{VL}`, exactly one colon
-* [ ] file ≤ 5 MB, `name` and `sequence` columns present, names unique
-* [ ] remaining track budget checked against the caps above
-* [ ] ≥ 24 h since the previous upload
-* [ ] novelty expected ≥ 3/4; designs are de novo, not grafted from 7OW6's TCR
-* [ ] no API key anywhere in the file or in the repo
-
-Submit page:
-<https://proteinbase.com/competitions/anthropic-adaptyv-2026/rounds/5/submit>
+- [ ] CSV is ordered best-first.
+- [ ] `name`, `sequence`, `molecule_class` are present.
+- [ ] molecule classes use the official vocabulary.
+- [ ] 10–250 aa per single protein chain; canonical amino acids only.
+- [ ] Fab only: `{VH}:{VL}`, with `fab_kappa` or `fab_lambda`.
+- [ ] unique sequences and unique names.
+- [ ] Track 1: 20–40 submitted; Track 2/3: ≤20.
+- [ ] designs are de novo/zero-shot; known binders were calibration controls,
+      not starting templates.
+- [ ] no API key, token, private path or secret in the CSV or metadata.
+- [ ] methods state negative/null results as well as positive evidence.
 
 ## Submission log
 
-Fill in as batches go out. Nothing here yet.
-
-| batch | date (Taipei) | upload time | track | designs | cumulative T1 / T2 / T3 | accepted? | notes |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| 0 | — | — | — | — | 0 / 0 / 0 | — | not submitted |
+| date (Taipei) | track | designs | accepted? | notes |
+| --- | --- | ---: | --- | --- |
+| — | — | 0 | — | nothing submitted as of 2026-11-04 |
