@@ -7,12 +7,13 @@ Proteinbase.
 
 [![tests](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml)
 
-> **Status: active design campaign through batch-08; no design has been
-> submitted yet.** RFdiffusion, ProteinMPNN and hosted Boltz-2 have been run
-> across multiple controlled batches. The current result is an honest null:
-> no candidate yet clears the project's full Asp6 reproducibility + WT
-> discrimination gate. See `results/batch-08/SUMMARY.md` for the latest
-> analysis.
+> **Status: design batches 01–08 complete; batch-09 control audit complete,
+> matched-anchor model panel pending. No design has been submitted.**
+> The control audit retired WT geometry-loss as a hard selectivity gate.
+> `bb50-g1`, `bb54-g2` and `bb25` are the fixed subjects for the next matched
+> G12D/WT/apo/decoy diagnostic. See `results/batch-09/SUMMARY.md` and
+> [`docs/BATCH09_RUNBOOK.md`](docs/BATCH09_RUNBOOK.md). No batch-09 model
+> outputs are currently committed.
 
 ---
 
@@ -106,8 +107,9 @@ pipeline.
    `src/validate_submission.py` build/validate the current Proteinbase CSV
    schema.
 
-Latest result: `results/batch-08/SUMMARY.md`. No candidate yet clears the
-project's full internal specificity gate, and no sequence has been submitted.
+Latest decision audit: `results/batch-09/SUMMARY.md`; latest model results:
+`results/batch-08/SUMMARY.md`. Batch-09 matched-anchor results are pending.
+No sequence has been submitted, and selectivity has not been established.
 
 ## Repository layout
 
@@ -125,7 +127,7 @@ project's full internal specificity gate, and no sequence has been submitted.
 │   ├── fetch_target.py          7OW6 → three target states
 │   ├── validate_submission.py   enforce every submission rule, exit non-zero
 │   └── make_submission.py       scored table → compliant top-N CSV
-├── tests/                       pytest suite (57 tests)
+├── tests/                       pytest suite
 ├── docs/
 │   ├── PIPELINE.md              the design pipeline, concretely
 │   └── SUBMISSION_PLAN.md       day-by-day plan to Nov 8
@@ -188,14 +190,15 @@ printed or logged.
 | Target preparation (`fetch_target.py`) | ✅ working — run against RCSB, 3 targets produced, peptide `VVVGADGVGK` extracted |
 | Submission validator (`validate_submission.py`) | ✅ working, tested |
 | Submission builder (`make_submission.py`) | ✅ working, tested |
-| Test suite | ✅ 57 passed |
+| Test suite | ✅ automated CI; run `python -m pytest -q` for current count |
 | CI (pytest on push/PR) | ✅ configured |
 | Pipeline documentation | ✅ written (`docs/PIPELINE.md`) |
 | Submission plan | ✅ written (`docs/SUBMISSION_PLAN.md`) |
 | Backbone generation (RFdiffusion) | ✅ run through batch-08 |
 | Sequence design (ProteinMPNN + donor-bias variants) | ✅ run through batch-08 |
 | Complex prediction / counter-screening (hosted Boltz-2) | ✅ run across G12D / WT / apo / decoy diagnostics |
-| Latest controlled result | ⚠️ batch-08 null: no full-gate survivor; see `results/batch-08/SUMMARY.md` |
+| Latest model result / audit | ⚠️ batch-08 model results; batch-09 control audit retires the WT geometry-loss hard gate |
+| Matched-anchor counter-screen | ⏳ 12-call / 36-sample panel prepared; model results pending |
 | **Designs produced** | **✅ multiple batches generated and scored** |
 | **Designs submitted** | **⬜ none** |
 

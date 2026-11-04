@@ -8,19 +8,20 @@ https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/pmhc
 
 ## Current project state
 
-This is no longer a scaffold. Batches 01–08 have been run and analysed.
+Batches 01–08 have been run and analysed. Batch-09's control audit and
+matched-anchor implementation are complete; the matched-anchor model outputs
+are not yet committed.
 
-- RFdiffusion and ProteinMPNN have produced multiple de novo design batches.
-- Hosted Boltz-2 has been used for G12D, WT and off-target diagnostics.
-- No sequence has been submitted to Proteinbase yet.
-- No candidate currently clears the project's full internal
-  **Asp6 reproducibility + pooled WT-discrimination** gate.
-- The central unresolved failure is peptide-free HLA: candidates tested on apo
-  HLA still show substantial groove binding.
-- `bb54-g2` remains an informative near-miss, but its pooled WT peptide-area
-  loss fell to 29.4%, just below the pre-registered 30% criterion in batch-08.
+- No sequence has been submitted to Proteinbase.
+- The batch-09 positive-control audit retires the 30% WT geometry-loss rule as
+  a future hard selectivity gate; historical batch reports remain unchanged.
+- `bb50-g1` is the lead, followed by `bb54-g2` and diversity hedge `bb25`.
+- Historical apo measurements used a different docking prior from loaded pMHC;
+  the next matched diagnostic must resolve that confound.
+- No candidate's biological selectivity is established by these predictions.
 
-See `results/batch-08/SUMMARY.md` for the latest controlled result.
+See `results/batch-09/SUMMARY.md` for the audit and
+`docs/BATCH09_RUNBOOK.md` for the fixed panel, execution and recovery.
 
 ## Current official submission rules
 
@@ -47,7 +48,8 @@ unless the live submission UI explicitly reintroduces one of them.
 
 The repo's gates are **research diagnostics**, not competition rules. They are
 deliberately stricter than “submit anything that might bind” and should not be
-silently retuned after seeing results.
+silently retuned after seeing results. The control-based retirement of the WT
+geometry-loss hard gate is documented explicitly in the batch-09 audit.
 
 Two important consequences:
 
@@ -80,11 +82,10 @@ The purpose of this diagnostic is not to weaken the apo objective. It is to ask
 whether the current computational counter-screen is measuring peptide
 dependence or an artefact of different docking priors.
 
-Prioritise:
-- `bb54-g2` (best mutation-specific evidence, but pooled WT near-miss);
-- `bb50-g1` (tightest pose reference);
-- the strongest diverse 3-of-3/2-of-3 Asp6 readers from earlier batches;
-- one or two peptide-centred batch-08 controls.
+The merged, frozen panel tests `bb50-g1`, `bb54-g2` and `bb25`, each on
+G12D, WT, apo and decoy. All arms use HLA A69/A155 anchors; each design uses its
+preselected sampling regime across all arms. This is 12 calls / 36 samples.
+The exact settings and recovery procedure are in `docs/BATCH09_RUNBOOK.md`.
 
 No gate is changed by this diagnostic.
 
@@ -106,7 +107,7 @@ For Track 2/3, prepare at most 20.
 Rank by a composite evidence table rather than a single ipTM:
 
 1. reproducible direct/indirect read-out of peptide position 6;
-2. pooled WT discrimination;
+2. WT diagnostics, interpreted under the batch-09 control audit;
 3. peptide-free HLA and unrelated-peptide counter-screens;
 4. pose reproducibility;
 5. sequence/topology diversity and design provenance;
