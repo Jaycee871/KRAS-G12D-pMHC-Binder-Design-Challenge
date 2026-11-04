@@ -297,15 +297,51 @@ targets it misses.
 > selective binder, and only 0.013 separates the on-target peptide from an
 > unrelated HLA-A*11:01 decoy. In the design regime the same quantity is not
 > even reproducible: identical constrained calls give ipTM(G12D) spreads of
-> 0.06-0.23 and flip the sign of a +0.30 gap. Until the ranking quantity is
-> replaced by a paired same-pose dG(G12D->WT) calculation, treat every
-> `specificity_gap` in this repository as unvalidated. The control also fails
-> two hard gates - `peptide_buried_frac` 0.224 vs the 0.40 threshold and net
-> interface charge -2.9 vs the -2.0 floor - and the evidence-backed
-> recalibration proposed in `CONTROL_7OW6.md` (0.18 and -3.5) is awaiting the
-> user's approval; the thresholds in `src/design_gates.py` are unchanged.
+> 0.06-0.23 and flip the sign of a +0.30 gap. Treat every `specificity_gap` in
+> this repository as unvalidated. The control also fails two hard gates -
+> `peptide_buried_frac` 0.224 vs the 0.40 threshold and net interface charge
+> -2.9 vs the -2.0 floor - and the evidence-backed recalibration proposed in
+> `CONTROL_7OW6.md` (0.18 and -3.5) is awaiting the user's approval; the
+> thresholds in `src/design_gates.py` are unchanged. The paired same-pose
+> dG(G12D->WT) calculation proposed here as the replacement ranking quantity has
+> since **also failed this same control** - see the callout immediately below.
 
-Tie-breakers, in order: larger `specificity_gap`, then higher
+> **Second control failure, 2026-11-03 - paired MM-GBSA fails it too.**
+> The replacement for `specificity_gap` was a paired same-pose MM-GBSA ddG,
+> `ddG_sel = dG_bind(G12D) - dG_bind(pos6->Gly)` on one pose (Amber ff14SB +
+> GBn2), where negative must favour G12D. Module `src/ddg_scoring.py`, full
+> write-up in [`results/ddg-scoring/FINDINGS.md`](../results/ddg-scoring/FINDINGS.md).
+> On the deposited 7OW6 crystal - the ground truth - it returns **+1.27 +/- 0.81
+> kcal/mol over 5 replicates, the wrong sign**, and it stays the wrong sign at
+> all four corners of a minimisation x solute-dielectric 2x2 (+1.27, +2.32,
+> +7.13, +9.60). The decoy negative control returns the strongest and most
+> confident "G12D-favouring" value in the panel (-3.53 +/- 0.12). Both candidate
+> remedies were tested and both made it worse: 10x tighter minimisation moved
+> the control further wrong, and `soluteDielectric` = 4 inflates `dG_bind` ~4x
+> and tripled the replicate SD. **The metric was retired rather than tuned until
+> it passed.** `scripts/ddg_rescore_designs.py` exists but has never been run
+> against a design.
+>
+> Diagnosis, in short: the quantity measures **side-chain burial, not specific
+> recognition** - an apolar Val3 scores -7.32 against a real Arg114-Asp6 salt
+> bridge's -7.42 - and the 7OW6 control is additionally ill-posed for it, since
+> no TCR heavy atom comes within 5 A of the Asp6 side chain (nearest 5.73 A);
+> Poole et al.'s selectivity is *indirect* electrostatics, which a single
+> minimised structure in implicit solvent has no term for.
+>
+> **Consequence for this section: neither `specificity_gap` nor `ddG_sel` is a
+> validated ranking quantity, and the project currently has none.** Until one
+> passes a control, rank only on structural quantities that are measured rather
+> than inferred - the Asp6 direct read-out as a hard gate, `peptide_buried_frac`,
+> contacts to the Asp6 *side chain*, net interface charge, replicate pose
+> stability, then topological diversity - and treat any energetic or confidence
+> score as a filter, never as a sort key. The recommended ordering is set out at
+> the end of `results/ddg-scoring/FINDINGS.md`.
+
+Tie-breakers, in order (**superseded** - `specificity_gap` and `ddG_sel` have
+both failed the 7OW6 control, so this ordering is retained only to document what
+batches 01-04 were ranked by; see the two callouts above): larger
+`specificity_gap`, then higher
 `asp6_buried_frac`, then lower PAE-interface on G12D, then higher monomer
 pLDDT, then topological diversity (do not submit 20 near-identical sequences —
 cluster at 70 % identity and take cluster representatives).

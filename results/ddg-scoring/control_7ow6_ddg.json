@@ -1,0 +1,188 @@
+{
+  "generated": "2026-11-03T08:26:47+0000",
+  "method": "paired same-pose MM-GBSA (Amber ff14SB + GBn2), src/ddg_scoring.py",
+  "ddg_convention": "ddg_sel = dG_bind(G12D) - dG_bind(pos6->Gly); negative favours G12D",
+  "replicates": 5,
+  "results": [
+    {
+      "label": "crystal_7ow6",
+      "ddg_sel": 1.2705861280899626,
+      "ddg_sd": 0.8057883295645403,
+      "ddg_values": [
+        0.411006112936775,
+        2.0584166163462214,
+        1.8891218633470999,
+        0.40324411493020307,
+        1.5911419328895136
+      ],
+      "dg_g12d": [
+        -74.4576844333842,
+        -73.3528099348805,
+        -73.55934786159014,
+        -75.53870682984598,
+        -74.49865334409878
+      ],
+      "dg_wt": [
+        -74.86869054632098,
+        -75.41122655122672,
+        -75.44846972493724,
+        -75.94195094477618,
+        -76.0897952769883
+      ],
+      "groups": {
+        "binder_chains": [
+          "D",
+          "E"
+        ],
+        "target_chains": [
+          "A",
+          "B",
+          "C"
+        ],
+        "peptide_chain": "C",
+        "peptide_position": 6
+      },
+      "n_residues": 153,
+      "n_fragments": 14,
+      "seconds": 2464.2612586021423,
+      "notes": [],
+      "ok": true,
+      "kind": "positive",
+      "note": "deposited crystal pose, the ground truth"
+    },
+    {
+      "label": "predicted_7ow6",
+      "ddg_sel": 0.8144147875209455,
+      "ddg_sd": 1.903103940603625,
+      "ddg_values": [
+        1.8726066921608435,
+        -2.4860664775551413,
+        1.1495729977341398,
+        1.2467481164831042,
+        2.2892126087817815
+      ],
+      "dg_g12d": [
+        -69.57470876721254,
+        -66.44729244578957,
+        -69.9745635022,
+        -69.68468120425314,
+        -68.94445805846317
+      ],
+      "dg_wt": [
+        -71.44731545937339,
+        -63.96122596823443,
+        -71.12413649993414,
+        -70.93142932073624,
+        -71.23367066724495
+      ],
+      "groups": {
+        "binder_chains": [
+          "D",
+          "E"
+        ],
+        "target_chains": [
+          "A",
+          "B",
+          "C"
+        ],
+        "peptide_chain": "C",
+        "peptide_position": 6
+      },
+      "n_residues": 151,
+      "n_fragments": 15,
+      "seconds": 2604.133416414261,
+      "notes": [],
+      "ok": true,
+      "kind": "positive",
+      "note": "pocket-constrained Boltz-2 prediction of the same complex"
+    },
+    {
+      "label": "crystal_offsite_p3",
+      "ddg_sel": -0.8252841904098508,
+      "ddg_sd": 1.5805566215110072,
+      "ddg_values": [
+        -0.8177862596476189,
+        0.7515101272538232,
+        -2.4095764388357566
+      ],
+      "dg_g12d": [
+        -74.10556220353646,
+        -71.89949407425593,
+        -74.532680929442
+      ],
+      "dg_wt": [
+        -73.28777594388885,
+        -72.65100420150975,
+        -72.12310449060624
+      ],
+      "groups": {
+        "binder_chains": [
+          "D",
+          "E"
+        ],
+        "target_chains": [
+          "A",
+          "B",
+          "C"
+        ],
+        "peptide_chain": "C",
+        "peptide_position": 3
+      },
+      "n_residues": 153,
+      "n_fragments": 17,
+      "seconds": 1880.6648063659668,
+      "notes": [],
+      "ok": true,
+      "kind": "negative",
+      "note": "same crystal, paired mutation moved to peptide position 3"
+    },
+    {
+      "label": "decoy_7ow6",
+      "ddg_sel": -3.533822704152044,
+      "ddg_sd": 0.12226915664437543,
+      "ddg_values": [
+        -3.3960354306418594,
+        -3.57605650012556,
+        -3.6293761816887127
+      ],
+      "dg_g12d": [
+        -59.73367385443271,
+        -57.892045213459824,
+        -56.77190772968788
+      ],
+      "dg_wt": [
+        -56.33763842379085,
+        -54.315988713334264,
+        -53.14253154799917
+      ],
+      "groups": {
+        "binder_chains": [
+          "D",
+          "E"
+        ],
+        "target_chains": [
+          "A",
+          "B",
+          "C"
+        ],
+        "peptide_chain": "C",
+        "peptide_position": 6
+      },
+      "n_residues": 156,
+      "n_fragments": 12,
+      "seconds": 2034.1035344600677,
+      "notes": [],
+      "ok": true,
+      "kind": "negative",
+      "note": "TCR on the unrelated AVFDRKSDAK decoy, paired at position 6"
+    },
+    {
+      "label": "offpeptide_design",
+      "ok": false,
+      "kind": "negative",
+      "error": "DdgError: no binder residue within 16 A of peptide position 6: this binder does not touch the site",
+      "note": "a batch-01 design docked away from the peptide",
+      "seconds": 0.06114816665649414
+    }
+  ]
+}
