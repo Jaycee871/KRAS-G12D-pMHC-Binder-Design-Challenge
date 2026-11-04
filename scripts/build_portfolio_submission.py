@@ -20,6 +20,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+from functools import lru_cache
 from pathlib import Path
 from typing import Dict, List, Mapping, Sequence
 
@@ -90,6 +91,7 @@ def _feature(candidate: Mapping) -> Dict:
     }
 
 
+@lru_cache(maxsize=None)
 def _levenshtein(a: str, b: str) -> int:
     previous = list(range(len(b) + 1))
     for i, ca in enumerate(a, start=1):
