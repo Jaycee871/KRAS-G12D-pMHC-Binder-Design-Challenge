@@ -43,7 +43,7 @@ jobs:
 
       - name: Peptide-only RFdiffusion and ProteinMPNN
         env:
-          NVIDIA_API_KEY: \${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           if [ -z "$NVIDIA_API_KEY" ]; then
             echo 'NVIDIA_API_KEY repository secret is required.' >&2
@@ -58,7 +58,7 @@ jobs:
 
       - name: Unconstrained G12D plus apo adaptive screen
         env:
-          NVIDIA_API_KEY: \${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           python scripts/batch11_peptide_only.py \
             --stage screen \
@@ -67,7 +67,7 @@ jobs:
 
       - name: WT plus decoy only for Phase-1 advancers
         env:
-          NVIDIA_API_KEY: \${{ secrets.NVIDIA_API_KEY }}
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
         run: |
           python scripts/batch11_peptide_only.py \
             --stage confirm \
@@ -117,7 +117,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: batch11-peptide-only-\${{ github.run_id }}-\${{ github.run_attempt }}
+          name: batch11-peptide-only-${{ github.run_id }}-${{ github.run_attempt }}
           path: |
             logs/batch11-plan.json
             results/batch-11/
