@@ -1,4 +1,4 @@
-# Existing candidate pool — review only, 2026-11-04
+# Existing candidate pool — review only, 2026-11-05
 
 **Correction notice (2026-11-04):** the original readout flags below are historical.
 The panel acceptor search admitted side-chain carbons and omitted the burial leg.
@@ -43,14 +43,14 @@ assert that every family variant has been measured to be promiscuous.
 | 1 | `bb50-g1` | Matched Asp6 3/3; unresolved apo over-burial |
 | 2 | `bb25` | Matched Asp6 2/3; apo and decoy concerns |
 | 3 | `bb54-g2` | Matched Asp6 1/3; several older sampling successes; apo concern |
-| 4 | `B6-c6-46_w2_bb36_donor-anchored-g2` | Mixed repeated readout; matched panel not run |
-| 5 | `B5-c6-62_bb173_donor-anchored-g1` | Mixed repeated readout; matched panel not run |
-| 6 | `bb54_graft-p3` | 2/3 under r3, 0/3 under r3np; same parent family |
-| 7 | `B5-c6-62_bb90_donor-anchored-g2` | Limited successes in repeated draws |
-| 8 | `B4-c67-65_bb26_donor-anchored` | Initial success followed by 0/3 repeats |
-| 9 | `B6-c6-46_w2_bb38_donor-anchored-g1` | Initial success followed by 0/6 across two settings |
-| 10 | `bb54_graft-p1-v3` | 1/3 under r3, 0/3 under r3np |
-| 11 | `bb54_graft-p2` | 1/3 under r3, 0/3 under r3np |
+| 4 | `B6-c6-46_w2_bb36_donor-anchored-g2` | Batch-10 matched G12D 1/3; apo/G12D area 1.258 — no advance |
+| 5 | `B5-c6-62_bb173_donor-anchored-g1` | Batch-10 matched G12D 1/3; apo/G12D area 1.372 — no advance |
+| 6 | `bb54_graft-p3` | Batch-10 matched G12D 0/3; apo/G12D area 1.776 — no advance |
+| 7 | `B5-c6-62_bb90_donor-anchored-g2` | Batch-10 matched G12D 1/3; apo/G12D area 1.750 — no advance |
+| 8 | `B4-c67-65_bb26_donor-anchored` | Batch-10 matched G12D 0/3; apo/G12D area 1.671 — no advance |
+| 9 | `B6-c6-46_w2_bb38_donor-anchored-g1` | Batch-10 matched G12D 0/3; apo/G12D area 2.180 — no advance |
+| 10 | `bb54_graft-p1-v3` | Batch-10 matched G12D 0/3; apo/G12D area 2.348 — no advance |
+| 11 | `bb54_graft-p2` | Batch-10 matched G12D 0/3; apo/G12D area 1.799 — no advance |
 
 This is a transparent review heuristic, not a new biological gate or an
 estimated probability of binding. The first three are the matched-panel leads,
@@ -90,12 +90,15 @@ python -m pytest -q
 
 ## Next decision
 
-Review the severe failures at ranks 7–11 before assigning experimental slots.
-The currently observed pool does not support a 20-design shortlist under this
-curation policy. The older-batch branch has now been assessed separately in
-`../legacy-readout-audit/README.md`: batches 01–03 contain 144 unique historical
-sequences but **zero** recorded oxygen-plus-burial direct Asp6 readouts. They do
-not expand this shortlist. Completing 20 therefore requires a genuinely new
-mechanism for generation. The matched-apo result does not justify more generic
-rescue sampling around the same scaffolds, and no excluded design is silently
-reintroduced to meet the count.
+Batch-10 has now directly counter-screened ranks 4–11 under the same matched
+HLA regional anchor used in batch-09. **0/8 advance**: every apo/G12D median
+total-area ratio is >1 and none reproduces corrected direct Asp6 recognition
+in at least 2/3 G12D draws. Phase-2 WT/decoy confirmation is therefore zero
+calls by the frozen adaptive rule; see `../batch-10/SUMMARY.md`.
+
+The currently observed pool still does not support a 20-design shortlist under
+this curation policy. The older-batch audit also found zero additional recorded
+oxygen-plus-burial direct Asp6 readouts. Completing 20 therefore requires a
+genuinely new peptide-dependent mechanism, or an explicitly labelled fallback
+near-miss package. No excluded design is silently reintroduced merely to meet
+the count.
