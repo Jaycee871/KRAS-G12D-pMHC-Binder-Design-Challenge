@@ -63,6 +63,20 @@ Two important consequences:
    to rewrite history. If a near-miss is submitted, its failure mode should be
    documented honestly in the metadata.
 
+## Legacy-pool decision — 5 Nov
+
+The fallback audit of batches 01–03 is now complete with **zero new model calls**.
+Across 163 checkpoint rows and 144 unique historical sequences, **no sequence**
+has a recorded Asp6 carboxylate-oxygen donor within 3.5 Å together with positive
+Asp6 side-chain burial. Seven sequences show burial without the required oxygen
+readout and are not rescued by contact count alone.
+
+This closes the “assess older excluded batches” branch of the decision tree.
+The current 11-design review pool therefore remains 9 short of the Track-1
+minimum. Any expansion now requires a genuinely new mechanism; silently
+reintroducing legacy failures is not permitted. See
+`results/legacy-readout-audit/README.md`.
+
 ## Plan from here
 
 ### 4 Nov — infrastructure and rule repair
