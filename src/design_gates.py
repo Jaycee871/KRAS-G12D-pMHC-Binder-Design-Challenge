@@ -17,16 +17,32 @@ from __future__ import annotations
 
 from typing import Dict, List, Mapping, Optional
 
-# --- ipTM gates -------------------------------------------------------------
-ON_TARGET_IPTM_MIN = 0.75          # ipTM(G12D) >= 0.75
-OFF_TARGET_IPTM_MAX = 0.50         # max(WT, apo, decoy) <= 0.50
-SPECIFICITY_GAP_MIN = 0.25         # score(G12D) - max(off-targets) >= 0.25
+# --- ipTM: ranking terms, not hard gates (batch-02) -------------------------
+# Batch-01 produced a best ipTM(G12D) of 0.870 and a best specificity gap of
+# +0.254 while burying a mean of 21 A^2 on the peptide: the reported ipTM is
+# the strongest binder-to-*any*-chain interface, so a binder parked on the HLA
+# alpha-3 face still scores 0.4-0.5. Until the pose filter is proven these
+# thresholds are reported as *shortfalls* (`ranking_shortfalls`) and used for
+# ranking; they no longer veto a design in `evaluate`.
+ON_TARGET_IPTM_MIN = 0.75          # ipTM(G12D) >= 0.75 (ranking target)
+OFF_TARGET_IPTM_MAX = 0.50         # max(WT, apo, decoy) <= 0.50 (ranking target)
+SPECIFICITY_GAP_MIN = 0.25         # score(G12D) - max(off-targets) (ranking target)
 
 # --- interface geometry gates -----------------------------------------------
 PEPTIDE_BURIED_FRACTION_MIN = 0.40  # >= 40 % of buried area on the peptide chain
-ASP6_BURIED_FRACTION_MIN = 0.60     # >= 60 % of the Asp6 side chain buried
+# `asp6_buried_frac` is now a *ranking* term only. Measured on 7OW6 itself the
+# groove alone buries 0.90 of the Asp6 side chain, leaving 8.8 A^2 exposed, and
+# the selective TCR of Poole et al. 2022 buries none of that remainder - so a
+# 0.60 hard gate was unreachable even by a known selective binder.
 ASP6_BURIED_FRACTION_PREFERRED = 0.75
+# What replaces it: the binder has to *read the carboxylate*. Either a donor
+# nitrogen or hydroxyl oxygen within 3.5 A of OD1/OD2 (an Asp6 hydrogen bond /
+# salt bridge), or - the Poole escape clause - a position-6 heavy-atom contact
+# footprint at least as dense as that selective TCR's, which reads the
+# aspartate indirectly (electrostatically) and makes no hydrogen bond to it
+# because HLA Arg114 already caps the carboxylate.
 MIN_POS6_HEAVY_ATOM_CONTACTS = 3    # binder heavy atoms within 5 A of position 6
+POS6_CONTACTS_WITHOUT_HBOND = 7     # contacts that substitute for the H-bond
 PAE_INTERFACE_MAX = 10.0            # Angstrom, on the G12D run
 
 # --- interface electrostatics (Xie et al. 2025: excess negative charge hurts) -
@@ -44,6 +60,8 @@ IPTM_COLUMNS = {
     "decoy": "iptm_decoy",
 }
 ASP6_BURIED_COLUMN = "asp6_buried_frac"
+ASP6_HBOND_COLUMN = "asp6_hbond"
+ASP6_SALT_BRIDGE_COLUMN = "asp6_salt_bridge"
 PEPTIDE_BURIED_COLUMN = "peptide_buried_frac"
 NET_INTERFACE_CHARGE_COLUMN = "net_interface_charge"
 POS6_CONTACTS_COLUMN = "pos6_contacts"
@@ -67,6 +85,27 @@ def _as_float(record: Mapping, key: str) -> Optional[float]:
         return float(raw)
     except (TypeError, ValueError):
         raise GateError(f"column '{key}' is not numeric: {raw!r}")
+
+
+_TRUE = {"true", "1", "yes", "y", "t"}
+_FALSE = {"false", "0", "no", "n", "f", ""}
+
+
+def _as_bool(record: Mapping, key: str) -> Optional[bool]:
+    """Return record[key] as a bool, or None when absent/blank."""
+    if key not in record:
+        return None
+    raw = record[key]
+    if raw is None:
+        return None
+    if isinstance(raw, bool):
+        return raw
+    text = str(raw).strip().lower()
+    if text in _TRUE:
+        return True
+    if text in _FALSE:
+        return None if text == "" else False
+    raise GateError(f"column '{key}' is not a boolean: {raw!r}")
 
 
 def off_target_scores(record: Mapping) -> Dict[str, float]:
@@ -119,34 +158,71 @@ def asp6_buried_fraction(sasa_free: float, sasa_complex: float) -> float:
     return (sasa_free - sasa_complex) / sasa_free
 
 
-def evaluate(record: Mapping) -> List[str]:
-    """Return the gate failures for one design record; empty list means pass.
+def asp6_readout_failures(record: Mapping) -> List[str]:
+    """The Asp6 read-out criterion that replaced `asp6_buried_frac >= 0.60`.
+
+    Passes when the binder hydrogen bonds or salt bridges to the Asp6
+    carboxylate (a donor N or hydroxyl O within 3.5 A of OD1/OD2), or makes at
+    least `POS6_CONTACTS_WITHOUT_HBOND` heavy-atom contacts with position 6 -
+    the footprint of the selective TCR of Poole et al. 2022, which discriminates
+    G12D from WT without an Asp6 hydrogen bond.
+    """
+    hbond = _as_bool(record, ASP6_HBOND_COLUMN)
+    salt = _as_bool(record, ASP6_SALT_BRIDGE_COLUMN)
+    contacts = _as_float(record, POS6_CONTACTS_COLUMN)
+    if hbond is None and salt is None:
+        return []          # not measured: no opinion (mid-pipeline records)
+    if hbond or salt:
+        return []
+    if contacts is not None and contacts >= POS6_CONTACTS_WITHOUT_HBOND:
+        return []
+    found = f"{contacts:.0f}" if contacts is not None else "an unknown number of"
+    return [
+        f"no hydrogen bond or salt bridge to the Asp6 carboxylate (donor "
+        f"within 3.5 A of OD1/OD2) and only {found} heavy-atom contacts with "
+        f"position 6 (need a bond, or >= {POS6_CONTACTS_WITHOUT_HBOND} contacts)"
+    ]
+
+
+def ranking_shortfalls(record: Mapping) -> List[str]:
+    """ipTM targets the record misses. Ranking information, not hard gates.
+
+    Demoted from `evaluate` in batch-02: the reported ipTM is the strongest
+    binder-to-any-target-chain interface, so it says little about *where* the
+    binder sits, which is the failure mode batch-01 actually had.
+    """
+    shortfalls: List[str] = []
+    on = _as_float(record, IPTM_COLUMNS["g12d"])
+    if on is not None and on < ON_TARGET_IPTM_MIN:
+        shortfalls.append(f"ipTM(G12D) {on:.3f} < {ON_TARGET_IPTM_MIN:.2f}")
+    for state, value in off_target_scores(record).items():
+        if value > OFF_TARGET_IPTM_MAX:
+            shortfalls.append(
+                f"ipTM({state}) {value:.3f} > {OFF_TARGET_IPTM_MAX:.2f} "
+                f"(counter-screen target: max(WT, apo, decoy) <= "
+                f"{OFF_TARGET_IPTM_MAX:.2f})"
+            )
+    gap = specificity_gap(record)
+    if gap is not None and gap < SPECIFICITY_GAP_MIN:
+        shortfalls.append(
+            f"specificity_gap {gap:.3f} < {SPECIFICITY_GAP_MIN:.2f}")
+    return shortfalls
+
+
+def evaluate(record: Mapping, include_ranking: bool = False) -> List[str]:
+    """Return the hard-gate failures for one design record; empty means pass.
+
+    Hard gates are the *geometry and chemistry* of the interface: peptide share
+    of the buried area, position-6 contacts, the Asp6 read-out criterion,
+    interface charge and interface PAE/PDE. The ipTM thresholds are ranking
+    terms since batch-02 and are only included when `include_ranking` is true
+    (see `ranking_shortfalls`).
 
     Missing columns are not failures - a partially scored design simply has
     fewer gates applied - so this can be run mid-pipeline. Use `is_complete` to
     check that every gate could actually be evaluated.
     """
     failures: List[str] = []
-
-    on = _as_float(record, IPTM_COLUMNS["g12d"])
-    if on is not None and on < ON_TARGET_IPTM_MIN:
-        failures.append(
-            f"ipTM(G12D) {on:.3f} < {ON_TARGET_IPTM_MIN:.2f}"
-        )
-
-    for state, value in off_target_scores(record).items():
-        if value > OFF_TARGET_IPTM_MAX:
-            failures.append(
-                f"ipTM({state}) {value:.3f} > {OFF_TARGET_IPTM_MAX:.2f} "
-                f"(counter-screen gate: max(WT, apo, decoy) <= "
-                f"{OFF_TARGET_IPTM_MAX:.2f})"
-            )
-
-    gap = specificity_gap(record)
-    if gap is not None and gap < SPECIFICITY_GAP_MIN:
-        failures.append(
-            f"specificity_gap {gap:.3f} < {SPECIFICITY_GAP_MIN:.2f}"
-        )
 
     pep = _as_float(record, PEPTIDE_BURIED_COLUMN)
     if pep is not None and pep < PEPTIDE_BURIED_FRACTION_MIN:
@@ -155,18 +231,14 @@ def evaluate(record: Mapping) -> List[str]:
             f"{PEPTIDE_BURIED_FRACTION_MIN:.2f}"
         )
 
-    asp6 = _as_float(record, ASP6_BURIED_COLUMN)
-    if asp6 is not None and asp6 < ASP6_BURIED_FRACTION_MIN:
-        failures.append(
-            f"Asp6 buried fraction {asp6:.2f} < {ASP6_BURIED_FRACTION_MIN:.2f}"
-        )
-
     contacts = _as_float(record, POS6_CONTACTS_COLUMN)
     if contacts is not None and contacts < MIN_POS6_HEAVY_ATOM_CONTACTS:
         failures.append(
             f"only {contacts:.0f} binder heavy atoms within 5 A of peptide "
             f"position 6 (need >= {MIN_POS6_HEAVY_ATOM_CONTACTS})"
         )
+
+    failures.extend(asp6_readout_failures(record))
 
     pae = _as_float(record, PAE_INTERFACE_COLUMN)
     if pae is not None and pae >= PAE_INTERFACE_MAX:
@@ -189,6 +261,8 @@ def evaluate(record: Mapping) -> List[str]:
                 f"attraction to the groove"
             )
 
+    if include_ranking:
+        failures.extend(ranking_shortfalls(record))
     return failures
 
 
@@ -198,7 +272,8 @@ REQUIRED_COLUMNS = (
     IPTM_COLUMNS["apo"],
     IPTM_COLUMNS["decoy"],
     PEPTIDE_BURIED_COLUMN,
-    ASP6_BURIED_COLUMN,
+    POS6_CONTACTS_COLUMN,
+    ASP6_HBOND_COLUMN,
     NET_INTERFACE_CHARGE_COLUMN,
 )
 

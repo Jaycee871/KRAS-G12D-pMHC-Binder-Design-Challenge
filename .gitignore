@@ -63,3 +63,18 @@ params_model_*.npz
 .DS_Store
 *.log
 *.tmp
+
+# ---- Curated batch results (small, reviewed by hand) ----
+# `run_batch.py --top-structures N` writes the N best predicted complexes to
+# results/<batch>/structures/; those are tracked. The bulk dumps next to them
+# (all_structures/, scored_structures/ - tens of MB per batch) stay ignored and
+# are reproducible from checkpoint.jsonl + designs.details.json.
+!results/*/structures/*.cif
+!results/*/structures/*.pdb
+results/*/all_structures/
+results/*/scored_structures/
+
+# batch-01's structures/ holds the overlapping top-5 dumps of two re-runs
+# (not a curated set) and predates the rule above; regenerate with
+# `run_batch.py --rebuild --out-dir results/batch-01` if they are ever needed.
+results/batch-01/structures/
