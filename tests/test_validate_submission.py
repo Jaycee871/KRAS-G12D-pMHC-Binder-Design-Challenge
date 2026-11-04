@@ -30,15 +30,15 @@ def test_valid_submission(tmp_path):
     assert vs.validate_file(p) == []
 
 
-def test_valid_at_exactly_20_designs(tmp_path):
-    p = write_csv(tmp_path / "s.csv", [(f"d{i}", GOOD) for i in range(20)])
+def test_valid_at_exactly_40_designs_track1_max(tmp_path):
+    p = write_csv(tmp_path / "s.csv", [(f"d{i}", GOOD) for i in range(40)])
     assert vs.validate_file(p) == []
 
 
-def test_21_designs_rejected(tmp_path):
-    p = write_csv(tmp_path / "s.csv", [(f"d{i}", GOOD) for i in range(21)])
+def test_41_designs_rejected(tmp_path):
+    p = write_csv(tmp_path / "s.csv", [(f"d{i}", GOOD) for i in range(41)])
     errors = vs.validate_file(p)
-    assert any("21 designs" in e and "limit of 20" in e for e in errors)
+    assert any("41 designs" in e and "maximum of 40" in e for e in errors)
 
 
 def test_chain_of_9_aa_rejected(tmp_path):
