@@ -1,0 +1,4772 @@
+{
+  "n_structures": 216,
+  "n_cells": 72,
+  "boltz2_calls_total": 72,
+  "cells": {
+    "B6-c6-46_w2_bb54_donor-anchored-g2|apo|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [],
+        "median": null
+      },
+      "buried_area_hla": {
+        "values": [
+          1238.5,
+          1211.5,
+          1102.2
+        ],
+        "median": 1211.5
+      },
+      "peptide_buried_frac": {
+        "values": [],
+        "median": null
+      },
+      "pos6_contacts": {
+        "values": [],
+        "median": null
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "HLA chain A only (apo: no peptide)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 13.42,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.36
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 6.83,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.16
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 8.35,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.35
+          }
+        ],
+        "mean": 9.53,
+        "max": 13.42,
+        "frame_max": 0.36
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|decoy|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          111.7,
+          18.5,
+          84.5
+        ],
+        "median": 84.5
+      },
+      "buried_area_hla": {
+        "values": [
+          535.9,
+          398.3,
+          353.2
+        ],
+        "median": 398.3
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.172,
+          0.044,
+          0.193
+        ],
+        "median": 0.172
+      },
+      "pos6_contacts": {
+        "values": [
+          2.0,
+          0.0,
+          7.0
+        ],
+        "median": 2.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 29.86,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 31.89,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 20.5,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.12
+          }
+        ],
+        "mean": 27.42,
+        "max": 31.89,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r1": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 3,
+      "buried_area_peptide": {
+        "values": [
+          221.9,
+          217.8,
+          226.5
+        ],
+        "median": 221.9
+      },
+      "buried_area_hla": {
+        "values": [
+          562.5,
+          499.9,
+          515.9
+        ],
+        "median": 515.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.283,
+          0.303,
+          0.305
+        ],
+        "median": 0.303
+      },
+      "pos6_contacts": {
+        "values": [
+          20.0,
+          11.0,
+          12.0
+        ],
+        "median": 12.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 7.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.36
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 12.24,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.34
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 13.98,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.55
+          }
+        ],
+        "mean": 11.13,
+        "max": 13.98,
+        "frame_max": 0.55
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r10": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          297.3,
+          231.9,
+          245.5
+        ],
+        "median": 245.5
+      },
+      "buried_area_hla": {
+        "values": [
+          693.5,
+          537.1,
+          597.9
+        ],
+        "median": 597.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.3,
+          0.302,
+          0.291
+        ],
+        "median": 0.3
+      },
+      "pos6_contacts": {
+        "values": [
+          28.0,
+          20.0,
+          25.0
+        ],
+        "median": 25.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 6.99,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 5.68,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.36
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 2.13,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.31
+          }
+        ],
+        "mean": 4.93,
+        "max": 6.99,
+        "frame_max": 0.36
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r10np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          283.4,
+          274.2,
+          268.9
+        ],
+        "median": 274.2
+      },
+      "buried_area_hla": {
+        "values": [
+          656.0,
+          640.7,
+          605.8
+        ],
+        "median": 640.7
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.302,
+          0.3,
+          0.307
+        ],
+        "median": 0.302
+      },
+      "pos6_contacts": {
+        "values": [
+          25.0,
+          26.0,
+          23.0
+        ],
+        "median": 25.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 1.91,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.16
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 2.04,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 2.81,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.27
+          }
+        ],
+        "mean": 2.25,
+        "max": 2.81,
+        "frame_max": 0.28
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r10s100np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          258.2,
+          191.2,
+          214.1
+        ],
+        "median": 214.1
+      },
+      "buried_area_hla": {
+        "values": [
+          688.4,
+          617.3,
+          545.6
+        ],
+        "median": 617.3
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.273,
+          0.236,
+          0.282
+        ],
+        "median": 0.273
+      },
+      "pos6_contacts": {
+        "values": [
+          21.0,
+          5.0,
+          13.0
+        ],
+        "median": 13.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 1.93,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.48
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.35,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.37
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 19.8,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.34
+          }
+        ],
+        "mean": 13.69,
+        "max": 19.8,
+        "frame_max": 0.48
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r1_rep": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          117.0,
+          180.4,
+          205.6
+        ],
+        "median": 180.4
+      },
+      "buried_area_hla": {
+        "values": [
+          590.8,
+          477.3,
+          695.1
+        ],
+        "median": 590.8
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.165,
+          0.274,
+          0.228
+        ],
+        "median": 0.228
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          11.0,
+          6.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 15.78,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.36
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 11.89,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.31
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 12.19,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          }
+        ],
+        "mean": 13.29,
+        "max": 15.78,
+        "frame_max": 0.36
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r1np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          163.2,
+          249.3,
+          101.1
+        ],
+        "median": 163.2
+      },
+      "buried_area_hla": {
+        "values": [
+          684.0,
+          410.9,
+          590.8
+        ],
+        "median": 590.8
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.193,
+          0.378,
+          0.146
+        ],
+        "median": 0.193
+      },
+      "pos6_contacts": {
+        "values": [
+          7.0,
+          24.0,
+          0.0
+        ],
+        "median": 7.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 17.45,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.53,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 13.52,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.35
+          }
+        ],
+        "mean": 16.17,
+        "max": 17.53,
+        "frame_max": 0.35
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 3,
+      "buried_area_peptide": {
+        "values": [
+          302.4,
+          184.5,
+          175.2
+        ],
+        "median": 184.5
+      },
+      "buried_area_hla": {
+        "values": [
+          749.4,
+          501.7,
+          642.0
+        ],
+        "median": 642.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.288,
+          0.269,
+          0.214
+        ],
+        "median": 0.269
+      },
+      "pos6_contacts": {
+        "values": [
+          26.0,
+          15.0,
+          7.0
+        ],
+        "median": 15.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 16.84,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.36
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.82,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 5.2,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          }
+        ],
+        "mean": 12.95,
+        "max": 16.84,
+        "frame_max": 0.36
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r3_rep": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          210.8,
+          208.7,
+          246.1
+        ],
+        "median": 210.8
+      },
+      "buried_area_hla": {
+        "values": [
+          456.4,
+          487.2,
+          653.3
+        ],
+        "median": 487.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.316,
+          0.3,
+          0.274
+        ],
+        "median": 0.3
+      },
+      "pos6_contacts": {
+        "values": [
+          18.0,
+          4.0,
+          24.0
+        ],
+        "median": 18.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 7.19,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 22.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 19.89,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          }
+        ],
+        "mean": 16.41,
+        "max": 22.16,
+        "frame_max": 0.33
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 3,
+      "buried_area_peptide": {
+        "values": [
+          310.9,
+          180.0,
+          166.2
+        ],
+        "median": 180.0
+      },
+      "buried_area_hla": {
+        "values": [
+          757.8,
+          379.1,
+          675.9
+        ],
+        "median": 675.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.291,
+          0.322,
+          0.197
+        ],
+        "median": 0.291
+      },
+      "pos6_contacts": {
+        "values": [
+          25.0,
+          7.0,
+          8.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 16.2,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.39
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.97,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.31
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 8.62,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.17
+          }
+        ],
+        "mean": 13.93,
+        "max": 16.97,
+        "frame_max": 0.39
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r3np_rep": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 3,
+      "buried_area_peptide": {
+        "values": [
+          329.4,
+          186.1,
+          181.6
+        ],
+        "median": 186.1
+      },
+      "buried_area_hla": {
+        "values": [
+          718.8,
+          464.1,
+          612.6
+        ],
+        "median": 612.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.314,
+          0.286,
+          0.229
+        ],
+        "median": 0.286
+      },
+      "pos6_contacts": {
+        "values": [
+          27.0,
+          19.0,
+          5.0
+        ],
+        "median": 19.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 17.37,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.0,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 4.7,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          }
+        ],
+        "mean": 13.02,
+        "max": 17.37,
+        "frame_max": 0.33
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r3np_rep3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 3,
+      "buried_area_peptide": {
+        "values": [
+          329.4,
+          186.1,
+          181.6
+        ],
+        "median": 186.1
+      },
+      "buried_area_hla": {
+        "values": [
+          718.8,
+          464.1,
+          612.6
+        ],
+        "median": 612.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.314,
+          0.286,
+          0.229
+        ],
+        "median": 0.286
+      },
+      "pos6_contacts": {
+        "values": [
+          27.0,
+          19.0,
+          5.0
+        ],
+        "median": 19.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 17.37,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.0,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 4.7,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          }
+        ],
+        "mean": 13.02,
+        "max": 17.37,
+        "frame_max": 0.33
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r3np_rep4": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          283.7,
+          208.3,
+          248.0
+        ],
+        "median": 248.0
+      },
+      "buried_area_hla": {
+        "values": [
+          682.5,
+          520.5,
+          599.8
+        ],
+        "median": 599.8
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.294,
+          0.286,
+          0.293
+        ],
+        "median": 0.293
+      },
+      "pos6_contacts": {
+        "values": [
+          29.0,
+          21.0,
+          24.0
+        ],
+        "median": 24.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 6.37,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 5.02,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.39
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 2.04,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          }
+        ],
+        "mean": 4.48,
+        "max": 6.37,
+        "frame_max": 0.39
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r5": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          314.7,
+          177.8,
+          169.7
+        ],
+        "median": 177.8
+      },
+      "buried_area_hla": {
+        "values": [
+          690.9,
+          487.0,
+          674.4
+        ],
+        "median": 674.4
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.313,
+          0.267,
+          0.201
+        ],
+        "median": 0.267
+      },
+      "pos6_contacts": {
+        "values": [
+          26.0,
+          2.0,
+          6.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 17.38,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.38
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.77,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 6.36,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.15
+          }
+        ],
+        "mean": 13.5,
+        "max": 17.38,
+        "frame_max": 0.38
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r5np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          295.2,
+          175.4,
+          177.5
+        ],
+        "median": 177.5
+      },
+      "buried_area_hla": {
+        "values": [
+          747.1,
+          411.4,
+          666.6
+        ],
+        "median": 666.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.283,
+          0.299,
+          0.21
+        ],
+        "median": 0.283
+      },
+      "pos6_contacts": {
+        "values": [
+          25.0,
+          6.0,
+          6.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 15.37,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.4
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.68,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 6.47,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.14
+          }
+        ],
+        "mean": 12.84,
+        "max": 16.68,
+        "frame_max": 0.4
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r6": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          258.0,
+          287.2,
+          276.9
+        ],
+        "median": 276.9
+      },
+      "buried_area_hla": {
+        "values": [
+          536.1,
+          648.0,
+          660.2
+        ],
+        "median": 648.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.325,
+          0.307,
+          0.296
+        ],
+        "median": 0.307
+      },
+      "pos6_contacts": {
+        "values": [
+          28.0,
+          22.0,
+          28.0
+        ],
+        "median": 28.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 3.0,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.35
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 4.59,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.17
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 2.94,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.43
+          }
+        ],
+        "mean": 3.51,
+        "max": 4.59,
+        "frame_max": 0.43
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r6np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          314.5,
+          189.5,
+          178.0
+        ],
+        "median": 189.5
+      },
+      "buried_area_hla": {
+        "values": [
+          726.6,
+          604.3,
+          649.0
+        ],
+        "median": 649.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.302,
+          0.239,
+          0.215
+        ],
+        "median": 0.239
+      },
+      "pos6_contacts": {
+        "values": [
+          27.0,
+          6.0,
+          5.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 16.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.38
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.69,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 3.85,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.15
+          }
+        ],
+        "mean": 12.23,
+        "max": 16.69,
+        "frame_max": 0.38
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r8": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          288.4,
+          261.7,
+          308.4
+        ],
+        "median": 288.4
+      },
+      "buried_area_hla": {
+        "values": [
+          766.0,
+          559.6,
+          537.5
+        ],
+        "median": 559.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.274,
+          0.319,
+          0.365
+        ],
+        "median": 0.319
+      },
+      "pos6_contacts": {
+        "values": [
+          24.0,
+          26.0,
+          32.0
+        ],
+        "median": 26.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 7.76,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 7.6,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 6.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          }
+        ],
+        "mean": 7.17,
+        "max": 7.76,
+        "frame_max": 0.29
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r8np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          259.4,
+          289.0,
+          278.5
+        ],
+        "median": 278.5
+      },
+      "buried_area_hla": {
+        "values": [
+          563.0,
+          662.0,
+          643.5
+        ],
+        "median": 643.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.315,
+          0.304,
+          0.302
+        ],
+        "median": 0.304
+      },
+      "pos6_contacts": {
+        "values": [
+          28.0,
+          25.0,
+          29.0
+        ],
+        "median": 28.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 3.91,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 5.05,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 2.66,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.44
+          }
+        ],
+        "mean": 3.87,
+        "max": 5.05,
+        "frame_max": 0.44
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|g12d|r8s100": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          278.2,
+          304.7,
+          187.3
+        ],
+        "median": 278.2
+      },
+      "buried_area_hla": {
+        "values": [
+          589.9,
+          518.2,
+          497.4
+        ],
+        "median": 518.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.32,
+          0.37,
+          0.274
+        ],
+        "median": 0.32
+      },
+      "pos6_contacts": {
+        "values": [
+          24.0,
+          21.0,
+          5.0
+        ],
+        "median": 21.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 1.35,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 18.23,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.37
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 18.44,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.41
+          }
+        ],
+        "mean": 12.67,
+        "max": 18.44,
+        "frame_max": 0.41
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|wt|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          82.0,
+          129.7,
+          140.4
+        ],
+        "median": 129.7
+      },
+      "buried_area_hla": {
+        "values": [
+          599.1,
+          359.9,
+          523.2
+        ],
+        "median": 523.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.12,
+          0.265,
+          0.212
+        ],
+        "median": 0.212
+      },
+      "pos6_contacts": {
+        "values": [
+          5.0,
+          10.0,
+          12.0
+        ],
+        "median": 10.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 22.78,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 21.98,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 9.17,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.16
+          }
+        ],
+        "mean": 17.98,
+        "max": 22.78,
+        "frame_max": 0.23
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|wt|r3np_rep2": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          94.8,
+          119.2,
+          136.9
+        ],
+        "median": 119.2
+      },
+      "buried_area_hla": {
+        "values": [
+          602.5,
+          389.9,
+          552.2
+        ],
+        "median": 552.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.136,
+          0.234,
+          0.199
+        ],
+        "median": 0.199
+      },
+      "pos6_contacts": {
+        "values": [
+          4.0,
+          2.0,
+          11.0
+        ],
+        "median": 4.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 25.28,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 22.24,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 13.81,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.17
+          }
+        ],
+        "mean": 20.44,
+        "max": 25.28,
+        "frame_max": 0.21
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|wt|r3np_rep3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          148.5,
+          146.2,
+          148.3
+        ],
+        "median": 148.3
+      },
+      "buried_area_hla": {
+        "values": [
+          584.0,
+          442.7,
+          459.5
+        ],
+        "median": 459.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.203,
+          0.248,
+          0.244
+        ],
+        "median": 0.244
+      },
+      "pos6_contacts": {
+        "values": [
+          12.0,
+          11.0,
+          9.0
+        ],
+        "median": 11.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 5.98,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 15.94,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.14
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 14.7,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          }
+        ],
+        "mean": 12.21,
+        "max": 15.94,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2|wt|r3np_rep4": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          86.7,
+          167.2,
+          147.1
+        ],
+        "median": 147.1
+      },
+      "buried_area_hla": {
+        "values": [
+          610.5,
+          484.3,
+          509.8
+        ],
+        "median": 509.8
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.124,
+          0.257,
+          0.224
+        ],
+        "median": 0.224
+      },
+      "pos6_contacts": {
+        "values": [
+          4.0,
+          10.0,
+          11.0
+        ],
+        "median": 10.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 19.52,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 22.76,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 16.23,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          }
+        ],
+        "mean": 19.5,
+        "max": 22.76,
+        "frame_max": 0.28
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-46_bb06_graft-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          209.9,
+          206.4,
+          188.1
+        ],
+        "median": 206.4
+      },
+      "buried_area_hla": {
+        "values": [
+          439.4,
+          553.5,
+          287.5
+        ],
+        "median": 439.4
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.323,
+          0.272,
+          0.396
+        ],
+        "median": 0.323
+      },
+      "pos6_contacts": {
+        "values": [
+          9.0,
+          10.0,
+          8.0
+        ],
+        "median": 9.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 15.83,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 11.61,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.12
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 18.44,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          }
+        ],
+        "mean": 15.29,
+        "max": 18.44,
+        "frame_max": 0.22
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B7-rigid-46_bb06_graft-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          216.3,
+          242.0,
+          248.1
+        ],
+        "median": 242.0
+      },
+      "buried_area_hla": {
+        "values": [
+          594.8,
+          633.3,
+          744.2
+        ],
+        "median": 633.3
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.267,
+          0.276,
+          0.25
+        ],
+        "median": 0.267
+      },
+      "pos6_contacts": {
+        "values": [
+          9.0,
+          12.0,
+          6.0
+        ],
+        "median": 9.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 13.17,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 12.01,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 5.89,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          }
+        ],
+        "mean": 10.36,
+        "max": 13.17,
+        "frame_max": 0.32
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B7-rigid-46_bb06_rigid-gp-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          260.4,
+          265.1,
+          225.9
+        ],
+        "median": 260.4
+      },
+      "buried_area_hla": {
+        "values": [
+          566.4,
+          595.9,
+          779.5
+        ],
+        "median": 595.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.315,
+          0.308,
+          0.225
+        ],
+        "median": 0.308
+      },
+      "pos6_contacts": {
+        "values": [
+          12.0,
+          9.0,
+          12.0
+        ],
+        "median": 12.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 11.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 11.01,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 11.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.15
+          }
+        ],
+        "mean": 11.11,
+        "max": 11.16,
+        "frame_max": 0.23
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B7-rigid-46_bb06_rigid-gp-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          226.4,
+          233.5,
+          111.2
+        ],
+        "median": 226.4
+      },
+      "buried_area_hla": {
+        "values": [
+          727.6,
+          450.8,
+          576.4
+        ],
+        "median": 576.4
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.237,
+          0.341,
+          0.162
+        ],
+        "median": 0.237
+      },
+      "pos6_contacts": {
+        "values": [
+          6.0,
+          7.0,
+          6.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 12.51,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.15
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 21.15,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.11
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 19.51,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.13
+          }
+        ],
+        "mean": 17.72,
+        "max": 21.15,
+        "frame_max": 0.15
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-46_bb18_graft-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          170.6,
+          116.7,
+          165.8
+        ],
+        "median": 165.8
+      },
+      "buried_area_hla": {
+        "values": [
+          849.0,
+          770.4,
+          774.5
+        ],
+        "median": 774.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.167,
+          0.132,
+          0.176
+        ],
+        "median": 0.167
+      },
+      "pos6_contacts": {
+        "values": [
+          6.0,
+          3.0,
+          6.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 25.78,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.27
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 18.48,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.34
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 20.08,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          }
+        ],
+        "mean": 21.45,
+        "max": 25.78,
+        "frame_max": 0.34
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "B7-rigid-46_bb18_graft-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          188.6,
+          99.5,
+          182.9
+        ],
+        "median": 182.9
+      },
+      "buried_area_hla": {
+        "values": [
+          560.9,
+          740.8,
+          721.2
+        ],
+        "median": 721.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.252,
+          0.118,
+          0.202
+        ],
+        "median": 0.202
+      },
+      "pos6_contacts": {
+        "values": [
+          9.0,
+          2.0,
+          10.0
+        ],
+        "median": 9.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 23.81,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 13.99,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 25.57,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.34
+          }
+        ],
+        "mean": 21.12,
+        "max": 25.57,
+        "frame_max": 0.34
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-46_bb18_graft-p2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          170.9,
+          118.4,
+          210.3
+        ],
+        "median": 170.9
+      },
+      "buried_area_hla": {
+        "values": [
+          730.9,
+          456.7,
+          688.1
+        ],
+        "median": 688.1
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.189,
+          0.206,
+          0.234
+        ],
+        "median": 0.206
+      },
+      "pos6_contacts": {
+        "values": [
+          5.0,
+          5.0,
+          6.0
+        ],
+        "median": 5.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 11.44,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.34
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 3.05,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.33
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 12.24,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.11
+          }
+        ],
+        "mean": 8.91,
+        "max": 12.24,
+        "frame_max": 0.34
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "B7-rigid-46_bb18_graft-p2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          178.5,
+          100.4,
+          215.0
+        ],
+        "median": 178.5
+      },
+      "buried_area_hla": {
+        "values": [
+          714.4,
+          461.4,
+          727.2
+        ],
+        "median": 714.4
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.2,
+          0.179,
+          0.228
+        ],
+        "median": 0.2
+      },
+      "pos6_contacts": {
+        "values": [
+          6.0,
+          4.0,
+          8.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 11.62,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.3
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 2.76,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 12.4,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.12
+          }
+        ],
+        "mean": 8.93,
+        "max": 12.4,
+        "frame_max": 0.32
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-46_bb18_graft-p3|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          190.3,
+          175.8,
+          192.4
+        ],
+        "median": 190.3
+      },
+      "buried_area_hla": {
+        "values": [
+          727.7,
+          563.7,
+          940.7
+        ],
+        "median": 727.7
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.207,
+          0.238,
+          0.17
+        ],
+        "median": 0.207
+      },
+      "pos6_contacts": {
+        "values": [
+          1.0,
+          12.0,
+          1.0
+        ],
+        "median": 1.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 17.83,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 20.24,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 23.87,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          }
+        ],
+        "mean": 20.65,
+        "max": 23.87,
+        "frame_max": 0.29
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-46_bb18_graft-p3|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          105.9,
+          176.3,
+          84.3
+        ],
+        "median": 105.9
+      },
+      "buried_area_hla": {
+        "values": [
+          763.9,
+          940.5,
+          814.2
+        ],
+        "median": 814.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.122,
+          0.158,
+          0.094
+        ],
+        "median": 0.122
+      },
+      "pos6_contacts": {
+        "values": [
+          3.0,
+          2.0,
+          3.0
+        ],
+        "median": 3.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 32.51,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 4.53,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 32.79,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.34
+          }
+        ],
+        "mean": 23.28,
+        "max": 32.79,
+        "frame_max": 0.34
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "B7-rigid-46_bb18_rigid-gp-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          188.0,
+          171.6,
+          160.2
+        ],
+        "median": 171.6
+      },
+      "buried_area_hla": {
+        "values": [
+          793.0,
+          841.2,
+          1059.7
+        ],
+        "median": 841.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.192,
+          0.169,
+          0.131
+        ],
+        "median": 0.169
+      },
+      "pos6_contacts": {
+        "values": [
+          11.0,
+          1.0,
+          3.0
+        ],
+        "median": 3.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 22.38,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.59,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 11.19,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.38
+          }
+        ],
+        "mean": 17.05,
+        "max": 22.38,
+        "frame_max": 0.38
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "B7-rigid-46_bb18_rigid-gp-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          187.1,
+          161.3,
+          164.5
+        ],
+        "median": 164.5
+      },
+      "buried_area_hla": {
+        "values": [
+          1213.1,
+          1099.5,
+          1306.3
+        ],
+        "median": 1213.1
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.134,
+          0.128,
+          0.112
+        ],
+        "median": 0.128
+      },
+      "pos6_contacts": {
+        "values": [
+          2.0,
+          1.0,
+          3.0
+        ],
+        "median": 2.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 11.87,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 14.08,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 20.23,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.12
+          }
+        ],
+        "mean": 15.39,
+        "max": 20.23,
+        "frame_max": 0.24
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "B7-rigid-46_bb18_rigid-gp-p2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          110.4,
+          214.1,
+          202.0
+        ],
+        "median": 202.0
+      },
+      "buried_area_hla": {
+        "values": [
+          647.9,
+          895.6,
+          758.1
+        ],
+        "median": 758.1
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.146,
+          0.193,
+          0.21
+        ],
+        "median": 0.193
+      },
+      "pos6_contacts": {
+        "values": [
+          1.0,
+          3.0,
+          2.0
+        ],
+        "median": 2.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 21.56,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 18.78,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 10.94,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.43
+          }
+        ],
+        "mean": 17.09,
+        "max": 21.56,
+        "frame_max": 0.43
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-46_bb18_rigid-gp-p2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          72.7,
+          161.5,
+          183.4
+        ],
+        "median": 161.5
+      },
+      "buried_area_hla": {
+        "values": [
+          678.3,
+          862.3,
+          711.3
+        ],
+        "median": 711.3
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.097,
+          0.158,
+          0.205
+        ],
+        "median": 0.158
+      },
+      "pos6_contacts": {
+        "values": [
+          1.0,
+          1.0,
+          8.0
+        ],
+        "median": 1.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 19.85,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.35
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 13.53,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 20.49,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          }
+        ],
+        "mean": 17.96,
+        "max": 20.49,
+        "frame_max": 0.35
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "B7-rigid-46_bb18_rigid-gp-p3|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          183.0,
+          203.2,
+          239.5
+        ],
+        "median": 203.2
+      },
+      "buried_area_hla": {
+        "values": [
+          924.6,
+          1131.7,
+          852.8
+        ],
+        "median": 924.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.165,
+          0.152,
+          0.219
+        ],
+        "median": 0.165
+      },
+      "pos6_contacts": {
+        "values": [
+          4.0,
+          8.0,
+          11.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 29.38,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.3
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 22.67,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.3
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 13.9,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.55
+          }
+        ],
+        "mean": 21.98,
+        "max": 29.38,
+        "frame_max": 0.55
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "B7-rigid-46_bb18_rigid-gp-p3|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          250.7,
+          249.0,
+          227.0
+        ],
+        "median": 249.0
+      },
+      "buried_area_hla": {
+        "values": [
+          947.1,
+          1080.0,
+          1126.4
+        ],
+        "median": 1080.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.209,
+          0.187,
+          0.168
+        ],
+        "median": 0.187
+      },
+      "pos6_contacts": {
+        "values": [
+          14.0,
+          11.0,
+          6.0
+        ],
+        "median": 11.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 9.5,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 9.4,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 10.55,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          }
+        ],
+        "mean": 9.82,
+        "max": 10.55,
+        "frame_max": 0.26
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "B7-rigid-58_bb05_graft-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          130.1,
+          5.7,
+          212.4
+        ],
+        "median": 130.1
+      },
+      "buried_area_hla": {
+        "values": [
+          1274.8,
+          1219.0,
+          744.0
+        ],
+        "median": 1219.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.086,
+          0.005,
+          0.222
+        ],
+        "median": 0.086
+      },
+      "pos6_contacts": {
+        "values": [
+          0.0,
+          0.0,
+          2.0
+        ],
+        "median": 0.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 39.4,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.45
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.49,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 40.42,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.49
+          }
+        ],
+        "mean": 33.1,
+        "max": 40.42,
+        "frame_max": 0.49
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "B7-rigid-58_bb05_graft-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          74.3,
+          1.2,
+          230.5
+        ],
+        "median": 74.3
+      },
+      "buried_area_hla": {
+        "values": [
+          1228.6,
+          1136.7,
+          742.6
+        ],
+        "median": 1136.7
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.053,
+          0.001,
+          0.237
+        ],
+        "median": 0.053
+      },
+      "pos6_contacts": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "median": 0.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 39.18,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.4
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.0,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 40.73,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.42
+          }
+        ],
+        "mean": 32.97,
+        "max": 40.73,
+        "frame_max": 0.42
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "B7-rigid-58_bb05_rigid-gp-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          100.7,
+          52.6,
+          65.0
+        ],
+        "median": 65.0
+      },
+      "buried_area_hla": {
+        "values": [
+          1275.6,
+          1322.6,
+          951.7
+        ],
+        "median": 1275.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.07,
+          0.033,
+          0.064
+        ],
+        "median": 0.064
+      },
+      "pos6_contacts": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "median": 0.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 39.46,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.4
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 13.55,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 42.96,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.38
+          }
+        ],
+        "mean": 31.99,
+        "max": 42.96,
+        "frame_max": 0.4
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "B7-rigid-58_bb05_rigid-gp-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          88.2,
+          49.3,
+          65.8
+        ],
+        "median": 65.8
+      },
+      "buried_area_hla": {
+        "values": [
+          1279.4,
+          1386.7,
+          888.2
+        ],
+        "median": 1279.4
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.062,
+          0.03,
+          0.069
+        ],
+        "median": 0.062
+      },
+      "pos6_contacts": {
+        "values": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "median": 0.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 39.94,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.41
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 13.54,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.21
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 43.48,
+            "n_ca": 58,
+            "frame_ca_rmsd": 0.41
+          }
+        ],
+        "mean": 32.32,
+        "max": 43.48,
+        "frame_max": 0.41
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "bb54_graft-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          185.4,
+          140.7,
+          167.4
+        ],
+        "median": 167.4
+      },
+      "buried_area_hla": {
+        "values": [
+          373.0,
+          471.5,
+          388.5
+        ],
+        "median": 388.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.332,
+          0.23,
+          0.301
+        ],
+        "median": 0.301
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          2.0,
+          8.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 22.28,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 15.69,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 16.06,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          }
+        ],
+        "mean": 18.01,
+        "max": 22.28,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          211.3,
+          119.2,
+          190.0
+        ],
+        "median": 190.0
+      },
+      "buried_area_hla": {
+        "values": [
+          739.0,
+          468.9,
+          742.1
+        ],
+        "median": 739.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.222,
+          0.203,
+          0.204
+        ],
+        "median": 0.204
+      },
+      "pos6_contacts": {
+        "values": [
+          6.0,
+          1.0,
+          6.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 19.86,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.31
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.59,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 21.64,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          }
+        ],
+        "mean": 20.36,
+        "max": 21.64,
+        "frame_max": 0.31
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p1-v2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          237.0,
+          195.6,
+          226.7
+        ],
+        "median": 226.7
+      },
+      "buried_area_hla": {
+        "values": [
+          993.3,
+          576.9,
+          848.3
+        ],
+        "median": 848.3
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.193,
+          0.253,
+          0.211
+        ],
+        "median": 0.211
+      },
+      "pos6_contacts": {
+        "values": [
+          11.0,
+          5.0,
+          3.0
+        ],
+        "median": 5.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 22.46,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.46,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 24.29,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          }
+        ],
+        "mean": 21.4,
+        "max": 24.29,
+        "frame_max": 0.28
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p1-v2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          234.8,
+          190.4,
+          219.2
+        ],
+        "median": 219.2
+      },
+      "buried_area_hla": {
+        "values": [
+          995.4,
+          641.0,
+          960.9
+        ],
+        "median": 960.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.191,
+          0.229,
+          0.186
+        ],
+        "median": 0.191
+      },
+      "pos6_contacts": {
+        "values": [
+          9.0,
+          6.0,
+          2.0
+        ],
+        "median": 6.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 22.16,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 18.39,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 26.24,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          }
+        ],
+        "mean": 22.26,
+        "max": 26.24,
+        "frame_max": 0.24
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p1-v3|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          0.0,
+          274.6,
+          94.1
+        ],
+        "median": 94.1
+      },
+      "buried_area_hla": {
+        "values": [
+          361.4,
+          561.7,
+          681.9
+        ],
+        "median": 561.7
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.0,
+          0.328,
+          0.121
+        ],
+        "median": 0.121
+      },
+      "pos6_contacts": {
+        "values": [
+          0.0,
+          31.0,
+          0.0
+        ],
+        "median": 0.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 23.92,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.43
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 25.8,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 23.92,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.39
+          }
+        ],
+        "mean": 24.55,
+        "max": 25.8,
+        "frame_max": 0.43
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 1
+    },
+    "bb54_graft-p1-v3|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          188.2,
+          151.1,
+          187.9
+        ],
+        "median": 187.9
+      },
+      "buried_area_hla": {
+        "values": [
+          537.8,
+          238.6,
+          459.5
+        ],
+        "median": 459.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.259,
+          0.388,
+          0.29
+        ],
+        "median": 0.29
+      },
+      "pos6_contacts": {
+        "values": [
+          4.0,
+          1.0,
+          4.0
+        ],
+        "median": 4.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 9.94,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 7.91,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 11.25,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          }
+        ],
+        "mean": 9.7,
+        "max": 11.25,
+        "frame_max": 0.26
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          165.2,
+          184.4,
+          201.7
+        ],
+        "median": 184.4
+      },
+      "buried_area_hla": {
+        "values": [
+          543.6,
+          561.8,
+          404.5
+        ],
+        "median": 543.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.233,
+          0.247,
+          0.333
+        ],
+        "median": 0.247
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          11.0,
+          9.0
+        ],
+        "median": 9.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 8.62,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.41
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 7.99,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 4.98,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.39
+          }
+        ],
+        "mean": 7.2,
+        "max": 8.62,
+        "frame_max": 0.41
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          174.4,
+          202.8,
+          221.4
+        ],
+        "median": 202.8
+      },
+      "buried_area_hla": {
+        "values": [
+          541.7,
+          553.2,
+          451.8
+        ],
+        "median": 541.7
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.244,
+          0.268,
+          0.329
+        ],
+        "median": 0.268
+      },
+      "pos6_contacts": {
+        "values": [
+          0.0,
+          13.0,
+          7.0
+        ],
+        "median": 7.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 8.02,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 7.85,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 10.35,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          }
+        ],
+        "mean": 8.74,
+        "max": 10.35,
+        "frame_max": 0.26
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p3|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          231.6,
+          225.6,
+          222.1
+        ],
+        "median": 225.6
+      },
+      "buried_area_hla": {
+        "values": [
+          585.6,
+          554.9,
+          441.6
+        ],
+        "median": 554.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.283,
+          0.289,
+          0.335
+        ],
+        "median": 0.289
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          29.0,
+          16.0
+        ],
+        "median": 16.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 15.58,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.38
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 13.44,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.31
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 12.93,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.4
+          }
+        ],
+        "mean": 13.98,
+        "max": 15.58,
+        "frame_max": 0.4
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_graft-p3|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          169.7,
+          191.7,
+          179.1
+        ],
+        "median": 179.1
+      },
+      "buried_area_hla": {
+        "values": [
+          324.0,
+          672.4,
+          463.0
+        ],
+        "median": 463.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.344,
+          0.222,
+          0.279
+        ],
+        "median": 0.279
+      },
+      "pos6_contacts": {
+        "values": [
+          11.0,
+          13.0,
+          2.0
+        ],
+        "median": 11.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 15.61,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.27
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 14.58,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 13.86,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          }
+        ],
+        "mean": 14.68,
+        "max": 15.61,
+        "frame_max": 0.27
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-p1|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          239.9,
+          160.9,
+          72.0
+        ],
+        "median": 160.9
+      },
+      "buried_area_hla": {
+        "values": [
+          742.2,
+          722.2,
+          919.6
+        ],
+        "median": 742.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.244,
+          0.182,
+          0.073
+        ],
+        "median": 0.182
+      },
+      "pos6_contacts": {
+        "values": [
+          15.0,
+          8.0,
+          1.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 16.97,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 29.98,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.4
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 28.6,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          }
+        ],
+        "mean": 25.18,
+        "max": 29.98,
+        "frame_max": 0.4
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p1|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          211.7,
+          155.4,
+          197.7
+        ],
+        "median": 197.7
+      },
+      "buried_area_hla": {
+        "values": [
+          904.2,
+          632.2,
+          845.1
+        ],
+        "median": 845.1
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.19,
+          0.197,
+          0.19
+        ],
+        "median": 0.19
+      },
+      "pos6_contacts": {
+        "values": [
+          13.0,
+          8.0,
+          1.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 19.93,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.35
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.43,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 20.08,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.41
+          }
+        ],
+        "mean": 19.81,
+        "max": 20.08,
+        "frame_max": 0.41
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-p1-v2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          210.1,
+          136.2,
+          180.3
+        ],
+        "median": 180.3
+      },
+      "buried_area_hla": {
+        "values": [
+          861.5,
+          573.2,
+          916.5
+        ],
+        "median": 861.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.196,
+          0.192,
+          0.164
+        ],
+        "median": 0.192
+      },
+      "pos6_contacts": {
+        "values": [
+          3.0,
+          3.0,
+          2.0
+        ],
+        "median": 3.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 24.22,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.71,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 18.97,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.44
+          }
+        ],
+        "mean": 20.97,
+        "max": 24.22,
+        "frame_max": 0.44
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p1-v2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          248.7,
+          221.9,
+          214.9
+        ],
+        "median": 221.9
+      },
+      "buried_area_hla": {
+        "values": [
+          711.8,
+          767.0,
+          1121.1
+        ],
+        "median": 767.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.259,
+          0.224,
+          0.161
+        ],
+        "median": 0.224
+      },
+      "pos6_contacts": {
+        "values": [
+          5.0,
+          7.0,
+          8.0
+        ],
+        "median": 7.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 6.79,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 20.59,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 23.35,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          }
+        ],
+        "mean": 16.91,
+        "max": 23.35,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p1-v3|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          187.3,
+          229.5,
+          217.6
+        ],
+        "median": 217.6
+      },
+      "buried_area_hla": {
+        "values": [
+          536.2,
+          785.0,
+          927.8
+        ],
+        "median": 785.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.259,
+          0.226,
+          0.19
+        ],
+        "median": 0.226
+      },
+      "pos6_contacts": {
+        "values": [
+          3.0,
+          10.0,
+          7.0
+        ],
+        "median": 7.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 11.65,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.63,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.2
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 23.75,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          }
+        ],
+        "mean": 18.34,
+        "max": 23.75,
+        "frame_max": 0.26
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-p1-v3|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          115.3,
+          58.2,
+          176.2
+        ],
+        "median": 115.3
+      },
+      "buried_area_hla": {
+        "values": [
+          699.2,
+          486.5,
+          910.2
+        ],
+        "median": 699.2
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.142,
+          0.107,
+          0.162
+        ],
+        "median": 0.142
+      },
+      "pos6_contacts": {
+        "values": [
+          1.0,
+          0.0,
+          3.0
+        ],
+        "median": 1.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 10.49,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 29.02,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 29.12,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          }
+        ],
+        "mean": 22.88,
+        "max": 29.12,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 0
+    },
+    "bb54_rigid-gp-p2|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 3,
+      "buried_area_peptide": {
+        "values": [
+          213.0,
+          211.3,
+          165.1
+        ],
+        "median": 211.3
+      },
+      "buried_area_hla": {
+        "values": [
+          577.6,
+          476.1,
+          748.7
+        ],
+        "median": 577.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.269,
+          0.307,
+          0.181
+        ],
+        "median": 0.269
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          12.0,
+          9.0
+        ],
+        "median": 9.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 14.53,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.26
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 10.44,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.17
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 16.26,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.21
+          }
+        ],
+        "mean": 13.74,
+        "max": 16.26,
+        "frame_max": 0.26
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-p2|g12d|r3_rep2": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          201.9,
+          199.0,
+          205.1
+        ],
+        "median": 201.9
+      },
+      "buried_area_hla": {
+        "values": [
+          545.9,
+          550.6,
+          959.9
+        ],
+        "median": 550.6
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.27,
+          0.265,
+          0.176
+        ],
+        "median": 0.265
+      },
+      "pos6_contacts": {
+        "values": [
+          17.0,
+          10.0,
+          5.0
+        ],
+        "median": 10.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 13.79,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.22
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.6,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.17
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 12.69,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.19
+          }
+        ],
+        "mean": 14.36,
+        "max": 16.6,
+        "frame_max": 0.22
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p2|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          218.1,
+          249.0,
+          185.2
+        ],
+        "median": 218.1
+      },
+      "buried_area_hla": {
+        "values": [
+          1063.4,
+          662.4,
+          729.5
+        ],
+        "median": 729.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.17,
+          0.273,
+          0.202
+        ],
+        "median": 0.202
+      },
+      "pos6_contacts": {
+        "values": [
+          10.0,
+          12.0,
+          7.0
+        ],
+        "median": 10.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 16.6,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 18.7,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 18.69,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          }
+        ],
+        "mean": 18.0,
+        "max": 18.7,
+        "frame_max": 0.29
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p2|g12d|recyc8": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          214.9,
+          215.9,
+          157.5
+        ],
+        "median": 214.9
+      },
+      "buried_area_hla": {
+        "values": [
+          710.0,
+          586.8,
+          985.7
+        ],
+        "median": 710.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.232,
+          0.269,
+          0.138
+        ],
+        "median": 0.232
+      },
+      "pos6_contacts": {
+        "values": [
+          7.0,
+          9.0,
+          6.0
+        ],
+        "median": 7.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 15.21,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 19.3,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.31
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 14.18,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          }
+        ],
+        "mean": 16.23,
+        "max": 19.3,
+        "frame_max": 0.31
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p2|wt|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          260.1,
+          174.3,
+          151.5
+        ],
+        "median": 174.3
+      },
+      "buried_area_hla": {
+        "values": [
+          933.2,
+          337.5,
+          665.5
+        ],
+        "median": 665.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.218,
+          0.341,
+          0.185
+        ],
+        "median": 0.218
+      },
+      "pos6_contacts": {
+        "values": [
+          29.0,
+          15.0,
+          6.0
+        ],
+        "median": 15.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 13.12,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.3
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.15,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.27
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 19.26,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.32
+          }
+        ],
+        "mean": 16.51,
+        "max": 19.26,
+        "frame_max": 0.32
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-p2|wt|r3_rep2": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          221.1,
+          193.2,
+          46.3
+        ],
+        "median": 193.2
+      },
+      "buried_area_hla": {
+        "values": [
+          630.5,
+          359.9,
+          720.5
+        ],
+        "median": 630.5
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.26,
+          0.349,
+          0.06
+        ],
+        "median": 0.26
+      },
+      "pos6_contacts": {
+        "values": [
+          21.0,
+          14.0,
+          2.0
+        ],
+        "median": 14.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 11.48,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 21.76,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.29
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 19.79,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.3
+          }
+        ],
+        "mean": 17.68,
+        "max": 21.76,
+        "frame_max": 0.3
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p2|wt|recyc8": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 0,
+      "buried_area_peptide": {
+        "values": [
+          104.2,
+          169.3,
+          186.8
+        ],
+        "median": 169.3
+      },
+      "buried_area_hla": {
+        "values": [
+          567.3,
+          336.8,
+          380.3
+        ],
+        "median": 380.3
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.155,
+          0.334,
+          0.329
+        ],
+        "median": 0.329
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          14.0,
+          18.0
+        ],
+        "median": 14.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 23.19,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.28
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 17.62,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 14.99,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          }
+        ],
+        "mean": 18.6,
+        "max": 23.19,
+        "frame_max": 0.28
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-p3|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          220.0,
+          161.3,
+          229.5
+        ],
+        "median": 220.0
+      },
+      "buried_area_hla": {
+        "values": [
+          848.5,
+          633.3,
+          797.9
+        ],
+        "median": 797.9
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.206,
+          0.203,
+          0.223
+        ],
+        "median": 0.206
+      },
+      "pos6_contacts": {
+        "values": [
+          9.0,
+          8.0,
+          7.0
+        ],
+        "median": 8.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 14.11,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.23
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 16.24,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 6.57,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.27
+          }
+        ],
+        "mean": 12.31,
+        "max": 16.24,
+        "frame_max": 0.27
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-p3|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 2,
+      "buried_area_peptide": {
+        "values": [
+          228.7,
+          150.9,
+          207.2
+        ],
+        "median": 207.2
+      },
+      "buried_area_hla": {
+        "values": [
+          589.7,
+          503.0,
+          805.5
+        ],
+        "median": 589.7
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.279,
+          0.231,
+          0.205
+        ],
+        "median": 0.231
+      },
+      "pos6_contacts": {
+        "values": [
+          7.0,
+          10.0,
+          9.0
+        ],
+        "median": 9.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 21.45,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 20.02,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 15.75,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          }
+        ],
+        "mean": 19.07,
+        "max": 21.45,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 3
+    },
+    "bb54_rigid-gp-self|g12d|r3": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          210.6,
+          41.3,
+          189.8
+        ],
+        "median": 189.8
+      },
+      "buried_area_hla": {
+        "values": [
+          491.8,
+          670.7,
+          464.5
+        ],
+        "median": 491.8
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.3,
+          0.058,
+          0.29
+        ],
+        "median": 0.29
+      },
+      "pos6_contacts": {
+        "values": [
+          9.0,
+          0.0,
+          2.0
+        ],
+        "median": 2.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 28.48,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.45
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 13.89,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.18
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 19.82,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.55
+          }
+        ],
+        "mean": 20.73,
+        "max": 28.48,
+        "frame_max": 0.55
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    },
+    "bb54_rigid-gp-self|g12d|r3np": {
+      "draws": 3,
+      "distinct_structures": 3,
+      "asp6_gate_passes": 1,
+      "buried_area_peptide": {
+        "values": [
+          227.3,
+          177.2,
+          157.9
+        ],
+        "median": 177.2
+      },
+      "buried_area_hla": {
+        "values": [
+          553.0,
+          389.2,
+          758.9
+        ],
+        "median": 553.0
+      },
+      "peptide_buried_frac": {
+        "values": [
+          0.291,
+          0.313,
+          0.172
+        ],
+        "median": 0.291
+      },
+      "pos6_contacts": {
+        "values": [
+          8.0,
+          1.0,
+          3.0
+        ],
+        "median": 3.0
+      },
+      "pose_spread": {
+        "n_poses": 3,
+        "frame": "pMHC (HLA chain A + peptide chain C)",
+        "pairwise": [
+          {
+            "pair": "r0~r1",
+            "binder_ca_rmsd": 6.54,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.25
+          },
+          {
+            "pair": "r0~r2",
+            "binder_ca_rmsd": 23.77,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.19
+          },
+          {
+            "pair": "r1~r2",
+            "binder_ca_rmsd": 21.2,
+            "n_ca": 46,
+            "frame_ca_rmsd": 0.24
+          }
+        ],
+        "mean": 17.17,
+        "max": 23.77,
+        "frame_max": 0.25
+      },
+      "peptide_buried_frac_ge_0.40": 0,
+      "peptide_buried_frac_ge_0.18": 2
+    }
+  },
+  "parent_wt_repeat_vs_r3np_g12d": {
+    "g12d_median_peptide_area": 180.0,
+    "wt_median_peptide_area": 119.2,
+    "peptide_area_loss": 0.338,
+    "g12d_median_pos6_contacts": 8.0,
+    "wt_median_pos6_contacts": 4.0,
+    "pos6_contact_loss": 0.5,
+    "strict_separation_area": true,
+    "strict_separation_pos6": false,
+    "wt_gate_pass": true,
+    "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+  },
+  "screen": {
+    "designs": 21,
+    "gate_3of3": [
+      "bb54_rigid-gp-p2"
+    ],
+    "peptide_buried_frac_all_draws": {
+      "n": 189,
+      "median": 0.23,
+      "max": 0.396,
+      "ge_0.40": 0,
+      "ge_0.18": 143
+    }
+  }
+}

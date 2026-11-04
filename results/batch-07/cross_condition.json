@@ -1,0 +1,80 @@
+{
+  "boltz2_calls_this_segment": 5,
+  "elapsed_seconds": 44.4,
+  "wt_criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion.",
+  "cells": {
+    "bb54_rigid-gp-p2@recyc8": {
+      "g12d_draws": 3,
+      "g12d_gate_passes": 0,
+      "wt_draws": 3,
+      "wt": {
+        "g12d_median_peptide_area": 214.9,
+        "wt_median_peptide_area": 169.3,
+        "peptide_area_loss": 0.212,
+        "g12d_median_pos6_contacts": 7.0,
+        "wt_median_pos6_contacts": 14.0,
+        "pos6_contact_loss": -1.0,
+        "strict_separation_area": false,
+        "strict_separation_pos6": false,
+        "wt_gate_pass": false,
+        "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+      }
+    },
+    "bb54_rigid-gp-p2@r3_rep2": {
+      "g12d_draws": 3,
+      "g12d_gate_passes": 1,
+      "wt_draws": 3,
+      "wt": {
+        "g12d_median_peptide_area": 201.9,
+        "wt_median_peptide_area": 193.2,
+        "peptide_area_loss": 0.043,
+        "g12d_median_pos6_contacts": 10.0,
+        "wt_median_pos6_contacts": 14.0,
+        "pos6_contact_loss": -0.4,
+        "strict_separation_area": false,
+        "strict_separation_pos6": false,
+        "wt_gate_pass": false,
+        "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+      }
+    },
+    "bb54_rigid-gp-p2@r3": {
+      "g12d_draws": 3,
+      "g12d_gate_passes": 3,
+      "wt_draws": 3,
+      "wt": {
+        "g12d_median_peptide_area": 211.3,
+        "wt_median_peptide_area": 174.3,
+        "peptide_area_loss": 0.175,
+        "g12d_median_pos6_contacts": 9.0,
+        "wt_median_pos6_contacts": 15.0,
+        "pos6_contact_loss": -0.667,
+        "strict_separation_area": false,
+        "strict_separation_pos6": false,
+        "wt_gate_pass": false,
+        "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+      }
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2@r3np_rep2": {
+      "g12d_draws": 0,
+      "g12d_gate_passes": 0,
+      "wt_draws": 3
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2@r3np": {
+      "g12d_draws": 3,
+      "g12d_gate_passes": 3,
+      "wt_draws": 3,
+      "wt": {
+        "g12d_median_peptide_area": 180.0,
+        "wt_median_peptide_area": 129.7,
+        "peptide_area_loss": 0.279,
+        "g12d_median_pos6_contacts": 8.0,
+        "wt_median_pos6_contacts": 10.0,
+        "pos6_contact_loss": -0.25,
+        "strict_separation_area": true,
+        "strict_separation_pos6": false,
+        "wt_gate_pass": false,
+        "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+      }
+    }
+  }
+}

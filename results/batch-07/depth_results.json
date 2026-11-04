@@ -1,0 +1,238 @@
+{
+  "design": "B6-c6-46_w2_bb54_donor-anchored-g2",
+  "cell": "r3np",
+  "boltz2_calls_this_segment": 6,
+  "elapsed_seconds": 65.1,
+  "wt_criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion.",
+  "per_call_wt_verdicts": {
+    "r3np": {
+      "g12d_median_peptide_area": 180.0,
+      "wt_median_peptide_area": 129.7,
+      "peptide_area_loss": 0.279,
+      "g12d_median_pos6_contacts": 8.0,
+      "wt_median_pos6_contacts": 10.0,
+      "pos6_contact_loss": -0.25,
+      "strict_separation_area": true,
+      "strict_separation_pos6": false,
+      "wt_gate_pass": false,
+      "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+    },
+    "r3np_rep2": {
+      "g12d_median_peptide_area": 180.0,
+      "wt_median_peptide_area": 119.2,
+      "peptide_area_loss": 0.338,
+      "g12d_median_pos6_contacts": 8.0,
+      "wt_median_pos6_contacts": 4.0,
+      "pos6_contact_loss": 0.5,
+      "strict_separation_area": true,
+      "strict_separation_pos6": false,
+      "wt_gate_pass": true,
+      "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+    },
+    "r3np_rep3": {
+      "g12d_median_peptide_area": 186.1,
+      "wt_median_peptide_area": 148.3,
+      "peptide_area_loss": 0.203,
+      "g12d_median_pos6_contacts": 19.0,
+      "wt_median_pos6_contacts": 11.0,
+      "pos6_contact_loss": 0.421,
+      "strict_separation_area": true,
+      "strict_separation_pos6": false,
+      "wt_gate_pass": false,
+      "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+    },
+    "r3np_rep4": {
+      "g12d_median_peptide_area": 248.0,
+      "wt_median_peptide_area": 147.1,
+      "peptide_area_loss": 0.407,
+      "g12d_median_pos6_contacts": 24.0,
+      "wt_median_pos6_contacts": 10.0,
+      "pos6_contact_loss": 0.583,
+      "strict_separation_area": true,
+      "strict_separation_pos6": true,
+      "wt_gate_pass": true,
+      "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+    }
+  },
+  "pooled_wt_verdict_context_only": {
+    "g12d_median_peptide_area": 208.3,
+    "wt_median_peptide_area": 138.65,
+    "peptide_area_loss": 0.334,
+    "g12d_median_pos6_contacts": 21.0,
+    "wt_median_pos6_contacts": 10.0,
+    "pos6_contact_loss": 0.524,
+    "strict_separation_area": false,
+    "strict_separation_pos6": false,
+    "wt_gate_pass": true,
+    "criterion": "A design clears the WT arm when, over 3 independent draws per state under the same sampling setting and the same pocket constraint, BOTH of: (1) median buried_area_peptide on VVVGAGGVGK is at least 30% lower than on VVVGADGVGK, and (2) median position-6 heavy-atom contacts (all atoms, backbone included) is at least 30% lower. Strict separation (max over WT draws < min over G12D draws, for both quantities) is recorded alongside as the stronger read. The disappearance of Asp6 side-chain contacts on WT is excluded: glycine has no side chain, so that loss is true by construction and carries no information. No ipTM quantity enters this criterion."
+  },
+  "apo_rows": [
+    {
+      "iptm": 0.5978,
+      "pde_interface": 1.94,
+      "arm": "apo",
+      "binder_chain": "C",
+      "peptide_chain": null,
+      "buried_area_total": 1238.5,
+      "buried_area_by_chain": {
+        "A": 1238.5
+      },
+      "net_interface_charge": 1.0,
+      "contacts_by_chain": {
+        "A": 140,
+        "B": 0
+      },
+      "peptide_buried_frac": null,
+      "pos6_residue": null,
+      "pos6_contacts": null,
+      "pos6_sidechain_contacts": null,
+      "pos6_min_donor_distance": null,
+      "donor_contacts": [],
+      "buried_area_hla": 1238.5,
+      "analysis_error": "",
+      "peptide_area_share": null
+    },
+    {
+      "iptm": 0.6745,
+      "pde_interface": 1.51,
+      "arm": "apo",
+      "binder_chain": "C",
+      "peptide_chain": null,
+      "buried_area_total": 1211.5,
+      "buried_area_by_chain": {
+        "A": 1211.5
+      },
+      "net_interface_charge": 3.0,
+      "contacts_by_chain": {
+        "A": 133,
+        "B": 0
+      },
+      "peptide_buried_frac": null,
+      "pos6_residue": null,
+      "pos6_contacts": null,
+      "pos6_sidechain_contacts": null,
+      "pos6_min_donor_distance": null,
+      "donor_contacts": [],
+      "buried_area_hla": 1211.5,
+      "analysis_error": "",
+      "peptide_area_share": null
+    },
+    {
+      "iptm": 0.7547,
+      "pde_interface": 1.36,
+      "arm": "apo",
+      "binder_chain": "C",
+      "peptide_chain": null,
+      "buried_area_total": 1102.2,
+      "buried_area_by_chain": {
+        "A": 1102.2
+      },
+      "net_interface_charge": 2.0,
+      "contacts_by_chain": {
+        "A": 132,
+        "B": 0
+      },
+      "peptide_buried_frac": null,
+      "pos6_residue": null,
+      "pos6_contacts": null,
+      "pos6_sidechain_contacts": null,
+      "pos6_min_donor_distance": null,
+      "donor_contacts": [],
+      "buried_area_hla": 1102.2,
+      "analysis_error": "",
+      "peptide_area_share": null
+    }
+  ],
+  "decoy_rows": [
+    {
+      "iptm": 0.2981,
+      "pde_interface": 2.18,
+      "arm": "decoy",
+      "binder_chain": "D",
+      "peptide_chain": "C",
+      "buried_area_total": 647.6,
+      "buried_area_by_chain": {
+        "A": 535.9,
+        "C": 111.7
+      },
+      "net_interface_charge": 3.0,
+      "contacts_by_chain": {
+        "A": 73,
+        "B": 0,
+        "C": 21
+      },
+      "buried_area_peptide": 111.7,
+      "peptide_buried_frac": 0.172,
+      "pos6_residue": "LYS",
+      "pos6_contacts": 2,
+      "pos6_sidechain_contacts": 1,
+      "pos6_min_donor_distance": null,
+      "pos6_donor_partner": "",
+      "asp6_gate_pass": false,
+      "donor_contacts": [],
+      "buried_area_hla": 535.9,
+      "analysis_error": "",
+      "peptide_area_share": 0.172
+    },
+    {
+      "iptm": 0.8966,
+      "pde_interface": 1.88,
+      "arm": "decoy",
+      "binder_chain": "D",
+      "peptide_chain": "C",
+      "buried_area_total": 416.8,
+      "buried_area_by_chain": {
+        "A": 398.3,
+        "C": 18.5
+      },
+      "net_interface_charge": 3.0,
+      "contacts_by_chain": {
+        "A": 49,
+        "B": 0,
+        "C": 2
+      },
+      "buried_area_peptide": 18.5,
+      "peptide_buried_frac": 0.044,
+      "pos6_residue": "LYS",
+      "pos6_contacts": 0,
+      "pos6_sidechain_contacts": 0,
+      "pos6_min_donor_distance": null,
+      "pos6_donor_partner": "",
+      "asp6_gate_pass": false,
+      "donor_contacts": [],
+      "buried_area_hla": 398.3,
+      "analysis_error": "",
+      "peptide_area_share": 0.044
+    },
+    {
+      "iptm": 0.8704,
+      "pde_interface": 2.48,
+      "arm": "decoy",
+      "binder_chain": "D",
+      "peptide_chain": "C",
+      "buried_area_total": 437.7,
+      "buried_area_by_chain": {
+        "A": 353.2,
+        "C": 84.5
+      },
+      "net_interface_charge": 2.0,
+      "contacts_by_chain": {
+        "A": 40,
+        "B": 0,
+        "C": 10
+      },
+      "buried_area_peptide": 84.5,
+      "peptide_buried_frac": 0.193,
+      "pos6_residue": "LYS",
+      "pos6_contacts": 7,
+      "pos6_sidechain_contacts": 7,
+      "pos6_min_donor_distance": 4.55,
+      "pos6_donor_partner": "ARG41:NE->CE@4.55A",
+      "asp6_gate_pass": false,
+      "donor_contacts": [],
+      "buried_area_hla": 353.2,
+      "analysis_error": "",
+      "peptide_area_share": 0.193
+    }
+  ]
+}
