@@ -1,5 +1,12 @@
 # Reproducibility inventory of `results/`
 
+**Correction update (2026-11-04):** this inventory describes the original archive.
+PR #21 has since preserved all 37 positive-control/rescore CIFs. The carboxylate
+readout bug and additive coordinate remeasurement are documented in
+[`../results/readout-correction/README.md`](../results/readout-correction/README.md).
+Historical metrics below retain their original meaning; consult the correction
+before using any batch-09 pass count or pose-stability claim.
+
 A factual, batch-by-batch record of what each result directory tested, what it
 concluded, which artefacts are committed, what is missing, and whether someone
 with only this repository could rerun it. Written 2026-11-04 (Asia/Taipei) on
@@ -271,7 +278,7 @@ branch `docs/methodology-record`; no existing result file was modified.
 * **Committed:** `SUMMARY.md`, `checkpoint.jsonl` (39 rows), `analysis.json`,
   `structures/` (39 mmCIF, all tracked) — 42 tracked files. This directory keeps a
   structure for every call.
-* **Missing:** no raw responses; **no `structure_sha1` and no sequence string in
+* **Missing:** no raw responses; **no `structure_sha1`; the sequence is nested in `row.sequence`, not at the top level of
   the checkpoint rows**, so the byte-identical-response artefact that the later
   selectivity panel documents cannot be audited retrospectively here; the baseline
   cell was not re-run but re-used from batch-04/05 replicate draws, so the baseline
@@ -472,7 +479,7 @@ branch `docs/methodology-record`; no existing result file was modified.
 4. **Seeds are partially recorded.** `--seed` defaults exist (1, 4042, 5050, 6060,
    7070, 8080) but only batch-08 writes the seed into its artefacts; and the
    Boltz-2 calls themselves are stochastic with no exposed seed, so a byte-exact
-   rerun is impossible in principle for the scoring half.
+   rerun is not guaranteed by the archived settings for the scoring half.
 5. **Environment is unpinned.** Lower-bound requirements only; buried-area numbers
    depend on Biopython's Shrake–Rupley, and the MM-GBSA work needs OpenMM, which is
    not declared at all.

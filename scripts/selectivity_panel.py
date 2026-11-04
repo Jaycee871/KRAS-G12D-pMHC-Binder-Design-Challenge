@@ -71,6 +71,7 @@ SETTINGS = {
     "bb25": "recyc8",
     "bb135-g1": "combo",
 }
+READOUT_VERSION = "carboxylate-oxygen-and-burial-v1"
 ACCEPTOR_ATOMS = {"ASP": ("OD1", "OD2"), "GLU": ("OE1", "OE2")}
 
 
@@ -91,6 +92,28 @@ def call_boltz(client: NvidiaClient, polymers, condition: str,
 
 
 # --- generic panel-arm measurement ------------------------------------------
+
+def nearest_carboxylate_donor(residue, search, cutoff=6.0):
+    """Only ASP OD1/OD2 or GLU OE1/OE2 acceptors; decide on unrounded distance."""
+    names = ACCEPTOR_ATOMS.get(residue.get_resname().strip().upper(), ())
+    donor_atoms = {**ca.CHARGED_DONORS, **ca.HYDROXYL_DONORS}
+    best = None
+    for atom in residue:
+        if atom.get_id() not in names:
+            continue
+        for neighbour in search.search(atom.coord, cutoff):
+            donor_res = neighbour.get_parent()
+            rname = donor_res.get_resname().strip().upper()
+            aname = neighbour.get_id().strip().upper()
+            if rname not in batch.GATE_DONOR_RESIDUES or aname not in donor_atoms.get(rname, ()):
+                continue
+            distance = float(((neighbour.coord - atom.coord) ** 2).sum() ** 0.5)
+            if best is None or distance < best["distance"]:
+                best = {"donor_residue": rname, "donor_resseq": donor_res.id[1],
+                        "donor_atom": aname, "acceptor_atom": atom.get_id(),
+                        "distance": distance}
+    return best
+
 
 def panel_metrics(text: str, binder_sequence: str, arm: str) -> Dict[str, Any]:
     """Interface geometry of one panel arm (works for apo and for Gly6)."""
@@ -131,7 +154,9 @@ def panel_metrics(text: str, binder_sequence: str, arm: str) -> Dict[str, Any]:
         "contacts_by_chain": ca.contacts_by_chain(model, binder_chain),
     }
     if peptide_chain is None:
-        out.update({"peptide_buried_frac": None, "pos6_residue": None,
+        out.update({"readout_version": READOUT_VERSION, "asp6_buried_frac": None,
+                    "asp6_donor_distance_pass": False, "asp6_gate_pass": False,
+                    "peptide_buried_frac": None, "pos6_residue": None,
                     "pos6_contacts": None, "pos6_sidechain_contacts": None,
                     "pos6_min_donor_distance": None, "donor_contacts": []})
         return out
@@ -159,54 +184,40 @@ def panel_metrics(text: str, binder_sequence: str, arm: str) -> Dict[str, Any]:
             hits.add(id(neighbour))
     out["pos6_sidechain_contacts"] = len(hits) if sc_atoms else 0
 
-    # closest gate-qualifying binder donor to the position-6 side chain
-    best = None
-    for atom in sc_atoms:
-        for neighbour in search.search(atom.coord, 6.0):
-            donor_res = neighbour.get_parent()
-            rname = donor_res.get_resname().strip().upper()
-            aname = neighbour.get_id().strip().upper()
-            if rname not in batch.GATE_DONOR_RESIDUES or aname not in batch.GATE_DONOR_ATOMS:
-                continue
-            d = float(((neighbour.coord - atom.coord) ** 2).sum() ** 0.5)
-            if best is None or d < best["distance"]:
-                best = {"donor_residue": rname, "donor_resseq": donor_res.id[1],
-                        "donor_atom": aname, "acceptor_atom": atom.get_id(),
-                        "distance": round(d, 2)}
-    out["pos6_min_donor_distance"] = best["distance"] if best else None
+    # Carbon contacts remain in the contact census, never in the readout gate.
+    best = nearest_carboxylate_donor(pos6, search)
+    out["readout_version"] = READOUT_VERSION
+    out["pos6_min_donor_distance"] = round(best["distance"], 2) if best else None
     out["pos6_donor_partner"] = (
         f"{best['donor_residue']}{best['donor_resseq']}:{best['donor_atom']}"
-        f"->{best['acceptor_atom']}@{best['distance']}A" if best else "")
-    # the Asp6 read-out gate proper, only meaningful where position 6 is an Asp
-    gate_ok = bool(best and best["distance"] <= batch.GATE_DONOR_DISTANCE
-                   and out["pos6_residue"] == "ASP")
-    out["asp6_gate_pass"] = gate_ok
+        f"->{best['acceptor_atom']}@{best['distance']:.2f}A" if best else "")
+    out["asp6_buried_frac"] = None
+    if out["pos6_residue"] == "ASP":
+        free_sc = sum(free.get((peptide_chain, pos6.id[1], n), 0.0) for n in sc_names)
+        bound_sc = sum(bound.get((peptide_chain, pos6.id[1], n), 0.0) for n in sc_names)
+        if free_sc <= 0:
+            raise ca.StructureAnalysisError("Asp6 has no accessible side-chain area in binder-free reference")
+        out["asp6_buried_frac"] = (free_sc - min(bound_sc, free_sc)) / free_sc
+    out["asp6_donor_distance_pass"] = bool(
+        best and best["distance"] <= batch.GATE_DONOR_DISTANCE
+        and out["pos6_residue"] == "ASP")
+    out["asp6_gate_pass"] = bool(out["asp6_donor_distance_pass"]
+                                 and out["asp6_buried_frac"] is not None
+                                 and out["asp6_buried_frac"] > 0)
 
     # donor approach to *every* acidic peptide side chain - carboxylate
     # promiscuity shows up here (the decoy carries Asp4 and Asp8)
     donor_contacts = []
     for index, residue in enumerate(residues, start=1):
-        rname = residue.get_resname().strip().upper()
-        names = ACCEPTOR_ATOMS.get(rname)
-        if not names:
-            continue
-        closest = None
-        for atom in residue:
-            if atom.get_id().strip().upper() not in names:
-                continue
-            for neighbour in search.search(atom.coord, 4.0):
-                dres = neighbour.get_parent()
-                dn = dres.get_resname().strip().upper()
-                an = neighbour.get_id().strip().upper()
-                if dn not in batch.GATE_DONOR_RESIDUES or an not in batch.GATE_DONOR_ATOMS:
-                    continue
-                d = float(((neighbour.coord - atom.coord) ** 2).sum() ** 0.5)
-                if closest is None or d < closest["distance"]:
-                    closest = {"peptide_position": index, "peptide_residue": rname,
-                               "donor": f"{dn}{dres.id[1]}:{an}",
-                               "distance": round(d, 2)}
+        closest = nearest_carboxylate_donor(residue, search, cutoff=4.0)
         if closest:
-            donor_contacts.append(closest)
+            donor_contacts.append({
+                "peptide_position": index,
+                "peptide_residue": residue.get_resname().strip().upper(),
+                "donor": f"{closest['donor_residue']}{closest['donor_resseq']}:{closest['donor_atom']}",
+                "acceptor_atom": closest["acceptor_atom"],
+                "distance": round(closest["distance"], 2),
+            })
     out["donor_contacts"] = donor_contacts
     return out
 

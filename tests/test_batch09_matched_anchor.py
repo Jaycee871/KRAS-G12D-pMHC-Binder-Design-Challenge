@@ -63,6 +63,7 @@ def sandbox_run(monkeypatch, tmp_path):
     monkeypatch.setattr(b9, "OUT", tmp_path / "batch-09")
     monkeypatch.delenv("NVIDIA_API_KEY", raising=False)
     monkeypatch.setattr(b9.panel, "panel_metrics", lambda *args: {
+        "readout_version": b9.panel.READOUT_VERSION, "asp6_buried_frac": 0.3,
         "buried_area_total": 100.0, "buried_area_peptide": 20.0,
         "peptide_buried_frac": 0.2, "pos6_contacts": 2,
     })

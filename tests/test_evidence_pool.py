@@ -69,3 +69,18 @@ def test_reproducible_exports_and_edit_similarity(report,tmp_path):
     assert pool.edit_similarity('ACDE','ACDE') == 1
     assert pool.edit_similarity('ACDE','ACD') == .75
     assert pool.edit_similarity('ACD','ACDE') == .75
+
+
+def test_corrected_inventory_uses_new_counts_and_preserves_original(report):
+    audit_path=ROOT/'results/readout-correction/audit.json'
+    matched_path=ROOT/'results/readout-correction/batch09_corrected_analysis.json'
+    before=(ROOT/'results/submission-review/evidence_pool.json').read_bytes()
+    corrected=pool.build(ROOT,audit_path,matched_path)
+    lead=shortlist(corrected)[0]
+    assert lead['matched']['arms']['g12d']['asp6_gate_passes']==2
+    assert shortlist(report)[0]['matched']['arms']['g12d']['asp6_gate_passes']==3
+    assert corrected['shortlist_sha256']==report['shortlist_sha256']
+    assert corrected['readout_correction_applied'] is True
+    assert corrected['unverified_records_remain'] is True
+    assert any(p['readout_status']=='coordinate-remeasured' for p in lead['protocols'])
+    assert (ROOT/'results/submission-review/evidence_pool.json').read_bytes()==before

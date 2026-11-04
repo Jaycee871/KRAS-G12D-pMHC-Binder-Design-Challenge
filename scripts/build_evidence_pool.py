@@ -2,6 +2,7 @@
 """Build a review pool from recorded results; never generate or submit sequences."""
 from __future__ import annotations
 import argparse
+import copy
 import csv
 import hashlib
 import json
@@ -61,10 +62,22 @@ def exclusion(candidate):
     return ''
 
 
-def build(root):
+def build(root, audit_path=None, matched_path=None):
     candidates, sources = {}, {}
+    overlays = {}
+    if audit_path is not None:
+        audit = json.loads(audit_path.read_text())
+        for relative, expected in audit['source_sha256'].items():
+            if hashlib.sha256((root/relative).read_bytes()).hexdigest() != expected:
+                raise ValueError(f'stale readout audit input: {relative}')
+        overlays = {(r['source'], r['line']): r['corrected_metrics'] for r in audit['remeasured']}
+        sources[str(audit_path.relative_to(root))] = hashlib.sha256(audit_path.read_bytes()).hexdigest()
     for path, location, record in source_records(root):
-        row = record.get('row') or {}
+        relative = str(path.relative_to(root))
+        correction = overlays.get((relative, location))
+        row = copy.deepcopy(record.get('row') or {})
+        if correction is not None:
+            row.update(correction)
         sequence = record.get('sequence') or row.get('sequence')
         if not sequence:
             raise ValueError(f'missing sequence: {path}:{location}')
@@ -83,6 +96,7 @@ def build(root):
             c['backbones'].add(backbone)
         arm = record.get('arm', 'g12d')
         protocol = {'source': relative, 'arm': arm,
+                    'readout_status': 'coordinate-remeasured' if correction is not None else 'recorded-unverified',
                     'condition': record.get('condition', 'matched_regional_anchor' if 'batch-09' in relative else 'initial_screen'),
                     'sampling': record.get('sampling', record.get('boltz_kwargs')),
                     'constraint': record.get('constraint')}
@@ -109,7 +123,7 @@ def build(root):
             g['structures'][digest] = passed
         else:
             g['unhashed_records'] += 1
-    matched_path = root / 'results/batch-09/matched_anchor_analysis.json'
+    matched_path = matched_path or root / 'results/batch-09/matched_anchor_analysis.json'
     sources[str(matched_path.relative_to(root))] = hashlib.sha256(matched_path.read_bytes()).hexdigest()
     matched = json.loads(matched_path.read_text())['designs']
     for c in candidates.values():
@@ -170,6 +184,8 @@ def build(root):
     return {'submission_ready': False, 'validated_selective_candidates': 0,
         'track1_minimum_in_project_plan': 20, 'shortlist_count': len(chosen),
         'shortfall_to_20': max(0, 20-len(chosen)), 'model_calls': 0,
+        'readout_correction_applied': audit_path is not None,
+        'unverified_records_remain': True,
         'scope': 'recorded downstream batches 04-09, sampling study and selectivity panel; not batches 01-03',
         'ranking_policy': 'Fixed matched leads bb50-g1, bb25, bb54-g2; then multi-sample mixed and limited-readout tiers. Within a tier, prefer an unused generation-backbone family, then lower maximum edit similarity to earlier entries, then SHA256. This is a review heuristic, not a calibrated biological score.',
         'source_sha256': sources, 'candidates': sorted(candidates.values(), key=lambda c: c['sequence_sha256']),
@@ -202,10 +218,17 @@ def write_report(report, out):
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument('--out', type=Path, default=ROOT / 'results/submission-review')
+    parser.add_argument('--out', type=Path)
+    parser.add_argument('--readout-audit', type=Path)
+    parser.add_argument('--matched-analysis', type=Path)
     args = parser.parse_args()
-    report = build(ROOT)
-    chosen = write_report(report, args.out)
+    if bool(args.readout_audit) != bool(args.matched_analysis):
+        parser.error('--readout-audit and --matched-analysis must be provided together')
+    out = args.out or ROOT / ('results/readout-correction/submission-review'
+                             if args.readout_audit else 'results/submission-review')
+    report = build(ROOT, args.readout_audit.resolve() if args.readout_audit else None,
+                   args.matched_analysis.resolve() if args.matched_analysis else None)
+    chosen = write_report(report, out)
     print(json.dumps({k: report[k] for k in ('submission_ready','shortlist_count','shortfall_to_20','model_calls')}))
     for c in chosen:
         print(c['evidence_rank'], c.get('lead_name', c['aliases'][0]), c['tier'])

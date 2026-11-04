@@ -1,5 +1,12 @@
 # Existing candidate pool — review only, 2026-11-04
 
+**Correction notice (2026-11-04):** the original readout flags below are historical.
+The panel acceptor search admitted side-chain carbons and omitted the burial leg.
+Use [`../readout-correction/README.md`](../readout-correction/README.md) for the
+oxygen-specific two-leg remeasurement, current batch-09 counts and measured RMSDs.
+Original checkpoint/analysis files and raw responses are preserved unchanged.
+
+
 **11 retained review candidates; 9 short of the Track-1 minimum recorded in the
 project plan. No final submission package and no Proteinbase upload. No new
 model calls, sequences or backbones. No experimentally validated selective

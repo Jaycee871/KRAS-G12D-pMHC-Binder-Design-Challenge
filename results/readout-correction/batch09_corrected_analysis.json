@@ -1,0 +1,614 @@
+{
+  "purpose": "matched HLA-regional-anchor diagnostic only",
+  "new_hard_gate": false,
+  "panel_complete": true,
+  "expected_draws_per_arm": 3,
+  "designs": {
+    "bb25": {
+      "arms": {
+        "g12d": {
+          "n": 3,
+          "median_total_buried_area": 694.2,
+          "median_peptide_buried_area": 196.5,
+          "median_peptide_buried_fraction": 0.268,
+          "median_pos6_contacts": 11.0,
+          "median_pos6_sidechain_contacts": 3.0,
+          "asp6_gate_passes": 2,
+          "median_iptm": 0.844,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": 0.2794917854380007,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 17.11690882396744,
+                "frame_ca_rmsd": 0.22
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 10.222154852640804,
+                "frame_ca_rmsd": 0.32
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 20.532186105100784,
+                "frame_ca_rmsd": 0.28
+              }
+            ],
+            "mean": 15.957083260569675,
+            "max": 20.532186105100784
+          }
+        },
+        "wt": {
+          "n": 3,
+          "median_total_buried_area": 736.7,
+          "median_peptide_buried_area": 190.4,
+          "median_peptide_buried_fraction": 0.257,
+          "median_pos6_contacts": 18.0,
+          "median_pos6_sidechain_contacts": 0.0,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8525,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 18.96651648402616,
+                "frame_ca_rmsd": 0.24
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 17.842289893062933,
+                "frame_ca_rmsd": 0.34
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 13.750089319918326,
+                "frame_ca_rmsd": 0.26
+              }
+            ],
+            "mean": 16.852965232335805,
+            "max": 18.96651648402616
+          }
+        },
+        "apo": {
+          "n": 3,
+          "median_total_buried_area": 1284.3,
+          "median_peptide_buried_area": null,
+          "median_peptide_buried_fraction": null,
+          "median_pos6_contacts": null,
+          "median_pos6_sidechain_contacts": null,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8572,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 10.357736228003638,
+                "frame_ca_rmsd": 0.38
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 10.935544127207907,
+                "frame_ca_rmsd": 0.35
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 7.792103075136385,
+                "frame_ca_rmsd": 0.21
+              }
+            ],
+            "mean": 9.695127810115977,
+            "max": 10.935544127207907
+          }
+        },
+        "decoy": {
+          "n": 3,
+          "median_total_buried_area": 533.7,
+          "median_peptide_buried_area": 169.9,
+          "median_peptide_buried_fraction": 0.318,
+          "median_pos6_contacts": 16.0,
+          "median_pos6_sidechain_contacts": 16.0,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8634,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 10.062293670671902,
+                "frame_ca_rmsd": 0.24
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 18.758564761418512,
+                "frame_ca_rmsd": 0.38
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 16.736310804711795,
+                "frame_ca_rmsd": 0.27
+              }
+            ],
+            "mean": 15.18572307893407,
+            "max": 18.758564761418512
+          }
+        }
+      },
+      "matched_comparisons": {
+        "apo_to_g12d_total_area_ratio": 1.8500432152117543,
+        "apo_buries_more_total_area_than_g12d": true,
+        "wt_to_g12d_peptide_area_ratio_diagnostic_only": 0.9689567430025445,
+        "decoy_to_g12d_peptide_area_ratio": 0.8646310432569975
+      }
+    },
+    "bb50-g1": {
+      "arms": {
+        "g12d": {
+          "n": 3,
+          "median_total_buried_area": 1037.3,
+          "median_peptide_buried_area": 233.8,
+          "median_peptide_buried_fraction": 0.218,
+          "median_pos6_contacts": 15.0,
+          "median_pos6_sidechain_contacts": 4.0,
+          "asp6_gate_passes": 2,
+          "median_iptm": 0.8511,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": 0.5768790666216669,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 9.965380796828873,
+                "frame_ca_rmsd": 0.39
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 5.072682175091685,
+                "frame_ca_rmsd": 0.3
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 6.914607805577502,
+                "frame_ca_rmsd": 0.35
+              }
+            ],
+            "mean": 7.317556925832687,
+            "max": 9.965380796828873
+          }
+        },
+        "wt": {
+          "n": 3,
+          "median_total_buried_area": 681.3,
+          "median_peptide_buried_area": 178.3,
+          "median_peptide_buried_fraction": 0.266,
+          "median_pos6_contacts": 11.0,
+          "median_pos6_sidechain_contacts": 0.0,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8559,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 11.342725552678973,
+                "frame_ca_rmsd": 0.22
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 20.87632725434821,
+                "frame_ca_rmsd": 0.17
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 17.281819018279883,
+                "frame_ca_rmsd": 0.21
+              }
+            ],
+            "mean": 16.50029060843569,
+            "max": 20.87632725434821
+          }
+        },
+        "apo": {
+          "n": 3,
+          "median_total_buried_area": 1387.0,
+          "median_peptide_buried_area": null,
+          "median_peptide_buried_fraction": null,
+          "median_pos6_contacts": null,
+          "median_pos6_sidechain_contacts": null,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8449,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 15.869750028546502,
+                "frame_ca_rmsd": 0.36
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 9.783867647501301,
+                "frame_ca_rmsd": 0.21
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 14.147255334421676,
+                "frame_ca_rmsd": 0.4
+              }
+            ],
+            "mean": 13.266957670156494,
+            "max": 15.869750028546502
+          }
+        },
+        "decoy": {
+          "n": 3,
+          "median_total_buried_area": 696.5,
+          "median_peptide_buried_area": 86.8,
+          "median_peptide_buried_fraction": 0.125,
+          "median_pos6_contacts": 5.0,
+          "median_pos6_sidechain_contacts": 5.0,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8253,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 26.01509921275849,
+                "frame_ca_rmsd": 0.28
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 28.519454699611796,
+                "frame_ca_rmsd": 0.35
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 14.893696174912833,
+                "frame_ca_rmsd": 0.21
+              }
+            ],
+            "mean": 23.142750029094373,
+            "max": 28.519454699611796
+          }
+        }
+      },
+      "matched_comparisons": {
+        "apo_to_g12d_total_area_ratio": 1.3371252289597995,
+        "apo_buries_more_total_area_than_g12d": true,
+        "wt_to_g12d_peptide_area_ratio_diagnostic_only": 0.762617621899059,
+        "decoy_to_g12d_peptide_area_ratio": 0.3712574850299401
+      }
+    },
+    "bb54-g2": {
+      "arms": {
+        "g12d": {
+          "n": 3,
+          "median_total_buried_area": 725.7,
+          "median_peptide_buried_area": 184.7,
+          "median_peptide_buried_fraction": 0.276,
+          "median_pos6_contacts": 5.0,
+          "median_pos6_sidechain_contacts": 4.0,
+          "asp6_gate_passes": 1,
+          "median_iptm": 0.8924,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": 0.4419514199495993,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 3.3405131147104554,
+                "frame_ca_rmsd": 0.2
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 6.0719664037654795,
+                "frame_ca_rmsd": 0.16
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 6.593351033610158,
+                "frame_ca_rmsd": 0.15
+              }
+            ],
+            "mean": 5.335276850695364,
+            "max": 6.593351033610158
+          }
+        },
+        "wt": {
+          "n": 3,
+          "median_total_buried_area": 713.7,
+          "median_peptide_buried_area": 153.2,
+          "median_peptide_buried_fraction": 0.252,
+          "median_pos6_contacts": 7.0,
+          "median_pos6_sidechain_contacts": 0.0,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8957,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 20.053494001770577,
+                "frame_ca_rmsd": 0.31
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 21.0252617009566,
+                "frame_ca_rmsd": 0.24
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 19.51903250570862,
+                "frame_ca_rmsd": 0.27
+              }
+            ],
+            "mean": 20.199262736145265,
+            "max": 21.0252617009566
+          }
+        },
+        "apo": {
+          "n": 3,
+          "median_total_buried_area": 1200.6,
+          "median_peptide_buried_area": null,
+          "median_peptide_buried_fraction": null,
+          "median_pos6_contacts": null,
+          "median_pos6_sidechain_contacts": null,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8863,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 8.49046569400049,
+                "frame_ca_rmsd": 0.21
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 5.373574554041612,
+                "frame_ca_rmsd": 0.3
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 9.959339181123047,
+                "frame_ca_rmsd": 0.26
+              }
+            ],
+            "mean": 7.941126476388383,
+            "max": 9.959339181123047
+          }
+        },
+        "decoy": {
+          "n": 3,
+          "median_total_buried_area": 565.1,
+          "median_peptide_buried_area": 152.3,
+          "median_peptide_buried_fraction": 0.27,
+          "median_pos6_contacts": 13.0,
+          "median_pos6_sidechain_contacts": 13.0,
+          "asp6_gate_passes": 0,
+          "median_iptm": 0.8844,
+          "analysis_errors": [],
+          "median_asp6_buried_fraction": null,
+          "pose": {
+            "fit_chains": [
+              "A",
+              "C"
+            ],
+            "binder_chain": "D",
+            "n": 3,
+            "pairwise": [
+              {
+                "draw_pair": [
+                  0,
+                  1
+                ],
+                "binder_ca_rmsd": 25.79229500878115,
+                "frame_ca_rmsd": 0.26
+              },
+              {
+                "draw_pair": [
+                  0,
+                  2
+                ],
+                "binder_ca_rmsd": 24.030010402318478,
+                "frame_ca_rmsd": 0.19
+              },
+              {
+                "draw_pair": [
+                  1,
+                  2
+                ],
+                "binder_ca_rmsd": 8.254201287917923,
+                "frame_ca_rmsd": 0.15
+              }
+            ],
+            "mean": 19.358835566339184,
+            "max": 25.79229500878115
+          }
+        }
+      },
+      "matched_comparisons": {
+        "apo_to_g12d_total_area_ratio": 1.6544026457213723,
+        "apo_buries_more_total_area_than_g12d": true,
+        "wt_to_g12d_peptide_area_ratio_diagnostic_only": 0.8294531672983216,
+        "decoy_to_g12d_peptide_area_ratio": 0.8245804006497023
+      }
+    }
+  },
+  "readout_version": "carboxylate-oxygen-and-burial-v1",
+  "supersedes_recorded_readout_counts": true,
+  "historical_analysis_sha256": "01bd08e046b0d425d68578bea33ef13b560303e8b7d7fd7f0bb1ebfa1cfbb54e"
+}

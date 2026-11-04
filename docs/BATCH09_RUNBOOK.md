@@ -55,7 +55,8 @@ python -m pip install -r requirements.txt
 python scripts/batch09_matched_anchor.py --dry-run
 # With NVIDIA_API_KEY already set in the execution environment:
 python scripts/batch09_matched_anchor.py --max-boltz-calls 12
-python scripts/batch09_analyze.py
+# New runs have versioned full readout flags. For the archived panel:
+python scripts/audit_carboxylate_readout.py
 ```
 
 The dry run prints the exact sequences, target polymers, sampling parameters
@@ -95,3 +96,7 @@ The matched comparison remains diagnostic: no apo-area cutoff is introduced,
 WT footprint loss remains descriptive, and ipTM is not an affinity or
 selectivity measurement. Consult `results/batch-09/SUMMARY.md` for the control
 audit and candidate priorities before deciding which sequences to advance.
+
+The original unversioned checkpoint is historical. Current readout and pose
+measurements are in `results/readout-correction/`; see its README before using
+any archived gate count.
