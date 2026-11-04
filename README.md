@@ -60,9 +60,13 @@ Designs are ranked by, in order:
 2. **peptide-dependent binding** — binds the complex, not peptide-free HLA
 3. **lowest K_D** — affinity is the last tie-break, not the goal
 
-The repository's internal ranking mirrors this with a single
-`specificity_gap = score(G12D) − max(score(WT), score(apo))`, which is the
-column `src/make_submission.py` sorts by.
+Final candidate ordering follows the evidence tiers in
+`results/batch-09/SUMMARY.md`: reproducible Asp6 readout, decoy/apo diagnostics,
+pose stability and diversity. The old ipTM specificity gap is retired.
+`src/make_submission.py` still supports historical scored tables; for a final
+package, provide an explicit `evidence_rank` column (1 is best) and use
+`--rank-column evidence_rank --ascending` so legacy score columns cannot
+silently reorder the reviewed evidence tiers.
 
 ## Submission rules
 
@@ -166,9 +170,9 @@ python src/validate_submission.py submissions/batch1.csv
 **Build a submission from a scored designs table:**
 
 ```bash
-python src/make_submission.py scored_designs.csv -o submissions/batch1.csv -n 20
-# ranks by specificity_gap (then score), truncates to N, and refuses to write
-# anything that would fail validation
+python src/make_submission.py scored_designs.csv -o submissions/batch1.csv -n 20 \
+  --rank-column evidence_rank --ascending
+# uses the reviewed evidence_rank, truncates to N, and validates the output
 ```
 
 **Run the tests:**

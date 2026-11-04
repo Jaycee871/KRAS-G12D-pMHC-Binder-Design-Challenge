@@ -131,10 +131,12 @@ Proteinbase UI and preserve the confirmation.
 
 ```bash
 python -m pytest -q
-python src/make_submission.py <scored>.csv -o submissions/final.csv -n <N>
+python src/make_submission.py <scored>.csv -o submissions/final.csv -n <N> \
+  --rank-column evidence_rank --ascending
 python src/validate_submission.py submissions/final.csv
 ```
 
+- [ ] Reviewed `evidence_rank` is explicit (1 = best); legacy ipTM gaps do not reorder it.
 - [ ] CSV is ordered best-first.
 - [ ] `name`, `sequence`, `molecule_class` are present.
 - [ ] molecule classes use the official vocabulary.
