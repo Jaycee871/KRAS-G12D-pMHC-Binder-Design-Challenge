@@ -98,6 +98,11 @@ def write_submission(rows: List[dict], path: Path) -> Path:
         for row in rows:
             sequence = (row.get("sequence") or "").strip()
             molecule_class = (row.get("molecule_class") or "").strip().lower()
+            # Historical scored tables used the repo-local label
+            # "single_chain". Normalize it at the submission boundary so old
+            # results remain usable with the current Proteinbase schema.
+            if molecule_class == "single_chain":
+                molecule_class = "protein"
             if not molecule_class and ":" not in sequence:
                 molecule_class = "protein"
             writer.writerow({
