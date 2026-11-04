@@ -31,6 +31,7 @@ except ImportError:  # pragma: no cover - import shim
 
 DEFAULT_RANK_COLUMNS = ("specificity_gap", "score")
 OUTPUT_COLUMNS = ("name", "sequence", "molecule_class")
+DEFAULT_TOP_N = 20  # Track 1 screens the top 20; files may contain up to 40.
 
 
 def read_scored(path: Path) -> List[dict]:
@@ -110,7 +111,7 @@ def write_submission(rows: List[dict], path: Path) -> Path:
 def build(
     source: Path,
     out: Path,
-    top_n: int = MAX_DESIGNS,
+    top_n: int = DEFAULT_TOP_N,
     rank_column: str | None = None,
     ascending: bool = False,
 ) -> Path:
@@ -119,7 +120,7 @@ def build(
         raise ValidationError(f"--top-n must be >= 1 (got {top_n})")
     if top_n > MAX_DESIGNS:
         raise ValidationError(
-            f"--top-n {top_n} exceeds the per-submission limit of {MAX_DESIGNS}"
+            f"--top-n {top_n} exceeds the Track 1 submission maximum of {MAX_DESIGNS}"
         )
 
     rows = read_scored(source)
@@ -146,7 +147,7 @@ def main(argv=None) -> int:
     ap = argparse.ArgumentParser(description=__doc__)
     ap.add_argument("source", type=Path, help="scored designs CSV")
     ap.add_argument("-o", "--out", type=Path, default=Path("submission.csv"))
-    ap.add_argument("-n", "--top-n", type=int, default=MAX_DESIGNS)
+    ap.add_argument("-n", "--top-n", type=int, default=DEFAULT_TOP_N)
     ap.add_argument("--rank-column", default=None,
                     help="column to rank by (default: specificity_gap, then score)")
     ap.add_argument("--ascending", action="store_true",
