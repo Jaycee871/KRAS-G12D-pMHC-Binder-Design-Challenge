@@ -1,0 +1,76 @@
+{
+  "elapsed_seconds": 1045.0,
+  "backbones_generated": 96,
+  "backbones_pose_ok": 14,
+  "grafts": 18,
+  "scored_this_segment": 18,
+  "boltz2_calls_this_segment": 18,
+  "stopped_early": "",
+  "strategies": [
+    {
+      "name": "B6-c6-34",
+      "binder_length": 34,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.15,
+      "rationale": "roughly half the batch-05 length - too small to reach the alpha1/alpha2 rim and the peptide at the same time"
+    },
+    {
+      "name": "B6-c6-40",
+      "binder_length": 40,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.15,
+      "rationale": "smallest length that reliably folds as a mini-binder while still being peptide-sized"
+    },
+    {
+      "name": "B6-c6-46",
+      "binder_length": 46,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "upper end of the shrunken band, higher MPNN temperature for topological diversity among survivors"
+    }
+  ],
+  "design_pose_filter": {
+    "min_pos6_contacts": 3,
+    "max_pos6_distance": 4.5,
+    "min_peptide_contact_frac": 0.25,
+    "max_hla_contacts": 90
+  },
+  "constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "C",
+          "residue_index": 6
+        }
+      ],
+      "max_distance": 6.0
+    }
+  ],
+  "boltz_kwargs": {
+    "recycling_steps": 8,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": false
+  },
+  "gate": {
+    "donor_residues": [
+      "ARG",
+      "HIS",
+      "LYS",
+      "SER",
+      "THR",
+      "TYR"
+    ],
+    "donor_distance": 3.5,
+    "asp6_buried_frac": "> 0",
+    "replication": "3 of 3 independent constrained draws (scripts/batch06_panel.py)",
+    "wt_arm": "inside the gate (scripts/batch06_panel.py)"
+  }
+}

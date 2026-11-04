@@ -1,0 +1,1285 @@
+{
+  "screening": {
+    "n": 41,
+    "buried_area_total": {
+      "n": 41,
+      "min": 0.0,
+      "median": 760.8,
+      "mean": 780.337,
+      "max": 1625.5
+    },
+    "buried_area_peptide": {
+      "n": 41,
+      "min": 0.0,
+      "median": 158.2,
+      "mean": 145.398,
+      "max": 291.6
+    },
+    "buried_area_hla": {
+      "n": 40,
+      "min": 269.8,
+      "median": 591.25,
+      "mean": 636.55,
+      "max": 1391.3
+    },
+    "peptide_area_share": {
+      "n": 41,
+      "min": 0.0,
+      "median": 0.213,
+      "mean": 0.188,
+      "max": 0.35
+    },
+    "asp6_gate_passes": 3,
+    "asp6_buried_frac_gt0": 21,
+    "pos6_sidechain_contact_ge1": 18,
+    "net_interface_charge": {
+      "n": 41,
+      "min": -4.0,
+      "median": 0.0,
+      "mean": 0.08,
+      "max": 5.0
+    },
+    "peptide_buried_frac_ge_0.40": 0,
+    "peptide_buried_frac_ge_0.18": 26
+  },
+  "batch05_reference": {
+    "n": 60,
+    "buried_area_total": {
+      "n": 60,
+      "min": 0.0,
+      "median": 960.1,
+      "mean": 987.075,
+      "max": 2152.2
+    },
+    "buried_area_peptide": {
+      "n": 60,
+      "min": 0.0,
+      "median": 201.15,
+      "mean": 190.257,
+      "max": 314.4
+    },
+    "buried_area_hla": {
+      "n": 59,
+      "min": 272.8,
+      "median": 772.9,
+      "mean": 801.649,
+      "max": 1793.0
+    },
+    "peptide_area_share": {
+      "n": 60,
+      "min": 0.0,
+      "median": 0.209,
+      "mean": 0.206,
+      "max": 0.341
+    }
+  },
+  "binder_length_breakdown": {
+    "34": {
+      "n": 4,
+      "buried_area_total": {
+        "n": 4,
+        "min": 570.9,
+        "median": 736.25,
+        "mean": 896.125,
+        "max": 1541.1
+      },
+      "peptide_area_share": {
+        "n": 4,
+        "min": 0.128,
+        "median": 0.205,
+        "mean": 0.201,
+        "max": 0.264
+      },
+      "asp6_gate_passes": 0
+    },
+    "40": {
+      "n": 7,
+      "buried_area_total": {
+        "n": 7,
+        "min": 0.0,
+        "median": 829.7,
+        "mean": 692.529,
+        "max": 1023.1
+      },
+      "peptide_area_share": {
+        "n": 7,
+        "min": 0.0,
+        "median": 0.179,
+        "mean": 0.146,
+        "max": 0.245
+      },
+      "asp6_gate_passes": 0
+    },
+    "46": {
+      "n": 30,
+      "buried_area_total": {
+        "n": 30,
+        "min": 330.9,
+        "median": 730.15,
+        "mean": 785.387,
+        "max": 1625.5
+      },
+      "peptide_area_share": {
+        "n": 30,
+        "min": 0.0,
+        "median": 0.217,
+        "mean": 0.196,
+        "max": 0.35
+      },
+      "asp6_gate_passes": 3
+    }
+  },
+  "panel": {
+    "B6-c6-46_w2_bb36_donor-anchored-g2": {
+      "g12d@combo": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          "",
+          "",
+          ""
+        ],
+        "pos6_contacts": [
+          10,
+          31,
+          9
+        ],
+        "pos6_sidechain_contacts": [
+          1,
+          15,
+          0
+        ],
+        "buried_area_total": [
+          1057.9,
+          667.8,
+          998.6
+        ],
+        "buried_area_peptide": [
+          147.3,
+          227.4,
+          182.1
+        ],
+        "buried_area_hla": [
+          910.7,
+          440.4,
+          816.5
+        ],
+        "peptide_buried_frac": [
+          0.139,
+          0.341,
+          0.182
+        ],
+        "net_interface_charge": [
+          -1.0,
+          0.0,
+          0.0
+        ],
+        "iptm_pose_readout": [
+          0.5453,
+          0.8929,
+          0.8811
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 18.1,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.47
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 26.44,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.4
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 17.31,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.3
+            }
+          ],
+          "mean": 20.62,
+          "max": 26.44,
+          "frame_max": 0.47
+        }
+      },
+      "g12d@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 2,
+        "donor_distance": [
+          3.29,
+          2.99,
+          ""
+        ],
+        "pos6_contacts": [
+          12,
+          25,
+          7
+        ],
+        "pos6_sidechain_contacts": [
+          3,
+          10,
+          0
+        ],
+        "buried_area_total": [
+          1089.1,
+          629.7,
+          907.5
+        ],
+        "buried_area_peptide": [
+          167.6,
+          194.4,
+          178.3
+        ],
+        "buried_area_hla": [
+          921.5,
+          435.3,
+          729.1
+        ],
+        "peptide_buried_frac": [
+          0.154,
+          0.309,
+          0.197
+        ],
+        "net_interface_charge": [
+          -0.9,
+          -1.0,
+          0.0
+        ],
+        "iptm_pose_readout": [
+          0.4142,
+          0.8695,
+          0.8956
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 18.94,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.49
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 26.44,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.38
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 17.06,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.27
+            }
+          ],
+          "mean": 20.81,
+          "max": 26.44,
+          "frame_max": 0.49
+        }
+      },
+      "wt@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          null,
+          null,
+          null
+        ],
+        "pos6_contacts": [
+          18,
+          17,
+          12
+        ],
+        "pos6_sidechain_contacts": [
+          0,
+          0,
+          0
+        ],
+        "buried_area_total": [
+          1056.0,
+          1205.6,
+          668.3
+        ],
+        "buried_area_peptide": [
+          175.9,
+          210.2,
+          173.5
+        ],
+        "buried_area_hla": [
+          880.1,
+          995.4,
+          494.8
+        ],
+        "peptide_buried_frac": [
+          0.167,
+          0.174,
+          0.26
+        ],
+        "net_interface_charge": [
+          -0.9,
+          0.0,
+          1.1
+        ],
+        "iptm_pose_readout": [
+          0.6072,
+          0.9102,
+          0.8981
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 17.14,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.35
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 27.51,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.38
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 21.1,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.22
+            }
+          ],
+          "mean": 21.92,
+          "max": 27.51,
+          "frame_max": 0.38
+        }
+      }
+    },
+    "B6-c6-46_w2_bb38_donor-anchored-g1": {
+      "g12d@combo": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          "",
+          "",
+          ""
+        ],
+        "pos6_contacts": [
+          5,
+          0,
+          5
+        ],
+        "pos6_sidechain_contacts": [
+          1,
+          0,
+          0
+        ],
+        "buried_area_total": [
+          535.2,
+          362.2,
+          485.3
+        ],
+        "buried_area_peptide": [
+          170.8,
+          72.9,
+          157.4
+        ],
+        "buried_area_hla": [
+          364.4,
+          289.3,
+          327.9
+        ],
+        "peptide_buried_frac": [
+          0.319,
+          0.201,
+          0.324
+        ],
+        "net_interface_charge": [
+          1.0,
+          1.0,
+          0.0
+        ],
+        "iptm_pose_readout": [
+          0.5375,
+          0.9052,
+          0.9
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 10.52,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.22
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 8.95,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.29
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 5.44,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.23
+            }
+          ],
+          "mean": 8.3,
+          "max": 10.52,
+          "frame_max": 0.29
+        }
+      },
+      "g12d@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          "",
+          "",
+          ""
+        ],
+        "pos6_contacts": [
+          1,
+          4,
+          0
+        ],
+        "pos6_sidechain_contacts": [
+          0,
+          0,
+          0
+        ],
+        "buried_area_total": [
+          667.4,
+          590.5,
+          414.5
+        ],
+        "buried_area_peptide": [
+          176.1,
+          176.4,
+          102.7
+        ],
+        "buried_area_hla": [
+          491.3,
+          414.1,
+          311.8
+        ],
+        "peptide_buried_frac": [
+          0.264,
+          0.299,
+          0.248
+        ],
+        "net_interface_charge": [
+          1.0,
+          2.0,
+          0.0
+        ],
+        "iptm_pose_readout": [
+          0.5981,
+          0.914,
+          0.8888
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 5.93,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.3
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 9.01,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.22
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 9.2,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.21
+            }
+          ],
+          "mean": 8.05,
+          "max": 9.2,
+          "frame_max": 0.3
+        }
+      }
+    },
+    "B6-c6-46_w2_bb54_donor-anchored-g2": {
+      "g12d@combo": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 1,
+        "donor_distance": [
+          2.51,
+          "",
+          ""
+        ],
+        "pos6_contacts": [
+          22,
+          28,
+          8
+        ],
+        "pos6_sidechain_contacts": [
+          20,
+          17,
+          1
+        ],
+        "buried_area_total": [
+          838.6,
+          911.5,
+          800.2
+        ],
+        "buried_area_peptide": [
+          226.0,
+          254.0,
+          198.4
+        ],
+        "buried_area_hla": [
+          612.6,
+          657.6,
+          601.8
+        ],
+        "peptide_buried_frac": [
+          0.27,
+          0.279,
+          0.248
+        ],
+        "net_interface_charge": [
+          1.0,
+          1.0,
+          3.0
+        ],
+        "iptm_pose_readout": [
+          0.7115,
+          0.9168,
+          0.8929
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 3.18,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.44
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 5.1,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.41
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 2.94,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.46
+            }
+          ],
+          "mean": 3.74,
+          "max": 5.1,
+          "frame_max": 0.46
+        }
+      },
+      "apo@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          null,
+          null,
+          null
+        ],
+        "pos6_contacts": [
+          null,
+          null,
+          null
+        ],
+        "pos6_sidechain_contacts": [
+          null,
+          null,
+          null
+        ],
+        "buried_area_total": [
+          1220.1,
+          1198.2,
+          1116.4
+        ],
+        "buried_area_peptide": [
+          null,
+          null,
+          null
+        ],
+        "buried_area_hla": [
+          1220.1,
+          1198.2,
+          1116.4
+        ],
+        "peptide_buried_frac": [
+          null,
+          null,
+          null
+        ],
+        "net_interface_charge": [
+          1.0,
+          3.0,
+          2.0
+        ],
+        "iptm_pose_readout": [
+          0.5181,
+          0.8949,
+          0.6254
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "HLA chain A only (apo: no peptide)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 13.47,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.41
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 8.17,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.28
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 8.06,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.35
+            }
+          ],
+          "mean": 9.9,
+          "max": 13.47,
+          "frame_max": 0.41
+        }
+      },
+      "decoy@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          null,
+          null,
+          null
+        ],
+        "pos6_contacts": [
+          1,
+          0,
+          3
+        ],
+        "pos6_sidechain_contacts": [
+          1,
+          0,
+          3
+        ],
+        "buried_area_total": [
+          429.4,
+          420.6,
+          393.6
+        ],
+        "buried_area_peptide": [
+          33.2,
+          34.1,
+          47.6
+        ],
+        "buried_area_hla": [
+          396.2,
+          386.5,
+          346.0
+        ],
+        "peptide_buried_frac": [
+          0.077,
+          0.081,
+          0.121
+        ],
+        "net_interface_charge": [
+          3.0,
+          2.0,
+          1.0
+        ],
+        "iptm_pose_readout": [
+          0.6861,
+          0.9221,
+          0.9232
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 2.55,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.18
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 6.36,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.16
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 5.99,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.14
+            }
+          ],
+          "mean": 4.97,
+          "max": 6.36,
+          "frame_max": 0.18
+        }
+      },
+      "g12d@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 2,
+        "donor_distance": [
+          2.99,
+          "",
+          2.77
+        ],
+        "pos6_contacts": [
+          26,
+          26,
+          30
+        ],
+        "pos6_sidechain_contacts": [
+          15,
+          19,
+          24
+        ],
+        "buried_area_total": [
+          1080.2,
+          804.9,
+          852.1
+        ],
+        "buried_area_peptide": [
+          287.1,
+          250.4,
+          320.2
+        ],
+        "buried_area_hla": [
+          793.1,
+          554.5,
+          531.9
+        ],
+        "peptide_buried_frac": [
+          0.266,
+          0.311,
+          0.376
+        ],
+        "net_interface_charge": [
+          3.0,
+          2.0,
+          5.0
+        ],
+        "iptm_pose_readout": [
+          0.5461,
+          0.89,
+          0.9079
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 7.96,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.29
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 7.5,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.17
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 6.33,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.21
+            }
+          ],
+          "mean": 7.26,
+          "max": 7.96,
+          "frame_max": 0.29
+        }
+      },
+      "wt@recyc8": {
+        "draws": 3,
+        "distinct_structures": 3,
+        "asp6_gate_passes": 0,
+        "donor_distance": [
+          null,
+          null,
+          null
+        ],
+        "pos6_contacts": [
+          16,
+          3,
+          7
+        ],
+        "pos6_sidechain_contacts": [
+          0,
+          0,
+          0
+        ],
+        "buried_area_total": [
+          808.9,
+          580.9,
+          751.8
+        ],
+        "buried_area_peptide": [
+          205.2,
+          70.4,
+          117.0
+        ],
+        "buried_area_hla": [
+          603.7,
+          510.5,
+          634.8
+        ],
+        "peptide_buried_frac": [
+          0.254,
+          0.121,
+          0.156
+        ],
+        "net_interface_charge": [
+          2.0,
+          2.0,
+          2.0
+        ],
+        "iptm_pose_readout": [
+          0.5232,
+          0.9273,
+          0.8895
+        ],
+        "pose_spread": {
+          "n_poses": 3,
+          "frame": "pMHC (HLA chain A + peptide chain C)",
+          "pairwise": [
+            {
+              "pair": "r0~r1",
+              "binder_ca_rmsd": 20.29,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.33
+            },
+            {
+              "pair": "r0~r2",
+              "binder_ca_rmsd": 8.8,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.2
+            },
+            {
+              "pair": "r1~r2",
+              "binder_ca_rmsd": 24.0,
+              "n_ca": 46,
+              "frame_ca_rmsd": 0.22
+            }
+          ],
+          "mean": 17.7,
+          "max": 24.0,
+          "frame_max": 0.33
+        }
+      }
+    }
+  },
+  "unchanged_hard_gates_reported": [
+    {
+      "design": "B6-c6-40_bb06_donor-anchored-g1",
+      "peptide_buried_frac": 0.194,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.19 < 0.40",
+        "only 1 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 1 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb15_donor-anchored-g1",
+      "peptide_buried_frac": 0.185,
+      "net_interface_charge": -1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.18 < 0.40",
+        "only 0 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 0 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb15_donor-anchored-g2",
+      "peptide_buried_frac": 0.243,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.24 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 6 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb12_donor-anchored-g1",
+      "peptide_buried_frac": 0.089,
+      "net_interface_charge": -1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.09 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-40_bb06_donor-anchored-g2",
+      "peptide_buried_frac": 0.0,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.00 < 0.40",
+        "only 0 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 0 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-34_bb17_donor-anchored-g1",
+      "peptide_buried_frac": 0.264,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.26 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 4 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb12_donor-anchored-g2",
+      "peptide_buried_frac": 0.0,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.00 < 0.40",
+        "only 0 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 0 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-34_bb17_donor-anchored-g2",
+      "peptide_buried_frac": 0.128,
+      "net_interface_charge": 5.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.13 < 0.40",
+        "net interface charge +5.0 above +4.0: non-specific electrostatic attraction to the groove"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb07_donor-anchored-g1",
+      "peptide_buried_frac": 0.238,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.24 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-40_bb17_donor-anchored-g1",
+      "peptide_buried_frac": 0.179,
+      "net_interface_charge": 3.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.18 < 0.40",
+        "only 1 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 1 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb14_donor-anchored-g1",
+      "peptide_buried_frac": 0.295,
+      "net_interface_charge": 2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.29 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 6 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-40_bb17_donor-anchored-g2",
+      "peptide_buried_frac": 0.011,
+      "net_interface_charge": -3.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.01 < 0.40",
+        "only 0 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 0 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)",
+        "net interface charge -3.0 below -2.0: excess negative charge at the interface (Xie et al. 2025)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb24_donor-anchored-g1",
+      "peptide_buried_frac": 0.214,
+      "net_interface_charge": -1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.21 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 6 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb24_donor-anchored-g2",
+      "peptide_buried_frac": 0.233,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.23 < 0.40",
+        "only 2 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 2 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb07_donor-anchored-g2",
+      "peptide_buried_frac": 0.021,
+      "net_interface_charge": -1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.02 < 0.40",
+        "only 0 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 0 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-34_bb20_donor-anchored-g1",
+      "peptide_buried_frac": 0.253,
+      "net_interface_charge": 2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.25 < 0.40",
+        "only 2 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 2 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-34_bb20_donor-anchored-g2",
+      "peptide_buried_frac": 0.157,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.16 < 0.40",
+        "only 1 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 1 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_bb14_donor-anchored-g2",
+      "peptide_buried_frac": 0.35,
+      "net_interface_charge": -2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.35 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb10_donor-anchored-g1",
+      "peptide_buried_frac": 0.227,
+      "net_interface_charge": 2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.23 < 0.40",
+        "only 2 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 2 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb50_donor-anchored-g1",
+      "peptide_buried_frac": 0.199,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.20 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb46_donor-anchored-g1",
+      "peptide_buried_frac": 0.334,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.33 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb38_donor-anchored-g1",
+      "peptide_buried_frac": 0.321,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.32 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb00_donor-anchored-g1",
+      "peptide_buried_frac": 0.213,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.21 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 6 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb36_donor-anchored-g1",
+      "peptide_buried_frac": 0.115,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.12 < 0.40",
+        "only 1 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 1 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb36_donor-anchored-g2",
+      "peptide_buried_frac": 0.146,
+      "net_interface_charge": -0.9,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.15 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb50_donor-anchored-g2",
+      "peptide_buried_frac": 0.243,
+      "net_interface_charge": 2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.24 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb00_donor-anchored-g2",
+      "peptide_buried_frac": 0.183,
+      "net_interface_charge": 2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.18 < 0.40",
+        "only 1 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 1 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb38_donor-anchored-g2",
+      "peptide_buried_frac": 0.229,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.23 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb10_donor-anchored-g2",
+      "peptide_buried_frac": 0.121,
+      "net_interface_charge": 4.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.12 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 4 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb46_donor-anchored-g2",
+      "peptide_buried_frac": 0.126,
+      "net_interface_charge": -3.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.13 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 3 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)",
+        "net interface charge -3.0 below -2.0: excess negative charge at the interface (Xie et al. 2025)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb54_donor-anchored-g1",
+      "peptide_buried_frac": 0.052,
+      "net_interface_charge": -1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.05 < 0.40",
+        "only 0 binder heavy atoms within 5 A of peptide position 6 (need >= 3)",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 0 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb35_donor-anchored-g2",
+      "peptide_buried_frac": 0.283,
+      "net_interface_charge": 0.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.28 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb54_donor-anchored-g2",
+      "peptide_buried_frac": 0.273,
+      "net_interface_charge": 3.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.27 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb19_donor-anchored-g1",
+      "peptide_buried_frac": 0.235,
+      "net_interface_charge": -2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.23 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 3 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb18_donor-anchored-g2",
+      "peptide_buried_frac": 0.221,
+      "net_interface_charge": -1.9,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.22 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb35_donor-anchored-g1",
+      "peptide_buried_frac": 0.191,
+      "net_interface_charge": 1.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.19 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 6 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)"
+      ]
+    },
+    {
+      "design": "B6-c6-40_w2_bb54_donor-anchored-g1",
+      "peptide_buried_frac": 0.221,
+      "net_interface_charge": -2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.22 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-40_w2_bb54_donor-anchored-g2",
+      "peptide_buried_frac": 0.173,
+      "net_interface_charge": 2.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.17 < 0.40"
+      ]
+    },
+    {
+      "design": "B6-c6-40_w2_bb06_donor-anchored-g1",
+      "peptide_buried_frac": 0.245,
+      "net_interface_charge": -4.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.24 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 6 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)",
+        "net interface charge -4.0 below -2.0: excess negative charge at the interface (Xie et al. 2025)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb18_donor-anchored-g1",
+      "peptide_buried_frac": 0.039,
+      "net_interface_charge": -3.9,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.04 < 0.40",
+        "no hydrogen bond or salt bridge to the Asp6 carboxylate (donor within 3.5 A of OD1/OD2) and only 3 heavy-atom contacts with position 6 (need a bond, or >= 7 contacts)",
+        "net interface charge -3.9 below -2.0: excess negative charge at the interface (Xie et al. 2025)"
+      ]
+    },
+    {
+      "design": "B6-c6-46_w2_bb19_donor-anchored-g2",
+      "peptide_buried_frac": 0.275,
+      "net_interface_charge": -3.0,
+      "hard_gate_failures": [
+        "peptide-buried fraction 0.28 < 0.40",
+        "net interface charge -3.0 below -2.0: excess negative charge at the interface (Xie et al. 2025)"
+      ]
+    }
+  ]
+}
