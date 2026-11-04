@@ -1,0 +1,1187 @@
+[
+  {
+    "backbone": "B11-peptide40_bb00",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "76 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.462,
+      "sidechain_min_distance": 2.462,
+      "contact_atoms": 13,
+      "sidechain_contact_atoms": 13,
+      "binder_residues": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.149
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.077,
+      "sidechain_min_distance": 4.233,
+      "contact_atoms": 10,
+      "sidechain_contact_atoms": 3,
+      "binder_residues": [
+        18,
+        19,
+        20
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.149
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.149,
+      "severe_clash_atoms": 76,
+      "hla_contact_atoms_5A": 114,
+      "min_hla_distance": 0.415
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb01",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "99 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.442,
+      "sidechain_min_distance": 2.442,
+      "contact_atoms": 14,
+      "sidechain_contact_atoms": 12,
+      "binder_residues": [
+        17,
+        29,
+        30,
+        31,
+        32
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1378
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.585,
+      "sidechain_min_distance": 3.585,
+      "contact_atoms": 10,
+      "sidechain_contact_atoms": 6,
+      "binder_residues": [
+        17,
+        18,
+        19,
+        20,
+        32
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1378
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1378,
+      "severe_clash_atoms": 99,
+      "hla_contact_atoms_5A": 122,
+      "min_hla_distance": 0.163
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb02",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "105 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 1.835,
+      "sidechain_min_distance": 1.835,
+      "contact_atoms": 12,
+      "sidechain_contact_atoms": 11,
+      "binder_residues": [
+        37,
+        38,
+        39,
+        40
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1308
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.066,
+      "sidechain_min_distance": 3.066,
+      "contact_atoms": 12,
+      "sidechain_contact_atoms": 9,
+      "binder_residues": [
+        32,
+        33,
+        34,
+        35,
+        36,
+        37
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1308
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1308,
+      "severe_clash_atoms": 105,
+      "hla_contact_atoms_5A": 158,
+      "min_hla_distance": 0.301
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb03",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "42 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 3.452,
+      "sidechain_min_distance": 3.452,
+      "contact_atoms": 9,
+      "sidechain_contact_atoms": 7,
+      "binder_residues": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1358
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 2.23,
+      "sidechain_min_distance": 2.23,
+      "contact_atoms": 12,
+      "sidechain_contact_atoms": 9,
+      "binder_residues": [
+        18,
+        19,
+        20,
+        21
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1358
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1358,
+      "severe_clash_atoms": 42,
+      "hla_contact_atoms_5A": 78,
+      "min_hla_distance": 0.58
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb04",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 7.504 > 4.5",
+      "97 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 3.124,
+      "sidechain_min_distance": 3.972,
+      "contact_atoms": 11,
+      "sidechain_contact_atoms": 4,
+      "binder_residues": [
+        11,
+        17,
+        18,
+        19
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.172
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 5.723,
+      "sidechain_min_distance": 7.504,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.172
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.172,
+      "severe_clash_atoms": 97,
+      "hla_contact_atoms_5A": 129,
+      "min_hla_distance": 0.341
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb05",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "84 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 3.437,
+      "sidechain_min_distance": 3.437,
+      "contact_atoms": 6,
+      "sidechain_contact_atoms": 4,
+      "binder_residues": [
+        16,
+        18,
+        39
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1423
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.326,
+      "sidechain_min_distance": 4.099,
+      "contact_atoms": 7,
+      "sidechain_contact_atoms": 6,
+      "binder_residues": [
+        36,
+        39,
+        40
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1423
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1423,
+      "severe_clash_atoms": 84,
+      "hla_contact_atoms_5A": 119,
+      "min_hla_distance": 0.301
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb06",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "105 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 1.62,
+      "sidechain_min_distance": 1.62,
+      "contact_atoms": 20,
+      "sidechain_contact_atoms": 18,
+      "binder_residues": [
+        20,
+        21,
+        22,
+        23,
+        24,
+        26,
+        27
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1559
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.267,
+      "sidechain_min_distance": 3.734,
+      "contact_atoms": 10,
+      "sidechain_contact_atoms": 4,
+      "binder_residues": [
+        20,
+        21,
+        22
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1559
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1559,
+      "severe_clash_atoms": 105,
+      "hla_contact_atoms_5A": 152,
+      "min_hla_distance": 0.357
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide40_bb07",
+    "strategy": "B11-peptide40",
+    "binder_length": 40,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance 5.091 > 4.5",
+      "Val8 side-chain distance 4.656 > 4.5",
+      "75 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 4.091,
+      "sidechain_min_distance": 5.091,
+      "contact_atoms": 3,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        33
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1482
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.656,
+      "sidechain_min_distance": 4.656,
+      "contact_atoms": 2,
+      "sidechain_contact_atoms": 1,
+      "binder_residues": [
+        33,
+        34
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1482
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1482,
+      "severe_clash_atoms": 75,
+      "hla_contact_atoms_5A": 119,
+      "min_hla_distance": 0.27
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb00",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 7.265 > 4.5",
+      "135 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 1.892,
+      "sidechain_min_distance": 1.892,
+      "contact_atoms": 20,
+      "sidechain_contact_atoms": 13,
+      "binder_residues": [
+        2,
+        3,
+        20,
+        21,
+        22,
+        23
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.144
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 5.406,
+      "sidechain_min_distance": 7.265,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.144
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.144,
+      "severe_clash_atoms": 135,
+      "hla_contact_atoms_5A": 180,
+      "min_hla_distance": 0.488
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb01",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "119 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 1.755,
+      "sidechain_min_distance": 1.755,
+      "contact_atoms": 14,
+      "sidechain_contact_atoms": 13,
+      "binder_residues": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1596
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.316,
+      "sidechain_min_distance": 3.846,
+      "contact_atoms": 9,
+      "sidechain_contact_atoms": 5,
+      "binder_residues": [
+        12,
+        13,
+        14
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1596
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1596,
+      "severe_clash_atoms": 119,
+      "hla_contact_atoms_5A": 170,
+      "min_hla_distance": 0.375
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb02",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance 6.799 > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 8.932 > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "99 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 4.465,
+      "sidechain_min_distance": 6.799,
+      "contact_atoms": 1,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        15
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1358
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 6.883,
+      "sidechain_min_distance": 8.932,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1358
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1358,
+      "severe_clash_atoms": 99,
+      "hla_contact_atoms_5A": 141,
+      "min_hla_distance": 0.345
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb03",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 5.062 > 4.5",
+      "144 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.563,
+      "sidechain_min_distance": 2.563,
+      "contact_atoms": 9,
+      "sidechain_contact_atoms": 9,
+      "binder_residues": [
+        35,
+        36,
+        37
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.15
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.373,
+      "sidechain_min_distance": 5.062,
+      "contact_atoms": 1,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        37
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.15
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.15,
+      "severe_clash_atoms": 144,
+      "hla_contact_atoms_5A": 182,
+      "min_hla_distance": 0.237
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb04",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance 5.697 > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 7.325 > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "139 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 5.118,
+      "sidechain_min_distance": 5.697,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1539
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 5.986,
+      "sidechain_min_distance": 7.325,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1539
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1539,
+      "severe_clash_atoms": 139,
+      "hla_contact_atoms_5A": 179,
+      "min_hla_distance": 0.184
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb05",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 side-chain distance 4.94 > 4.5",
+      "83 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.857,
+      "sidechain_min_distance": 3.142,
+      "contact_atoms": 17,
+      "sidechain_contact_atoms": 13,
+      "binder_residues": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1572
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.94,
+      "sidechain_min_distance": 4.94,
+      "contact_atoms": 1,
+      "sidechain_contact_atoms": 1,
+      "binder_residues": [
+        45
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1572
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1572,
+      "severe_clash_atoms": 83,
+      "hla_contact_atoms_5A": 128,
+      "min_hla_distance": 0.459
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb06",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance 6.494 > 4.5",
+      "70 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 5.195,
+      "sidechain_min_distance": 6.494,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1305
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.017,
+      "sidechain_min_distance": 3.017,
+      "contact_atoms": 5,
+      "sidechain_contact_atoms": 4,
+      "binder_residues": [
+        3,
+        4,
+        16
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1305
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1305,
+      "severe_clash_atoms": 70,
+      "hla_contact_atoms_5A": 112,
+      "min_hla_distance": 0.353
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide46_bb07",
+    "strategy": "B11-peptide46",
+    "binder_length": 46,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance 5.932 > 4.5",
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 7.494 > 4.5",
+      "Asp6/Val8 contacts do not span two binder residues",
+      "65 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 5.932,
+      "sidechain_min_distance": 5.932,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.171
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 6.104,
+      "sidechain_min_distance": 7.494,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.171
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.171,
+      "severe_clash_atoms": 65,
+      "hla_contact_atoms_5A": 108,
+      "min_hla_distance": 0.488
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb00",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 6.523 > 4.5",
+      "41 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.825,
+      "sidechain_min_distance": 2.825,
+      "contact_atoms": 16,
+      "sidechain_contact_atoms": 11,
+      "binder_residues": [
+        30,
+        31,
+        32,
+        33,
+        34
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1379
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 5.477,
+      "sidechain_min_distance": 6.523,
+      "contact_atoms": 0,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1379
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1379,
+      "severe_clash_atoms": 41,
+      "hla_contact_atoms_5A": 91,
+      "min_hla_distance": 0.697
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb01",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "95 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.275,
+      "sidechain_min_distance": 2.275,
+      "contact_atoms": 14,
+      "sidechain_contact_atoms": 14,
+      "binder_residues": [
+        47,
+        48,
+        49,
+        50,
+        51
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1112
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.583,
+      "sidechain_min_distance": 3.583,
+      "contact_atoms": 6,
+      "sidechain_contact_atoms": 6,
+      "binder_residues": [
+        1,
+        2,
+        5
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1112
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1112,
+      "severe_clash_atoms": 95,
+      "hla_contact_atoms_5A": 161,
+      "min_hla_distance": 0.387
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb02",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 side-chain distance 4.796 > 4.5",
+      "69 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 3.287,
+      "sidechain_min_distance": 3.546,
+      "contact_atoms": 20,
+      "sidechain_contact_atoms": 12,
+      "binder_residues": [
+        9,
+        10,
+        11,
+        12,
+        32,
+        33,
+        36,
+        37
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1152
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.433,
+      "sidechain_min_distance": 4.796,
+      "contact_atoms": 6,
+      "sidechain_contact_atoms": 1,
+      "binder_residues": [
+        9,
+        10,
+        32,
+        36
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1152
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1152,
+      "severe_clash_atoms": 69,
+      "hla_contact_atoms_5A": 131,
+      "min_hla_distance": 0.242
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb03",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 5.677 > 4.5",
+      "141 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.884,
+      "sidechain_min_distance": 4.025,
+      "contact_atoms": 13,
+      "sidechain_contact_atoms": 3,
+      "binder_residues": [
+        37,
+        39,
+        40,
+        41,
+        42
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1389
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.238,
+      "sidechain_min_distance": 5.677,
+      "contact_atoms": 2,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        40
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1389
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1389,
+      "severe_clash_atoms": 141,
+      "hla_contact_atoms_5A": 186,
+      "min_hla_distance": 0.347
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb04",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Asp6 has no side-chain contact",
+      "Asp6 side-chain distance 5.103 > 4.5",
+      "134 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 4.037,
+      "sidechain_min_distance": 5.103,
+      "contact_atoms": 3,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        46
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1159
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 3.272,
+      "sidechain_min_distance": 4.297,
+      "contact_atoms": 7,
+      "sidechain_contact_atoms": 4,
+      "binder_residues": [
+        46,
+        47,
+        49
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1159
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1159,
+      "severe_clash_atoms": 134,
+      "hla_contact_atoms_5A": 154,
+      "min_hla_distance": 0.193
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb05",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 6.467 > 4.5",
+      "154 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 2.756,
+      "sidechain_min_distance": 2.756,
+      "contact_atoms": 11,
+      "sidechain_contact_atoms": 10,
+      "binder_residues": [
+        26,
+        35,
+        36,
+        37
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1232
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.495,
+      "sidechain_min_distance": 6.467,
+      "contact_atoms": 2,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        35
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1232
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1232,
+      "severe_clash_atoms": 154,
+      "hla_contact_atoms_5A": 202,
+      "min_hla_distance": 0.321
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb06",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": false,
+    "hla_fit_ok": false,
+    "reasons": [
+      "Val8 has no side-chain contact",
+      "Val8 side-chain distance 6.527 > 4.5",
+      "119 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 3.024,
+      "sidechain_min_distance": 3.024,
+      "contact_atoms": 11,
+      "sidechain_contact_atoms": 7,
+      "binder_residues": [
+        11,
+        47,
+        48,
+        49
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1321
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 4.611,
+      "sidechain_min_distance": 6.527,
+      "contact_atoms": 1,
+      "sidechain_contact_atoms": 0,
+      "binder_residues": [
+        48
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.1321
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.1321,
+      "severe_clash_atoms": 119,
+      "hla_contact_atoms_5A": 162,
+      "min_hla_distance": 0.285
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  },
+  {
+    "backbone": "B11-peptide52_bb07",
+    "strategy": "B11-peptide52",
+    "binder_length": 52,
+    "ok": false,
+    "contact_only_ok": true,
+    "hla_fit_ok": false,
+    "reasons": [
+      "142 severe HLA clash atoms > 2"
+    ],
+    "pos6": {
+      "position": 6,
+      "residue": "ASP",
+      "min_distance": 3.055,
+      "sidechain_min_distance": 3.473,
+      "contact_atoms": 21,
+      "sidechain_contact_atoms": 7,
+      "binder_residues": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.144
+    },
+    "pos8": {
+      "position": 8,
+      "residue": "VAL",
+      "min_distance": 0.622,
+      "sidechain_min_distance": 0.622,
+      "contact_atoms": 20,
+      "sidechain_contact_atoms": 17,
+      "binder_residues": [
+        26,
+        28,
+        29,
+        30,
+        31,
+        32,
+        33
+      ],
+      "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+      "peptide_alignment_rmsd": 0.144
+    },
+    "hla_reinsertion": {
+      "peptide_alignment_rmsd": 0.144,
+      "severe_clash_atoms": 142,
+      "hla_contact_atoms_5A": 185,
+      "min_hla_distance": 0.357
+    },
+    "measurement_correction": "Asp6/Val8 side chains restored from 7OW6 after CA alignment; RFdiffusion output contains target backbone atoms only"
+  }
+]
