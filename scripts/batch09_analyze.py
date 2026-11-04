@@ -8,13 +8,17 @@ G12D under the SAME regional docking prior.
 from __future__ import annotations
 
 import json
+import math
 import statistics
+import sys
 from pathlib import Path
 from typing import Any, Dict, Iterable, List, Optional
 
 REPO = Path(__file__).resolve().parents[1]
 OUT = REPO / "results" / "batch-09"
 CHECKPOINT = OUT / "matched_anchor_checkpoint.jsonl"
+sys.path.insert(0, str(REPO / "scripts"))
+import batch09_matched_anchor as experiment  # noqa: E402
 
 
 def median(values: Iterable[Any]) -> Optional[float]:
@@ -34,8 +38,42 @@ def rows() -> List[Dict[str, Any]]:
         raise FileNotFoundError(
             f"{CHECKPOINT} not found; run scripts/batch09_matched_anchor.py first"
         )
-    return [json.loads(line) for line in CHECKPOINT.read_text().splitlines()
+    data = [json.loads(line) for line in CHECKPOINT.read_text().splitlines()
             if line.strip()]
+    validate_panel(data)
+    return data
+
+
+def validate_panel(data: List[Dict[str, Any]]) -> None:
+    """Data-integrity checks, not biological pass/fail thresholds."""
+    expected = {(key, arm, draw) for key in experiment.SUBJECT_KEYS
+                for arm in experiment.ARMS for draw in range(3)}
+    actual = [(r["design"], r["arm"], r["draw"]) for r in data]
+    if len(set(actual)) != len(actual):
+        raise ValueError("duplicate samples in matched-anchor panel")
+    if set(actual) != expected:
+        raise ValueError("matched-anchor panel is incomplete or contains unexpected samples; "
+                         "expected 3 designs x 4 arms x 3 draws")
+    for record in data:
+        row = record.get("row") or {}
+        if row.get("analysis_error"):
+            raise ValueError("matched-anchor panel contains an analysis error")
+        metrics = ["buried_area_total"]
+        if record["arm"] != "apo":
+            metrics += ["buried_area_peptide", "peptide_buried_frac", "pos6_contacts"]
+        for metric in metrics:
+            try:
+                valid = math.isfinite(float(row[metric]))
+            except (KeyError, TypeError, ValueError):
+                valid = False
+            if not valid:
+                raise ValueError(f"missing/non-finite matched-anchor metric: {metric}")
+    original_out = experiment.OUT
+    try:
+        experiment.OUT = OUT
+        experiment.validate_records(data, experiment.load_subjects(), 3)
+    finally:
+        experiment.OUT = original_out
 
 
 def arm_summary(records: List[Dict[str, Any]]) -> Dict[str, Any]:
@@ -73,6 +111,8 @@ def main() -> int:
     result: Dict[str, Any] = {
         "purpose": "matched HLA-regional-anchor diagnostic only",
         "new_hard_gate": False,
+        "panel_complete": True,
+        "expected_draws_per_arm": 3,
         "designs": {},
     }
 

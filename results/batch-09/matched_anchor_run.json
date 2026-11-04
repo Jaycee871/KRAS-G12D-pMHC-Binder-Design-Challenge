@@ -1,0 +1,55 @@
+{
+  "status": "completed",
+  "completed_calls": 12,
+  "expected_calls_this_selection": 12,
+  "purpose": "matched regional-anchor counter-screen; diagnostic only",
+  "designs": [
+    "bb50-g1",
+    "bb54-g2",
+    "bb25"
+  ],
+  "arms": [
+    "g12d",
+    "wt",
+    "apo",
+    "decoy"
+  ],
+  "draws_per_call": 3,
+  "boltz2_calls_this_run": 12,
+  "matched_constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "A",
+          "residue_index": 69
+        },
+        {
+          "id": "A",
+          "residue_index": 155
+        }
+      ],
+      "max_distance": 10.0
+    }
+  ],
+  "settings": {
+    "bb50-g1": [
+      8,
+      50,
+      false
+    ],
+    "bb54-g2": [
+      3,
+      50,
+      true
+    ],
+    "bb25": [
+      8,
+      50,
+      false
+    ]
+  },
+  "historical_gates_changed": false,
+  "track1_slots_spent": 0,
+  "elapsed_seconds": 149.6
+}

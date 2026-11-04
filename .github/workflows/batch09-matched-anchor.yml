@@ -1,0 +1,62 @@
+name: Batch 09 matched-anchor counter-screen
+
+on:
+  push:
+    branches: [run/batch09-matched-anchor]
+    paths: [.github/workflows/batch09-matched-anchor.yml]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Validate the 12 requests without spending model calls
+        type: boolean
+        default: true
+        required: true
+
+permissions:
+  contents: read
+
+concurrency:
+  group: batch09-matched-anchor
+  cancel-in-progress: false
+
+jobs:
+  counter-screen:
+    runs-on: ubuntu-latest
+    timeout-minutes: 240
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Test runner and analysis
+        run: python -m pytest -q
+      - name: Validate frozen requests without model calls
+        run: |
+          mkdir -p logs
+          python scripts/batch09_matched_anchor.py --dry-run > logs/batch09-preflight.json
+      - name: Run the matched counter-screen
+        if: ${{ github.event_name == 'push' || !inputs.dry_run }}
+        env:
+          NVIDIA_API_KEY: ${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          if [ -z "$NVIDIA_API_KEY" ]; then
+            echo 'NVIDIA_API_KEY repository secret is required for model calls.' >&2
+            exit 1
+          fi
+          python scripts/batch09_matched_anchor.py --max-boltz-calls 12
+      - name: Analyze the complete panel
+        if: ${{ github.event_name == 'push' || !inputs.dry_run }}
+        run: python scripts/batch09_analyze.py
+      - name: Preserve preflight and model evidence, including on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch09-matched-anchor-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            logs/batch09-preflight.json
+            results/batch-09/
+          if-no-files-found: warn
+          retention-days: 30

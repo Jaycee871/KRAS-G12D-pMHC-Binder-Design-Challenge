@@ -7,12 +7,13 @@ Proteinbase.
 
 [![tests](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml)
 
-> **Status: active design campaign through batch-08; no design has been
-> submitted yet.** RFdiffusion, ProteinMPNN and hosted Boltz-2 have been run
-> across multiple controlled batches. The current result is an honest null:
-> no candidate yet clears the project's full Asp6 reproducibility + WT
-> discrimination gate. See `results/batch-08/SUMMARY.md` for the latest
-> analysis.
+> **Status: design batches 01–08 complete; batch-09 control audit complete,
+> matched-anchor panel complete (12 calls / 36 samples). No design submitted.**
+> The control audit retired WT geometry-loss as a hard selectivity gate.
+> `bb50-g1`, `bb54-g2` and `bb25` completed the matched G12D/WT/apo/decoy diagnostic.
+> All three retain greater apo buried area; selectivity remains unresolved. See `results/batch-09/SUMMARY.md` and
+> [`docs/BATCH09_RUNBOOK.md`](docs/BATCH09_RUNBOOK.md). Measured results:
+> [`MATCHED_ANCHOR_RESULTS.md`](results/batch-09/MATCHED_ANCHOR_RESULTS.md).
 
 ---
 
@@ -59,9 +60,13 @@ Designs are ranked by, in order:
 2. **peptide-dependent binding** — binds the complex, not peptide-free HLA
 3. **lowest K_D** — affinity is the last tie-break, not the goal
 
-The repository's internal ranking mirrors this with a single
-`specificity_gap = score(G12D) − max(score(WT), score(apo))`, which is the
-column `src/make_submission.py` sorts by.
+Final candidate ordering follows the evidence tiers in
+`results/batch-09/SUMMARY.md`: reproducible Asp6 readout, decoy/apo diagnostics,
+pose stability and diversity. The old ipTM specificity gap is retired.
+`src/make_submission.py` still supports historical scored tables; for a final
+package, provide an explicit `evidence_rank` column (1 is best) and use
+`--rank-column evidence_rank --ascending` so legacy score columns cannot
+silently reorder the reviewed evidence tiers.
 
 ## Submission rules
 
@@ -106,8 +111,10 @@ pipeline.
    `src/validate_submission.py` build/validate the current Proteinbase CSV
    schema.
 
-Latest result: `results/batch-08/SUMMARY.md`. No candidate yet clears the
-project's full internal specificity gate, and no sequence has been submitted.
+Latest decision audit: `results/batch-09/SUMMARY.md`; latest model results:
+`results/batch-08/SUMMARY.md`. Batch-09 matched-anchor results:
+`results/batch-09/MATCHED_ANCHOR_RESULTS.md` (apo over-burial persists).
+No sequence has been submitted, and selectivity has not been established.
 
 ## Repository layout
 
@@ -125,7 +132,7 @@ project's full internal specificity gate, and no sequence has been submitted.
 │   ├── fetch_target.py          7OW6 → three target states
 │   ├── validate_submission.py   enforce every submission rule, exit non-zero
 │   └── make_submission.py       scored table → compliant top-N CSV
-├── tests/                       pytest suite (57 tests)
+├── tests/                       pytest suite
 ├── docs/
 │   ├── PIPELINE.md              the design pipeline, concretely
 │   └── SUBMISSION_PLAN.md       day-by-day plan to Nov 8
@@ -163,9 +170,9 @@ python src/validate_submission.py submissions/batch1.csv
 **Build a submission from a scored designs table:**
 
 ```bash
-python src/make_submission.py scored_designs.csv -o submissions/batch1.csv -n 20
-# ranks by specificity_gap (then score), truncates to N, and refuses to write
-# anything that would fail validation
+python src/make_submission.py scored_designs.csv -o submissions/batch1.csv -n 20 \
+  --rank-column evidence_rank --ascending
+# uses the reviewed evidence_rank, truncates to N, and validates the output
 ```
 
 **Run the tests:**
@@ -188,14 +195,15 @@ printed or logged.
 | Target preparation (`fetch_target.py`) | ✅ working — run against RCSB, 3 targets produced, peptide `VVVGADGVGK` extracted |
 | Submission validator (`validate_submission.py`) | ✅ working, tested |
 | Submission builder (`make_submission.py`) | ✅ working, tested |
-| Test suite | ✅ 57 passed |
+| Test suite | ✅ automated CI; run `python -m pytest -q` for current count |
 | CI (pytest on push/PR) | ✅ configured |
 | Pipeline documentation | ✅ written (`docs/PIPELINE.md`) |
 | Submission plan | ✅ written (`docs/SUBMISSION_PLAN.md`) |
 | Backbone generation (RFdiffusion) | ✅ run through batch-08 |
 | Sequence design (ProteinMPNN + donor-bias variants) | ✅ run through batch-08 |
 | Complex prediction / counter-screening (hosted Boltz-2) | ✅ run across G12D / WT / apo / decoy diagnostics |
-| Latest controlled result | ⚠️ batch-08 null: no full-gate survivor; see `results/batch-08/SUMMARY.md` |
+| Latest model result / audit | ⚠️ batch-08 model results; batch-09 control audit retires the WT geometry-loss hard gate |
+| Matched-anchor counter-screen | ✅ 12 calls / 36 samples complete; apo over-burial persists for all three candidates |
 | **Designs produced** | **✅ multiple batches generated and scored** |
 | **Designs submitted** | **⬜ none** |
 

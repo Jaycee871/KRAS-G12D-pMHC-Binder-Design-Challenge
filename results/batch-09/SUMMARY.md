@@ -1,7 +1,9 @@
 # Batch-09 — control-calibrated selectivity audit
 
 **Date:** 2026-11-04 (Asia/Taipei)  
-**Compute spent:** 0 RFdiffusion, 0 ProteinMPNN, 0 Boltz-2 calls.  
+**Audit compute spent:** 0 RFdiffusion, 0 ProteinMPNN, 0 Boltz-2 calls.
+**Subsequent matched panel:** 12 Boltz-2 calls / 36 structures; see
+[`MATCHED_ANCHOR_RESULTS.md`](MATCHED_ANCHOR_RESULTS.md).
 **Track-1 slots spent:** 0.  
 **Purpose:** audit the *decision rule* before generating any more binders.
 
@@ -193,7 +195,12 @@ measured dead ends.
 
 ---
 
-## Next experiment — matched apo / WT regional anchor
+## Predeclared next experiment — matched apo / WT regional anchor
+
+**Execution update:** this panel is now complete. All three retain greater
+apo buried area under the matched regional anchor. The prospective rationale
+and interpretation branch below are preserved; measured outcomes are in
+`MATCHED_ANCHOR_RESULTS.md`.
 
 The highest-value new computation is **not another backbone-generation batch**.
 

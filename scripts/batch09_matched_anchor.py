@@ -105,7 +105,7 @@ def load_subjects() -> Dict[str, Dict[str, Any]]:
     return subjects
 
 
-def call_boltz(client: NvidiaClient, polymers, design_key: str, samples: int):
+def request_body(polymers, design_key: str, samples: int):
     recyc, sampling_steps, nopot = SETTINGS[design_key]
     body = {
         "polymers": [dict(p) for p in polymers],
@@ -117,7 +117,65 @@ def call_boltz(client: NvidiaClient, polymers, design_key: str, samples: int):
         # IMPORTANT: unlike every earlier apo arm, this is present for apo too.
         "constraints": matched_constraint(),
     }
+    return body
+
+
+def call_boltz(client: NvidiaClient, polymers, design_key: str, samples: int):
+    body = request_body(polymers, design_key, samples)
     return client.post(BOLTZ2_PATH, body), body
+
+
+def atomic_json(path: Path, value: Any) -> None:
+    temporary = path.with_suffix(path.suffix + ".tmp")
+    with temporary.open("w") as handle:
+        json.dump(value, handle, indent=2, default=str)
+        handle.flush()
+        os.fsync(handle.fileno())
+    temporary.replace(path)
+
+
+def checkpoint_records() -> List[Dict[str, Any]]:
+    if not checkpoint_path().exists():
+        return []
+    records, seen = [], set()
+    for line_no, line in enumerate(checkpoint_path().read_text().splitlines(), 1):
+        if not line.strip():
+            continue
+        try:
+            row = json.loads(line)
+            key = (row["design"], row["arm"], row["draw"])
+        except (ValueError, KeyError, TypeError) as exc:
+            raise ValueError(f"invalid checkpoint line {line_no}") from exc
+        if key in seen:
+            raise ValueError(f"duplicate checkpoint sample: {key}")
+        seen.add(key)
+        records.append(row)
+    return records
+
+
+def validate_records(records, subjects, draws: int) -> None:
+    """Reject mixed protocols or missing/changed structures before resuming."""
+    for record in records:
+        key, arm, draw = record["design"], record["arm"], record["draw"]
+        if key not in SUBJECT_KEYS or arm not in ARMS:
+            raise ValueError(f"unknown checkpoint design/arm: {key} {arm}")
+        if type(draw) is not int or draw not in range(draws):
+            raise ValueError(f"unexpected checkpoint draw: {key} {arm} {draw}")
+        recyc, steps, nopot = SETTINGS[key]
+        expected = {"recycling_steps": recyc, "sampling_steps": steps,
+                    "without_potentials": nopot, "diffusion_samples": draws,
+                    "step_scale": 1.638}
+        if (record.get("sampling") != expected
+                or record.get("constraint") != matched_constraint()
+                or record.get("sequence") != subjects[key]["sequence"]):
+            raise ValueError(f"checkpoint protocol mismatch: {key} {arm} {draw}")
+        relative = Path(record.get("structure_file", ""))
+        path = (OUT / relative).resolve()
+        if not path.is_relative_to((OUT / "structures").resolve()):
+            raise ValueError(f"invalid structure path: {relative}")
+        if (not path.is_file() or hashlib.sha1(path.read_bytes()).hexdigest()
+                != record.get("structure_sha1")):
+            raise ValueError(f"missing or changed checkpoint structure: {relative}")
 
 
 def checkpoint_path() -> Path:
@@ -131,18 +189,12 @@ def append_checkpoint(record: Dict[str, Any]) -> None:
         os.fsync(handle.fileno())
 
 
-def done_call_keys() -> set:
-    """A call is complete when draw 0 has already been checkpointed."""
-    if not checkpoint_path().exists():
-        return set()
-    out = set()
-    for line in checkpoint_path().read_text().splitlines():
-        if not line.strip():
-            continue
-        row = json.loads(line)
-        if row.get("draw") == 0:
-            out.add((row["design"], row["arm"]))
-    return out
+def done_call_keys(draws: int = 3) -> set:
+    """All expected draws must be checkpointed; draw zero is insufficient."""
+    groups = {}
+    for row in checkpoint_records():
+        groups.setdefault((row["design"], row["arm"]), set()).add(row["draw"])
+    return {key for key, actual in groups.items() if actual == set(range(draws))}
 
 
 def sample_payload(payload: Dict[str, Any], index: int) -> Dict[str, Any]:
@@ -160,6 +212,8 @@ def sample_payload(payload: Dict[str, Any], index: int) -> Dict[str, Any]:
 
 def main(argv=None) -> int:
     ap = argparse.ArgumentParser()
+    ap.add_argument("--dry-run", action="store_true",
+                    help="validate inputs and print requests without a key or API calls")
     ap.add_argument("--designs", default=",".join(SUBJECT_KEYS))
     ap.add_argument("--arms", default=",".join(ARMS))
     ap.add_argument("--draws", type=int, default=3)
@@ -171,8 +225,13 @@ def main(argv=None) -> int:
     if args.draws < 1:
         raise ValueError("--draws must be >= 1")
 
+    if args.max_boltz_calls < 0:
+        raise ValueError("--max-boltz-calls must be >= 0")
+
     wanted = [x.strip() for x in args.designs.split(",") if x.strip()]
     arms = [x.strip() for x in args.arms.split(",") if x.strip()]
+    if not wanted or not arms or len(set(wanted)) != len(wanted) or len(set(arms)) != len(arms):
+        raise ValueError("designs and arms must be non-empty and unique")
     bad_designs = sorted(set(wanted) - set(SUBJECT_KEYS))
     bad_arms = sorted(set(arms) - set(ARMS))
     if bad_designs:
@@ -180,101 +239,158 @@ def main(argv=None) -> int:
     if bad_arms:
         raise ValueError(f"unknown arm(s): {bad_arms}")
 
-    OUT.mkdir(parents=True, exist_ok=True)
-    (OUT / "structures").mkdir(parents=True, exist_ok=True)
-
     subjects = load_subjects()
     states = run_pipeline.load_target_states(REPO / "data" / "targets")
-    client = NvidiaClient(timeout=args.timeout, max_retries=args.max_retries)
-    done = done_call_keys()
+    records = checkpoint_records()
+    validate_records(records, subjects, args.draws)
+    done = done_call_keys(args.draws)
+    if args.dry_run:
+        requests = []
+        for key in wanted:
+            for arm in arms:
+                polymers = list(states[arm]) + [{
+                    "id": run_pipeline.BINDER_CHAIN, "molecule_type": "protein",
+                    "sequence": subjects[key]["sequence"],
+                }]
+                requests.append({"design": key, "arm": arm,
+                                 "complete": (key, arm) in done,
+                                 "body": request_body(polymers, key, args.draws)})
+        print(json.dumps({"dry_run": True, "boltz2_calls_this_run": 0,
+                          "planned_calls": sum(not r["complete"] for r in requests),
+                          "requests": requests}, indent=2))
+        return 0
 
+    OUT.mkdir(parents=True, exist_ok=True)
+    (OUT / "structures").mkdir(parents=True, exist_ok=True)
+    (OUT / "responses").mkdir(parents=True, exist_ok=True)
+    client = None  # Cached responses can be recovered without a key.
     calls = 0
     started = time.time()
-    for key in wanted:
-        subject = subjects[key]
-        sequence = subject["sequence"]
-        for arm in arms:
-            if (key, arm) in done:
-                print(f"[skip] {key} {arm} already complete")
-                continue
-            if calls >= args.max_boltz_calls:
-                print(f"[stop] call cap {args.max_boltz_calls} reached")
-                return 0
-
-            polymers = list(states[arm]) + [{
-                "id": run_pipeline.BINDER_CHAIN,
-                "molecule_type": "protein",
-                "sequence": sequence,
-            }]
-            payload, body = call_boltz(client, polymers, key, args.draws)
-            calls += 1
-            structures = payload.get("structures") or []
-            hashes = [hashlib.sha1(s["structure"].encode()).hexdigest()
-                      for s in structures]
-
-            for draw, structure in enumerate(structures):
-                text = structure["structure"]
-                stem = f"{key}_{arm}_matched_r{draw}"
-                (OUT / "structures" / f"{stem}.cif").write_text(text)
-
-                shim = sample_payload(payload, draw)
-                row: Dict[str, Any] = {
-                    "iptm": run_pipeline._round(
-                        run_pipeline.binder_interface_iptm(
-                            shim, len(polymers) - 1), 4),
-                    "pde_interface": run_pipeline._round(
-                        run_pipeline._first(shim, "complex_ipde_scores"), 2),
-                }
-                try:
-                    row.update(panel.panel_metrics(text, sequence, arm))
-                    row["analysis_error"] = ""
-                except Exception as exc:  # noqa: BLE001
-                    row["analysis_error"] = f"{type(exc).__name__}: {exc}"
-
-                append_checkpoint({
-                    "design": key,
-                    "source_name": subject.get("source_name", key),
-                    "arm": arm,
-                    "draw": draw,
+    status = "running"
+    try:
+        for key in wanted:
+            subject = subjects[key]
+            sequence = subject["sequence"]
+            for arm in arms:
+                if (key, arm) in done:
+                    print(f"[skip] {key} {arm} already complete")
+                    continue
+                polymers = list(states[arm]) + [{
+                    "id": run_pipeline.BINDER_CHAIN,
+                    "molecule_type": "protein",
                     "sequence": sequence,
-                    "sampling": {
-                        "recycling_steps": body["recycling_steps"],
-                        "sampling_steps": body["sampling_steps"],
-                        "without_potentials": body["without_potentials"],
-                        "diffusion_samples": body["diffusion_samples"],
-                        "step_scale": body["step_scale"],
-                    },
-                    "constraint": body["constraints"],
-                    "constraint_kind": "matched_hla_regional_anchor",
-                    "structure_sha1": hashes[draw],
-                    "distinct_structures_in_call": len(set(hashes)),
-                    "row": row,
-                    "structure_file": f"structures/{stem}.cif",
-                    "scored_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
-                })
+                }]
+                body = request_body(polymers, key, args.draws)
+                existing = {r["draw"] for r in records
+                            if r["design"] == key and r["arm"] == arm}
+                cache = OUT / "responses" / f"{key}_{arm}.json"
+                if cache.exists():
+                    saved = json.loads(cache.read_text())
+                    if saved.get("request") != body:
+                        raise ValueError(f"cached request protocol mismatch: {key} {arm}")
+                    payload = saved["payload"]
+                else:
+                    if existing:
+                        raise ValueError(
+                            f"incomplete checkpoint for {key} {arm} has no cached response; "
+                            "recover the original response before resuming")
+                    if calls >= args.max_boltz_calls:
+                        print(f"[stop] call cap {args.max_boltz_calls} reached")
+                        status = "call_cap_reached"
+                        break
+                    if client is None:
+                        client = NvidiaClient(timeout=args.timeout, max_retries=args.max_retries)
+                    calls += 1
+                    payload = client.post(BOLTZ2_PATH, body)
+                    # Persist all samples before scoring or checkpointing draw zero.
+                    atomic_json(cache, {"request": body, "payload": payload})
+                structures = payload.get("structures") or []
+                if len(structures) != args.draws:
+                    raise ValueError(f"{key} {arm}: expected {args.draws} structures, "
+                                     f"received {len(structures)}; response preserved")
+                hashes = [hashlib.sha1(s["structure"].encode()).hexdigest()
+                          for s in structures]
 
-            print(
-                f"[boltz2 {calls}] {key} {arm}: "
-                f"{len(structures)} draws, distinct={len(set(hashes))} "
-                f"({time.time() - started:.0f}s)",
-                flush=True,
-            )
+                if len(set(hashes)) != args.draws:
+                    raise ValueError(f"{key} {arm}: duplicate structures; response preserved")
+                for r in records:
+                    if r["design"] == key and r["arm"] == arm:
+                        if r["structure_sha1"] != hashes[r["draw"]]:
+                            raise ValueError(f"cached response differs from checkpoint: {key} {arm}")
 
-    meta = {
-        "purpose": "matched regional-anchor counter-screen; diagnostic only",
-        "designs": wanted,
-        "arms": arms,
-        "draws_per_call": args.draws,
-        "boltz2_calls_this_run": calls,
-        "matched_constraint": matched_constraint(),
-        "settings": {k: SETTINGS[k] for k in wanted},
-        "historical_gates_changed": False,
-        "track1_slots_spent": 0,
-        "elapsed_seconds": round(time.time() - started, 1),
-    }
-    (OUT / "matched_anchor_run.json").write_text(
-        json.dumps(meta, indent=2, default=str)
-    )
+                for draw, structure in enumerate(structures):
+                    if draw in existing:
+                        continue
+                    text = structure["structure"]
+                    stem = f"{key}_{arm}_matched_r{draw}"
+                    (OUT / "structures" / f"{stem}.cif").write_text(text)
+
+                    shim = sample_payload(payload, draw)
+                    row: Dict[str, Any] = {
+                        "iptm": run_pipeline._round(
+                            run_pipeline.binder_interface_iptm(
+                                shim, len(polymers) - 1), 4),
+                        "pde_interface": run_pipeline._round(
+                            run_pipeline._first(shim, "complex_ipde_scores"), 2),
+                    }
+                    try:
+                        row.update(panel.panel_metrics(text, sequence, arm))
+                        row["analysis_error"] = ""
+                    except Exception as exc:  # noqa: BLE001
+                        row["analysis_error"] = f"{type(exc).__name__}: {exc}"
+
+                    append_checkpoint({
+                        "design": key,
+                        "source_name": subject.get("source_name", key),
+                        "arm": arm,
+                        "draw": draw,
+                        "sequence": sequence,
+                        "sampling": {
+                            "recycling_steps": body["recycling_steps"],
+                            "sampling_steps": body["sampling_steps"],
+                            "without_potentials": body["without_potentials"],
+                            "diffusion_samples": body["diffusion_samples"],
+                            "step_scale": body["step_scale"],
+                        },
+                        "constraint": body["constraints"],
+                        "constraint_kind": "matched_hla_regional_anchor",
+                        "structure_sha1": hashes[draw],
+                        "distinct_structures_in_call": len(set(hashes)),
+                        "row": row,
+                        "structure_file": f"structures/{stem}.cif",
+                        "scored_at": time.strftime("%Y-%m-%dT%H:%M:%S%z"),
+                    })
+
+                print(
+                    f"[boltz2 {calls}] {key} {arm}: "
+                    f"{len(structures)} draws, distinct={len(set(hashes))} "
+                    f"({time.time() - started:.0f}s)",
+                    flush=True,
+                )
+            if status == "call_cap_reached":
+                break
+        if status == "running":
+            status = "completed"
+    except BaseException:
+        status = "failed"
+        raise
+    finally:
+        meta = {
+            "status": status,
+            "completed_calls": len(done_call_keys(args.draws)),
+            "expected_calls_this_selection": len(wanted) * len(arms),
+            "purpose": "matched regional-anchor counter-screen; diagnostic only",
+            "designs": wanted,
+            "arms": arms,
+            "draws_per_call": args.draws,
+            "boltz2_calls_this_run": calls,
+            "matched_constraint": matched_constraint(),
+            "settings": {k: SETTINGS[k] for k in wanted},
+            "historical_gates_changed": False,
+            "track1_slots_spent": 0,
+            "elapsed_seconds": round(time.time() - started, 1),
+        }
+        atomic_json(OUT / "matched_anchor_run.json", meta)
     return 0
 
 
