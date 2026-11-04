@@ -81,19 +81,21 @@ def test_unscored_rows_sort_last(tmp_path):
 
 def test_molecule_class_passed_through(tmp_path):
     src = write_scored(tmp_path / "scored.csv",
-                       [("s1", f"{GOOD}:{GOOD}", "scFv")],
+                       [("s1", f"{GOOD}:{GOOD}", "fab_kappa")],
                        header=("name", "sequence", "molecule_class"))
     out = ms.build(src, tmp_path / "sub.csv", top_n=1)
     rows = read_rows(out)
-    assert rows[0]["molecule_class"] == "scFv"
+    assert rows[0]["molecule_class"] == "fab_kappa"
     assert vs.validate_file(out) == []
 
 
-def test_molecule_class_column_omitted_when_unused(tmp_path):
+def test_molecule_class_defaults_to_protein(tmp_path):
     src = write_scored(tmp_path / "scored.csv", [("a", GOOD, 0.5)])
     out = ms.build(src, tmp_path / "sub.csv", top_n=1)
     with out.open() as fh:
-        assert fh.readline().strip() == "name,sequence"
+        assert fh.readline().strip() == "name,sequence,molecule_class"
+    rows = read_rows(out)
+    assert rows[0]["molecule_class"] == "protein"
 
 
 def test_top_n_above_20_rejected(tmp_path):
