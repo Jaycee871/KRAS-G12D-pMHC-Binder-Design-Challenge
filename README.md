@@ -116,6 +116,15 @@ Latest decision audit: `results/batch-09/SUMMARY.md`; latest model results:
 `results/batch-09/MATCHED_ANCHOR_RESULTS.md` (apo over-burial persists).
 No sequence has been submitted, and selectivity has not been established.
 
+## Candidate review pool
+
+The downstream evidence inventory retains **11 review candidates** from 213
+recorded sequences, below the 20-design Track-1 minimum in the project plan.
+This is not a final submission package. It preserves failed repeats, separates
+sampling protocols and counts repeated coordinates once per protocol.
+See [`results/submission-review/README.md`](results/submission-review/README.md)
+for the ordered pool, exclusions, remaining gaps and reproduction commands.
+
 ## Repository layout
 
 ```
