@@ -1,23 +1,9 @@
 {
-  "status": "completed",
+  "status": "not_run_due_to_design_infrastructure_failure",
+  "scientific_result": false,
   "stage": "screen",
   "selected_candidates": [],
-  "arms": [
-    "g12d",
-    "apo"
-  ],
-  "sampling": {
-    "recycling_steps": 8,
-    "sampling_steps": 50,
-    "diffusion_samples": 3,
-    "without_potentials": false
-  },
-  "constraint": null,
-  "advance_rule": "G12D corrected Asp6 >=2/3 AND G12D Val8 side-chain contact >=2/3 AND apo/G12D median total buried area <1.0",
-  "screen_summary": {},
-  "advancers": [],
   "boltz2_calls_this_run": 0,
-  "elapsed_seconds": 0.0,
-  "historical_gates_changed": false,
+  "interpretation": "No G12D/apo screen occurred because RFdiffusion returned zero model backbones. This is not a scientific null result.",
   "track1_slots_spent": 0
 }
