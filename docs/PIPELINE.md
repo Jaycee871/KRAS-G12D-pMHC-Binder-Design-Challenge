@@ -202,6 +202,19 @@ predicted G12D complex, so the two numbers differ only by the binder.
   of the aspartate side chain it is supposed to be reading.
 * **Preferred: ≥ 0.75**, used as a ranking term behind the specificity gap.
 
+> **Measured caveat (2026-11-02).** Run on PDB 7OW6 itself
+> (`scripts/validate_7ow6.py`), the HLA groove buries 0.90 of the Asp6 side
+> chain and 0.44 of the whole peptide, which is the sanity check this definition
+> needs to pass. But with the *selective TCR* of Poole et al. (chains D+E) as the
+> binder, `asp6_buried_frac = 0.00`: the aspartate is already ~90 % buried by the
+> groove, leaving only 8.8 Å² of side-chain SASA, and the TCR buries none of the
+> remainder while still making 11 heavy-atom contacts with position 6. **A gate
+> of 0.60 measured this way is therefore unreachable even by a known selective
+> binder** and should be replaced by a hydrogen-bond / salt-bridge criterion on
+> the Asp6 carboxylate (donor within 3.5 Å) plus the position-6 contact count.
+> It is left in `src/design_gates.py` unchanged for now so that document and code
+> still agree; changing it is a batch-02 decision.
+
 The reasoning is energetic, not geometric. A binder that genuinely *buries* the
 carboxylate makes the glycine variant pay a real desolvation and cavity penalty;
 a binder that merely touches position 6 loses one weak contact and keeps
@@ -281,6 +294,45 @@ target answered in ~6 s, ProteinMPNN in ~2 s, and each Boltz-2 call on the
 455-residue complex in ~4 s. Use `--max-candidates` to cap spend, and
 `--recycling-steps 1 --sampling-steps 30` for cheap smoke runs.
 
+### Rate limits and the measured sustainable request rate
+
+The hosted NIMs are shared and rate limited per key. Batch-01 was run with six
+worker threads and no pacing and paid for it: **235 HTTP 429 retries**, and only
+50 of 56 candidates finished a four-state score in 1506 s. Everything is now
+funnelled through the token-bucket throttle in
+[`src/nvidia_client.py`](../src/nvidia_client.py), which enforces a global rate
+plus a per-endpoint minimum interval, holds a process-wide lock so Boltz-2 calls
+are **strictly serial**, honours `Retry-After` (seconds or HTTP-date), and backs
+off exponentially with full jitter up to 120 s.
+
+The sustainable rate was measured with
+[`scripts/calibrate_boltz2.py`](../scripts/calibrate_boltz2.py) against the live
+endpoint on 2026-11-02 (raw JSON in `results/calibration/`):
+
+| configuration | calls | HTTP 429s | lost calls | achieved rate |
+| --- | --- | --- | --- | --- |
+| 6 workers, no pacing | 12 | **31** | 6 | — (unusable) |
+| serial, no pacing | 20 | 12 | 0 | 9.76 calls/min |
+| **serial, 8 s minimum interval** | 12 | **0** | 0 | **7.87 calls/min** |
+
+**The sustainable Boltz-2 rate from one API key is ~8 requests per minute
+(one request every 8 s, serial).** That is the default:
+`DEFAULT_BOLTZ2_MIN_INTERVAL = 8.0`, overridable with `NVIDIA_BOLTZ2_MIN_INTERVAL`
+or `--boltz-min-interval`. Even at 8 s a small residue of 429s survives (the
+limit is shared, so neighbours matter): the 56-candidate rescore saw roughly one
+retry per seven requests, every one of them absorbed by a single backoff with no
+lost candidate, against 235 retries and six lost candidates before.
+RFdiffusion and ProteinMPNN are paced at 2 s and are
+not serialised; the global bucket is 1 request/s with a burst of 2. Setting
+`NVIDIA_THROTTLE=0` disables all of it (tests only).
+
+Practical consequence for planning: a four-state screen is four Boltz-2 calls,
+so **~30-35 s per candidate** end to end. A 56-candidate batch is ~33 minutes,
+and that is the number to size batches against - not the worker count.
+`src/run_batch.py` therefore checkpoints every scored candidate to
+`checkpoint.jsonl` (plus its mmCIF) with an `fsync` before continuing, and
+`--resume` picks up where an interrupted run stopped without re-spending calls.
+
 ### Confirmed endpoint schemas
 
 Verified live on 2026-11-02 by reading the 422 validation bodies and NVIDIA's
@@ -331,3 +383,16 @@ Three things about these endpoints shape the code:
   against a separately predicted free pMHC. That isolates the binder's
   contribution exactly, which is what the definition wants, but it does not
   capture any peptide relaxation on binder release.
+* **Interface analysis now fails loudly.** All SASA, contact and charge
+  measurement lives in [`src/complex_analysis.py`](../src/complex_analysis.py),
+  which identifies the binder, peptide, HLA heavy chain and B2M **by content**
+  (sequence and length) rather than by hardcoded chain IDs, strips waters,
+  ligands, hydrogens and alternate locations, checks that peptide position 6 is
+  actually an aspartate, and raises `StructureAnalysisError` when a chain or
+  side-chain atom it needs is absent. Previously every one of those paths
+  returned `0.0`, which is indistinguishable from a binder that genuinely buries
+  nothing - and in batch-01 the zeros were genuine, so the silence cost a whole
+  batch of diagnosis. The CSV now also carries `buried_area_total`,
+  `buried_area_peptide`, `buried_area_hla`, `contacts_peptide`, `contacts_hla`
+  and `analysis_error` so *where* a binder landed is visible without reopening
+  the structures.

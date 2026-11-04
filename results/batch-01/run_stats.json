@@ -1,0 +1,120 @@
+{
+  "elapsed_seconds": 2123.1,
+  "backbones": 18,
+  "raw_sequences": 56,
+  "scored": 56,
+  "passing": 0,
+  "analysis_errors": 0,
+  "call_counts": {
+    "boltz2": 100
+  },
+  "total_calls": 100,
+  "retry_statuses": {
+    "429": 70
+  },
+  "throttle": {
+    "global": {
+      "name": "global",
+      "rate_per_second": 1.0,
+      "burst": 2.0,
+      "min_interval": 0.0,
+      "grants": 172,
+      "waited_seconds": 0.0
+    },
+    "endpoints": {
+      "/v1/biology/mit/boltz2/predict": {
+        "name": "boltz2",
+        "rate_per_second": 0.125,
+        "burst": 1.0,
+        "min_interval": 8.0,
+        "grants": 172,
+        "waited_seconds": 717.66
+      },
+      "/v1/biology/ipd/rfdiffusion/generate": {
+        "name": "rfdiffusion",
+        "rate_per_second": 0.5,
+        "burst": 1.0,
+        "min_interval": 2.0,
+        "grants": 0,
+        "waited_seconds": 0.0
+      },
+      "/v1/biology/ipd/proteinmpnn/predict": {
+        "name": "proteinmpnn",
+        "rate_per_second": 0.5,
+        "burst": 1.0,
+        "min_interval": 2.0,
+        "grants": 0,
+        "waited_seconds": 0.0
+      }
+    }
+  },
+  "strategies": [
+    {
+      "name": "S1-core-short",
+      "rationale": "short minibinder arcing over the peptide; hotspots on the solvent-exposed peptide core C4-C8, low MPNN temperature",
+      "binder_length": 65,
+      "hotspots": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "sampling_temp": 0.1
+    },
+    {
+      "name": "S2-core-long",
+      "rationale": "longer scaffold on the same peptide-core hotspots, higher MPNN temperature for more sequence diversity",
+      "binder_length": 95,
+      "hotspots": [
+        "C4",
+        "C5",
+        "C6",
+        "C7",
+        "C8"
+      ],
+      "sampling_temp": 0.2
+    },
+    {
+      "name": "S3-pos6-tight",
+      "rationale": "hotspots collapsed onto C5-C7, i.e. the mutated Asp6 and its immediate neighbours, to force a position-6-centred paratope (Xie et al. 2025 mutation-site hotspot)",
+      "binder_length": 80,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.15
+    },
+    {
+      "name": "S4-full-groove",
+      "rationale": "control: whole peptide plus a1/a2 rim, the docking mode PIPELINE.md section 0 predicts will bind all four states",
+      "binder_length": 85,
+      "hotspots": [
+        "C1",
+        "C3",
+        "C5",
+        "C6",
+        "C8",
+        "C10",
+        "A62",
+        "A65",
+        "A72",
+        "A146",
+        "A150",
+        "A155",
+        "A158"
+      ],
+      "sampling_temp": 0.15
+    }
+  ],
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": true
+  },
+  "diffusion_steps": 15,
+  "seqs_per_backbone": 8,
+  "seqs_scored_per_backbone": 4
+}

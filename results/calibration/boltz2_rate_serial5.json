@@ -1,0 +1,27 @@
+{
+  "measured_at": "2026-11-02T15:59:57+0000",
+  "state": "g12d",
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": true
+  },
+  "serial": true,
+  "runs": [
+    {
+      "min_interval_s": 0.0,
+      "calls": 5,
+      "succeeded": 5,
+      "failed": 0,
+      "elapsed_s": 20.7,
+      "mean_latency_s": 4.1,
+      "median_latency_s": 4.1,
+      "max_latency_s": 5.3,
+      "realised_rate_per_min": 14.47,
+      "retry_statuses": {},
+      "http_429": 0,
+      "failures": []
+    }
+  ]
+}

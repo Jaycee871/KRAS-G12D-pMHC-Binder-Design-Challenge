@@ -1,0 +1,117 @@
+{
+  "pdb_id": "7OW6",
+  "cases": {
+    "hla_groove_as_binder": {
+      "chain_map": {
+        "binder": "A",
+        "peptide": "C",
+        "hla": null,
+        "b2m": "B",
+        "chains": {
+          "A": {
+            "chain_id": "A",
+            "length": 276,
+            "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP",
+            "first_resseq": 1,
+            "last_resseq": 276
+          },
+          "B": {
+            "chain_id": "B",
+            "length": 99,
+            "sequence": "IQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM",
+            "first_resseq": 1,
+            "last_resseq": 99
+          },
+          "C": {
+            "chain_id": "C",
+            "length": 10,
+            "sequence": "VVVGADGVGK",
+            "first_resseq": 1,
+            "last_resseq": 10
+          }
+        }
+      },
+      "binder_chain": "A",
+      "peptide_chain": "C",
+      "peptide_buried_frac": 0.44230282785819897,
+      "buried_area_total": 2321.2014708628462,
+      "buried_area_peptide": 1026.6739745912478,
+      "buried_area_by_chain": {
+        "B": 1294.5,
+        "C": 1026.7
+      },
+      "pos6_residue": "ASP",
+      "pos6_resseq": 6,
+      "asp6_sasa_free": 85.20783418061855,
+      "asp6_sasa_bound": 8.844010576456155,
+      "asp6_buried_frac": 0.8962066028141362,
+      "pos6_contacts": 19.0,
+      "contacts_by_chain": {
+        "B": 178,
+        "C": 147
+      },
+      "net_interface_charge": 0.10000000000000009,
+      "notes": []
+    },
+    "tcr_as_binder": {
+      "chain_map": {
+        "binder": "D",
+        "peptide": "C",
+        "hla": "A",
+        "b2m": "B",
+        "chains": {
+          "A": {
+            "chain_id": "A",
+            "length": 276,
+            "sequence": "GSHSMRYFYTSVSRPGRGEPRFIAVGYVDDTQFVRFDSDAASQRMEPRAPWIEQEGPEYWDQETRNVKAQSQTDRVDLGTLRGYYNQSEDGSHTIQIMYGCDVGPDGRFLRGYRQDAYDGKDYIALNEDLRSWTAADMAAQITKRKWEAAHAAEQQRAYLEGRCVEWLRRYLENGKETLQRTDPPKTHMTHHPISDHEATLRCWALGFYPAEITLTWQRDGEDQTQDTELVETRPAGDGTFQKWAAVVVPSGEEQRYTCHVQHEGLPKPLTLRWEP",
+            "first_resseq": 1,
+            "last_resseq": 276
+          },
+          "B": {
+            "chain_id": "B",
+            "length": 99,
+            "sequence": "IQRTPKIQVYSRHPAENGKSNFLNCYVSGFHPSDIEVDLLKNGERIEKVEHSDLSFSKDWSFYLLYYTEFTPTEKDEYACRVNHVTLSQPKIVKWDRDM",
+            "first_resseq": 1,
+            "last_resseq": 99
+          },
+          "C": {
+            "chain_id": "C",
+            "length": 10,
+            "sequence": "VVVGADGVGK",
+            "first_resseq": 1,
+            "last_resseq": 10
+          },
+          "D": {
+            "chain_id": "D",
+            "length": 426,
+            "sequence": "AQKVTQAQTEISVVEKEDVTLDCVYETRDTAYYLFWYKQPPSGELVFLIRQPWWGEQNEISGRYSWNFQKSTSSFNFTITASQVVDSAVYFCAMSVPSGDGSYQFTFGKGTKLSVIPNIQNPDPAVYQLRDSKSSDKSVCLFTDFDSQTNVSSDVYITDKCVLKSNSAVAWSNKACANAFNMNAGVTQTPKFRVLKTGQSMTLLCAQDMNHEYMYWYRQDPGMGLRLIHYSVGEGTTAKGEVPDGYNVSRLKKQNFLLGLESAAPSQTSVYFCASKVGPGQHNSPLHFGNGTRLTVTEDLNKVFPPEVAVFEPSEAEISHTQKATLVCLATGFYPDHVELSWWVNGKEVHSGVCTDPQPLKEQPALNDSRYALSSRLRVSATFWQDPRNHFRCQVQFYGLSENDEWTQDRAKPVTQIVSAEAWGRA",
+            "first_resseq": 1,
+            "last_resseq": 648
+          }
+        }
+      },
+      "binder_chain": "D",
+      "peptide_chain": "C",
+      "peptide_buried_frac": 0.2073077025321894,
+      "buried_area_total": 813.0607663582495,
+      "buried_area_peptide": 168.5537594927899,
+      "buried_area_by_chain": {
+        "A": 644.5,
+        "C": 168.6
+      },
+      "pos6_residue": "ASP",
+      "pos6_resseq": 6,
+      "asp6_sasa_free": 8.844010576456155,
+      "asp6_sasa_bound": 8.844010576456155,
+      "asp6_buried_frac": 0.0,
+      "pos6_contacts": 7.0,
+      "contacts_by_chain": {
+        "A": 86,
+        "B": 0,
+        "C": 33
+      },
+      "net_interface_charge": -1.9,
+      "notes": []
+    }
+  }
+}

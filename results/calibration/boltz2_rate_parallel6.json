@@ -1,0 +1,38 @@
+{
+  "measured_at": "2026-11-02T16:04:55+0000",
+  "state": "g12d",
+  "boltz_kwargs": {
+    "recycling_steps": 3,
+    "sampling_steps": 50,
+    "diffusion_samples": 1,
+    "without_potentials": true
+  },
+  "serial": false,
+  "workers": 6,
+  "runs": [
+    {
+      "min_interval_s": 0.0,
+      "workers": 6,
+      "calls": 12,
+      "succeeded": 6,
+      "failed": 6,
+      "elapsed_s": 37.6,
+      "mean_latency_s": 8.0,
+      "median_latency_s": 5.8,
+      "max_latency_s": 21.1,
+      "realised_rate_per_min": 9.58,
+      "retry_statuses": {
+        "429": 31
+      },
+      "http_429": 31,
+      "failures": [
+        "POST /v1/biology/mit/boltz2/predict returned HTTP 429: Too Many Requests",
+        "POST /v1/biology/mit/boltz2/predict returned HTTP 429: Too Many Requests",
+        "POST /v1/biology/mit/boltz2/predict returned HTTP 429: Too Many Requests",
+        "POST /v1/biology/mit/boltz2/predict returned HTTP 429: Too Many Requests",
+        "POST /v1/biology/mit/boltz2/predict returned HTTP 429: Too Many Requests",
+        "POST /v1/biology/mit/boltz2/predict returned HTTP 429: Too Many Requests"
+      ]
+    }
+  ]
+}
