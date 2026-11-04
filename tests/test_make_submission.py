@@ -98,10 +98,10 @@ def test_molecule_class_defaults_to_protein(tmp_path):
     assert rows[0]["molecule_class"] == "protein"
 
 
-def test_top_n_above_20_rejected(tmp_path):
+def test_top_n_above_40_rejected(tmp_path):
     src = write_scored(tmp_path / "scored.csv", [("a", GOOD, 0.5)])
-    with pytest.raises(ms.ValidationError, match="exceeds the per-submission limit"):
-        ms.build(src, tmp_path / "sub.csv", top_n=21)
+    with pytest.raises(ms.ValidationError, match="exceeds the Track 1 submission maximum"):
+        ms.build(src, tmp_path / "sub.csv", top_n=41)
 
 
 def test_top_n_zero_rejected(tmp_path):
@@ -177,3 +177,22 @@ def test_cli(tmp_path, capsys):
     assert out.exists()
     bad = write_scored(tmp_path / "bad.csv", [("a", "AAAAAAAAA", 0.5)])
     assert ms.main([str(bad), "-o", str(tmp_path / "bad_out.csv")]) == 1
+
+
+def test_default_top_n_remains_20_for_track1_screening(tmp_path):
+    src = write_scored(
+        tmp_path / "scored.csv",
+        [(f"d{i}", GOOD, i / 100) for i in range(30)],
+    )
+    out = ms.build(src, tmp_path / "sub.csv")
+    assert len(read_rows(out)) == 20
+
+
+def test_builder_can_emit_40_for_track1(tmp_path):
+    src = write_scored(
+        tmp_path / "scored.csv",
+        [(f"d{i}", GOOD, i / 100) for i in range(40)],
+    )
+    out = ms.build(src, tmp_path / "sub.csv", top_n=40)
+    assert len(read_rows(out)) == 40
+    assert vs.validate_file(out) == []
