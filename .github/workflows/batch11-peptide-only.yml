@@ -1,0 +1,125 @@
+name: Batch 11 peptide-only generation
+
+on:
+  push:
+    branches: [batch11-peptide-only-design]
+    paths: [.github/workflows/batch11-peptide-only.yml]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: batch11-peptide-only
+  cancel-in-progress: false
+
+jobs:
+  experiment:
+    runs-on: ubuntu-latest
+    timeout-minutes: 300
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: batch11-peptide-only-design
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+
+      - name: Install dependencies
+        run: python -m pip install -r requirements.txt
+
+      - name: Re-run tests before spending model calls
+        run: python -m pytest -q
+
+      - name: Rebuild crystallographic target
+        run: python src/fetch_target.py
+
+      - name: Freeze and print call plan
+        run: |
+          mkdir -p logs
+          python scripts/batch11_peptide_only.py --stage plan > logs/batch11-plan.json
+          cat logs/batch11-plan.json
+
+      - name: Peptide-only RFdiffusion and ProteinMPNN
+        env:
+          NVIDIA_API_KEY: \${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          if [ -z "$NVIDIA_API_KEY" ]; then
+            echo 'NVIDIA_API_KEY repository secret is required.' >&2
+            exit 1
+          fi
+          python scripts/batch11_peptide_only.py \
+            --stage design \
+            --backbones-per-strategy 8 \
+            --seqs-per-backbone 12 \
+            --seqs-kept-per-backbone 2 \
+            --design-workers 4
+
+      - name: Unconstrained G12D plus apo adaptive screen
+        env:
+          NVIDIA_API_KEY: \${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          python scripts/batch11_peptide_only.py \
+            --stage screen \
+            --max-screen-candidates 12 \
+            --max-boltz-calls 24
+
+      - name: WT plus decoy only for Phase-1 advancers
+        env:
+          NVIDIA_API_KEY: \${{ secrets.NVIDIA_API_KEY }}
+        run: |
+          python scripts/batch11_peptide_only.py \
+            --stage confirm \
+            --max-screen-candidates 12 \
+            --max-boltz-calls 24
+
+      - name: Freeze raw evidence archives
+        if: always()
+        run: |
+          mkdir -p results/batch-11/all_structures results/batch-11/responses
+          tar -czf results/batch-11/design_backbones.tar.gz \
+            -C results/batch-11 all_structures
+          tar -czf results/batch-11/boltz_responses.tar.gz \
+            -C results/batch-11 responses
+          sha256sum results/batch-11/design_backbones.tar.gz \
+            results/batch-11/boltz_responses.tar.gz \
+            > results/batch-11/evidence_archives.sha256
+
+      - name: Commit completed evidence to experiment branch
+        if: success()
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          for p in \
+            results/batch-11/PLAN.md \
+            results/batch-11/backbone_poses.json \
+            results/batch-11/candidates.json \
+            results/batch-11/design_run.json \
+            results/batch-11/panel_checkpoint.jsonl \
+            results/batch-11/screen_run.json \
+            results/batch-11/confirm_run.json \
+            results/batch-11/structures \
+            results/batch-11/design_backbones.tar.gz \
+            results/batch-11/boltz_responses.tar.gz \
+            results/batch-11/evidence_archives.sha256
+          do
+            if [ -e "$p" ]; then git add -- "$p"; fi
+          done
+          if git diff --cached --quiet; then
+            echo 'No new batch-11 evidence to commit.'
+          else
+            git commit -m 'batch-11: preserve peptide-only experiment evidence'
+            git push origin HEAD:batch11-peptide-only-design
+          fi
+
+      - name: Upload complete evidence even on failure
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: batch11-peptide-only-\${{ github.run_id }}-\${{ github.run_attempt }}
+          path: |
+            logs/batch11-plan.json
+            results/batch-11/
+          if-no-files-found: warn
+          retention-days: 30
