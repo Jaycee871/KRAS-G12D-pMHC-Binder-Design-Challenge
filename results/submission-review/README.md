@@ -40,7 +40,7 @@ assert that every family variant has been measured to be promiscuous.
 
 | Rank | Recorded candidate | Evidence and limitation |
 | ---: | --- | --- |
-| 1 | `bb50-g1` | Matched Asp6 3/3; unresolved apo over-burial |
+| 1 | `bb50-g1` | Corrected matched Asp6 2/3; unresolved apo over-burial |
 | 2 | `bb25` | Matched Asp6 2/3; apo and decoy concerns |
 | 3 | `bb54-g2` | Matched Asp6 1/3; several older sampling successes; apo concern |
 | 4 | `B6-c6-46_w2_bb36_donor-anchored-g2` | Batch-10 matched G12D 1/3; apo/G12D area 1.258 — no advance |
@@ -96,9 +96,12 @@ total-area ratio is >1 and none reproduces corrected direct Asp6 recognition
 in at least 2/3 G12D draws. Phase-2 WT/decoy confirmation is therefore zero
 calls by the frozen adaptive rule; see `../batch-10/SUMMARY.md`.
 
-The currently observed pool still does not support a 20-design shortlist under
-this curation policy. The older-batch audit also found zero additional recorded
-oxygen-plus-burial direct Asp6 readouts. Completing 20 therefore requires a
-genuinely new peptide-dependent mechanism, or an explicitly labelled fallback
-near-miss package. No excluded design is silently reintroduced merely to meet
-the count.
+Batch-11 tested a genuinely new peptide-only generation mechanism. Offline
+side-chain restoration found 9/24 bidentate Asp6+Val8 peptide-contact backbones,
+but 0/24 fit after HLA was restored (41–154 severe clash atoms, frozen limit
+<=2). The predeclared stop rule therefore freezes generation.
+
+A separate 20-sequence **fallback-only submission package** now lives in
+`../final-submission/`. Its first 11 rows preserve this retained review pool;
+rows 12–20 are explicitly documented previously excluded near-misses. They are
+not silently reclassified as validated or retained candidates.

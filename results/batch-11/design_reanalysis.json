@@ -1,0 +1,14 @@
+{
+  "status": "completed",
+  "scientific_result": true,
+  "stage": "offline_design_reanalysis",
+  "model_calls": 0,
+  "backbones": 24,
+  "bidentate_contact_only_ok": 9,
+  "hla_fit_ok": 0,
+  "full_gate_ok": 0,
+  "min_severe_hla_clash_atoms": 41,
+  "max_severe_hla_clash_atoms": 154,
+  "measurement_correction": "The original design-stage side-chain metric was unavailable because RFdiffusion emitted only N/CA/C/O atoms for the kept peptide. This reanalysis restores crystallographic 7OW6 side chains after rigid CA alignment. The predeclared thresholds are unchanged.",
+  "track1_slots_spent": 0
+}

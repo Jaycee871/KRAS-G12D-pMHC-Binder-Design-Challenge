@@ -118,12 +118,17 @@ produced no advancer. Do **not** run its WT/decoy Phase 2 and do **not** repeat
 the already-refuted “smaller”, “rigidified”, generic shape-steering or helix
 de-wetting strategies.
 
-A final generation experiment is justified only if it changes the mechanism:
-the binder must be geometrically dependent on the peptide itself at design
-time, for example a predeclared bidentate peptide motif combining direct Asp6
-carboxylate recognition with a second independent peptide contact while
-explicitly disfavoring HLA-only docking. If that protocol cannot be implemented
-cleanly, freeze generation and build the ranked near-miss package instead.
+Batch-11 implemented the genuinely different peptide-only mechanism and is now
+complete. Corrected offline geometry found 9/24 Asp6+Val8 bidentate peptide
+contacts but 0/24 HLA-compatible backbones after re-insertion; every backbone
+had 41–154 severe HLA clash atoms against the frozen <=2 threshold. Per the
+predeclared stop rule, **generation is frozen**.
+
+The ranked near-miss fallback package has therefore been built at
+`results/final-submission/track1_fallback20.csv`. The first 11 rows preserve the
+curated review order; rows 12–20 remain explicitly fallback-only and retain
+their exclusion reasons in `fallback20_audit.csv`. This package is not evidence
+that any sequence is experimentally selective.
 
 ### 7 Nov — build the ranked submission package
 
