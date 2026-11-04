@@ -1,50 +1,16 @@
 {
-  "status": "completed",
+  "status": "invalid_infrastructure",
+  "scientific_result": false,
   "stage": "design",
   "mechanism": "peptide-only RFdiffusion + ProteinMPNN; HLA reinserted after generation",
-  "strategies": [
-    {
-      "name": "B11-peptide40",
-      "binder_length": 40,
-      "hotspots": [
-        "C5",
-        "C6",
-        "C8"
-      ],
-      "sampling_temp": 0.2
-    },
-    {
-      "name": "B11-peptide46",
-      "binder_length": 46,
-      "hotspots": [
-        "C5",
-        "C6",
-        "C8"
-      ],
-      "sampling_temp": 0.2
-    },
-    {
-      "name": "B11-peptide52",
-      "binder_length": 52,
-      "hotspots": [
-        "C5",
-        "C6",
-        "C8"
-      ],
-      "sampling_temp": 0.25
-    }
-  ],
+  "attempted_at": "2026-11-05 Asia/Taipei",
   "backbones_requested": 24,
-  "backbones_bidentate_ok": 0,
+  "model_backbones_returned": 0,
+  "rfdiffusion_requests_rejected_before_model_output": 24,
   "candidate_sequences": 0,
-  "design_gate": {
-    "asp6_sidechain_contact_atoms": ">=1",
-    "asp6_sidechain_distance": "<=4.5",
-    "val8_sidechain_contact_atoms": ">=1",
-    "val8_sidechain_distance": "<=4.5",
-    "distinct_binder_residues": ">=2 across Asp6/Val8 contacts",
-    "severe_hla_clash_atoms": "<=2 at 2.2 A"
-  },
-  "elapsed_seconds": 46.1,
+  "failure_class": "NvidiaAuthError",
+  "failure": "RFdiffusion hosted endpoint returned HTTP 401: Invalid JWT serialization: Missing dot delimiter(s).",
+  "interpretation": "INVALID INFRASTRUCTURE RUN. The peptide-only mechanism was not tested. Do not interpret this as 0/24 scientific failures.",
+  "boltz2_calls": 0,
   "track1_slots_spent": 0
 }
