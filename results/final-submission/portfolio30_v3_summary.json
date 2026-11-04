@@ -1,0 +1,20 @@
+{
+  "designs": 30,
+  "top20_families": 20,
+  "top20_direct_readout_designs": 8,
+  "top20_buckets": {
+    "exploit_lead": 3,
+    "evidence_risk_hedge": 5,
+    "exploration": 12
+  },
+  "top20_gt2_cys": [
+    {
+      "rank": 4,
+      "alias": "B5-c6-62_bb135_donor-anchored-g1",
+      "cys_count": 4
+    }
+  ],
+  "max_family_count_top20": 1,
+  "max_family_count_full30": 2,
+  "bb135_policy": "explicit high-evidence/high-risk exception; 4 Cys is a risk flag, not a hard exclusion"
+}
