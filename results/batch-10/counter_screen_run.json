@@ -1,0 +1,182 @@
+{
+  "status": "completed",
+  "phase": "screen",
+  "boltz2_calls_this_run": 16,
+  "draws_per_call": 3,
+  "subjects": [
+    "KRAS_REVIEW_04_8827a211",
+    "KRAS_REVIEW_05_84aaeb67",
+    "KRAS_REVIEW_06_7cc39d25",
+    "KRAS_REVIEW_07_610c10d2",
+    "KRAS_REVIEW_08_c4b05d07",
+    "KRAS_REVIEW_09_9f4561b9",
+    "KRAS_REVIEW_10_08ffd5a8",
+    "KRAS_REVIEW_11_71561413"
+  ],
+  "selected_designs_this_phase": [
+    "KRAS_REVIEW_04_8827a211",
+    "KRAS_REVIEW_05_84aaeb67",
+    "KRAS_REVIEW_06_7cc39d25",
+    "KRAS_REVIEW_07_610c10d2",
+    "KRAS_REVIEW_08_c4b05d07",
+    "KRAS_REVIEW_09_9f4561b9",
+    "KRAS_REVIEW_10_08ffd5a8",
+    "KRAS_REVIEW_11_71561413"
+  ],
+  "arms_this_phase": [
+    "g12d",
+    "apo"
+  ],
+  "matched_constraint": [
+    {
+      "binder": "D",
+      "contacts": [
+        {
+          "id": "A",
+          "residue_index": 69
+        },
+        {
+          "id": "A",
+          "residue_index": 155
+        }
+      ],
+      "max_distance": 10.0
+    }
+  ],
+  "settings": {
+    "KRAS_REVIEW_04_8827a211": [
+      8,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_05_84aaeb67": [
+      8,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_06_7cc39d25": [
+      3,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_07_610c10d2": [
+      8,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_08_c4b05d07": [
+      3,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_09_9f4561b9": [
+      8,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_10_08ffd5a8": [
+      3,
+      50,
+      false
+    ],
+    "KRAS_REVIEW_11_71561413": [
+      3,
+      50,
+      false
+    ]
+  },
+  "screen_advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total buried area <1.0",
+  "screen_summary": {
+    "KRAS_REVIEW_04_8827a211": {
+      "rank": 4,
+      "family": "B6-c6-46_w2_bb36",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 1,
+      "g12d_median_total_buried_area": 1018.1,
+      "apo_median_total_buried_area": 1280.9,
+      "apo_to_g12d_total_area_ratio": 1.2581278852764954,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_05_84aaeb67": {
+      "rank": 5,
+      "family": "B5-c6-62_bb173",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 1,
+      "g12d_median_total_buried_area": 797.6,
+      "apo_median_total_buried_area": 1094.5,
+      "apo_to_g12d_total_area_ratio": 1.3722417251755266,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_06_7cc39d25": {
+      "rank": 6,
+      "family": "bb54_parent_and_derivatives",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 0,
+      "g12d_median_total_buried_area": 665.1,
+      "apo_median_total_buried_area": 1181.3,
+      "apo_to_g12d_total_area_ratio": 1.7761238911441888,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_07_610c10d2": {
+      "rank": 7,
+      "family": "B5-c6-62_bb90",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 1,
+      "g12d_median_total_buried_area": 761.2,
+      "apo_median_total_buried_area": 1332.4,
+      "apo_to_g12d_total_area_ratio": 1.7503941145559643,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_08_c4b05d07": {
+      "rank": 8,
+      "family": "B4-c67-65_bb26",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 0,
+      "g12d_median_total_buried_area": 939.3,
+      "apo_median_total_buried_area": 1569.5,
+      "apo_to_g12d_total_area_ratio": 1.6709251570318322,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_09_9f4561b9": {
+      "rank": 9,
+      "family": "B6-c6-46_w2_bb38",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 0,
+      "g12d_median_total_buried_area": 572.0,
+      "apo_median_total_buried_area": 1247.0,
+      "apo_to_g12d_total_area_ratio": 2.18006993006993,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_10_08ffd5a8": {
+      "rank": 10,
+      "family": "bb54_parent_and_derivatives",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 0,
+      "g12d_median_total_buried_area": 545.9,
+      "apo_median_total_buried_area": 1281.6,
+      "apo_to_g12d_total_area_ratio": 2.347682725773951,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    },
+    "KRAS_REVIEW_11_71561413": {
+      "rank": 11,
+      "family": "bb54_parent_and_derivatives",
+      "complete": true,
+      "g12d_Asp6_gate_passes": 0,
+      "g12d_median_total_buried_area": 666.4,
+      "apo_median_total_buried_area": 1198.9,
+      "apo_to_g12d_total_area_ratio": 1.7990696278511407,
+      "advance_to_wt_decoy": false,
+      "advance_rule": "G12D direct Asp6 >=2/3 AND apo/G12D median total area <1.0"
+    }
+  },
+  "historical_gates_changed": false,
+  "track1_slots_spent": 0,
+  "elapsed_seconds": 208.5
+}
