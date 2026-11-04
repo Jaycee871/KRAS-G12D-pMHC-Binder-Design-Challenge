@@ -398,6 +398,7 @@ def design_one(
             "strategy": strategy["name"],
             "ok": False,
             "stage": "rfdiffusion",
+            "error_type": type(exc).__name__,
             "error": f"{type(exc).__name__}: {exc}",
             "candidates": [],
         }
@@ -450,6 +451,7 @@ def design_one(
             random_seed=args.seed + index + int(strategy["binder_length"]),
         )
     except Exception as exc:  # noqa: BLE001
+        record["mpnn_error_type"] = type(exc).__name__
         record["mpnn_error"] = f"{type(exc).__name__}: {exc}"
         return record
 
@@ -512,6 +514,88 @@ def design_one(
     return record
 
 
+def _design_infrastructure_failures(
+    records: Sequence[Mapping[str, Any]],
+) -> List[Dict[str, Any]]:
+    """API/transport failures invalidate the generation sample, not the biology."""
+    failures: List[Dict[str, Any]] = []
+    for record in records:
+        if record.get("stage") == "rfdiffusion":
+            failures.append(
+                {
+                    "backbone": record.get("backbone"),
+                    "service": "rfdiffusion",
+                    "error_type": record.get("error_type"),
+                    "error": record.get("error"),
+                }
+            )
+        if record.get("mpnn_error"):
+            failures.append(
+                {
+                    "backbone": record.get("backbone"),
+                    "service": "proteinmpnn",
+                    "error_type": record.get("mpnn_error_type"),
+                    "error": record.get("mpnn_error"),
+                }
+            )
+    return failures
+
+
+def _write_design_artifacts(
+    records: Sequence[Mapping[str, Any]],
+    candidates: Sequence[Mapping[str, Any]],
+    jobs_requested: int,
+    started: float,
+    status: str,
+    scientific_result: bool,
+) -> Dict[str, Any]:
+    records_sorted = sorted(records, key=lambda r: str(r.get("backbone") or ""))
+    (OUT / "backbone_poses.json").write_text(
+        json.dumps(
+            [{k: v for k, v in r.items() if k != "candidates"}
+             for r in records_sorted],
+            indent=2,
+            default=str,
+        )
+    )
+    (OUT / "candidates.json").write_text(
+        json.dumps(list(candidates), indent=2, default=str)
+    )
+    infrastructure = _design_infrastructure_failures(records_sorted)
+    run = {
+        "status": status,
+        "scientific_result": scientific_result,
+        "stage": "design",
+        "mechanism": "peptide-only RFdiffusion + ProteinMPNN; HLA reinserted after generation",
+        "strategies": STRATEGIES,
+        "backbones_requested": jobs_requested,
+        "model_backbones_returned": sum(
+            1 for r in records_sorted if r.get("stage") != "rfdiffusion"
+        ),
+        "backbones_bidentate_ok": sum(1 for r in records_sorted if r.get("ok")),
+        "candidate_sequences": len(candidates),
+        "infrastructure_failures": infrastructure,
+        "design_gate": {
+            "asp6_sidechain_contact_atoms": ">=1",
+            "asp6_sidechain_distance": f"<={DESIGN_SIDECHAIN_DISTANCE}",
+            "val8_sidechain_contact_atoms": ">=1",
+            "val8_sidechain_distance": f"<={DESIGN_SIDECHAIN_DISTANCE}",
+            "distinct_binder_residues": ">=2 across Asp6/Val8 contacts",
+            "severe_hla_clash_atoms": f"<={MAX_SEVERE_CLASH_ATOMS} at {SEVERE_CLASH_DISTANCE} A",
+        },
+        "elapsed_seconds": round(time.time() - started, 1),
+        "track1_slots_spent": 0,
+    }
+    if not scientific_result:
+        run["interpretation"] = (
+            "INVALID INFRASTRUCTURE RUN. Do not interpret missing candidates as "
+            "a peptide-only design failure."
+        )
+    (OUT / "design_run.json").write_text(json.dumps(run, indent=2))
+    print(json.dumps(run, indent=2))
+    return run
+
+
 def design_stage(args) -> int:
     if not TARGET_PDB.exists():
         raise FileNotFoundError(
@@ -526,12 +610,29 @@ def design_stage(args) -> int:
     ]
     records: List[Dict[str, Any]] = []
     started = time.time()
+
+    # The first RFdiffusion request is a fail-fast infrastructure preflight and
+    # is also the first planned scientific draw. It is not an extra API call.
+    first_strategy, first_index = jobs[0]
+    first = design_one(first_strategy, first_index, peptide_pdb, peptide_chain, args)
+    records.append(first)
+    if first.get("stage") == "rfdiffusion":
+        _write_design_artifacts(
+            records, [], len(jobs), started,
+            status="invalid_infrastructure", scientific_result=False,
+        )
+        raise RuntimeError(
+            "batch-11 aborted after the first RFdiffusion request failed before "
+            "a model backbone was returned"
+        )
+
+    remaining = jobs[1:]
     with ThreadPoolExecutor(max_workers=args.design_workers) as pool:
         futures = [
             pool.submit(
                 design_one, strategy, index, peptide_pdb, peptide_chain, args
             )
-            for strategy, index in jobs
+            for strategy, index in remaining
         ]
         for future in as_completed(futures):
             record = future.result()
@@ -542,10 +643,9 @@ def design_stage(args) -> int:
                 flush=True,
             )
 
-    records.sort(key=lambda r: r["backbone"])
     candidates: List[Dict[str, Any]] = []
     seen = set()
-    for record in records:
+    for record in sorted(records, key=lambda r: r["backbone"]):
         for candidate in record.get("candidates") or []:
             if candidate["sequence"] in seen:
                 continue
@@ -559,37 +659,21 @@ def design_stage(args) -> int:
         )
     )
 
-    (OUT / "backbone_poses.json").write_text(
-        json.dumps(
-            [{k: v for k, v in r.items() if k != "candidates"} for r in records],
-            indent=2,
-            default=str,
+    infrastructure = _design_infrastructure_failures(records)
+    if infrastructure:
+        _write_design_artifacts(
+            records, candidates, len(jobs), started,
+            status="invalid_infrastructure", scientific_result=False,
         )
+        raise RuntimeError(
+            f"batch-11 invalidated by {len(infrastructure)} generation-service "
+            "failure(s); no scientific null result is recorded"
+        )
+
+    _write_design_artifacts(
+        records, candidates, len(jobs), started,
+        status="completed", scientific_result=True,
     )
-    (OUT / "candidates.json").write_text(
-        json.dumps(candidates, indent=2, default=str)
-    )
-    run = {
-        "status": "completed",
-        "stage": "design",
-        "mechanism": "peptide-only RFdiffusion + ProteinMPNN; HLA reinserted after generation",
-        "strategies": STRATEGIES,
-        "backbones_requested": len(jobs),
-        "backbones_bidentate_ok": sum(1 for r in records if r.get("ok")),
-        "candidate_sequences": len(candidates),
-        "design_gate": {
-            "asp6_sidechain_contact_atoms": ">=1",
-            "asp6_sidechain_distance": f"<={DESIGN_SIDECHAIN_DISTANCE}",
-            "val8_sidechain_contact_atoms": ">=1",
-            "val8_sidechain_distance": f"<={DESIGN_SIDECHAIN_DISTANCE}",
-            "distinct_binder_residues": ">=2 across Asp6/Val8 contacts",
-            "severe_hla_clash_atoms": f"<={MAX_SEVERE_CLASH_ATOMS} at {SEVERE_CLASH_DISTANCE} A",
-        },
-        "elapsed_seconds": round(time.time() - started, 1),
-        "track1_slots_spent": 0,
-    }
-    (OUT / "design_run.json").write_text(json.dumps(run, indent=2))
-    print(json.dumps(run, indent=2))
     return 0
 
 
