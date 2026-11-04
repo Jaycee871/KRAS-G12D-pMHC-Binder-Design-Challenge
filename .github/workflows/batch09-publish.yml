@@ -1,0 +1,58 @@
+name: Preserve reviewed batch-09 evidence
+
+on:
+  push:
+    branches: [run/batch09-matched-anchor]
+    paths: [.github/workflows/batch09-publish.yml]
+
+permissions:
+  contents: write
+  actions: read
+
+concurrency:
+  group: batch09-publish
+  cancel-in-progress: false
+
+jobs:
+  preserve-evidence:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: run/batch09-matched-anchor
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+          cache: pip
+      - name: Download the completed 12-call experiment
+        uses: actions/download-artifact@v4
+        with:
+          name: batch09-matched-anchor-41828512409-1
+          run-id: 41828512409
+          github-token: ${{ github.token }}
+          path: recovered-evidence
+      - name: Restore and verify the complete panel
+        run: |
+          python -m pip install -r requirements.txt
+          cp recovered-evidence/results/batch-09/matched_anchor_checkpoint.jsonl results/batch-09/
+          cp recovered-evidence/results/batch-09/matched_anchor_run.json results/batch-09/
+          cp recovered-evidence/results/batch-09/matched_anchor_analysis.json results/batch-09/
+          cp -R recovered-evidence/results/batch-09/structures results/batch-09/
+          cp -R recovered-evidence/results/batch-09/responses results/batch-09/
+          python scripts/batch09_analyze.py
+          cmp results/batch-09/matched_anchor_analysis.json recovered-evidence/results/batch-09/matched_anchor_analysis.json
+          python -m pytest -q
+          tar -czf results/batch-09/matched_anchor_responses.tar.gz -C results/batch-09 responses
+          sha256sum results/batch-09/matched_anchor_responses.tar.gz > results/batch-09/matched_anchor_responses.sha256
+      - name: Commit evidence to the existing review branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- results/batch-09/matched_anchor_checkpoint.jsonl results/batch-09/matched_anchor_run.json results/batch-09/matched_anchor_analysis.json results/batch-09/structures results/batch-09/matched_anchor_responses.tar.gz results/batch-09/matched_anchor_responses.sha256
+          if git diff --cached --quiet; then
+            echo 'Evidence already preserved.'
+          else
+            git commit -m 'batch-09: preserve 36 matched-anchor structures and complete model evidence'
+            git push origin HEAD:run/batch09-matched-anchor
+          fi

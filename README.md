@@ -8,12 +8,12 @@ Proteinbase.
 [![tests](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml)
 
 > **Status: design batches 01–08 complete; batch-09 control audit complete,
-> matched-anchor model panel pending. No design has been submitted.**
+> matched-anchor panel complete (12 calls / 36 samples). No design submitted.**
 > The control audit retired WT geometry-loss as a hard selectivity gate.
-> `bb50-g1`, `bb54-g2` and `bb25` are the fixed subjects for the next matched
-> G12D/WT/apo/decoy diagnostic. See `results/batch-09/SUMMARY.md` and
-> [`docs/BATCH09_RUNBOOK.md`](docs/BATCH09_RUNBOOK.md). No batch-09 model
-> outputs are currently committed.
+> `bb50-g1`, `bb54-g2` and `bb25` completed the matched G12D/WT/apo/decoy diagnostic.
+> All three retain greater apo buried area; selectivity remains unresolved. See `results/batch-09/SUMMARY.md` and
+> [`docs/BATCH09_RUNBOOK.md`](docs/BATCH09_RUNBOOK.md). Measured results:
+> [`MATCHED_ANCHOR_RESULTS.md`](results/batch-09/MATCHED_ANCHOR_RESULTS.md).
 
 ---
 
@@ -108,7 +108,8 @@ pipeline.
    schema.
 
 Latest decision audit: `results/batch-09/SUMMARY.md`; latest model results:
-`results/batch-08/SUMMARY.md`. Batch-09 matched-anchor results are pending.
+`results/batch-08/SUMMARY.md`. Batch-09 matched-anchor results:
+`results/batch-09/MATCHED_ANCHOR_RESULTS.md` (apo over-burial persists).
 No sequence has been submitted, and selectivity has not been established.
 
 ## Repository layout
@@ -198,7 +199,7 @@ printed or logged.
 | Sequence design (ProteinMPNN + donor-bias variants) | ✅ run through batch-08 |
 | Complex prediction / counter-screening (hosted Boltz-2) | ✅ run across G12D / WT / apo / decoy diagnostics |
 | Latest model result / audit | ⚠️ batch-08 model results; batch-09 control audit retires the WT geometry-loss hard gate |
-| Matched-anchor counter-screen | ⏳ 12-call / 36-sample panel prepared; model results pending |
+| Matched-anchor counter-screen | ✅ 12 calls / 36 samples complete; apo over-burial persists for all three candidates |
 | **Designs produced** | **✅ multiple batches generated and scored** |
 | **Designs submitted** | **⬜ none** |
 

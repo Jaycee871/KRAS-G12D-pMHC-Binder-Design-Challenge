@@ -9,19 +9,21 @@ https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/pmhc
 ## Current project state
 
 Batches 01–08 have been run and analysed. Batch-09's control audit and
-matched-anchor implementation are complete; the matched-anchor model outputs
-are not yet committed.
+matched-anchor model panel are complete (12 calls / 36 samples).
 
 - No sequence has been submitted to Proteinbase.
 - The batch-09 positive-control audit retires the 30% WT geometry-loss rule as
   a future hard selectivity gate; historical batch reports remain unchanged.
 - `bb50-g1` is the lead, followed by `bb54-g2` and diversity hedge `bb25`.
 - Historical apo measurements used a different docking prior from loaded pMHC;
-  the next matched diagnostic must resolve that confound.
+  the completed matched regional-anchor panel still shows apo over-burial for
+  all three candidates (1.34–1.85× G12D area). This remains a structural warning,
+  not an affinity measurement.
 - No candidate's biological selectivity is established by these predictions.
 
 See `results/batch-09/SUMMARY.md` for the audit and
-`docs/BATCH09_RUNBOOK.md` for the fixed panel, execution and recovery.
+`results/batch-09/MATCHED_ANCHOR_RESULTS.md` for the measured result, and
+`docs/BATCH09_RUNBOOK.md` for execution and recovery.
 
 ## Current official submission rules
 

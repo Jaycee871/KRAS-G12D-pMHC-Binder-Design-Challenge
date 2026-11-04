@@ -1,9 +1,10 @@
 # Batch-09 execution and recovery
 
-As of 2026-11-04, the control audit and matched-anchor implementation are in
-`main`. The matched-anchor checkpoint, model run and analysis files are **not**
-in `main`; no matched-anchor model result is claimed. The local takeover
-preflight made zero NVIDIA calls. Historical batches 06–08 remain unchanged.
+The 2026-11-04 model run completed 12 calls and 36 samples using the repository
+secret. Results are in `results/batch-09/MATCHED_ANCHOR_RESULTS.md`.
+The complete checkpoint, analysis, structures and compressed raw response
+archive are preserved in this review branch. Historical batches 06–08 remain
+unchanged. Reanalysis of the completed panel needs no model requests.
 
 ## Frozen experiment
 
@@ -43,7 +44,9 @@ are not biological selectivity thresholds.
 
 **Do not use “Re-run jobs” to resume a paid model run.** Each fresh Actions job
 starts a fresh filesystem. Instead, recover the downloaded artifact locally
-as below. The workflow does not automatically commit or submit any results.
+as below. The model workflow does not commit or submit results. A separate, narrowly
+scoped preservation workflow imports the reviewed, completed artifact into the
+existing PR branch without making model calls.
 
 ## Local preflight and execution
 
@@ -84,7 +87,8 @@ not counted as a complete panel.
 
 Review `matched_anchor_checkpoint.jsonl`, `matched_anchor_run.json`,
 `matched_anchor_analysis.json` and the matching coordinates together. Raw
-responses can stay in the artifact. Preserve the artifact or an equivalent
+responses are also archived in `matched_anchor_responses.tar.gz` with a SHA-256
+checksum; extract that archive in `results/batch-09/` for response-level recovery. Preserve the artifact or an equivalent
 response backup to allow recovery and reanalysis.
 
 The matched comparison remains diagnostic: no apo-area cutoff is introduced,

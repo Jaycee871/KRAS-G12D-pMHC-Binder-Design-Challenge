@@ -88,3 +88,8 @@ logs/
 # single draw that clears the unapplied 0.40 floor). The rest are reproducible
 # from panel_checkpoint.jsonl, which records every structure's sha1.
 results/batch-08/structures/
+
+# Batch-09 raw responses are preserved in matched_anchor_responses.tar.gz.
+# Keep extracted recovery copies out of subsequent commits.
+results/batch-09/responses/
+recovered-evidence/
