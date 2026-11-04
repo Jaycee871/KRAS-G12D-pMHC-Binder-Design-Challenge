@@ -1,5 +1,5 @@
 name: Build Track-1 portfolio v2
-# Rebuilds the deterministic portfolio on workflow revisions; edit distances are cached.
+# Rebuilds the deterministic portfolio on workflow revisions; edit distances are cached; final README state included.
 
 on:
   push:
