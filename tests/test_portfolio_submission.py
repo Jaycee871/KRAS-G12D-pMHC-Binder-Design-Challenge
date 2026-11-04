@@ -12,13 +12,12 @@ assert SPEC.loader is not None
 SPEC.loader.exec_module(portfolio)
 
 
-def _rows():
-    pool = json.loads(portfolio.POOL.read_text())
-    return portfolio.select_portfolio(pool)
+POOL_DATA = json.loads(portfolio.POOL.read_text())
+ROWS = portfolio.select_portfolio(POOL_DATA)
 
 
 def test_portfolio_has_thirty_unique_sequences_and_twenty_unique_top_families():
-    rows = _rows()
+    rows = ROWS
     assert len(rows) == 30
     assert len({row["sequence"] for row in rows}) == 30
     assert len({row["name"] for row in rows}) == 30
@@ -26,7 +25,7 @@ def test_portfolio_has_thirty_unique_sequences_and_twenty_unique_top_families():
 
 
 def test_top20_family_cap_and_full30_family_cap_are_locked():
-    rows = _rows()
+    rows = ROWS
     top20 = rows[:20]
     full = rows
     assert max(
@@ -40,7 +39,7 @@ def test_top20_family_cap_and_full30_family_cap_are_locked():
 
 
 def test_top20_keeps_three_leads_then_uses_exploration_not_batch10_failures():
-    rows = _rows()
+    rows = ROWS
     assert [row["alias"] for row in rows[:3]] == list(portfolio.LEAD_ALIASES)
     for row in rows[3:20]:
         assert row["candidate"]["exclusion_reason"] == portfolio.NO_DIRECT_REASON
@@ -48,7 +47,7 @@ def test_top20_keeps_three_leads_then_uses_exploration_not_batch10_failures():
 
 
 def test_portfolio_removes_high_cys_burden_and_repo_sequence_liabilities():
-    rows = _rows()
+    rows = ROWS
     assert all(row["cys_count"] <= 2 for row in rows)
     assert all(not row["sequence_filter_failures"] for row in rows)
     aliases = {row["alias"] for row in rows}
@@ -57,7 +56,7 @@ def test_portfolio_removes_high_cys_burden_and_repo_sequence_liabilities():
 
 
 def test_known_batch10_exact_failures_are_outside_top20():
-    rows = _rows()
+    rows = ROWS
     top_aliases = {row["alias"] for row in rows[:20]}
     failed_aliases = {
         "B6-c6-46_w2_bb36_donor-anchored-g2",
