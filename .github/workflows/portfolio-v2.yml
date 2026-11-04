@@ -1,4 +1,5 @@
 name: Build Track-1 portfolio v2
+# Rebuilds the deterministic portfolio on workflow revisions.
 
 on:
   push:
