@@ -7,6 +7,7 @@ G12D under the SAME regional docking prior.
 """
 from __future__ import annotations
 
+import argparse
 import json
 import math
 import statistics
@@ -33,18 +34,18 @@ def median(values: Iterable[Any]) -> Optional[float]:
     return statistics.median(clean) if clean else None
 
 
-def rows() -> List[Dict[str, Any]]:
+def rows(historical=False) -> List[Dict[str, Any]]:
     if not CHECKPOINT.exists():
         raise FileNotFoundError(
             f"{CHECKPOINT} not found; run scripts/batch09_matched_anchor.py first"
         )
     data = [json.loads(line) for line in CHECKPOINT.read_text().splitlines()
             if line.strip()]
-    validate_panel(data)
+    validate_panel(data, historical=historical)
     return data
 
 
-def validate_panel(data: List[Dict[str, Any]]) -> None:
+def validate_panel(data: List[Dict[str, Any]], historical=False) -> None:
     """Data-integrity checks, not biological pass/fail thresholds."""
     expected = {(key, arm, draw) for key in experiment.SUBJECT_KEYS
                 for arm in experiment.ARMS for draw in range(3)}
@@ -56,6 +57,12 @@ def validate_panel(data: List[Dict[str, Any]]) -> None:
                          "expected 3 designs x 4 arms x 3 draws")
     for record in data:
         row = record.get("row") or {}
+        if not historical:
+            if row.get("readout_version") != experiment.panel.READOUT_VERSION:
+                raise ValueError("legacy readout flags: run scripts/audit_carboxylate_readout.py; "
+                                 "use --historical-recorded-metrics only to reproduce the old summary")
+            if record["arm"] == "g12d" and row.get("asp6_buried_frac") is None:
+                raise ValueError("corrected G12D readout requires Asp6 burial")
         if row.get("analysis_error"):
             raise ValueError("matched-anchor panel contains an analysis error")
         metrics = ["buried_area_total"]
@@ -105,11 +112,17 @@ def safe_ratio(numerator: Optional[float],
     return numerator / denominator
 
 
-def main() -> int:
-    data = rows()
+def main(argv=()) -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument('--historical-recorded-metrics', action='store_true',
+                        help='rebuild legacy counts into a separate explicitly historical file')
+    args = parser.parse_args(argv)
+    data = rows(historical=args.historical_recorded_metrics)
     designs = sorted({r["design"] for r in data})
     result: Dict[str, Any] = {
         "purpose": "matched HLA-regional-anchor diagnostic only",
+        "historical_recorded_metrics": args.historical_recorded_metrics,
+        "readout_version": "legacy-recorded-flags" if args.historical_recorded_metrics else experiment.panel.READOUT_VERSION,
         "new_hard_gate": False,
         "panel_complete": True,
         "expected_draws_per_arm": 3,
@@ -150,7 +163,9 @@ def main() -> int:
             },
         }
 
-    (OUT / "matched_anchor_analysis.json").write_text(
+    output_name = ("historical_recorded_analysis_rebuilt.json" if args.historical_recorded_metrics
+                   else "matched_anchor_analysis.json")
+    (OUT / output_name).write_text(
         json.dumps(result, indent=2, default=str)
     )
 
@@ -169,4 +184,4 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    raise SystemExit(main(sys.argv[1:]))

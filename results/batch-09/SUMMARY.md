@@ -1,5 +1,12 @@
 # Batch-09 — control-calibrated selectivity audit
 
+**Correction notice (2026-11-04):** the original readout flags below are historical.
+The panel acceptor search admitted side-chain carbons and omitted the burial leg.
+Use [`../readout-correction/README.md`](../readout-correction/README.md) for the
+oxygen-specific two-leg remeasurement, current batch-09 counts and measured RMSDs.
+Original checkpoint/analysis files and raw responses are preserved unchanged.
+
+
 **Date:** 2026-11-04 (Asia/Taipei)  
 **Audit compute spent:** 0 RFdiffusion, 0 ProteinMPNN, 0 Boltz-2 calls.
 **Subsequent matched panel:** 12 Boltz-2 calls / 36 structures; see

@@ -20,7 +20,8 @@ def panel(monkeypatch):
     return [{"design": key, "arm": arm, "draw": draw,
              "row": {"buried_area_total": 100, "buried_area_peptide": 20,
                      "peptide_buried_frac": 0.2, "pos6_contacts": 2,
-                     "analysis_error": ""}}
+                     "analysis_error": "", "readout_version": analyzer.experiment.panel.READOUT_VERSION,
+                     "asp6_buried_frac": 0.3}}
             for key in analyzer.experiment.SUBJECT_KEYS
             for arm in analyzer.experiment.ARMS for draw in range(3)]
 
@@ -52,3 +53,27 @@ def test_incomplete_or_invalid_panel_is_rejected(panel, failure):
         del data[0]["row"]["buried_area_total"]
     with pytest.raises(ValueError):
         analyzer.validate_panel(data)
+
+
+def test_legacy_flags_require_explicit_historical_mode(panel):
+    for r in panel:
+        r['row'].pop('readout_version')
+    with pytest.raises(ValueError, match='legacy readout'):
+        analyzer.validate_panel(panel)
+    analyzer.validate_panel(panel, historical=True)
+
+
+def test_historical_mode_does_not_overwrite_original_analysis(panel,monkeypatch,tmp_path):
+    for r in panel:
+        r['row'].pop('readout_version')
+    checkpoint=tmp_path/'matched_anchor_checkpoint.jsonl'
+    checkpoint.write_text('\n'.join(json.dumps(r) for r in panel))
+    monkeypatch.setattr(analyzer,'OUT',tmp_path)
+    monkeypatch.setattr(analyzer,'CHECKPOINT',checkpoint)
+    original=tmp_path/'matched_anchor_analysis.json'
+    original.write_text('original evidence sentinel')
+    assert analyzer.main(['--historical-recorded-metrics'])==0
+    assert original.read_text()=='original evidence sentinel'
+    rebuilt=json.loads((tmp_path/'historical_recorded_analysis_rebuilt.json').read_text())
+    assert rebuilt['historical_recorded_metrics'] is True
+    assert rebuilt['readout_version']=='legacy-recorded-flags'

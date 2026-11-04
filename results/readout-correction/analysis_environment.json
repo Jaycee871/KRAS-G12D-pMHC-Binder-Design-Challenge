@@ -1,0 +1,6 @@
+{
+  "python": "3.12.14",
+  "biopython": "1.88",
+  "numpy": "2.3.5",
+  "note": "Environment for the offline correction, not a reconstruction of hosted model versions."
+}

@@ -1,5 +1,12 @@
 # Methodology record — proposed section structure
 
+**Correction update (2026-11-04):** this inventory describes the original archive.
+PR #21 has since preserved all 37 positive-control/rescore CIFs. The carboxylate
+readout bug and additive coordinate remeasurement are documented in
+[`../results/readout-correction/README.md`](../results/readout-correction/README.md).
+Historical metrics below retain their original meaning; consult the correction
+before using any batch-09 pass count or pose-stability claim.
+
 **Status:** proposal only. Nothing in `results/` is altered by this document, no
 number or conclusion in any existing file is restated with a different value, and
 `src/design_gates.py` is untouched.
@@ -358,7 +365,7 @@ calls, 36 structures, all SHA-1 distinct, ~150 s in a GitHub Actions runner.
    all 36 records), and `scripts/batch09_analyze.py` produces none. The
    "1.58 Å mean / 3.78 Å max" figure quoted for `bb50-g1` in
    `results/batch-09/SUMMARY.md` is a **recycled** number from the n = 10
-   selectivity panel under a different constraint and different settings; it is
+   selectivity panel under a different constraint (bb50-g1 retains the same recycling/sampling settings); it is
    not a measurement of the matched-anchor poses. The record should say so, and
    `MATCHED_ANCHOR_RESULTS.md` is correct in warning that these draws must not be
    pooled with the peptide-C6-constrained draws.

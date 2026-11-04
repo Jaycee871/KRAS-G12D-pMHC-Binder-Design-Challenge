@@ -1,5 +1,12 @@
 # Batch-09 matched-anchor results — 2026-11-04
 
+**Correction notice (2026-11-04):** the original readout flags below are historical.
+The panel acceptor search admitted side-chain carbons and omitted the burial leg.
+Use [`../readout-correction/README.md`](../readout-correction/README.md) for the
+oxygen-specific two-leg remeasurement, current batch-09 counts and measured RMSDs.
+Original checkpoint/analysis files and raw responses are preserved unchanged.
+
+
 ## Conclusion
 
 Matching the HLA regional docking prior does **not** remove the apo over-burial

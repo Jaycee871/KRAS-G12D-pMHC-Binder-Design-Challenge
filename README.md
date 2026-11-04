@@ -17,6 +17,15 @@ Proteinbase.
 
 ---
 
+## Readout correction
+
+The original batch-09 donor flag admitted Asp side-chain carbons and omitted
+the burial leg. The corrected oxygen-specific, two-leg readout gives
+**bb50-g1 2/3, bb54-g2 1/3, bb25 2/3**. The new matched-panel pose measurements
+also show substantial spread. See
+[`results/readout-correction/README.md`](results/readout-correction/README.md)
+for additive remeasurement and coverage; historical files remain available.
+
 ## The target
 
 | | |
