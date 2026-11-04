@@ -123,3 +123,32 @@ def test_screen_summary_uses_frozen_three_leg_rule():
     summary = b11.summarize_screen(rows, selected)[design]
     assert summary["apo_to_g12d_total_area_ratio"] > 1
     assert summary["advance_to_wt_decoy"] is False
+
+
+def test_generation_service_failure_is_infrastructure_not_geometry():
+    records = [
+        {
+            "backbone": "bb0",
+            "stage": "rfdiffusion",
+            "error_type": "NvidiaAuthError",
+            "error": "NvidiaAuthError: rejected",
+        },
+        {
+            "backbone": "bb1",
+            "ok": False,
+            "stage": "geometry",
+            "error_type": "StructureAnalysisError",
+            "error": "geometry parse issue",
+        },
+        {
+            "backbone": "bb2",
+            "ok": True,
+            "mpnn_error_type": "NvidiaAuthError",
+            "mpnn_error": "NvidiaAuthError: rejected",
+        },
+    ]
+    failures = b11._design_infrastructure_failures(records)
+    assert [(x["backbone"], x["service"]) for x in failures] == [
+        ("bb0", "rfdiffusion"),
+        ("bb2", "proteinmpnn"),
+    ]
