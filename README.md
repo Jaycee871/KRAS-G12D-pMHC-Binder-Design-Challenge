@@ -7,11 +7,12 @@ Proteinbase.
 
 [![tests](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml/badge.svg)](https://github.com/Jaycee871/KRAS-G12D-pMHC-Binder-Design-Challenge/actions/workflows/tests.yml)
 
-> **Status: scaffold only. No binder has been designed, folded, scored or
-> submitted.** What works today is target preparation, submission building and
-> submission validation (all CPU-only, all tested). The design and
-> structure-prediction stages are written out concretely in
-> [`docs/PIPELINE.md`](docs/PIPELINE.md) but have not been run.
+> **Status: active design campaign through batch-08; no design has been
+> submitted yet.** RFdiffusion, ProteinMPNN and hosted Boltz-2 have been run
+> across multiple controlled batches. The current result is an honest null:
+> no candidate yet clears the project's full Asp6 reproducibility + WT
+> discrimination gate. See `results/batch-08/SUMMARY.md` for the latest
+> analysis.
 
 ---
 
@@ -67,14 +68,15 @@ column `src/make_submission.py` sorts by.
 | rule | value |
 | --- | --- |
 | Deadline | **Sun 8 Nov 2026, 23:59 Anywhere on Earth** (= 9 Nov 11:59 UTC = 9 Nov 19:59 Asia/Taipei) |
-| Format | CSV or FASTA, **≤ 5 MB** |
-| Columns | `name`, `sequence` required; `molecule_class` optional |
+| Format | **CSV**, ordered by preferred rank |
+| Columns | `name`, `sequence`, `molecule_class` required |
 | Designs per submission | **≤ 20** |
 | Rate limit | **one submission per 24 hours** |
 | Chain length | **10–250 aa** per chain |
-| Molecule formats | single chain, nanobody, scFv, Fab — scFv/Fab written as `{VH}:{VL}` |
+| `molecule_class` | `protein`, `nanobody`, `scfv`, `fab_kappa`, or `fab_lambda`; Fab uses `{VH}:{VL}` |
 | Originality | designs must be **de novo**; novelty score **≥ 3/4**, checked automatically |
-| Per-participant caps | up to **40** designs Track 1; up to **20** each for Tracks 2 and 3 |
+| Per-participant caps | Track 1: submit **20–40**; Tracks 2/3: up to **20** |
+| Track 1 screening | the **top 20** ranked designs that pass filtering are screened |
 
 Submit at
 <https://proteinbase.com/competitions/anthropic-adaptyv-2026/rounds/5/submit>.
@@ -191,11 +193,11 @@ printed or logged.
 | CI (pytest on push/PR) | ✅ configured |
 | Pipeline documentation | ✅ written (`docs/PIPELINE.md`) |
 | Submission plan | ✅ written (`docs/SUBMISSION_PLAN.md`) |
-| Backbone generation (RFdiffusion / BindCraft) | ⬜ not started — needs GPU |
-| Sequence design (ProteinMPNN) | ⬜ not started |
-| AF2 monomer filter | ⬜ not started |
-| Complex prediction / four-target scoring | ⬜ not started |
-| **Designs produced** | **⬜ none** |
+| Backbone generation (RFdiffusion) | ✅ run through batch-08 |
+| Sequence design (ProteinMPNN + donor-bias variants) | ✅ run through batch-08 |
+| Complex prediction / counter-screening (hosted Boltz-2) | ✅ run across G12D / WT / apo / decoy diagnostics |
+| Latest controlled result | ⚠️ batch-08 null: no full-gate survivor; see `results/batch-08/SUMMARY.md` |
+| **Designs produced** | **✅ multiple batches generated and scored** |
 | **Designs submitted** | **⬜ none** |
 
 ## Licence
