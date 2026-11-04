@@ -1,3 +1,37 @@
+# Track-1 submission packages — review before upload
+
+## Current candidate: portfolio v2
+
+The current **candidate upload** is `track1_portfolio30.csv`, generated
+deterministically by `scripts/build_portfolio_submission.py`.
+
+It separates scientific evidence ranking from experimental slot allocation:
+
+- ranks 1–3: the three corrected matched-panel leads;
+- ranks 4–20: seventeen additional families selected as a diversity hedge;
+- ranks 21–30: reserve rows in case higher-ranked designs fail competition hard
+  filters.
+
+See `PORTFOLIO_METHOD.md`, `portfolio30_audit.csv` and
+`portfolio30_summary.json` for the frozen allocation policy and full negative
+evidence.
+
+### Why the old fallback-20 is superseded
+
+The earlier `track1_fallback20.csv` is retained for audit only and **should not
+be uploaded as the current package**. It preserved the historical review order
+too literally:
+
+- six of twenty sequences belonged to the bb54 parent/derivative family;
+- two rows carried four cysteines;
+- ranks 4–11 included exact sequences that batch-10 had already failed under
+  the matched G12D/apo advance rule.
+
+Those observations do not rewrite the original evidence table. They change only
+how scarce wet-lab slots are allocated under uncertainty.
+
+---
+
 # Track-1 fallback-20 package — review before upload
 
 **Date:** 2026-11-05 (Asia/Taipei)
