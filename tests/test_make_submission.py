@@ -196,3 +196,15 @@ def test_builder_can_emit_40_for_track1(tmp_path):
     out = ms.build(src, tmp_path / "sub.csv", top_n=40)
     assert len(read_rows(out)) == 40
     assert vs.validate_file(out) == []
+
+
+def test_legacy_single_chain_is_normalized_to_protein(tmp_path):
+    src = write_scored(
+        tmp_path / "scored.csv",
+        [("legacy", GOOD, "single_chain")],
+        header=("name", "sequence", "molecule_class"),
+    )
+    out = ms.build(src, tmp_path / "sub.csv", top_n=1)
+    rows = read_rows(out)
+    assert rows[0]["molecule_class"] == "protein"
+    assert vs.validate_file(out) == []
