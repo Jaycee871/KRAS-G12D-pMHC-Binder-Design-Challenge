@@ -77,9 +77,6 @@ independence. No pooled cross-protocol success rate is used for ranking.
 
 ```bash
 python scripts/build_evidence_pool.py
-python src/make_submission.py results/submission-review/review_shortlist.csv \
-  -o results/submission-review/format_preview_only.csv -n 11 \
-  --rank-column evidence_rank --ascending
 python src/validate_submission.py results/submission-review/format_preview_only.csv
 python -m pytest -q
 ```

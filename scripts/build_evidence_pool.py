@@ -184,14 +184,19 @@ def write_report(report, out):
     fields = ['evidence_rank', 'name', 'sequence', 'molecule_class', 'tier', 'family',
               'max_edit_similarity_to_earlier', 'sequence_sha256','aliases','review_warnings']
     with (out / 'review_shortlist.csv').open('w', newline='') as f:
-        w = csv.DictWriter(f, fieldnames=fields); w.writeheader()
+        w = csv.DictWriter(f, fieldnames=fields, lineterminator='\n'); w.writeheader()
         for c in chosen:
             w.writerow({**{k: ';'.join(c[k]) if isinstance(c[k],list) else c[k] for k in fields if k != 'molecule_class'}, 'molecule_class': 'protein'})
     with (out / 'candidate_audit.csv').open('w', newline='') as f:
-        w = csv.DictWriter(f, fieldnames=['sequence_sha256','sequence','tier','aliases','exclusion_reason'])
+        w = csv.DictWriter(f, fieldnames=['sequence_sha256','sequence','tier','aliases','exclusion_reason'], lineterminator='\n')
         w.writeheader()
         for c in report['candidates']:
             w.writerow({k: ';'.join(c[k]) if k == 'aliases' else c[k] for k in w.fieldnames})
+    with (out / 'format_preview_only.csv').open('w', newline='') as f:
+        w = csv.DictWriter(f, fieldnames=['name','sequence','molecule_class'], lineterminator='\n')
+        w.writeheader()
+        for c in chosen:
+            w.writerow({'name': c['name'], 'sequence': c['sequence'], 'molecule_class': 'protein'})
     return chosen
 
 
