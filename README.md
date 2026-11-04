@@ -70,45 +70,44 @@ column `src/make_submission.py` sorts by.
 | Deadline | **Sun 8 Nov 2026, 23:59 Anywhere on Earth** (= 9 Nov 11:59 UTC = 9 Nov 19:59 Asia/Taipei) |
 | Format | **CSV**, ordered by preferred rank |
 | Columns | `name`, `sequence`, `molecule_class` required |
-| Designs per submission | **≤ 20** |
-| Rate limit | **one submission per 24 hours** |
 | Chain length | **10–250 aa** per chain |
 | `molecule_class` | `protein`, `nanobody`, `scfv`, `fab_kappa`, or `fab_lambda`; Fab uses `{VH}:{VL}` |
-| Originality | designs must be **de novo**; novelty score **≥ 3/4**, checked automatically |
+| Originality | designs must be **unique, de novo and zero-shot**; known binders may calibrate filters but cannot be the starting binder |
 | Per-participant caps | Track 1: submit **20–40**; Tracks 2/3: up to **20** |
 | Track 1 screening | the **top 20** ranked designs that pass filtering are screened |
 
-Submit at
-<https://proteinbase.com/competitions/anthropic-adaptyv-2026/rounds/5/submit>.
-The day-by-day batching plan is in
+Submit from the live Challenge 5 page:
+<https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/pmhc>.
+The current deadline plan is in
 [`docs/SUBMISSION_PLAN.md`](docs/SUBMISSION_PLAN.md).
 
 ## Pipeline overview
 
-Implemented here (CPU, tested) in **bold**; everything else is planned.
+The project is now an **active, measured design campaign**, not a planned
+pipeline.
 
-1. **Target preparation** — `src/fetch_target.py` downloads 7OW6 from RCSB,
-   identifies the heavy chain / B2M / peptide, and writes the three target
-   states (G12D complex, WT complex, peptide-free HLA+B2M). The
-   counter-screen decoy complex (unrelated A*11:01 10-mer) sits beside them as
-   `data/targets/decoy_a1101_complex.fasta`.
-2. Backbone generation — RFdiffusion and BindCraft against a peptide-centred
-   epitope (peptide residues 4–8, weighted on residue 6).
-3. Sequence design — ProteinMPNN, 8–16 sequences per backbone.
-4. Monomer refolding filter — AlphaFold2, keep pLDDT ≥ 85 and RMSD < 2 Å to
-   the design backbone.
-5. Complex prediction — AlphaFold-Multimer or Boltz, run **four times per
-   design** (G12D, WT, peptide-free, unrelated A*11:01 decoy `AVFDRKSDAK`),
-   scoring ipTM, PAE-interface and the buried fraction of the Asp at peptide
-   position 6.
-6. Ranking — by `specificity_gap`, behind hard gates on ipTM (including
-   `max(ipTM(WT), ipTM(apo), ipTM(decoy)) ≤ 0.50`), interface coverage of
-   peptide position 6, the buried fraction of Asp6, net interface charge,
-   and PAE. The thresholds live in `src/design_gates.py`.
-7. **Submission** — `src/make_submission.py` ranks and truncates,
-   `src/validate_submission.py` enforces every documented rule.
+1. **Target preparation** — G12D, WT, apo HLA+B2M, and an unrelated
+   HLA-A*11:01 decoy peptide are represented under `data/targets/`.
+2. **Backbone generation** — RFdiffusion has been run across multiple design
+   hypotheses through batch-08.
+3. **Sequence design** — ProteinMPNN plus targeted donor-biased variants has
+   been run across the surviving backbones.
+4. **Complex prediction** — hosted Boltz-2 is the current workhorse, with
+   repeated constrained G12D/WT and diagnostic apo/decoy arms.
+5. **Interface analysis** — `src/complex_analysis.py` and
+   `src/groove_geometry.py` measure chain-aware buried area, position-6
+   contacts, direct Asp6 read-out, interface charge, pose spread, and groove
+   partitioning.
+6. **Decision gates** — later batches use reproducibility and measured
+   geometry/chemistry. The old independent-docking ipTM specificity gap and
+   paired MM-GBSA ddG are **retired as decision metrics**; historical code is
+   retained for provenance.
+7. **Submission tooling** — `src/make_submission.py` and
+   `src/validate_submission.py` build/validate the current Proteinbase CSV
+   schema.
 
-Full detail, including thresholds and filters: [`docs/PIPELINE.md`](docs/PIPELINE.md).
+Latest result: `results/batch-08/SUMMARY.md`. No candidate yet clears the
+project's full internal specificity gate, and no sequence has been submitted.
 
 ## Repository layout
 
