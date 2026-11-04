@@ -5,11 +5,14 @@ import pytest
 import validate_submission as vs
 
 
-def write_csv(path, rows, header=("name", "sequence")):
+def write_csv(path, rows, header=("name", "sequence", "molecule_class")):
     with path.open("w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(header)
         for row in rows:
+            row = list(row)
+            if "molecule_class" in header and len(row) == 2:
+                row.append("protein")
             w.writerow(row)
     return path
 
@@ -74,7 +77,7 @@ def test_valid_vh_vl_pair(tmp_path):
     with p.open("w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(("name", "sequence", "molecule_class"))
-        w.writerow(("scfv1", f"{GOOD}:{GOOD}", "scFv"))
+        w.writerow(("fab1", f"{GOOD}:{GOOD}", "fab_kappa"))
     assert vs.validate_file(p) == []
 
 
@@ -96,12 +99,12 @@ def test_short_vl_in_pair_rejected(tmp_path):
     assert any("VL" in e and "minimum of 10" in e for e in errors)
 
 
-def test_scfv_class_without_colon_rejected(tmp_path):
+def test_fab_class_without_colon_rejected(tmp_path):
     p = tmp_path / "s.csv"
     with p.open("w", newline="") as fh:
         w = csv.writer(fh)
         w.writerow(("name", "sequence", "molecule_class"))
-        w.writerow(("x", GOOD, "scFv"))
+        w.writerow(("x", GOOD, "fab_kappa"))
     errors = vs.validate_file(p)
     assert any("{VH}:{VL}" in e for e in errors)
 
@@ -151,30 +154,11 @@ def test_unsupported_extension(tmp_path):
         vs.validate_file(p)
 
 
-def test_fasta_valid(tmp_path):
-    p = tmp_path / "s.fasta"
-    p.write_text(f">d1\n{GOOD}\n>d2\n{GOOD[:16]}\n{GOOD[16:]}\n")
-    assert vs.validate_file(p) == []
-
-
-def test_fasta_short_chain_rejected(tmp_path):
-    p = tmp_path / "s.fasta"
-    p.write_text(f">d1\n{seq(9)}\n")
-    errors = vs.validate_file(p)
-    assert any("minimum of 10" in e for e in errors)
-
-
-def test_fasta_too_many_records(tmp_path):
-    p = tmp_path / "s.fasta"
-    p.write_text("".join(f">d{i}\n{GOOD}\n" for i in range(21)))
-    errors = vs.validate_file(p)
-    assert any("limit of 20" in e for e in errors)
-
-
-def test_fasta_without_header_raises(tmp_path):
-    p = tmp_path / "s.fasta"
-    p.write_text(f"{GOOD}\n")
-    with pytest.raises(vs.ValidationError, match="before any"):
+@pytest.mark.parametrize("suffix", [".fasta", ".fa", ".faa", ".fas"])
+def test_fasta_rejected_current_schema(tmp_path, suffix):
+    p = tmp_path / f"s{suffix}"
+    p.write_text(f">d1\n{GOOD}\n")
+    with pytest.raises(vs.ValidationError, match="require CSV"):
         vs.validate_file(p)
 
 
@@ -195,4 +179,25 @@ def test_cli_exit_codes(tmp_path, capsys):
 
 def test_lowercase_sequence_accepted(tmp_path):
     p = write_csv(tmp_path / "s.csv", [("d1", GOOD.lower())])
+    assert vs.validate_file(p) == []
+
+
+def test_missing_molecule_class_column(tmp_path):
+    p = tmp_path / "s.csv"
+    p.write_text("name,sequence\nd1,AAAAAAAAAA\n")
+    with pytest.raises(vs.ValidationError, match="molecule_class"):
+        vs.validate_file(p)
+
+
+def test_legacy_single_chain_class_rejected(tmp_path):
+    p = write_csv(
+        tmp_path / "s.csv",
+        [("d1", GOOD, "single_chain")],
+    )
+    errors = vs.validate_file(p)
+    assert any("molecule_class 'single_chain' is invalid" in e for e in errors)
+
+
+def test_scfv_single_chain_is_accepted(tmp_path):
+    p = write_csv(tmp_path / "s.csv", [("scfv1", GOOD * 3, "scfv")])
     assert vs.validate_file(p) == []
