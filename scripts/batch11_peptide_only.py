@@ -241,6 +241,127 @@ def _reference_chains(target_pdb: Path = TARGET_PDB):
     return model, hla_candidates[0].id, peptide_id
 
 
+
+def reference_sidechain_contact_metrics(
+    pdb_text: str,
+    peptide_position: int,
+    cutoff: float = DESIGN_CONTACT_DISTANCE,
+    target_pdb: Path = TARGET_PDB,
+) -> Dict[str, Any]:
+    """Measure binder contact to crystallographic peptide side chains.
+
+    RFdiffusion returns the kept target peptide with backbone atoms only. Align
+    the generated peptide backbone onto 7OW6 and measure the generated binder
+    against the crystallographic side-chain coordinates instead of treating the
+    missing side chains as "no contact".
+    """
+    design_model = _design_model(pdb_text)
+    binder, target_chain = _design_chains(design_model)
+    design_peptide = _polymer_residues(target_chain)
+
+    ref_model, _hla_id, peptide_id = _reference_chains(target_pdb)
+    ref_peptide = _polymer_residues(ref_model[peptide_id])
+    residue = ref_peptide[peptide_position - 1]
+
+    mobile = np.array([r["CA"].coord for r in design_peptide], dtype=float)
+    reference = np.array([r["CA"].coord for r in ref_peptide], dtype=float)
+    sup = SVDSuperimposer()
+    sup.set(reference, mobile)
+    sup.run()
+    rot, tran = sup.get_rotran()
+
+    target_atoms = ca.heavy_atoms(residue)
+    sc_names = set(ca.sidechain_atom_names(residue))
+    sidechain_atoms = [
+        a for a in residue if a.element != "H" and a.get_id() in sc_names
+    ]
+    if not sidechain_atoms:
+        raise ca.StructureAnalysisError(
+            f"7OW6 peptide position {peptide_position} has no side-chain atoms"
+        )
+
+    target_xyz = np.array([a.coord for a in target_atoms], dtype=float)
+    side_xyz = np.array([a.coord for a in sidechain_atoms], dtype=float)
+    contact_atom_ids = set()
+    side_atom_ids = set()
+    residue_hits = set()
+    min_all = float("inf")
+    min_side = float("inf")
+
+    for binder_residue in _polymer_residues(binder):
+        for atom in ca.heavy_atoms(binder_residue):
+            xyz = np.dot(np.asarray(atom.coord, dtype=float), rot) + tran
+            d_all = np.linalg.norm(target_xyz - xyz, axis=1)
+            d_side = np.linalg.norm(side_xyz - xyz, axis=1)
+            min_all = min(min_all, float(d_all.min()))
+            min_side = min(min_side, float(d_side.min()))
+            if float(d_all.min()) <= cutoff:
+                contact_atom_ids.add(id(atom))
+                residue_hits.add(int(binder_residue.id[1]))
+            if float(d_side.min()) <= cutoff:
+                side_atom_ids.add(id(atom))
+                residue_hits.add(int(binder_residue.id[1]))
+
+    return {
+        "position": peptide_position,
+        "residue": residue.get_resname().strip().upper(),
+        "min_distance": round(min_all, 3),
+        "sidechain_min_distance": round(min_side, 3),
+        "contact_atoms": len(contact_atom_ids),
+        "sidechain_contact_atoms": len(side_atom_ids),
+        "binder_residues": sorted(residue_hits),
+        "sidechain_source": "7OW6_crystal_aligned_to_RF_peptide_backbone",
+        "peptide_alignment_rmsd": round(float(sup.get_rms()), 4),
+    }
+
+
+def reference_sidechain_shell_positions(
+    pdb_text: str,
+    peptide_position: int,
+    radius: float = 10.0,
+    target_pdb: Path = TARGET_PDB,
+) -> List[Dict[str, Any]]:
+    """Binder residue shell around an aligned crystallographic side chain."""
+    design_model = _design_model(pdb_text)
+    binder, target_chain = _design_chains(design_model)
+    design_peptide = _polymer_residues(target_chain)
+
+    ref_model, _hla_id, peptide_id = _reference_chains(target_pdb)
+    ref_peptide = _polymer_residues(ref_model[peptide_id])
+    residue = ref_peptide[peptide_position - 1]
+    sc_names = set(ca.sidechain_atom_names(residue))
+    sidechain_atoms = [
+        a for a in residue if a.element != "H" and a.get_id() in sc_names
+    ]
+    if not sidechain_atoms:
+        return []
+
+    mobile = np.array([r["CA"].coord for r in design_peptide], dtype=float)
+    reference = np.array([r["CA"].coord for r in ref_peptide], dtype=float)
+    sup = SVDSuperimposer()
+    sup.set(reference, mobile)
+    sup.run()
+    rot, tran = sup.get_rotran()
+    side_xyz = np.array([a.coord for a in sidechain_atoms], dtype=float)
+
+    out = []
+    for index, binder_residue in enumerate(_polymer_residues(binder), start=1):
+        atoms = ca.heavy_atoms(binder_residue)
+        if not atoms:
+            continue
+        distance = min(
+            float(np.linalg.norm(
+                side_xyz - (np.dot(np.asarray(atom.coord, dtype=float), rot) + tran),
+                axis=1,
+            ).min())
+            for atom in atoms
+        )
+        if distance <= radius:
+            out.append({"position": index, "distance": round(distance, 3)})
+    out.sort(key=lambda x: (x["distance"], x["position"]))
+    return out
+
+
 def hla_reinsertion_metrics(
     pdb_text: str,
     target_pdb: Path = TARGET_PDB,
@@ -407,8 +528,8 @@ def design_one(
     (OUT / "all_structures" / f"{name}.pdb").write_text(pdb)
 
     try:
-        pos6 = residue_contact_metrics(pdb, ASP6)
-        pos8 = residue_contact_metrics(pdb, VAL8)
+        pos6 = reference_sidechain_contact_metrics(pdb, ASP6)
+        pos8 = reference_sidechain_contact_metrics(pdb, VAL8)
         fit = hla_reinsertion_metrics(pdb)
         ok, reasons = design_backbone_assessment(pos6, pos8, fit)
     except Exception as exc:  # noqa: BLE001
@@ -436,8 +557,8 @@ def design_one(
     if not ok:
         return record
 
-    shell6 = residue_shell_positions(pdb, ASP6)
-    shell8 = residue_shell_positions(pdb, VAL8)
+    shell6 = reference_sidechain_shell_positions(pdb, ASP6)
+    shell8 = reference_sidechain_shell_positions(pdb, VAL8)
     record["shell6"] = shell6[:10]
     record["shell8"] = shell8[:10]
 
@@ -674,6 +795,92 @@ def design_stage(args) -> int:
         records, candidates, len(jobs), started,
         status="completed", scientific_result=True,
     )
+    return 0
+
+
+
+def reanalyze_stage(args) -> int:
+    """Offline correction of batch-11 design geometry; makes no model calls."""
+    structures = OUT / "all_structures"
+    if not structures.exists():
+        raise FileNotFoundError(
+            "results/batch-11/all_structures is missing; extract "
+            "design_backbones.tar.gz before reanalysis"
+        )
+    paths = sorted(structures.glob("*.pdb"))
+    if not paths:
+        raise FileNotFoundError("no batch-11 RFdiffusion PDBs found")
+
+    rows: List[Dict[str, Any]] = []
+    for path in paths:
+        pdb = path.read_text()
+        pos6 = reference_sidechain_contact_metrics(pdb, ASP6)
+        pos8 = reference_sidechain_contact_metrics(pdb, VAL8)
+        fit = hla_reinsertion_metrics(pdb)
+        ok, reasons = design_backbone_assessment(pos6, pos8, fit)
+        strategy = next(
+            (st for st in STRATEGIES if path.stem.startswith(st["name"])),
+            None,
+        )
+        union = set(pos6.get("binder_residues") or []) | set(
+            pos8.get("binder_residues") or []
+        )
+        contact_only = bool(
+            int(pos6.get("sidechain_contact_atoms") or 0) >= 1
+            and float(pos6["sidechain_min_distance"]) <= DESIGN_SIDECHAIN_DISTANCE
+            and int(pos8.get("sidechain_contact_atoms") or 0) >= 1
+            and float(pos8["sidechain_min_distance"]) <= DESIGN_SIDECHAIN_DISTANCE
+            and len(union) >= 2
+        )
+        rows.append(
+            {
+                "backbone": path.stem,
+                "strategy": strategy["name"] if strategy else None,
+                "binder_length": strategy["binder_length"] if strategy else None,
+                "ok": ok,
+                "contact_only_ok": contact_only,
+                "hla_fit_ok": int(fit["severe_clash_atoms"]) <= MAX_SEVERE_CLASH_ATOMS,
+                "reasons": reasons,
+                "pos6": pos6,
+                "pos8": pos8,
+                "hla_reinsertion": fit,
+                "measurement_correction": (
+                    "Asp6/Val8 side chains restored from 7OW6 after CA alignment; "
+                    "RFdiffusion output contains target backbone atoms only"
+                ),
+            }
+        )
+
+    summary = {
+        "status": "completed",
+        "scientific_result": True,
+        "stage": "offline_design_reanalysis",
+        "model_calls": 0,
+        "backbones": len(rows),
+        "bidentate_contact_only_ok": sum(bool(r["contact_only_ok"]) for r in rows),
+        "hla_fit_ok": sum(bool(r["hla_fit_ok"]) for r in rows),
+        "full_gate_ok": sum(bool(r["ok"]) for r in rows),
+        "min_severe_hla_clash_atoms": min(
+            int(r["hla_reinsertion"]["severe_clash_atoms"]) for r in rows
+        ),
+        "max_severe_hla_clash_atoms": max(
+            int(r["hla_reinsertion"]["severe_clash_atoms"]) for r in rows
+        ),
+        "measurement_correction": (
+            "The original design-stage side-chain metric was unavailable because "
+            "RFdiffusion emitted only N/CA/C/O atoms for the kept peptide. This "
+            "reanalysis restores crystallographic 7OW6 side chains after rigid "
+            "CA alignment. The predeclared thresholds are unchanged."
+        ),
+        "track1_slots_spent": 0,
+    }
+    (OUT / "backbone_reanalysis.json").write_text(
+        json.dumps(rows, indent=2, default=str)
+    )
+    (OUT / "design_reanalysis.json").write_text(
+        json.dumps(summary, indent=2, default=str)
+    )
+    print(json.dumps(summary, indent=2))
     return 0
 
 
@@ -1108,7 +1315,7 @@ def plan_stage(args) -> int:
 def main(argv=None) -> int:
     parser = argparse.ArgumentParser()
     parser.add_argument(
-        "--stage", choices=("plan", "design", "screen", "confirm"), required=True
+        "--stage", choices=("plan", "design", "reanalyze", "screen", "confirm"), required=True
     )
     parser.add_argument("--backbones-per-strategy", type=int, default=8)
     parser.add_argument("--seqs-per-backbone", type=int, default=12)
@@ -1130,6 +1337,8 @@ def main(argv=None) -> int:
         return plan_stage(args)
     if args.stage == "design":
         return design_stage(args)
+    if args.stage == "reanalyze":
+        return reanalyze_stage(args)
     if args.stage == "screen":
         return screen_stage(args)
     return confirm_stage(args)
