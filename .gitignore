@@ -81,3 +81,10 @@ results/batch-01/structures/
 
 # Run logs (raw stdout; checkpoints under results/ are authoritative)
 logs/
+
+# batch-08 scored 129 structures (35 MB) and keeps them all on disk, but only the
+# curated set named in results/batch-08/SUMMARY.md is tracked (the de-wetting
+# pair with its WT arm, the two apo/decoy probe designs with every arm, and the
+# single draw that clears the unapplied 0.40 floor). The rest are reproducible
+# from panel_checkpoint.jsonl, which records every structure's sha1.
+results/batch-08/structures/

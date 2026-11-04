@@ -1,0 +1,59 @@
+{
+  "elapsed_seconds": 60.8,
+  "backbones_generated": 192,
+  "backbones_base_ok": 16,
+  "backbones_shape_ok": 0,
+  "backbones_reserve": 16,
+  "candidates": 37,
+  "shape_thresholds": {
+    "min_peptide_contact_frac": 0.3,
+    "max_helix_contact_frac": 0.3,
+    "min_approach_height": 2.0,
+    "max_abs_lateral_offset": 5.0,
+    "min_over_peptide_frac": 0.55
+  },
+  "strategies": [
+    {
+      "name": "B8-apex-46",
+      "binder_length": 46,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "bb54-g2's size and hotspot, but kept only when the backbone comes down on position 6 from above the groove axis"
+    },
+    {
+      "name": "B8-span-50",
+      "binder_length": 50,
+      "hotspots": [
+        "C4",
+        "C6",
+        "C8"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "hotspots spread along the peptide long axis, so the paratope has to lie along the peptide rather than across the groove and onto the alpha1/alpha2 walls"
+    },
+    {
+      "name": "B8-crest-46",
+      "binder_length": 46,
+      "hotspots": [
+        "C5",
+        "C6",
+        "C7"
+      ],
+      "sampling_temp": 0.2,
+      "rationale": "the solvent-exposed crest of the bulge only - the three residues whose side chains point out of the groove"
+    },
+    {
+      "name": "B8-apex-54",
+      "binder_length": 54,
+      "hotspots": [
+        "C6"
+      ],
+      "sampling_temp": 0.25,
+      "rationale": "slightly larger than bb54-g2 (never smaller: shrinking is a measured dead end) at a higher MPNN temperature, for topological diversity among shape survivors"
+    }
+  ],
+  "diffusion_steps": 15,
+  "seed": 8080
+}
