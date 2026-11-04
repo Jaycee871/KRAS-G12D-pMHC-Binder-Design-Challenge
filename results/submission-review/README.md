@@ -92,8 +92,10 @@ python -m pytest -q
 
 Review the severe failures at ranks 7–11 before assigning experimental slots.
 The currently observed pool does not support a 20-design shortlist under this
-curation policy. Completing 20 needs an explicit choice: assess older excluded
-batches under the current readout, or define a new mechanism for generation.
-Neither has happened here. The matched-apo result does not justify more generic
+curation policy. The older-batch branch has now been assessed separately in
+`../legacy-readout-audit/README.md`: batches 01–03 contain 144 unique historical
+sequences but **zero** recorded oxygen-plus-burial direct Asp6 readouts. They do
+not expand this shortlist. Completing 20 therefore requires a genuinely new
+mechanism for generation. The matched-apo result does not justify more generic
 rescue sampling around the same scaffolds, and no excluded design is silently
 reintroduced to meet the count.
