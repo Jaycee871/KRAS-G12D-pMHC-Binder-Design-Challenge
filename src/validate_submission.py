@@ -5,7 +5,7 @@ Rules enforced (from the current Anthropic x Adaptyv competition FAQ):
   * submission file is CSV
   * CSV must have `name`, `sequence`, and `molecule_class`
   * molecule_class is one of: protein, nanobody, scfv, fab_kappa, fab_lambda
-  * at most 20 designs per submission file
+  * at most 40 designs for Track 1 (Tracks 2/3 are capped at 20)
   * each chain between 10 and 250 amino acids (inclusive)
   * only the 20 canonical amino acids
   * Fab is written as {VH}:{VL} - exactly one colon, both parts valid
@@ -25,7 +25,7 @@ import sys
 from pathlib import Path
 from typing import List, Tuple
 
-MAX_DESIGNS = 20
+MAX_DESIGNS = 40  # absolute competition maximum (Track 1); Tracks 2/3 cap at 20
 MIN_CHAIN_LEN = 10
 MAX_CHAIN_LEN = 250
 MAX_FILE_BYTES = 5 * 1024 * 1024  # 5 MB
@@ -175,8 +175,8 @@ def validate_file(path: Path) -> List[str]:
         errors.append("submission contains no designs")
     if len(rows) > MAX_DESIGNS:
         errors.append(
-            f"submission contains {len(rows)} designs, above the limit of "
-            f"{MAX_DESIGNS} per submission"
+            f"submission contains {len(rows)} designs, above the competition "
+            f"maximum of {MAX_DESIGNS} (Track 1; Tracks 2/3 cap at 20)"
         )
 
     seen = {}
