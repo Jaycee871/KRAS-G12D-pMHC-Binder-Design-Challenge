@@ -75,10 +75,13 @@ import numpy as np
 from Bio.PDB import PDBIO, Chain as BioChain, Model as BioModel, Structure as BioStructure
 from Bio.PDB.Residue import Residue
 
-import openmm as mm
-import openmm.app as app
-from openmm import unit
-from pdbfixer import PDBFixer
+# OpenMM/PDBFixer are optional, heavyweight dependencies.  Keep import-time
+# geometry/bookkeeping usable in the lightweight CI environment and require the
+# force-field stack only when an energy calculation is actually requested.
+mm = None
+app = None
+unit = None
+PDBFixer = None
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import complex_analysis as ca  # noqa: E402
@@ -100,6 +103,29 @@ BACKBONE_KEEP = ("N", "CA", "C", "O", "OXT")
 
 class DdgError(RuntimeError):
     """The ddG calculation could not be carried out."""
+
+
+def _require_openmm() -> None:
+    """Load the optional MM-GBSA stack on first use.
+
+    The repository's default requirements intentionally stay lightweight.
+    Geometry/truncation utilities and their unit tests therefore must not fail
+    merely because OpenMM/PDBFixer are absent.
+    """
+    global mm, app, unit, PDBFixer
+    if mm is not None and app is not None and unit is not None and PDBFixer is not None:
+        return
+    try:
+        import openmm as _mm
+        import openmm.app as _app
+        from openmm import unit as _unit
+        from pdbfixer import PDBFixer as _PDBFixer
+    except ModuleNotFoundError as exc:
+        raise DdgError(
+            "MM-GBSA scoring requires the optional OpenMM and PDBFixer "
+            "dependencies; install them in the dedicated ddG environment"
+        ) from exc
+    mm, app, unit, PDBFixer = _mm, _app, _unit, _PDBFixer
 
 
 # --- group bookkeeping ------------------------------------------------------
@@ -303,6 +329,7 @@ def build_local_system(
 # --- OpenMM plumbing --------------------------------------------------------
 
 def _prepare(pdb_text: str) -> Tuple[app.Topology, unit.Quantity]:
+    _require_openmm()
     fixer = PDBFixer(pdbfile=io.StringIO(pdb_text))
     fixer.findMissingResidues()
     fixer.missingResidues = {}          # never build loops across a truncation
@@ -332,6 +359,7 @@ def _system(topology: app.Topology) -> mm.System:
     eps_in = 2-4 is the usual MM-GBSA remedy. It is a knob, so it is only ever
     moved against the 7OW6 control, never against a design.
     """
+    _require_openmm()
     ff = app.ForceField(*FORCEFIELD)
     kwargs = dict(nonbondedMethod=app.NoCutoff, constraints=None,
                   rigidWater=False)
@@ -342,6 +370,7 @@ def _system(topology: app.Topology) -> mm.System:
 
 def _energy(topology: app.Topology, positions) -> float:
     """Potential energy, kcal/mol, of `topology` at `positions`."""
+    _require_openmm()
     system = _system(topology)
     integrator = mm.VerletIntegrator(1.0 * unit.femtosecond)
     context = mm.Context(
@@ -355,6 +384,7 @@ def _energy(topology: app.Topology, positions) -> float:
 
 def _subset(topology: app.Topology, positions, keep_chains: Sequence[str]):
     """Topology/positions restricted to `keep_chains` (coordinates unchanged)."""
+    _require_openmm()
     modeller = app.Modeller(topology, positions)
     drop = [r for c in modeller.topology.chains() if c.id not in keep_chains
             for r in c.residues()]
@@ -371,6 +401,7 @@ def _minimise(
     seed: int,
 ) -> Tuple[object, float, int]:
     """Restrained minimisation. Returns (positions, energy kcal/mol, n_free)."""
+    _require_openmm()
     system = _system(topology)
     pos = np.array(positions.value_in_unit(unit.nanometer), dtype=float)
     centre_nm = center / 10.0
