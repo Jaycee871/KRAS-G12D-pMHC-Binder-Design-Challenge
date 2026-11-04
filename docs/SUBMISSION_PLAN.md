@@ -1,4 +1,4 @@
-# Submission plan — current as of 2026-11-04
+# Submission plan — current as of 2026-11-05
 
 **Official deadline:** Sunday 8 Nov 2026, 23:59 Anywhere on Earth (UTC−12),
 which is **Monday 9 Nov 2026, 19:59 Asia/Taipei**.
@@ -9,7 +9,9 @@ https://proteinbase.com/competitions/anthropic-adaptyv-2026/challenges/pmhc
 ## Current project state
 
 Batches 01–08 have been run and analysed. Batch-09's control audit and
-matched-anchor model panel are complete (12 calls / 36 samples).
+matched-anchor panel are complete (12 calls / 36 samples). Batch-10 has now
+completed the matched G12D/apo counter-screen of review ranks 4–11
+(16 calls / 48 samples).
 
 - No sequence has been submitted to Proteinbase.
 - The batch-09 positive-control audit retires the 30% WT geometry-loss rule as
@@ -19,11 +21,15 @@ matched-anchor model panel are complete (12 calls / 36 samples).
   the completed matched regional-anchor panel still shows apo over-burial for
   all three candidates (1.34–1.85× G12D area). This remains a structural warning,
   not an affinity measurement.
+- Batch-10 produced **0/8 Phase-1 advancers**. Corrected G12D Asp6 readout was
+  at most 1/3 for every rank 4–11 design, and every matched apo/G12D buried-area
+  ratio was >1 (1.258–2.348). By the predeclared adaptive rule, Phase 2 uses
+  **0 WT/decoy calls**.
 - No candidate's biological selectivity is established by these predictions.
 
-See `results/batch-09/SUMMARY.md` for the audit and
-`results/batch-09/MATCHED_ANCHOR_RESULTS.md` for the measured result, and
-`docs/BATCH09_RUNBOOK.md` for execution and recovery.
+See `results/batch-09/SUMMARY.md` and
+`results/batch-09/MATCHED_ANCHOR_RESULTS.md` for the lead-panel audit, and
+`results/batch-10/SUMMARY.md` for the lower-ranked matched apo counter-screen.
 
 ## Current official submission rules
 
@@ -105,15 +111,19 @@ The exact settings and recovery procedure are in `docs/BATCH09_RUNBOOK.md`.
 
 No gate is changed by this diagnostic.
 
-### 6 Nov — freeze the candidate pool
+### 6 Nov — mechanism decision and candidate-pool freeze
 
-If the matched diagnostic produces a clear improvement, make a small targeted
-batch-09 around that mechanism only. Do **not** repeat the already-refuted
-“smaller”, “rigidified”, generic shape-steering, or helix de-wetting strategies.
+Batch-10 closed the remaining matched-apo evidence gap for ranks 4–11 and
+produced no advancer. Do **not** run its WT/decoy Phase 2 and do **not** repeat
+the already-refuted “smaller”, “rigidified”, generic shape-steering or helix
+de-wetting strategies.
 
-If it does not improve the evidence, stop generating backbones and rank the
-best existing near-misses. Additional RFdiffusion sampling without a new
-mechanism is unlikely to add information before the deadline.
+A final generation experiment is justified only if it changes the mechanism:
+the binder must be geometrically dependent on the peptide itself at design
+time, for example a predeclared bidentate peptide motif combining direct Asp6
+carboxylate recognition with a second independent peptide contact while
+explicitly disfavoring HLA-only docking. If that protocol cannot be implemented
+cleanly, freeze generation and build the ranked near-miss package instead.
 
 ### 7 Nov — build the ranked submission package
 
