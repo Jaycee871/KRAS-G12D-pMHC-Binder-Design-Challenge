@@ -1,13 +1,14 @@
 #!/usr/bin/env python3
 """Validate a Proteinbase Challenge 5 submission file (CSV or FASTA).
 
-Rules enforced (from the Anthropic x Adaptyv competition submission page):
-  * file size <= 5 MB
-  * CSV must have `name` and `sequence` columns; `molecule_class` optional
-  * at most 20 designs per submission
+Rules enforced (from the current Anthropic x Adaptyv competition FAQ):
+  * submission file is CSV
+  * CSV must have `name`, `sequence`, and `molecule_class`
+  * molecule_class is one of: protein, nanobody, scfv, fab_kappa, fab_lambda
+  * at most 20 designs per submission file
   * each chain between 10 and 250 amino acids (inclusive)
   * only the 20 canonical amino acids
-  * scFv / Fab written as {VH}:{VL} - exactly one colon, both parts valid
+  * Fab is written as {VH}:{VL} - exactly one colon, both parts valid
   * names must be present and unique
 
 Exit code 0 = valid, 1 = invalid, 2 = usage/IO error.
@@ -29,9 +30,9 @@ MIN_CHAIN_LEN = 10
 MAX_CHAIN_LEN = 250
 MAX_FILE_BYTES = 5 * 1024 * 1024  # 5 MB
 VALID_AA = set("ACDEFGHIKLMNPQRSTVWY")
-REQUIRED_COLUMNS = ("name", "sequence")
-OPTIONAL_COLUMNS = ("molecule_class",)
-MULTI_CHAIN_CLASSES = {"scfv", "fab"}
+REQUIRED_COLUMNS = ("name", "sequence", "molecule_class")
+VALID_MOLECULE_CLASSES = {"protein", "nanobody", "scfv", "fab_kappa", "fab_lambda"}
+MULTI_CHAIN_CLASSES = {"fab_kappa", "fab_lambda"}
 
 
 class ValidationError(Exception):
@@ -93,10 +94,9 @@ def load_rows(path: Path) -> List[dict]:
     suffix = path.suffix.lower()
     if suffix == ".csv":
         return parse_csv(path)
-    if suffix in {".fasta", ".fa", ".faa", ".fas"}:
-        return parse_fasta(path)
     raise ValidationError(
-        f"unsupported file type '{suffix or path.name}': expected .csv or .fasta"
+        f"unsupported file type '{suffix or path.name}': current Proteinbase "
+        "submission instructions require CSV"
     )
 
 
@@ -109,6 +109,12 @@ def validate_sequence(seq: str, molecule_class: str = "") -> List[str]:
     if not seq:
         return ["sequence is empty"]
 
+    if mc not in VALID_MOLECULE_CLASSES:
+        problems.append(
+            f"molecule_class '{mc or '<blank>'}' is invalid; expected one of "
+            + ", ".join(sorted(VALID_MOLECULE_CLASSES))
+        )
+
     n_colons = seq.count(":")
     if n_colons > 1:
         return [
@@ -119,6 +125,11 @@ def validate_sequence(seq: str, molecule_class: str = "") -> List[str]:
         problems.append(
             f"molecule_class '{mc}' requires a two-chain sequence written as "
             "{VH}:{VL}, but no ':' was found"
+        )
+    if n_colons == 1 and mc not in MULTI_CHAIN_CLASSES:
+        problems.append(
+            f"molecule_class '{mc or '<blank>'}' must not use ':'; only "
+            "fab_kappa/fab_lambda are submitted as {VH}:{VL}"
         )
 
     chains = seq.split(":")
