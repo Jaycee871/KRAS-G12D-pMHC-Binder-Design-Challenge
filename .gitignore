@@ -93,3 +93,11 @@ results/batch-08/structures/
 # Keep extracted recovery copies out of subsequent commits.
 results/batch-09/responses/
 recovered-evidence/
+
+# ---- Positive-control and rescore coordinates (tracked on purpose) ----
+# The 7OW6 positive control and the constrained-rescore / constraint_test
+# coordinates are the instrument behind the geometry argument in
+# docs/METHODOLOGY_RECORD_OUTLINE.md; they must be re-runnable from a clone.
+!results/validation/7ow6_control_*.cif
+!results/constrained-rescore/*.cif
+!results/constraint_test/*.cif
